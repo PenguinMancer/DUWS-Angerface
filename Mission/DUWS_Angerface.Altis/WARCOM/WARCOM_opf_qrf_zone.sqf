@@ -2,8 +2,8 @@ sleep (1 + (random 4));
 if (!WARCOM_qrf_zones_ready) exitWith {};
 WARCOM_qrf_zones_ready = false;
 _zoneattacked = _this select 0;
-_unitPos = getpos _attachedUnit;
-//hint format["%1",_attachedUnit]; sleep 3;
+_unitPos = getpos _zoneattacked;
+//hint format["%1",_zoneattacked]; sleep 3;
 aliveAllUnits = {alive _x} count allunits;
 
 WARCOM_opf_response_type = "";

@@ -46,7 +46,6 @@ disabledAI = 1;
 #include "dialog\info\reset\reset.hpp"
 #include "locations.hpp"
 #include "support\support.hpp"
-#include "hints.hpp"
 #include "dialog\startup\hq_placement\placement.hpp"
 #include "sounds\sounds.hpp"
 #include "dialog\operative\identities.hpp"

@@ -43,7 +43,7 @@ str(_markername2) setMarkerAlpha 0.1;
 _trg=createTrigger["EmptyDetector",_trigger];
 _trg setTriggerArea[_size,_size2,0,false];
 _trg setTriggerActivation["WEST SEIZED","PRESENT",false];
-_trg setTriggerStatements["this", format["[""%1"",%2,""%3"",""%4"",%5] execvm 'zonescap\captured.sqf'",_place,_points,_markername,_markername2,_trigger], ""];
+_trg setTriggerStatements["this", format["[""%1"",%2,""%3"",""%4"",%5,_size] execvm 'zonescap\captured.sqf'",_place,_points,_markername,_markername2,_trigger,_size], ""];
 _trg setTriggerTimeout [30, 60, 300, true ];
 // CREATE VARNAME FOR ZONE TRIGGER --> use the pos of the trigger
 _triggerName = format["trigger%1%2",round (_trigger select 0),round (_trigger select 1)];
@@ -82,6 +82,26 @@ _trg2 triggerAttachVehicle [player];
 _trg2 setTriggerArea[_size,_size2,0,false];
 _trg2 setTriggerActivation["VEHICLE","PRESENT",true];
 _trg2 setTriggerStatements["this", format["[""%1"",thislist] execvm 'enterlocation.sqf'",_place], ""];
+
+[_size,_size2,_trigger] spawn {
+_size 		= _this select 0;
+_size2		= _this select 1;
+_trigger	= _this select 2;
+
+// CREATE ZONE CAPTURABLE TRIGGER
+_trg=createTrigger["EmptyDetector",_trigger];
+_trg setTriggerArea[_size,_size2,0,false];
+_trg setTriggerActivation["WEST SEIZED","PRESENT",false];
+_trg setTriggerStatements["this","[_trg,_trg2]execVM 'deletezonetriggers.sqf'", ""];
+_trg setTriggerTimeout [30, 60, 300, true ];
+		
+// CREATE ZONE NOTIFICATION TRIGGER
+_trg2=createTrigger["EmptyDetector",_trigger];
+_trg2 setTriggerArea[_size,_size2,0,false];
+_trg2 setTriggerActivation["WEST","EAST D",true];
+_trg2 setTriggerStatements["this","[_trigger] spawn QRF_Zones", ""];
+};
+
 // move the spawn location, or units get stuck
 _safetrigger = [_trigger, 0,_size-25,15,0,0.2,0,[],[[0,0],[0,0]]] call BIS_fnc_findSafePos;
 _trigger = [(_trigger select 0)+40,_trigger select 1];
