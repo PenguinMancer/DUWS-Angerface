@@ -8,7 +8,7 @@ modded/modified version of DUWS Angerface, as long as you put a link pointing to
 ## Disclaimer
 I am not responsible for any instances of exploding computers, death, injury, etc that make come from playing this mission.
 I have to credit DUWS-R and DUWS-Unofficial because I used many ideas from DUWS-R and used DUWS-Unofficial as a starting point for this project.
-Their github repositories can be found <a href="https://github.com/DUWS-R-Team/DUWS-R">here and <a href="https://github.com/rlex/a3-duws-unofficial">here.
+Their github repositories can be found <a href="https://github.com/DUWS-R-Team/DUWS-R">here</a> and <a href="https://github.com/rlex/a3-duws-unofficial">here</a>.
 Additional credit goes to the original DUWS, for the base of all this work. http://forums.bistudio.com/showthread.php?160117-SP-Dynamic-Universal-War-System-(DUWS-alpha0-1)
 
 ## Overview
