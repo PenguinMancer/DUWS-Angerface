@@ -330,6 +330,14 @@ class CfgVehicles {
 		scope = 2;
 	};
 	
+	/*extern*/ class SoldierWB;
+
+	class Niko_US_Base: SoldierWB {
+		modelsides = {3, 2, 1, 0};
+	};
+};
+
+	
 };
 
 
