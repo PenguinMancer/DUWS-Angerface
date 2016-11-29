@@ -26,13 +26,12 @@ Keep note that "Quick start" may be a bit of a misnomer due to the vast requirem
 Many. Besides the required addons though, you can use all the add-ons you want: islands, weapons, gear, etc... Note that the DUWS Angerface
 will not show add-ons that adds new units/vehicles, since they are added by hand.
 
-
 ### Using the mission on another island
 Just rename the .pbo to the extension of the other island. That's all you need to do. 
  * Example: DUWS_Angerface.stratis.pbo >> DUWS_Angerface.chernarus.pbo
  
 ### Manually placing zones
-After a location for the HQ has been selected the player will be prompted with a dialog with various options. Three buttons will be shown at this time. Random will naturally gnerate zones randomly. Manual and advanced both allow manual zone placement. The latter though, allows the host to readjust the parameters of each zone after the previous has been placed. This allows the host to make a plethora of zones very accurately, ranging from huge to tiny.
+After a location for the HQ has been selected the player will be prompted with a dialog with various options. Three buttons will be shown at this time. Random will naturally generate zones randomly. Manual and advanced both allow manual zone placement. The latter though, allows the host to readjust the parameters of each zone after the previous has been placed. This allows the host to make a plethora of zones very accurately, ranging from huge to tiny.
 
 ## Features
  * Play the way you want:
@@ -45,8 +44,9 @@ After a location for the HQ has been selected the player will be prompted with a
  * You can define the HQ location yourself and the enemy zones, or just the HQ and let the mission generate the zones automatically. You can also let the mission determine the HQ location itself. Basically you decide the level of randomization.
 
 ## Credits / Thanks
-* Thanks to all the members of the DUWS-R Team for your hard work and contributions!
 * DUWS Mission made by kibot.
 * Thanks to Kempco for the map size script.
 * Thanks to Aeroson for repetitive clean up and SET/GET loadout scripts.
-* Thanks to the rlex for DUWS Unofficial, which I used as a base for this modification.0
+* Thanks to pokertour for the airdrop script.
+* Thanks to the rlex for DUWS Unofficial, which I used as a base for this modification.
+* Thanks to all the members of the DUWS-R Team for your hard work and contributions!
