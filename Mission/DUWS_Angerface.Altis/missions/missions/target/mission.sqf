@@ -61,8 +61,8 @@ _PatrolSoldier2 = [] call Soldiers_fnc_GetOpforSoldier;
 
 _group = createGroup east;
 _target = _group createUnit [_PatrolOfficer1, _missionpos, [], 0, "FORM"];
-_unit = _group createUnit [_PatrolSoldier1, _missionpos, [], 0, "FORM"];
-_unit = _group createUnit [_PatrolSoldier2, _missionpos, [], 0, "FORM"];
+_unit1 = _group createUnit [_PatrolSoldier1, _missionpos, [], 0, "FORM"];
+_unit2 = _group createUnit [_PatrolSoldier2, _missionpos, [], 0, "FORM"];
 
 [_target] remoteExecCall ["Soldiers_fnc_RandomOpforIdentityOfficer", 0, true];
 [_unit1] remoteExecCall ["Soldiers_fnc_RandomOpforIdentity", 0, true];
