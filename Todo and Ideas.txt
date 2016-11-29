@@ -1,0 +1,13 @@
+Forced Entry mode:
+Start with one vehicle and nothing but the weapons we already have. Have to capture a zone to place the HQ.
+
+Make a civilian Relation system
+This would take a hell of a lot of work.
+
+Finish making the zone quick response force, and the zone capture response force
+
+Make it where the zone response forces have some serious firepower compared to a regular QRF
+
+Make more enemy base prefabs.
+
+Go through and make all friendly and enemy units for the next map.
