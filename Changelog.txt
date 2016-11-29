@@ -1,0 +1,24 @@
+1.0.0: Almost too many things to count, but I'll do my best to add these over time as I remember.
+
+Enemy and friendly units are drastically changed. They are being made by me and a collegue and given classnames through the customunits addon.
+The units in the custom units addon will be changed over time. What I mean by this is that they will be assigned a certain map, and then kept as backup. This is because my unit and I are currently doing a campaign where we will be going from map to map.
+Due to this the mission descriptions and debriefs are going to vary from map to map.
+Added unit randomization in the form of two functions, one that fetches a random unit classname, and another that sets random identity. This is for both factions.
+Converted many recurring scripts to functions.
+Changed the loading screen image.
+Made the mission require many addons, most notable ones being RHS, NIARMS (everything), and ace medical/repair
+Made AP a resource that acts more on a scale from 0 to 200 instead of infinitely going up. The idea being that a side can start losing the war through loss of resources. The players gain it back by completing missions, and Opfor gains it back over time. It can also be lost by Blufor by player death, and Opfor by players winning missions/capping zones.
+Currently AP is being worked on to have a slightly bigger point, in that it can modify the size of enemy fireteams, and their makeup, for example
+The healing script now is based on the code from the personal aid kit from ACE 3.
+VAS has been removed entirely in favor of BIS' virtual arsenal
+TAW view distance script was removed.
+DUWS limiter has been removed.
+Repetitive cleanup script, satcom script, and halo jump scripts updated.
+Diary messages moved to their own file.
+Remove fatigue script changed to actually remove fatigue post nexus update.
+Zone cap scripts updated to remove an odd bug where if multiple players were present when a zone was capped, it would count as capped multiple times. 
+Working on a WIP system to add a new type of Quick respone force that will send a hefty force if players try to capture a zone. Along with this, if enemy AP is high enough, they will send a second force after players cap a zone which will attempt to take it back before players can set up defenses.
+Added a new (WIP) support which allows players to request a vehicle be airdropped near their location, for elevated price.
+Added many missions. Some where ideas taken from other DUWS variants, some my own.
+Added a third option for zone placement: Advanced. Advanced zone placement allows the player to adjust parameters after every zone is placed, including a couple of new ones I made myself. This allows players to adjust the zones size, number of fortifications, etc for every single zone. Also, zones with additonal fortifications can have them spawn at places besides the very center of the zone, leading to a slightly more dynamic experience.
+Changed the fortifications around the Blufor HQ.
