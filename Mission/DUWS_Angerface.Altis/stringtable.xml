@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="ATM Airdrop">
+<Package name="ATMDrop">
+<Key ID="STR_ATM_hintload">
+<Original>loading loadout</Original>
+<French>Chargement de votre équipement</French>
+</Key>
+<Key ID="STR_ATM_hinton">
+<Original>Designate LZ for HALO Jump by clicking on the map</Original>
+<French>Sélectionner votre Altitude et désigner une LZ sur la carte</French></Key>
+</Package>
+</Project>
