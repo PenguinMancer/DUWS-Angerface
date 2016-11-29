@@ -56,5 +56,5 @@ sleep 2;
 _trg=createTrigger["EmptyDetector",_triggerPos];
 _trg setTriggerArea[_size,_size,0,false];
 _trg setTriggerActivation["EAST SEIZED","PRESENT",false];
-_trg setTriggerStatements["this", format["[""%1"",%2,""%3"",""%4"",%5,_size] execvm 'zonescap\opfor_cap.sqf'",_place,_points,_markername,_markername2,_triggerPos,_size], ""];
+_trg setTriggerStatements["this", [_place,_points,_markername,_markername2,_triggerPos,_size] execvm 'zonescap\opfor_cap.sqf'", ""];
 _trg setTriggerTimeout [30, 60, 300, true ];
