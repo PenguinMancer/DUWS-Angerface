@@ -42,7 +42,7 @@ str(_markername2) setMarkerColor "ColorRed";
 
 // CREATE ZONE CAPTURABLE TRIGGER
 _trg=createTrigger["EmptyDetector",_triggerPos];
-_trg setTriggerArea[_size,_size2,0,false];
+_trg setTriggerArea[_size,_size,0,false];
 _trg setTriggerActivation["WEST SEIZED","PRESENT",false];
 _trg setTriggerStatements["this", format["[""%1"",%2,""%3"",""%4"",%5,_size] execvm 'zonescap\blufor_cap.sqf'",_place,_points,_markername,_markername2,_trigger,_size], ""];
 _trg setTriggerTimeout [30, 60, 300, true ];
@@ -53,14 +53,14 @@ _triggerPos	= _this select 1;
 
 // CREATE ZONE CAPTURABLE TRIGGER
 _trg=createTrigger["EmptyDetector",_triggerPos];
-_trg setTriggerArea[_size,_size2,0,false];
+_trg setTriggerArea[_size,_size,0,false];
 _trg setTriggerActivation["WEST SEIZED","PRESENT",false];
 _trg setTriggerStatements["this","[_trg,_trg2]execVM 'deletezonetriggers.sqf'", ""];
 _trg setTriggerTimeout [30, 60, 300, true ];
 		
 // CREATE ZONE NOTIFICATION TRIGGER
 _trg2=createTrigger["EmptyDetector",_triggerPos];
-_trg2 setTriggerArea[_size,_size2,0,false];
+_trg2 setTriggerArea[_size,_size,0,false];
 _trg2 setTriggerActivation["WEST","EAST D",true];
 _trg2 setTriggerStatements["this","[_triggerPos] spawn QRF_Zones", ""];
 };
