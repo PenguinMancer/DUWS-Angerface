@@ -39,7 +39,7 @@ WARCOM_opf_attack_wave_type = "";
             if (_failsafe > 5) then {sleep 300; _failsafe = 0;}
             };
           // find a zone *** end ////////////////Spawn Troops
-		  _randomZonesafe = [_randomZone, 0,100,10,0,0.2,0,[],[[0,0],[0,0]]] call BIS_fnc_findSafePos;//Find a safe spawn position.
+		  _randomZonesafe = [_randomZone, 100,500,10,0,0.25,0,[],[[0,0],[0,0]]] call BIS_fnc_findSafePos;//Find a safe spawn position.
 		  if (0 == _randomZonesafe select 0 && 0 == _randomZonesafe select 1) then {//If not found, then simply default to the center again.
 		  _randomZonesafe = [(_randomZone select 0)+20,_randomZone select 1];
 		  };
