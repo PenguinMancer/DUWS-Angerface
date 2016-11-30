@@ -49,5 +49,6 @@ After a location for the HQ has been selected the player will be prompted with a
 * Thanks to Aeroson for repetitive clean up script.
 * Thanks to pokertour for the airdrop script.
 * Thanks to Pixel Art Studio for the SATCOM script.
+* Thanks to Haleks for Unlocked uniforms, which I have modified slightly for the purposes of my addon. 
 * Thanks to the rlex for DUWS Unofficial, which I used as a base for this modification.
 * Thanks to all the members of the DUWS-R Team for your hard work and contributions!
