@@ -8,7 +8,7 @@ _markerstr = createMarker [str(_markername), _unitPos];
 _markerstr setMarkerShape "ICON";
 str(_markername) setMarkerType "o_inf";
 str(_markername) setMarkerColor "ColorRed";
-str(_markername) setMarkerText format["Enemy Town Patrol Waypoint"];
+str(_markername) setMarkerText format["Enemy QRF Waypoint"];
 enemy_waypoint_num = enemy_waypoint_num + 1;
 };
 

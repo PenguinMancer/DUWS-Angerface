@@ -23,3 +23,8 @@ Added many missions. Some where ideas taken from other DUWS variants, some my ow
 Added a third option for zone placement: Advanced. Advanced zone placement allows the player to adjust parameters after every zone is placed, including a couple of new ones I made myself. This allows players to adjust the zones size, number of fortifications, etc for every single zone. Also, zones with additonal fortifications can have them spawn at places besides the very center of the zone, leading to a slightly more dynamic experience.
 Changed the fortifications around the Blufor HQ.
 Added a third option for HQ placement, with a fourth inbound. The players are placed near a vehicle with an action on it that allows them to deploy the HQ. The idea of this being that all players can collaborate on figuring out exactly where they want their HQ to be.
+Added a new random patrol type that picks a random town or city on the map and paths to that city and back.
+
+1.1.0
+
+First implimentation of Zone Quick Response Force. This type of quick response force is exclusive to zones, essentially acting as backup whenever players attempt to capture it. This is first implimentation, and as such is still quite buggy. Expect fixes in the coming days.

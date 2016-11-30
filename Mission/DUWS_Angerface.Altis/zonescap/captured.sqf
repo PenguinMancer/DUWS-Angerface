@@ -4,6 +4,7 @@ _markername = _this select 2;
 _markername2 = _this select 3;
 _triggerPos = _this select 4;
 _size = _this select 5;
+_QRFtrg = _this select 6;
 
 // TELL THE ZONE IS UNDER BLU CONTROL
 WARCOM_zones_controled_by_BLUFOR = WARCOM_zones_controled_by_BLUFOR + [_triggerPos];
@@ -49,12 +50,23 @@ str(_markername) setMarkerColor "ColorGreen";
 // MODIFY MARKER ELLIPSE
 str(_markername2) setMarkerColor "ColorGreen";
 
+deleteVehicle _QRFtrg;
+
 sleep 2;
 
 [[[50],{["cpadded",[(_this select 0)]] call bis_fnc_showNotification;}],"BIS_fnc_spawn",true,true] call BIS_fnc_MP;
 
-_trg=createTrigger["EmptyDetector",_triggerPos];
-_trg setTriggerArea[_size,_size,0,false];
+// RECALL VARNAME FOR ZONE TRIGGER --> use the pos of the trigger
+private ["_trg","_trgQRF"];
+
+call compile format["_trg = trigger%1%2",round (_triggerPos select 0),round (_triggerPos select 1)];
+call compile format["_trgQRF = triggerQRF%1%2",round (_triggerPos select 0),round (_triggerPos select 1)];
+
+//// MAKE THE TRIGGER CAPTURABLE FOR OPFOR
 _trg setTriggerActivation["EAST SEIZED","PRESENT",false];
-_trg setTriggerStatements["this", [_place,_points,_markername,_markername2,_triggerPos,_size] execvm 'zonescap\opfor_cap.sqf'", ""];
-_trg setTriggerTimeout [30, 60, 300, true ];
+_trg setTriggerStatements["this", format["[""%1"",%2,""%3"",""%4"",%5] execvm 'zonescap\opfor_cap.sqf'",_place,_points,_markername,_markername2,_triggerPos], ""];
+
+//// MAKE QRF TRIGGER DO NOTHING FOR NOW
+_trgQRF setTriggerArea[1,1,1,false];
+_trgQRF setTriggerActivation["NONE","PRESENT",true];
+_trgQRF setTriggerStatements["","",""];

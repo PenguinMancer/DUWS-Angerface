@@ -45,8 +45,17 @@ str(_markername2) setMarkerColor "ColorGreen";
 
 [[[],{["cpadded_retaken",[]] call bis_fnc_showNotification;}],"BIS_fnc_spawn",true,true] call BIS_fnc_MP;
 
-_trg=createTrigger["EmptyDetector",_triggerPos];
-_trg setTriggerArea[_size,_size,0,false];
+// RECALL VARNAME FOR ZONE TRIGGER --> use the pos of the trigger
+private ["_trg","_trgQRF"];
+
+call compile format["_trg = trigger%1%2",round (_triggerPos select 0),round (_triggerPos select 1)];
+call compile format["_trgQRF = triggerQRF%1%2",round (_triggerPos select 0),round (_triggerPos select 1)];
+
+//// MAKE THE TRIGGER CAPTURABLE FOR OPFOR
 _trg setTriggerActivation["EAST SEIZED","PRESENT",false];
-_trg setTriggerStatements["this", format["[""%1"",%2,""%3"",""%4"",%5,_size] execvm 'zonescap\opfor_cap.sqf'",_place,_points,_markername,_markername2,_triggerPos,_size], ""];
-_trg setTriggerTimeout [30, 60, 300, true ];
+_trg setTriggerStatements["this", format["[""%1"",%2,""%3"",""%4"",%5] execvm 'zonescap\opfor_cap.sqf'",_place,_points,_markername,_markername2,_triggerPos], ""];
+
+//// MAKE QRF TRIGGER DO NOTHING FOR NOW
+_trgQRF setTriggerArea[1,1,1,false];
+_trgQRF setTriggerActivation["NONE","PRESENT",true];
+_trgQRF setTriggerStatements["","",""];

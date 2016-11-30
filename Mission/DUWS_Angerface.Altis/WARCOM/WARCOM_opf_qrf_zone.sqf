@@ -2,9 +2,6 @@ sleep (1 + (random 4));
 if (!WARCOM_qrf_zones_ready) exitWith {};
 WARCOM_qrf_zones_ready = false;
 _zoneattacked = _this select 0;
-_unitPos = getpos _zoneattacked;
-//hint format["%1",_zoneattacked]; sleep 3;
-aliveAllUnits = {alive _x} count allunits;
 
 WARCOM_opf_response_type = "";
 
@@ -50,7 +47,7 @@ WARCOM_opf_response_type = "";
 		      _randomZonesafe = [(_randomZone select 0)+20,_randomZone select 1];
 		      };
 			  _group = [_randomZonesafe, EAST, WARCOM_opf_response_type,[],[],WARCOM_opf_ai_skill_range] call BIS_fnc_spawnGroup;
-			  _opf_assault = [_group,_unitPos] execVM "WARCOM\WARCOM_wp_opf_qrf.sqf";
+			  _opf_assault = [_group,_zoneattacked] execVM "WARCOM\WARCOM_wp_opf_qrf.sqf";
 			  
 		  if (debugmode) then {
 		  _null = [_group,"Zone QRF"] execvm "debuglocation.sqf";

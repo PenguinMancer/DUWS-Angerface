@@ -9,7 +9,14 @@ Finish making the zone quick response force, and the zone capture response force
 Make it where the zone response forces have some serious firepower compared to a regular QRF
 
 Make more enemy base prefabs.
+(serious defensive capabilities?, mortars, MG emplacements, etc.)
 
 Go through and make all friendly and enemy units for the next map.
 
 Make an alarm go off when we are detected in an enemy zone?
+
+make actual physical alarms that have to be used by opfor units for an alarm to go off.
+
+Enemy zone QRFs waypoints are throwing errors. Find a solution to that.
+
+Enemy assaults and patrols seem to get stuck quite often. Come up with a better system of spawn.
