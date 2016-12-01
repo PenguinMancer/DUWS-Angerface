@@ -61,7 +61,7 @@ call compile format["_trgQRF = triggerQRF%1%2",round (_triggerPos select 0),roun
 
 //// MAKE THE TRIGGER CAPTURABLE FOR OPFOR
 _trg setTriggerActivation["EAST SEIZED","PRESENT",false];
-_trg setTriggerStatements["this", format["[""%1"",%2,""%3"",""%4"",%5,%6] execvm 'zonescap\opfor_cap.sqf'",_place,_points,_markername,_markername2,_trigger,_size], ""];
+_trg setTriggerStatements["this", format["[""%1"",%2,""%3"",""%4"",%5,%6] execvm 'zonescap\opfor_cap.sqf'",_place,_points,_markername,_markername2,_triggerPos,_size], ""];
 
 //// MAKE QRF TRIGGER DO NOTHING FOR NOW
 _trgQRF setTriggerArea[1,1,1,false];

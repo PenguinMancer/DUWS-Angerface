@@ -43,9 +43,10 @@ zone_fortified = false; // Only used for advanced zone generation, allows you to
 zone_compound = false; //Only used for advanced zone generation. Compounds have twice as many prefabs as normal.
 /////////////////////////////////////////////////////////////
 
-// preprocess the qrf file for the EH
-QRF_test = compile preprocessFile "WARCOM\WARCOM_opf_qrf.sqf";
-QRF_Zones = compile preprocessFile "WARCOM\WARCOM_opf_qrf_zone.sqf";
+//initialize various scripts
+QRF = compile preprocessFile "WARCOM\WARCOM_opf_qrf.sqf";
+QRF_zone = compile preprocessFile "WARCOM\WARCOM_opf_qrf_zone.sqf";
+QRF_WP = compile preprocessFile "WARCOM\WARCOM_wp_opf_qrf.sqf";
 [] call compile preprocessFile "Scripts\kndr_unit_markers.sqf";
 
 ///////////////////////////////////////////////////

@@ -53,7 +53,7 @@ _patrolRadius = round(_radius/2);
 } forEach (units _group);
 
 // ADD QRF eventhandler
-_EH = leader _group addEventHandler ["Fired", {[_this select 0] spawn QRF_test}];
+_EH = leader _group addEventHandler ["Fired", {[_this select 0] spawn QRF}];
 
 if (debugmode) then {
 _null = [_group,"Weapons team"] execvm "debuglocation.sqf";

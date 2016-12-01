@@ -1,6 +1,8 @@
 _group =_this select 0;
 _unitPos = _this select 1;
 
+sleep 0.5;
+
 if (debugmode) then {
 // create marker on leader 
 _markername = format["ENEMYWP%1",enemy_waypoint_num]; // Define marker name

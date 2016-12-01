@@ -17,6 +17,8 @@ Make an alarm go off when we are detected in an enemy zone?
 
 make actual physical alarms that have to be used by opfor units for an alarm to go off.
 
-Enemy zone QRFs waypoints are throwing errors. Find a solution to that.
-
 Enemy assaults and patrols seem to get stuck quite often. Come up with a better system of spawn.
+
+redo the zone cap script so that there's some way for it to be recaptured multiple times. as it stands the trigger can only go once, preventing a multiple capture bug. If there could be a way to delete the trigger after capture and remake it, that would be perfect.
+
+make a small function for the zone generation script that automates the process of finding a safe spawn position for every group spawned, so they don't spawn clustered together.

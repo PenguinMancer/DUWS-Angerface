@@ -1,7 +1,7 @@
 class CFGfunctions
 {
 	tag = "Soldiers"
-	class Functions
+	class SoldierFunctions
 	{
 		file = "SoldierFNC\functions";
 		class GetBluforAntiTank {};

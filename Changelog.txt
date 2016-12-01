@@ -28,3 +28,7 @@ Added a new random patrol type that picks a random town or city on the map and p
 1.1.0
 
 First implimentation of Zone Quick Response Force. This type of quick response force is exclusive to zones, essentially acting as backup whenever players attempt to capture it. This is first implimentation, and as such is still quite buggy. Expect fixes in the coming days.
+
+1.1.1
+
+Zone Quick response force implimented. Units will now spawn from a random zone (that's not the one being attacked) and rush to that zone to aid them.

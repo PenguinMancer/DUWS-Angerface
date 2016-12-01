@@ -19,4 +19,4 @@ _group = [_position, EAST, _initGroup,[],[],opfor_ai_skill] call BIS_fnc_spawnGr
 } forEach (units _group);
 
 // ADD QRF eventhandler
-_EH = leader _group addEventHandler ["Fired", {[_this select 0] spawn QRF_test}];
+_EH = leader _group addEventHandler ["Fired", {[_this select 0] spawn QRF}];

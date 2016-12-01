@@ -42,7 +42,7 @@ str(_markername2) setMarkerAlpha 0.1;
 _trgQRF=createTrigger["EmptyDetector",_trigger];
 _trgQRF setTriggerArea[_size,_size2,0,false];
 _trgQRF setTriggerActivation["WEST","EAST D",true];
-_trgQRF setTriggerStatements["this","[_trigger] spawn QRF_Zones", ""];
+_trgQRF setTriggerStatements["this", format["[%1] spawn QRF_zone",_trigger], ""];
 
 // CREATE ZONE CAPTURABLE TRIGGER
 _trg=createTrigger["EmptyDetector",_trigger];
@@ -96,16 +96,13 @@ _trigger = [(_trigger select 0)+40,_trigger select 1];
 if (0 == _safetrigger select 0 && 0 == _safetrigger select 1) then {//If our safe position is empty, it ain't safe.
 _safetrigger = _trigger;
 };
-
-_fortifiedspawn = _trigger;
-
-
+_trigger = _safetrigger;
 
 // CREATE OPFOR. HEAVY CLUSTERFUCK INCOMING.
 // Check if fortified is true
 if (_fortified) then  
 {
-      [_fortifiedspawn] execvm "createopfortified.sqf";
+      [_trigger] execvm "createopfortified.sqf";
       sleep 2;
 };
 

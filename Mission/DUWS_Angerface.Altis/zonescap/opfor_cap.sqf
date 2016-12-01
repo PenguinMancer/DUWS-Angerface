@@ -48,9 +48,9 @@ call compile format["_trgQRF = triggerQRF%1%2",round (_triggerPos select 0),roun
 
 //// MAKE THE TRIGGER CAPTURABLE FOR BLUFOR
 _trg setTriggerActivation["WEST SEIZED","PRESENT",false];
-_trg setTriggerStatements["this", format["[""%1"",%2,""%3"",""%4"",%5,%6] execvm 'zonescap\blufor_cap.sqf'",_place,_points,_markername,_markername2,_trigger,_size], ""];
+_trg setTriggerStatements["this", format["[""%1"",%2,""%3"",""%4"",%5,%6] execvm 'zonescap\blufor_cap.sqf'",_place,_points,_markername,_markername2,_triggerPos,_size], ""];
 
 //// MAKE QRF TRIGGER DO SOMETHING AGAIN
 _trgQRF setTriggerArea[_size,_size,0,false];
 _trgQRF setTriggerActivation["WEST","EAST D",true];
-_trgQRF setTriggerStatements["this","[_triggerPos] spawn QRF_Zones", ""];
+_trgQRF setTriggerStatements["this", format["[%1] spawn QRF_zone",_triggerPos], ""];
