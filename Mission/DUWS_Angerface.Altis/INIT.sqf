@@ -178,6 +178,7 @@ if ((MTV1cap) && (alive MTV1)) then {[MTV1, "mil_triangle", "ColorGreen", "2", "
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
+game_master = ["player1"];
 player allowDamage false;
 
 //Time of Day
@@ -188,9 +189,7 @@ setDate [2016, 8, 6, (paramsArray select 2), 1];
 #include "dialog\supports_init.hpp"
 #include "dialog\squad_number_init.hpp"
 
-if (!isMultiplayer) then {
-	getsize_script = [player] spawn Recurring_fnc_getMapSize;
-};
+getsize_script = [player] spawn Recurring_fnc_getMapSize;
 
 //enable ZBE units caching
 ZbeCacheStatus = paramsArray select 7;
@@ -242,36 +241,40 @@ if (isMultiplayer) then {
 		"finishedMissionsNumber" addPublicVariableEventHandler { call persistent_fnc_incrementCompletedMissions }; // change the shown CP for request dialog
 	};
 
-
-    if (isServer) then { // SERVER INIT
+	sleep 5;
+	
+	if (((vehiclevarname player) in game_master)) then {
 	DUWS_host_start = false;
 	publicVariable "DUWS_host_start";
 	waitUntil {time > 0.1};
-	_getsize_script = [player] spawn Recurring_fnc_getMapSize;
 	DUWS_host_start = true;
 	publicVariable "DUWS_host_start";
 
-	// init High Command
-	_handle = [] execVM "dialog\hc_init.sqf";
 	waitUntil {scriptDone _getsize_script};
 	};
 
 
 };
 
-if (isServer) then
-{
 _null = [] execVM "dialog\startup\hq_placement\placement.sqf";
 waitUntil {chosen_hq_placement};
 
+// create random HQ
+if (!hq_manually_placed && !player_is_choosing_hqpos) then {
+    hq_create = [20, 0.015] execVM "initHQ\locatorHQ.sqf";
+    waitUntil {scriptDone hq_create};	
+};
 
+if (hasinterface) then {
+    _grplogic = createGroup sideLogic;
+    _hc_module = _grplogic createUnit ["HighCommand",[0,0,0] , [], 0, ""];
+    _hc_module synchronizeObjectsAdd [game_master];
+    // done,
 
-	// create random HQ
-	if (!player_is_choosing_hqpos) then {
-	hq_create = [20, 0.015] execVM "initHQ\locatorHQ.sqf";
-	waitUntil {scriptDone hq_create};
-	};
-
+    // make 1 HC subordinate so that the player will not control all blufor forces
+    _grplogic = createGroup sideLogic;
+    _sub_module = _grplogic createUnit ["HighCommandsubordinate",[0,0,0] , [], 0, ""];                    
+    _sub_module synchronizeObjectsAdd [_hc_module];
 };
 
 // group cleaning script
@@ -301,18 +304,12 @@ if (!isServer) then { // WHEN CLIENT CONNECTS INIT (might need sleep)
 	hintsilent format["Joined game, welcome to %1, %2",worldName,profileName];
 	// init High Command
 	waitUntil {sleep 1; HQgenerated};
-	[hq_blu1] execVM "initHQ\HQaddactions.sqf";
-	_handle = [] execVM "dialog\hc_init.sqf";
 	[] execVM "dialog\startup\weather_client.sqf";
 
 };
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-if (!isMultiplayer) then {
-	_handle = [] execVM "dialog\hc_init.sqf";
-	};
 
 if (isServer) then {
 // initialise the ressources per zone bonus
