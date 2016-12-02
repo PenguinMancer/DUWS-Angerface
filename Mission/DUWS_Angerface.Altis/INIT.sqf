@@ -260,7 +260,7 @@ _null = [] execVM "dialog\startup\hq_placement\placement.sqf";
 waitUntil {chosen_hq_placement};
 
 // create random HQ
-if (!hq_manually_placed && !player_is_choosing_hqpos) then {
+if (!player_is_choosing_hqpos) then {
     hq_create = [20, 0.015] execVM "initHQ\locatorHQ.sqf";
     waitUntil {scriptDone hq_create};	
 };
