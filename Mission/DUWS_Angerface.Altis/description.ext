@@ -32,6 +32,8 @@ respawnOnStart = 0;
 disabledAI = 1;
 //allowFunctionsLog = 0;
 
+__EXEC (MISSION_ROOT = __FILE__ select [0, count __FILE__ - 15])
+
 #include "debriefing.hpp"
 #include "dialog\defines.hpp"
 #include "dialog\startup\startup.hpp"

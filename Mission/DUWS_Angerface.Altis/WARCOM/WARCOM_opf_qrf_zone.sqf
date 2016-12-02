@@ -2,6 +2,7 @@ sleep (1 + (random 4));
 if (!WARCOM_qrf_zones_ready) exitWith {};
 WARCOM_qrf_zones_ready = false;
 _zoneattacked = _this select 0;
+_size = _this select 1;
 
 WARCOM_opf_response_type = "";
 
@@ -48,6 +49,11 @@ WARCOM_opf_response_type = "";
 		      };
 			  _group = [_randomZonesafe, EAST, WARCOM_opf_response_type,[],[],WARCOM_opf_ai_skill_range] call BIS_fnc_spawnGroup;
 			  _opf_assault = [_group,_zoneattacked] spawn QRF_WP;
+			  
+			  _root = parsingNamespace getVariable "MISSION_ROOT";
+			  _soundToPlay = _root + "sounds\Siren.ogg";
+			  playSound3D [_soundToPlay, player, false, _zoneattacked, 5, 1, _size];
+			  [[{PAPABEAR sidechat "This is HQ, an enemy zone has gone on high alert. They are sending reinforcements that way!"}],"BIS_fnc_Spawn",true,false] call BIS_fnc_MP;
 			  
 		  if (debugmode) then {
 		  _null = [_group,"Zone QRF"] execvm "debuglocation.sqf";

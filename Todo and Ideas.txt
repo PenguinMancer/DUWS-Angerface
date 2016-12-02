@@ -14,11 +14,14 @@ Make more enemy base prefabs.
 Go through and make all friendly and enemy units for the next map.
 
 Make an alarm go off when we are detected in an enemy zone?
+Done, except now we have to figure out how loud it needs to be.
 
 make actual physical alarms that have to be used by opfor units for an alarm to go off.
 
-Enemy assaults and patrols seem to get stuck quite often. Come up with a better system of spawn.
-
 redo the zone cap script so that there's some way for it to be recaptured multiple times. as it stands the trigger can only go once, preventing a multiple capture bug. If there could be a way to delete the trigger after capture and remake it, that would be perfect.
 
-make a small function for the zone generation script that automates the process of finding a safe spawn position for every group spawned, so they don't spawn clustered together.
+change the random vehicle calls to pull from a list of vehicles that can be defined in soldier functions, so I don't have to worry about changing multiple files.
+
+Make a zone marker for HQ so that we have an indicator of the size of the HQ location.
+
+Take a look at that XML parsing error in the RPT logs.
