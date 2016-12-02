@@ -1,10 +1,10 @@
 _array_of_missions = [];  // init the array of missions
 _allFound = false;
 _counter = 0;
+_uidhost = getPlayerUID player1;
 
 if (isnil ("Mission_timeout_request")) then {Mission_timeout_request = true;};
 if (!Mission_timeout_request) exitWith {PAPABEAR=[West,"HQ"]; PAPABEAR SideChat "We don't have any other missions for you right now, try again in 10 minutes";};
-_uidhost = getPlayerUID player1;
 if (!((getPlayerUID player) in _uidhost)) exitWith {hint "Only the host can request side missions for now"};
 if (officedead) exitWith {hint "Your commanding officer is dead, so there are no side-missions allowed!"};
 
