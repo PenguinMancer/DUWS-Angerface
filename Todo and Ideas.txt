@@ -4,8 +4,6 @@ Start with one vehicle and nothing but the weapons we already have. Have to capt
 Make a civilian Relation system
 This would take a hell of a lot of work.
 
-Finish making the zone quick response force, and the zone capture response force
-
 Make it where the zone response forces have some serious firepower compared to a regular QRF
 
 Make more enemy base prefabs.
@@ -13,15 +11,8 @@ Make more enemy base prefabs.
 
 Go through and make all friendly and enemy units for the next map.
 
-Make an alarm go off when we are detected in an enemy zone?
-Done, except now we have to figure out how loud it needs to be.
-
 make actual physical alarms that have to be used by opfor units for an alarm to go off.
 
-redo the zone cap script so that there's some way for it to be recaptured multiple times. as it stands the trigger can only go once, preventing a multiple capture bug. If there could be a way to delete the trigger after capture and remake it, that would be perfect.
+Make enemy spawns based more on AP, same with our units.
 
-change the random vehicle calls to pull from a list of vehicles that can be defined in soldier functions, so I don't have to worry about changing multiple files.
-
-Make a zone marker for HQ so that we have an indicator of the size of the HQ location.
-
-Take a look at that XML parsing error in the RPT logs.
+Test if the alterations to the capture scripts allow opfor to recap zones now.

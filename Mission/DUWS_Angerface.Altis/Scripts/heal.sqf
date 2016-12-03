@@ -10,12 +10,7 @@ if (commandpointsblu1<2) exitWith
 
 commandpointsblu1 = commandpointsblu1 - 2;
 
-
-if (isNil "AGM_Blood") then {
-  null = [player] execVM 'fullheallocal.sqf';
-  {null = [_x] execVM 'fullheallocal.sqf';} forEach units group player;
-} else {
-hint "Oh fuck, something messed up. BAD BAD BAD"
-};
+null = [player] execVM 'Scripts\fullheallocal.sqf';
+{null = [_x] execVM 'Scripts\fullheallocal.sqf';} forEach units group player;
 
 hint "You and your squad members have been fully healed";

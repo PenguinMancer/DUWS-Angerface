@@ -1,11 +1,5 @@
-// usage: [position, radius] execvm "createoppatrol.sqf"
-// radius: 50 for patrol inside and around base, 500 for medium lenght skirmish, 1300 for island
-
 _position = _this select 0;
 _radius   = _this select 1;
-
-
-// hint format["%1",_position];
 
 _group = [_position, EAST, ["rhs_zsu234_aa"],[],[],opfor_ai_skill] call BIS_fnc_spawnGroup;
 _patrolRadius = round(_radius/2);

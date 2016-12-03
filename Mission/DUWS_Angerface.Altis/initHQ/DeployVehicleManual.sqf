@@ -31,17 +31,22 @@ blu_hq_markername = _markername; publicVariable "blu_hq_markername";
 // make HQ zone notification trigger
 _trg5=createTrigger["EmptyDetector",_hqblu];
 _trg5 triggerAttachVehicle [player];
-_trg5 setTriggerArea[100,100,0,false];
+_trg5 setTriggerArea[200,200,0,false];
 _trg5 setTriggerActivation["VEHICLE","PRESENT",true];
-_trg5 setTriggerStatements["this", format["[""%1"",thislist] execvm 'enterlocation.sqf'",'Main Base'], ""];
+_trg5 setTriggerStatements["this", format["[""%1"",thislist] execvm 'Scripts\enterlocation.sqf'",'Main Base'], ""];
 
+// CREATE MARKER (HQ)
+_HQmarker = createMarker ["HQMarker",_hqblu];
+"HQMarker" setMarkerShape "ELLIPSE";
+"HQMarker" setMarkerBrush "SolidBorder";
+"HQMarker" setMarkerColor "ColorBlue";
+"HQMarker" setMarkerSize [200, 200];
+"HQMarker" setMarkerAlpha 0.1; 
 // warning trigger when an enemy approaches the camp
 _trgWarning=createTrigger["EmptyDetector",_hqblu];
 _trgWarning setTriggerArea[500,500,0,false];
 _trgWarning setTriggerActivation["EAST","PRESENT",true];
-_trgWarning setTriggerStatements["this","[]execVM 'warninghq.sqf'", ""];
-
-
+_trgWarning setTriggerStatements["this","[]execVM 'Scripts\warninghq.sqf'", ""];
 
 // CREATE THE OFFICER. UGLY HACKS FOR AI MODS SUPPORT
 _group = createGroup west;
@@ -56,9 +61,9 @@ _hq disableAI "AUTOTARGET";
 _hq disableAI "MOVE";
 _hq disableAI "PRONE";
 //Disable ASR for officer
-_hq setVariable ["asr_ai_exclude", true];
+//_hq setVariable ["asr_ai_exclude", true];
 //Disable VCOM for officer
-_hq setVariable ["NOAI",1,false];
+_hq setVariable ["NOAI",true];
 hq_blu1 = _hq;
 publicVariable "hq_blu1";
 _hq setpos [_hqblu select 0, _hqblu select 1, .59];
@@ -69,13 +74,11 @@ removeAllAssignedItems _hq;
 _hq setFace "Zee_White_Head_04";
 _hq setSpeaker "rhs_Male02RUS";
 
-
 //GUARDS
 _handle = [getpos hq_blu1] execVM "initHQ\guards.sqf";
 
 //STATIC DEFENSES
 _handle = [getpos hq_blu1] execVM "initHQ\fortify.sqf";
-
 
 // IF THE OFFICER IS DEAD -- BEGIN OF "SPAWN"
 [_hq] spawn {
@@ -99,17 +102,15 @@ _handle = [getpos hq_blu1] execVM "initHQ\fortify.sqf";
 		if (WARCOM_opfor_ap > 200) then {
 		WARCOM_opfor_ap = 200;
 		publicVariable "WARCOM_opfor_ap";
-		} else {};
+		};
 		if (WARCOM_blufor_ap < 0) then {
 		WARCOM_blufor_ap = 0;
 		publicVariable "WARCOM_blufor_ap";
-		} else {};
+		};
 		
-		[[[],"spectate.sqf"],"BIS_fnc_execVM",true,true ] call BIS_fnc_MP;
+		[[[],"Scripts\spectate.sqf"],"BIS_fnc_execVM",true,true ] call BIS_fnc_MP;
 //		deleteVehicle _hq;
 		};	
-	
-	
   };
 // IF THE OFFICER IS DEAD -- End OF "SPAWN"
 
@@ -122,7 +123,6 @@ player setdir 110;
 //////// HQ GENERATED /////
 "respawn_west" setMarkerPos _hqblu;
 sleep 0.1;
-
 HQgenerated = true;
 publicVariable "HQgenerated";
 

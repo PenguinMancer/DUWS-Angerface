@@ -52,7 +52,7 @@ WARCOM_opf_response_type = "";
 			  
 			  _root = parsingNamespace getVariable "MISSION_ROOT";
 			  _soundToPlay = _root + "sounds\Siren.ogg";
-			  playSound3D [_soundToPlay, player, false, _zoneattacked, 5, 1, _size];
+			  playSound3D [_soundToPlay, player, false, _zoneattacked, 25, 1, _size];
 			  [[{PAPABEAR sidechat "This is HQ, an enemy zone has gone on high alert. They are sending reinforcements that way!"}],"BIS_fnc_Spawn",true,false] call BIS_fnc_MP;
 			  
 		  if (debugmode) then {

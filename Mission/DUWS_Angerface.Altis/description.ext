@@ -46,7 +46,7 @@ __EXEC (MISSION_ROOT = __FILE__ select [0, count __FILE__ - 15])
 #include "dialog\fob\fobmanager.hpp"
 #include "dialog\info\info.hpp"
 #include "dialog\info\reset\reset.hpp"
-#include "locations.hpp"
+#include "Scripts\locations.hpp"
 #include "support\support.hpp"
 #include "dialog\startup\hq_placement\placement.hpp"
 #include "sounds\sounds.hpp"
@@ -61,4 +61,5 @@ class CfgFunctions
 	#include "Recurring\CfgFunctions.hpp"
 	#include "persistent\CfgFunctions.hpp"
 	#include "SoldierFNC\CfgFunctions.hpp"
+	#include "SoldierSpawn\CfgFunctions.hpp"
 };

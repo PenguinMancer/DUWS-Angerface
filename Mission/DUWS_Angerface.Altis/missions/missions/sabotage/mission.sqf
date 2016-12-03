@@ -44,12 +44,12 @@ _tasklocation = getMarkerPos str(_markername);
 
 // CREATE OPFOR PATROLS
       sleep 1;
-      [_randompos, _radius] execvm "createoppatrol.sqf";
-      [_randompos, _radius] execvm "createoppatrol.sqf";
-	  [_randompos, _radius] execvm "createopteam.sqf";
-      [_missionpos, 10] execvm "createoppatrol.sqf"; // <-- around target
-      [_missionpos, 15] execvm "createoppatrol.sqf"; // <-- around target
-	  [_missionpos, 20] execvm "createopteam.sqf"; // <-- around target
+      [_randompos, _radius] spawn SoldierSpawn_fnc_createoppatrol;
+      [_randompos, _radius] spawn SoldierSpawn_fnc_createoppatrol;
+	  [_randompos, _radius] spawn SoldierSpawn_fnc_createopteam;
+      [_missionpos, 10] spawn SoldierSpawn_fnc_createoppatrol; // <-- around target
+      [_missionpos, 15] spawn SoldierSpawn_fnc_createoppatrol; // <-- around target
+	  [_missionpos, 20] spawn SoldierSpawn_fnc_createopteam; // <-- around target
 	  
 // MISSION COMPLETED --   ATTENDRE QUE LE CAMION SOIT ARRIVE A LA BASE OU DETRUIT  
 waitUntil {sleep 1; (sabotage)};  

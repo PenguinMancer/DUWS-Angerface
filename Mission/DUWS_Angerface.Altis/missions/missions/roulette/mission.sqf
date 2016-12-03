@@ -96,11 +96,11 @@ leader BOMBCODE1 setVariable["persistent",true];
 
 // CREATE PATROLS without secret code
 sleep 1;
-[_missionpos, 15] execvm "createopteam.sqf"; // <-- around target		
-[_randompos, _radius] execvm "createoppatrol.sqf";
-[_randompos, _radius] execvm "createoppatrol.sqf";
-[_randompos, _radius] execvm "createopteam.sqf";
-[_randompos, _radius] execvm "createopteam.sqf";
+[_missionpos, 15] spawn SoldierSpawn_fnc_createopteam; // <-- around target		
+[_randompos, _radius] spawn SoldierSpawn_fnc_createoppatrol;
+[_randompos, _radius] spawn SoldierSpawn_fnc_createoppatrol;
+[_randompos, _radius] spawn SoldierSpawn_fnc_createopteam;
+[_randompos, _radius] spawn SoldierSpawn_fnc_createopteam;
  
 
 

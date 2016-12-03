@@ -2,7 +2,7 @@ params ["_fob"];
 
 _fob addaction ["<t color='#ff0066'>Armory</t>",{ [] call Recurring_fnc_VA }, "", 0, true, true, "", "_this == player"];
 _fob addaction ["<t color='#ffbe1a'>Player Stats</t>","dialog\info\info.sqf", "", 0, true, true, "", "_this == player"];
-_fob addAction ["<t color='#ff0066'>Heal (2CP)</t>", "heal.sqf", "", 0, true, true, "", "_this == player"];
+_fob addAction ["<t color='#ff0066'>Heal (2CP)</t>", "Scripts\heal.sqf", "", 0, true, true, "", "_this == player"];
 if (support_halo_available) then {_fob addAction ["<t color='#15ff00'>HALO Alone (5CP)</t>", "ATM_airdrop\atm_airdrop.sqf", "", 0, true, true, "", "_this == player"];};
 if (support_halo_available) then {_fob addAction ["<t color='#15ff00'>HALO Group (5CP)</t>", "COB_HALO\grphalo.sqf", "", 0, true, true, "", "_this == player"];};
 if (support_satcom_available) then {_fob addAction ["<t color='#ff0066'>SATCOM</t>", {call PXS_startSatellite;}, "", 0, true, true, "", "_this == player"];};

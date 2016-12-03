@@ -56,16 +56,15 @@ WARCOM_opf_patrol_type = "";
 				aliveAllTanks = {alive _x AND _x isKindOf "Tank" || _x isKindOf "car"} count vehicles;
 				
 				if ((WARCOM_opfor_ap>75) && (aliveAllTanks<12)) then {				
-				  	["OPFOR_DUWS","armored",_randomZone] execVM "WARCOM\random_veh_opf_patrol.sqf";
+				  	[_randomZone] spawn SoldierSpawn_fnc_randomvehpatrolopfground;
 					};
-				
 				
 				// spawn air
 				sleep 2;
 				aliveAllAir = {_x isKindOf "Air" AND alive _x} count vehicles;
 				
 				if ((Attack) && (WARCOM_opfor_ap>149) && (aliveAllAir<4)) then {				
-					["OPFOR_DUWS","air",_randomZone] execVM "WARCOM\random_veh_opf_patrol.sqf";
+					[_randomZone] spawn SoldierSpawn_fnc_randomvehpatrolopfair;
 					
 				};
 			};

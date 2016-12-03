@@ -89,415 +89,225 @@ _trg3=createTrigger["EmptyDetector",_trigger];
 _trg3 triggerAttachVehicle [player];
 _trg3 setTriggerArea[_size,_size2,0,false];
 _trg3 setTriggerActivation["VEHICLE","PRESENT",true];
-_trg3 setTriggerStatements["this", format["[""%1"",thislist] execvm 'enterlocation.sqf'",_place], ""];
-
-//store the original position of the trigger for function use
-_originaltrigger = _trigger;
+_trg3 setTriggerStatements["this", format["[""%1"",thislist] execvm 'Scripts\enterlocation.sqf'",_place], ""];
 
 // CREATE OPFOR. HEAVY CLUSTERFUCK INCOMING.
 // Check if fortified is true
 if (_fortified) then  
 {
-      [_originaltrigger,_size] spawn Recurring_fnc_createopfortified;
+      [_trigger,_size] spawn SoldierSpawn_fnc_createzoneopfortified;
       sleep 2;
 };
 
 // Check if radius is 100m or smaller => create 2 patrols then exit the script
 if ((_size + _size2)/2 < 101) exitWith  
 {
-      _handle = [_originaltrigger, _size] spawn Recurring_fnc_createoppatrol;
+      _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneoppatrol;
       waituntil {sleep .1;scriptdone _handle};
-      _handle = [_originaltrigger, _size] spawn Recurring_fnc_createoppatrol;
+      _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneoppatrol;
 };
 // Check if radius is 250m-100m => create 2 patrols and 1 fireteam then exit the script
 if ((_size + _size2)/2 < 251) exitWith  
 {
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createoppatrol;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneoppatrol;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createoppatrol;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneoppatrol;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopteam;
 };
 // Check if radius is 250m-500m => create 2 patrols and 2 fireteams then exit the script
 if ((_size + _size2)/2 < 501) exitWith  
 {
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createoppatrol;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneoppatrol;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createoppatrol;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneoppatrol;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopteam;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopteam;
 };
 if ((_size + _size2)/2 <= 1000) exitWith                    
 {
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createoppatrol;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneoppatrol;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createoppatrol;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneoppatrol;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopteam;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopteam;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopwpteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopwpteam;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopteam;
       waituntil {sleep .1;scriptdone _handle};
-	  _trigger = [_originaltrigger,_size] call Recurring_fnc_findsafespawn;
-      ["OPF_F","armored",_trigger,_size] execVM "random_veh.sqf";
-	  
-	  _extraprefab = [_trigger, 0,_size-50,15,0,0.2,0,[],[[0,0],[0,0]]] call BIS_fnc_findSafePos;
-	  if (0 == _extraprefab select 0 && 0 == _extraprefab select 1) then {//If our safe position is empty, it ain't safe.
-	  
-	  _handle = [_trigger, _size] execvm "createoppatrol.sqf"; //If a safe position isn't found, skip the prefab and spawn another patrol.
-      waituntil {sleep .1;scriptdone _handle};
-      } else {
-	  _prefabduplicate = [_extraprefab] execVM _path;						//A safe location was found, so we spawn the prefab, and it's patrol.
-	  _extraprefab = [(_extraprefab select 0)+10,_extraprefab select 1];
-	  _handle = [_extraprefab, 15] execvm "createoppatrol.sqf";
-      waituntil {sleep .1;scriptdone _handle}; 
-	  };
-	  
+	  _vehcreate = [_trigger, _size] spawn SoldierSpawn_fnc_createzonevehground;
+	  waituntil {sleep .1;scriptdone _vehcreate};
+	  _extraprefab = [_trigger, _size] spawn SoldierSpawn_fnc_createzonecompound;
+	  waituntil {sleep .1;scriptdone _extraprefab};
 	  if (_compound) then {
-		  sleep .5;
-		  _compoundprefab = [_trigger, 0,_size-50,15,0,0.2,0,[],[[0,0],[0,0]]] call BIS_fnc_findSafePos;
-		  if (0 == _compoundprefab select 0 && 0 == _compoundprefab select 1) then {//If our safe position is empty, it ain't safe.
-		  
-		  _handle = [_trigger, _size] execvm "createoppatrol.sqf"; //If a safe position isn't found, skip the prefab and spawn another patrol.
-		  waituntil {sleep .1;scriptdone _handle};
-		  } else {
-		  _prefabduplicate = [_compoundprefab] execVM _path;						//A safe location was found, so we spawn the prefab, and it's patrol.
-		  _compoundprefab = [(_compoundprefab select 0)+10,_compoundprefab select 1];
-		  _handle = [_compoundprefab, 15] execvm "createoppatrol.sqf";
-		  waituntil {sleep .1;scriptdone _handle}; 
-		  }; 
+	  _extraprefab = [_trigger, _size] spawn SoldierSpawn_fnc_createzonecompound;
 	  };
 };      
 if ((_size + _size2)/2 <= 1500) exitWith  
 {
-_trigger = [_originaltrigger,_size] call Recurring_fnc_findsafespawn;
-_vehcreate = ["OPF_F","armored",_trigger,_size] execVM "random_veh.sqf";
-waitUntil {scriptDone _vehcreate};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createoppatrol;
+	  _vehcreate = [_trigger, _size] spawn SoldierSpawn_fnc_createzonevehground;
+	  waitUntil {sleep .1;scriptDone _vehcreate};
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneoppatrol;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createoppatrol;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneoppatrol;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createoppatrol;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneoppatrol;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopteam;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopteam;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopwpteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopwpteam;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopteam;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopteam;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopwpteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopwpteam;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopteam;
       waituntil {sleep .1;scriptdone _handle};
-	  _trigger = [_originaltrigger,_size] call Recurring_fnc_findsafespawn;
-      ["OPF_F","armored",_trigger,_size] execVM "random_veh.sqf";
-	  
-	  _extraprefab = [_trigger, 0,_size-50,15,0,0.2,0,[],[[0,0],[0,0]]] call BIS_fnc_findSafePos;
-	  if (0 == _extraprefab select 0 && 0 == _extraprefab select 1) then {//If our safe position is empty, it ain't safe.
-	  
-	  _handle = [_trigger, _size] execvm "createoppatrol.sqf"; //If a safe position isn't found, skip the prefab and spawn another patrol.
-      waituntil {sleep .1;scriptdone _handle};
-      } else {
-	  _prefabduplicate = [_extraprefab] execVM _path;						//A safe location was found, so we spawn the prefab, and it's patrol.
-	  _extraprefab = [(_extraprefab select 0)+10,_extraprefab select 1];
-	  _handle = [_extraprefab, 15] execvm "createoppatrol.sqf";
-      waituntil {sleep .1;scriptdone _handle}; 
-	  }; 
-	  
-	  if (_compound) then { 
-		  sleep .5;
-		  _compoundprefab = [_trigger, 0,_size-50,15,0,0.2,0,[],[[0,0],[0,0]]] call BIS_fnc_findSafePos;
-		  if (0 == _compoundprefab select 0 && 0 == _compoundprefab select 1) then {//If our safe position is empty, it ain't safe.
-		  
-		  _handle = [_trigger, _size] execvm "createoppatrol.sqf"; //If a safe position isn't found, skip the prefab and spawn another patrol.
-		  waituntil {sleep .1;scriptdone _handle};
-		  } else {
-		  _prefabduplicate = [_compoundprefab] execVM _path;						//A safe location was found, so we spawn the prefab, and it's patrol.
-		  _compoundprefab = [(_compoundprefab select 0)+10,_compoundprefab select 1];
-		  _handle = [_compoundprefab, 15] execvm "createoppatrol.sqf";
-		  waituntil {sleep .1;scriptdone _handle}; 
-		  }; 
+	  _vehcreate = [_trigger, _size] spawn SoldierSpawn_fnc_createzonevehground;
+	  waituntil {sleep .1;scriptdone _vehcreate};
+	  _extraprefab = [_trigger, _size] spawn SoldierSpawn_fnc_createzonecompound;
+	  waituntil {sleep .1;scriptdone _extraprefab};
+	  if (_compound) then {
+	  _extraprefab = [_trigger, _size] spawn SoldierSpawn_fnc_createzonecompound;
 	  };
 };      
 if ((_size + _size2)/2 <= 2000) exitWith  
 {
-_trigger = [_originaltrigger,_size] call Recurring_fnc_findsafespawn;
-_vehcreate = ["OPF_F","armored",_trigger,_size] execVM "random_veh.sqf";
-waitUntil {scriptDone _vehcreate};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createoppatrol;
+	  _vehcreate = [_trigger, _size] spawn SoldierSpawn_fnc_createzonevehground;
+	  waitUntil {sleep .1;scriptDone _vehcreate};
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneoppatrol;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createoppatrol;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneoppatrol;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createoppatrol;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneoppatrol;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopteam;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopteam;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopwpteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopwpteam;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopteam;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopteam;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopwpteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopwpteam;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopteam;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopteam;
       waituntil {sleep .1;scriptdone _handle};
-	  _trigger = [_originaltrigger,_size] call Recurring_fnc_findsafespawn;
-	  waituntil {sleep .1;scriptdone _handle};    
-      _handle = [_originaltrigger, _size] spawn Recurring_fnc_createoppatrol;
+      _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneoppatrol;
       waituntil {sleep .1;scriptdone _handle};
-	  _trigger = [_originaltrigger,_size] call Recurring_fnc_findsafespawn;
-      ["OPF_F","air",_trigger,_size] execVM "random_veh.sqf";
-	  
-	  _extraprefab = [_trigger, 0,_size-50,15,0,0.2,0,[],[[0,0],[0,0]]] call BIS_fnc_findSafePos;
-	  if (0 == _extraprefab select 0 && 0 == _extraprefab select 1) then {//If our safe position is empty, it ain't safe.
-	  
-	  _handle = [_trigger, _size] execvm "createoppatrol.sqf"; //If a safe position isn't found, skip the prefab and spawn another patrol.
-      waituntil {sleep .1;scriptdone _handle};
-      } else {
-	  _prefabduplicate = [_extraprefab] execVM _path;						//A safe location was found, so we spawn the prefab, and it's patrol.
-	  _extraprefab = [(_extraprefab select 0)+10,_extraprefab select 1];
-	  _handle = [_extraprefab, 15] execvm "createoppatrol.sqf";
-      waituntil {sleep .1;scriptdone _handle}; 
-	  };
-	  
-	  sleep .5;
-	  
-	  _extraprefab2 = [_trigger, 0,_size-50,15,0,0.2,0,[],[[0,0],[0,0]]] call BIS_fnc_findSafePos;
-	  if (0 == _extraprefab2 select 0 && 0 == _extraprefab2 select 1) then {//If our safe position is empty, it ain't safe.
-	  
-	  _handle = [_trigger, _size] execvm "createoppatrol.sqf"; //If a safe position isn't found, skip the prefab and spawn another patrol.
-      waituntil {sleep .1;scriptdone _handle};
-      } else {
-	  _prefabduplicate2 = [_extraprefab2] execVM _path;						//A safe location was found, so we spawn the prefab, and it's patrol.
-	  _extraprefab2 = [(_extraprefab2 select 0)+10,_extraprefab2 select 1];
-	  _handle = [_extraprefab2, 15] execvm "createoppatrol.sqf";
-      waituntil {sleep .1;scriptdone _handle}; 
-	  }; 
-	  
+	  _vehcreate = [_trigger, _size] spawn SoldierSpawn_fnc_createzonevehair;
+	  waituntil {sleep .1;scriptdone _vehcreate};
+	  _extraprefab = [_trigger, _size] spawn SoldierSpawn_fnc_createzonecompound;
+	  waituntil {sleep .1;scriptdone _extraprefab};
+	  _extraprefab = [_trigger, _size] spawn SoldierSpawn_fnc_createzonecompound;
+	  waituntil {sleep .1;scriptdone _extraprefab};
 	  if (_compound) then {
-		  sleep .5;
-		  _compoundprefab = [_trigger, 0,_size-50,15,0,0.2,0,[],[[0,0],[0,0]]] call BIS_fnc_findSafePos;
-		  if (0 == _compoundprefab select 0 && 0 == _compoundprefab select 1) then {//If our safe position is empty, it ain't safe.
-		  
-		  _handle = [_trigger, _size] execvm "createoppatrol.sqf"; //If a safe position isn't found, skip the prefab and spawn another patrol.
-		  waituntil {sleep .1;scriptdone _handle};
-		  } else {
-		  _prefabduplicate = [_compoundprefab] execVM _path;						//A safe location was found, so we spawn the prefab, and it's patrol.
-		  _compoundprefab = [(_compoundprefab select 0)+10,_compoundprefab select 1];
-		  _handle = [_compoundprefab, 15] execvm "createoppatrol.sqf";
-		  waituntil {sleep .1;scriptdone _handle}; 
-		  }; 
-		  
-		  sleep .5;
-		  _compoundprefab2 = [_trigger, 0,_size-50,15,0,0.2,0,[],[[0,0],[0,0]]] call BIS_fnc_findSafePos;
-		  if (0 == _compoundprefab2 select 0 && 0 == _compoundprefab2 select 1) then {//If our safe position is empty, it ain't safe.
-		  
-		  _handle = [_trigger, _size] execvm "createoppatrol.sqf"; //If a safe position isn't found, skip the prefab and spawn another patrol.
-		  waituntil {sleep .1;scriptdone _handle};
-		  } else {
-		  _prefabduplicate = [_compoundprefab2] execVM _path;						//A safe location was found, so we spawn the prefab, and it's patrol.
-		  _compoundprefab2 = [(_compoundprefab2 select 0)+10,_compoundprefab2 select 1];
-		  _handle = [_compoundprefab2, 15] execvm "createoppatrol.sqf";
-		  waituntil {sleep .1;scriptdone _handle}; 
-		  }; 
+	  _extraprefab = [_trigger, _size] spawn SoldierSpawn_fnc_createzonecompound;
+	  waituntil {sleep .1;scriptdone _extraprefab};
+	  _extraprefab = [_trigger, _size] spawn SoldierSpawn_fnc_createzonecompound;
 	  };
 };        
 if ((_size + _size2)/2 <= 3000) exitWith  
 {
-_trigger = [_originaltrigger,_size] call Recurring_fnc_findsafespawn;
-_vehcreate = ["OPF_F","armored",_trigger,_size] execVM "random_veh.sqf";
-waitUntil {scriptDone _vehcreate};
-_trigger = [_originaltrigger,_size] call Recurring_fnc_findsafespawn;
-_vehcreate = ["OPF_F","armored",_trigger,_size] execVM "random_veh.sqf";
-waitUntil {scriptDone _vehcreate};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createoppatrol;
+	  _vehcreate = [_trigger, _size] spawn SoldierSpawn_fnc_createzonevehground;
+	  waitUntil {sleep .1;scriptDone _vehcreate};
+	  _vehcreate = [_trigger, _size] spawn SoldierSpawn_fnc_createzonevehground;
+	  waitUntil {sleep .1;scriptDone _vehcreate};
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneoppatrol;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createoppatrol;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneoppatrol;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createoppatrol;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneoppatrol;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopteam;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopteam;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopwpteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopwpteam;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopteam;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopwpteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopwpteam;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopwpteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopwpteam;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopteam;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopteam;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopteam;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createoppatrol;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneoppatrol;
       waituntil {sleep .1;scriptdone _handle};
-	  _trigger = [_originaltrigger,_size] call Recurring_fnc_findsafespawn;
-      ["OPF_F","air",_trigger,_size] execVM "random_veh.sqf";
-	  
-	  _extraprefab = [_trigger, 0,_size-50,15,0,0.2,0,[],[[0,0],[0,0]]] call BIS_fnc_findSafePos;
-	  if (0 == _extraprefab select 0 && 0 == _extraprefab select 1) then {//If our safe position is empty, it ain't safe.
-	  
-	  _handle = [_trigger, _size] execvm "createoppatrol.sqf"; //If a safe position isn't found, skip the prefab and spawn another patrol.
-      waituntil {sleep .1;scriptdone _handle};
-      } else {
-	  _prefabduplicate = [_extraprefab] execVM _path;						//A safe location was found, so we spawn the prefab, and it's patrol.
-	  _extraprefab = [(_extraprefab select 0)+10,_extraprefab select 1];
-	  _handle = [_extraprefab, 15] execvm "createoppatrol.sqf";
-      waituntil {sleep .1;scriptdone _handle}; 
-	  };
-	  
-	  sleep .5;
-	  
-	  _extraprefab2 = [_trigger, 0,_size-50,15,0,0.2,0,[],[[0,0],[0,0]]] call BIS_fnc_findSafePos;
-	  if (0 == _extraprefab2 select 0 && 0 == _extraprefab2 select 1) then {//If our safe position is empty, it ain't safe.
-	  
-	  _handle = [_trigger, _size] execvm "createoppatrol.sqf"; //If a safe position isn't found, skip the prefab and spawn another patrol.
-      waituntil {sleep .1;scriptdone _handle};
-      } else {
-	  _prefabduplicate2 = [_extraprefab2] execVM _path;						//A safe location was found, so we spawn the prefab, and it's patrol.
-	  _extraprefab2 = [(_extraprefab2 select 0)+10,_extraprefab2 select 1];
-	  _handle = [_extraprefab2, 15] execvm "createoppatrol.sqf";
-      waituntil {sleep .1;scriptdone _handle}; 
-	  }; 
-	  
+	  _vehcreate = [_trigger, _size] spawn SoldierSpawn_fnc_createzonevehair;
+	  waituntil {sleep .1;scriptdone _vehcreate};
+	  _extraprefab = [_trigger, _size] spawn SoldierSpawn_fnc_createzonecompound;
+	  waituntil {sleep .1;scriptdone _extraprefab};
+	  _extraprefab = [_trigger, _size] spawn SoldierSpawn_fnc_createzonecompound;
+	  waituntil {sleep .1;scriptdone _extraprefab};
 	  if (_compound) then {
-		  sleep .5;
-		  _compoundprefab = [_trigger, 0,_size-50,15,0,0.2,0,[],[[0,0],[0,0]]] call BIS_fnc_findSafePos;
-		  if (0 == _compoundprefab select 0 && 0 == _compoundprefab select 1) then {//If our safe position is empty, it ain't safe.
-		  
-		  _handle = [_trigger, _size] execvm "createoppatrol.sqf"; //If a safe position isn't found, skip the prefab and spawn another patrol.
-		  waituntil {sleep .1;scriptdone _handle};
-		  } else {
-		  _prefabduplicate = [_compoundprefab] execVM _path;						//A safe location was found, so we spawn the prefab, and it's patrol.
-		  _compoundprefab = [(_compoundprefab select 0)+10,_compoundprefab select 1];
-		  _handle = [_compoundprefab, 15] execvm "createoppatrol.sqf";
-		  waituntil {sleep .1;scriptdone _handle}; 
-		  }; 
-		  
-		  sleep .5;
-		  _compoundprefab2 = [_trigger, 0,_size-50,15,0,0.2,0,[],[[0,0],[0,0]]] call BIS_fnc_findSafePos;
-		  if (0 == _compoundprefab2 select 0 && 0 == _compoundprefab2 select 1) then {//If our safe position is empty, it ain't safe.
-		  
-		  _handle = [_trigger, _size] execvm "createoppatrol.sqf"; //If a safe position isn't found, skip the prefab and spawn another patrol.
-		  waituntil {sleep .1;scriptdone _handle};
-		  } else {
-		  _prefabduplicate = [_compoundprefab2] execVM _path;						//A safe location was found, so we spawn the prefab, and it's patrol.
-		  _compoundprefab2 = [(_compoundprefab2 select 0)+10,_compoundprefab2 select 1];
-		  _handle = [_compoundprefab2, 15] execvm "createoppatrol.sqf";
-		  waituntil {sleep .1;scriptdone _handle}; 
-		  }; 
+	  _extraprefab = [_trigger, _size] spawn SoldierSpawn_fnc_createzonecompound;
+	  waituntil {sleep .1;scriptdone _extraprefab};
+	  _extraprefab = [_trigger, _size] spawn SoldierSpawn_fnc_createzonecompound;
 	  };
 };
 
 // IF NOT IN PARAMETERS (TOO BIG ZONE)        
-_trigger = [_originaltrigger,_size] call Recurring_fnc_findsafespawn;
-_vehcreate = ["OPF_F","armored",_trigger,_size] execVM "random_veh.sqf";
-waitUntil {scriptDone _vehcreate};
-_trigger = [_originaltrigger,_size] call Recurring_fnc_findsafespawn;
-_vehcreate = ["OPF_F","armored",_trigger,_size] execVM "random_veh.sqf";
-waitUntil {scriptDone _vehcreate};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createoppatrol;
+	  _vehcreate = [_trigger, _size] spawn SoldierSpawn_fnc_createzonevehground;
+	  waitUntil {sleep .1;scriptDone _vehcreate};
+	  _vehcreate = [_trigger, _size] spawn SoldierSpawn_fnc_createzonevehground;
+	  waitUntil {sleep .1;scriptDone _vehcreate};
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneoppatrol;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createoppatrol;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneoppatrol;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createoppatrol;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneoppatrol;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopteam;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopwpteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopwpteam;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopteam;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopwpteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopwpteam;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopteam;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopwpteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopwpteam;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopteam;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopteam;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createoppatrol;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneoppatrol;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createoppatrol;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneoppatrol;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createopteam;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopteam;
       waituntil {sleep .1;scriptdone _handle};
-	  _handle = [_originaltrigger, _size] spawn Recurring_fnc_createoppatrol;
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneoppatrol;
       waituntil {sleep .1;scriptdone _handle};
-	  _trigger = [_originaltrigger,_size] call Recurring_fnc_findsafespawn;
-      ["OPF_F","air",_trigger,_size] execVM "random_veh.sqf";     
-
-	  _extraprefab = [_trigger, 0,_size-50,15,0,0.2,0,[],[[0,0],[0,0]]] call BIS_fnc_findSafePos;
-	  if (0 == _extraprefab select 0 && 0 == _extraprefab select 1) then {//If our safe position is empty, it ain't safe.
-	  
-	  _handle = [_trigger, _size] execvm "createoppatrol.sqf"; //If a safe position isn't found, skip the prefab and spawn another patrol.
-      waituntil {sleep .1;scriptdone _handle};
-      } else {
-	  _prefabduplicate = [_extraprefab] execVM _path;						//A safe location was found, so we spawn the prefab, and it's patrol.
-	  _extraprefab = [(_extraprefab select 0)+10,_extraprefab select 1];
-	  _handle = [_extraprefab, 15] execvm "createoppatrol.sqf";
-      waituntil {sleep .1;scriptdone _handle}; 
-	  };
-	  
-	  sleep .5;
-	  
-	  _extraprefab2 = [_trigger, 0,_size-50,15,0,0.2,0,[],[[0,0],[0,0]]] call BIS_fnc_findSafePos;
-	  if (0 == _extraprefab2 select 0 && 0 == _extraprefab2 select 1) then {//If our safe position is empty, it ain't safe.
-	  
-	  _handle = [_trigger, _size] execvm "createoppatrol.sqf"; //If a safe position isn't found, skip the prefab and spawn another patrol.
-      waituntil {sleep .1;scriptdone _handle};
-      } else {
-	  _prefabduplicate2 = [_extraprefab2] execVM _path;						//A safe location was found, so we spawn the prefab, and it's patrol.
-	  _extraprefab2 = [(_extraprefab2 select 0)+10,_extraprefab2 select 1];
-	  _handle = [_extraprefab2, 15] execvm "createoppatrol.sqf";
-      waituntil {sleep .1;scriptdone _handle}; 
-	  };  
-      
+	  _vehcreate = [_trigger, _size] spawn SoldierSpawn_fnc_createzonevehair;  
+	  waituntil {sleep .1;scriptdone _vehcreate};
+	  _extraprefab = [_trigger, _size] spawn SoldierSpawn_fnc_createzonecompound;
+	  waituntil {sleep .1;scriptdone _extraprefab};
+	  _extraprefab = [_trigger, _size] spawn SoldierSpawn_fnc_createzonecompound;
+	  waituntil {sleep .1;scriptdone _extraprefab};
 	  if (_compound) then {
-		  sleep .5;
-		  _compoundprefab = [_trigger, 0,_size-50,15,0,0.2,0,[],[[0,0],[0,0]]] call BIS_fnc_findSafePos;
-		  if (0 == _compoundprefab select 0 && 0 == _compoundprefab select 1) then {//If our safe position is empty, it ain't safe.
-		  
-		  _handle = [_trigger, _size] execvm "createoppatrol.sqf"; //If a safe position isn't found, skip the prefab and spawn another patrol.
-		  waituntil {sleep .1;scriptdone _handle};
-		  } else {
-		  _prefabduplicate = [_compoundprefab] execVM _path;						//A safe location was found, so we spawn the prefab, and it's patrol.
-		  _compoundprefab = [(_compoundprefab select 0)+10,_compoundprefab select 1];
-		  _handle = [_compoundprefab, 15] execvm "createoppatrol.sqf";
-		  waituntil {sleep .1;scriptdone _handle}; 
-		  }; 
-		  
-		  sleep .5;
-		  _compoundprefab2 = [_trigger, 0,_size-50,15,0,0.2,0,[],[[0,0],[0,0]]] call BIS_fnc_findSafePos;
-		  if (0 == _compoundprefab2 select 0 && 0 == _compoundprefab2 select 1) then {//If our safe position is empty, it ain't safe.
-		  
-		  _handle = [_trigger, _size] execvm "createoppatrol.sqf"; //If a safe position isn't found, skip the prefab and spawn another patrol.
-		  waituntil {sleep .1;scriptdone _handle};
-		  } else {
-		  _prefabduplicate = [_compoundprefab2] execVM _path;						//A safe location was found, so we spawn the prefab, and it's patrol.
-		  _compoundprefab2 = [(_compoundprefab2 select 0)+10,_compoundprefab2 select 1];
-		  _handle = [_compoundprefab2, 15] execvm "createoppatrol.sqf";
-		  waituntil {sleep .1;scriptdone _handle}; 
-		  }; 
+	  _extraprefab = [_trigger, _size] spawn SoldierSpawn_fnc_createzonecompound;
+	  waituntil {sleep .1;scriptdone _extraprefab};
+	  _extraprefab = [_trigger, _size] spawn SoldierSpawn_fnc_createzonecompound;
 	  };

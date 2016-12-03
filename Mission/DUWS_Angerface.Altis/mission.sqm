@@ -151,7 +151,7 @@ class Mission
 					rank="SERGEANT";
 					skill=0.60000002;
 					text="player1";
-					init="null = [this] execVM 'DeathAP.sqf';";
+					init="null = [this] execVM 'Scripts\DeathAPLeader.sqf';";
 				};
 				class Item1
 				{
@@ -164,7 +164,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="player2";
-					init="null = [this] execVM 'DeathAP.sqf';";
+					init="null = [this] execVM 'Scripts\DeathAP.sqf';";
 				};
 				class Item2
 				{
@@ -177,7 +177,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="player3";
-					init="null = [this] execVM 'DeathAP.sqf';";
+					init="null = [this] execVM 'Scripts\DeathAP.sqf';";
 				};
 				class Item3
 				{
@@ -190,7 +190,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="player4";
-					init="null = [this] execVM 'DeathAP.sqf';";
+					init="null = [this] execVM 'Scripts\DeathAP.sqf';";
 				};
 				class Item4
 				{
@@ -203,7 +203,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="player5";
-					init="null = [this] execVM 'DeathAP.sqf';";
+					init="null = [this] execVM 'Scripts\DeathAP.sqf';";
 				};
 			};
 		};

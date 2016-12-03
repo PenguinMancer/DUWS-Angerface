@@ -54,7 +54,7 @@ WARCOM_blu_patrol_type = "";
 				aliveAllTanks = {alive _x AND _x isKindOf "Tank" || _x isKindOf "car"} count vehicles;
 				if ((WARCOM_blufor_ap>75) && (aliveAllTanks<12)) then {
 									
-					["BLU_F","armored",_randomZone] execVM "WARCOM\random_veh_blu_patrol.sqf";
+					[_randomZone] spawn SoldierSpawn_fnc_randomvehpatrolbluground;
 										
 				};
 				
@@ -65,7 +65,7 @@ WARCOM_blu_patrol_type = "";
 				
 				if ((Attack) && (WARCOM_blufor_ap>149) && (aliveAllAir<4)) then {
 										
-					["BLU_F","air",_randomZone] execVM "WARCOM\random_veh_blu_patrol.sqf";
+					[_randomZone] spawn SoldierSpawn_fnc_randomvehpatrolbluair;
 					
 				};
 			};

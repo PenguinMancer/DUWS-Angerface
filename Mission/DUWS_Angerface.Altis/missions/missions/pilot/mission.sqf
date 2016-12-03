@@ -30,10 +30,10 @@ str(_markername2) setMarkerAlpha 0.5;
 
 // CREATE PATROLS
       sleep 1;
-      [_randompos, _radius] execvm "createoppatrol.sqf";
-      [_randompos, _radius] execvm "createoppatrol.sqf";
-      [_randompos, _radius] execvm "createoppatrol.sqf";
-      [_randompos, _radius] execvm "createopteam.sqf";
+      [_randompos, _radius] spawn SoldierSpawn_fnc_createoppatrol;
+      [_randompos, _radius] spawn SoldierSpawn_fnc_createoppatrol;
+      [_randompos, _radius] spawn SoldierSpawn_fnc_createoppatrol;
+      [_randompos, _radius] spawn SoldierSpawn_fnc_createopteam;
         
 // CREATE WRECK
 _choppa = "Land_Wreck_Heli_Attack_01_F" createVehicle (_missionpos);

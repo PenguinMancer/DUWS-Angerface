@@ -70,9 +70,9 @@ _trg setTriggerTimeout [10, 10, 10, true ];
 
 //CREATE OPFOR PATROLS
       sleep 1;
-      [_randompos, _radius] execvm "createopteam.sqf";
-      [_randompos, _radius] execvm "createopteam.sqf";
-	  [_randompos, _radius] execvm "createopteam.sqf";
+      [_randompos, _radius] spawn SoldierSpawn_fnc_createopteam;
+      [_randompos, _radius] spawn SoldierSpawn_fnc_createopteam;
+	  [_randompos, _radius] spawn SoldierSpawn_fnc_createopteam;
 
 waitUntil {sleep 1; (rescued)};  
 

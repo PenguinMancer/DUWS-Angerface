@@ -10,11 +10,6 @@ class Recurring
 		class addFobActions {};
 		class getRandomCallsign {};
 		class generateSideMissionName {};
-		class findsafespawn {};
-		class createopteam {};
-		class createopwpteam {};
-		class createoppatrol {};
-		class createopfortified {};
 		class VA {};
 	};
 };

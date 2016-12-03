@@ -46,9 +46,21 @@ private ["_trg","_trgQRF"];
 call compile format["_trg = trigger%1%2",round (_triggerPos select 0),round (_triggerPos select 1)];
 call compile format["_trgQRF = triggerQRF%1%2",round (_triggerPos select 0),round (_triggerPos select 1)];
 
-//// MAKE THE TRIGGER CAPTURABLE FOR BLUFOR
+//// Delete old trigger
+deleteVehicle _trg;
+
+sleep 0.5;
+
+// CREATE ZONE CAPTURABLE TRIGGER
+_trg=createTrigger["EmptyDetector",_triggerPos];
+_trg setTriggerArea[_size,_size,0,false];
 _trg setTriggerActivation["WEST SEIZED","PRESENT",false];
 _trg setTriggerStatements["this", format["[""%1"",%2,""%3"",""%4"",%5,%6] execvm 'zonescap\blufor_cap.sqf'",_place,_points,_markername,_markername2,_triggerPos,_size], ""];
+_trg setTriggerTimeout [30, 60, 300, true ];
+
+// CREATE VARNAME FOR ZONE TRIGGER --> use the pos of the trigger
+_triggerName = format["trigger%1%2",round (_triggerPos select 0),round (_triggerPos select 1)];
+call compile format["%1 = _trg",_triggerName];
 
 //// MAKE QRF TRIGGER DO SOMETHING AGAIN
 _trgQRF setTriggerArea[_size,_size,0,false];

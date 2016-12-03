@@ -189,7 +189,7 @@ setDate [2016, 8, 6, (paramsArray select 2), 1];
 #include "dialog\supports_init.hpp"
 #include "dialog\squad_number_init.hpp"
 
-getsize_script = [player] spawn Recurring_fnc_getMapSize;
+_getsize_script = [player] spawn Recurring_fnc_getMapSize;
 
 //enable ZBE units caching
 ZbeCacheStatus = paramsArray select 7;
@@ -212,7 +212,7 @@ if (isMultiplayer) then {
 	if (AttackHeli == 0) then {Attack = false};
 	if (AttackHeli == 1) then {Attack = true};
 	if (TrkAllPlayer == 0) then {PlayerMrkrs = false};
-	if (player_fatigue == 0) then {[]execVM "fatigue.sqf"};
+	if (player_fatigue == 0) then {[]execVM "Scripts\fatigue.sqf"};
 	
 	if (support_halo_available) then {hq_blu1 addAction ["<t color='#15ff00'>HALO Alone (5CP)</t>", "ATM_airdrop\atm_airdrop.sqf", "", 0, true, true, "", "_this == player"]};
 	if (support_halo_available) then {hq_blu1 addAction ["<t color='#15ff00'>HALO Group (5CP)</t>", "COB_HALO\grphalo.sqf", "", 0, true, true, "", "_this == player"]};
@@ -249,7 +249,7 @@ if (isMultiplayer) then {
 	waitUntil {time > 0.1};
 	DUWS_host_start = true;
 	publicVariable "DUWS_host_start";
-
+	_handle = [] execVM "dialog\hc_init.sqf";
 	waitUntil {scriptDone _getsize_script};
 	};
 
@@ -263,18 +263,6 @@ waitUntil {chosen_hq_placement};
 if (!player_is_choosing_hqpos) then {
     hq_create = [20, 0.015] execVM "initHQ\locatorHQ.sqf";
     waitUntil {scriptDone hq_create};	
-};
-
-if (hasinterface) then {
-    _grplogic = createGroup sideLogic;
-    _hc_module = _grplogic createUnit ["HighCommand",[0,0,0] , [], 0, ""];
-    _hc_module synchronizeObjectsAdd [game_master];
-    // done,
-
-    // make 1 HC subordinate so that the player will not control all blufor forces
-    _grplogic = createGroup sideLogic;
-    _sub_module = _grplogic createUnit ["HighCommandsubordinate",[0,0,0] , [], 0, ""];                    
-    _sub_module synchronizeObjectsAdd [_hc_module];
 };
 
 // group cleaning script
@@ -302,7 +290,6 @@ if (!isServer) then { // WHEN CLIENT CONNECTS INIT (might need sleep)
 	player setdamage 0;
 	player allowDamage true;
 	hintsilent format["Joined game, welcome to %1, %2",worldName,profileName];
-	// init High Command
 	waitUntil {sleep 1; HQgenerated};
 	[] execVM "dialog\startup\weather_client.sqf";
 
@@ -368,7 +355,7 @@ for[{_x = 2},{_x <= 12},{_x = _x + 1}] do
 trk = ["player"] execVM 'Scripts\player_markers.sqf';
 
 BOMBCODE1 = [];
-[] call compile preprocessfilelinenumbers "protectofficer.sqf";
+[] call compile preprocessfilelinenumbers "Scripts\protectofficer.sqf";
 [] call compile preprocessfilelinenumbers "missions\missions\roulette\deathhint.sqf";
 
 

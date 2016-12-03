@@ -1,6 +1,3 @@
-// usage: [position, radius] execvm "createoppatrol.sqf"
-// radius: 50 for patrol inside and around base, 500 for medium lenght skirmish, 1300 for island
-
 _position = _this select 0;
 _radius   = _this select 1;
 
@@ -8,6 +5,7 @@ if (isNil "WARCOM_opfor_ap") then {
 WARCOM_opfor_ap = 75;
 };
 
+//initialize the array and classnames, as you can't do that inside of an if.
 _initGroup = [];
 _PatrolSoldier1 = "";
 _PatrolSoldier2 = "";

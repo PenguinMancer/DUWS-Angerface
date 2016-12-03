@@ -46,9 +46,9 @@ _PatrolSoldier3 = [] call Soldiers_fnc_GetOpforSoldier;
 
 // CREATE PATROLS
       sleep 1;
-      [_missionpos, 15] execvm "createoppatrol.sqf"; // <-- around target
-      [_randompos, _radius] execvm "createoppatrol.sqf";
-      [_randompos, _radius] execvm "createopteam.sqf";
+      [_missionpos, 15] spawn SoldierSpawn_fnc_createoppatrol; // <-- around target
+      [_randompos, _radius] spawn SoldierSpawn_fnc_createoppatrol;
+      [_randompos, _radius] spawn SoldierSpawn_fnc_createopteam;
       
 _group = createGroup east;
 _unit1 = _group createUnit [_PatrolSoldier1, _missionpos, [], 0, "FORM"];

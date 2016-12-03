@@ -30,12 +30,12 @@ str(_markername2) setMarkerAlpha 0.5;
 
 // CREATE PATROLS
       sleep 1;
-      [_randompos, _radius] execvm "createoppatrol.sqf"; // <-- around target
-      [_randompos, _radius] execvm "createoppatrol.sqf";
-      [_randompos, _radius] execvm "createoppatrol.sqf";
-	  [_randompos, _radius] execvm "createoppatrol.sqf";
-      [_randompos, _radius] execvm "createopteam.sqf";
-	  [_randompos, _radius] execvm "createopteam.sqf";
+      [_randompos, _radius] spawn SoldierSpawn_fnc_createoppatrol; // <-- around target
+      [_randompos, _radius] spawn SoldierSpawn_fnc_createoppatrol;
+      [_randompos, _radius] spawn SoldierSpawn_fnc_createoppatrol;
+	  [_randompos, _radius] spawn SoldierSpawn_fnc_createoppatrol;
+      [_randompos, _radius] spawn SoldierSpawn_fnc_createopteam;
+	  [_randompos, _radius] spawn SoldierSpawn_fnc_createopteam;
 
 // TASK AND NOTIFICATION
 _tasklocation = getMarkerPos str(_markername);

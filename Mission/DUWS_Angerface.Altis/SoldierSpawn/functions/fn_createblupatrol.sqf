@@ -1,12 +1,9 @@
-// usage: [position, radius] execvm "createpatrol.sqf"
-// radius: 50 for patrol inside and around base, 500 for medium lenght skirmish, 1300 for island
+_position = _this select 0;
+_radius   = _this select 1;
 
 //Randomizing Units
 _PatrolSoldier1 = [] call Soldiers_fnc_GetBluforLeader;
 _PatrolSoldier2 = [] call Soldiers_fnc_GetBluforSoldier;
-
-_position = _this select 0;
-_radius   = _this select 1;
 
 _group = [_position, WEST, [_PatrolSoldier1,_PatrolSoldier2]] call BIS_fnc_spawnGroup;
 _patrolRadius = round(_radius/3);

@@ -77,9 +77,9 @@ _fob addaction ["<t color='#ff0000'>Fortify FOB(4CP)</t>","inithq\fortifyFOB.sqf
 PAPABEAR sidechat "The FOB has been deployed.";
 
 /////////////////////////////////////////////////////////////////////////////
-[_foundPickupPos, _size] execvm "createpatrol.sqf";
-[_foundPickupPos, _size] execvm "createpatrol.sqf";
-[_foundPickupPos, _size] execvm "createpatrol.sqf";
+[_foundPickupPos, _size] spawn SoldierSpawn_fnc_createblupatrol;
+[_foundPickupPos, _size] spawn SoldierSpawn_fnc_createblupatrol;
+[_foundPickupPos, _size] spawn SoldierSpawn_fnc_createblupatrol;
 _handle = [_foundPickupPos] execVM "initHQ\guards.sqf";
 ////////////////////////////////////////////////////////////////////////////
 
@@ -90,13 +90,13 @@ _trg23=createTrigger["EmptyDetector",_foundPickupPos];
 _trg23 triggerAttachVehicle [player];
 _trg23 setTriggerArea[_size,_size,0,false];
 _trg23 setTriggerActivation["VEHICLE","PRESENT",true];
-_trg23 setTriggerStatements["this", format["[""FOB %1"",thislist] execvm 'enterlocation.sqf'",_fobname], ""];
+_trg23 setTriggerStatements["this", format["[""FOB %1"",thislist] execvm 'Scripts\enterlocation.sqf'",_fobname], ""];
 
 // warning trigger when an enemy approaches the camp
 _trgWarning=createTrigger["EmptyDetector",_foundPickupPos];
 _trgWarning setTriggerArea[500,500,0,false];
 _trgWarning setTriggerActivation["EAST","PRESENT",true];
-_trgWarning setTriggerStatements["this","[]execVM 'warningfob.sqf'", ""];
+_trgWarning setTriggerStatements["this","[]execVM 'Scripts\warningfob.sqf'", ""];
 
 
 //ADD THE FOB TO Array_of_FOBS

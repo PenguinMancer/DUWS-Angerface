@@ -1,12 +1,7 @@
 _hqblu = _this select 0;
 blu_hq_created = true;
-
-
 PosOfBLUHQ = _hqblu;
 publicVariable "PosOfBLUHQ";
-
-
-
 // create the building
 _hq = "Land_Cargo_HQ_V1_F" createVehicle _hqblu; //  	Land_Medevac_house_V1_F // Land_Cargo_HQ_V3_F
 
@@ -24,18 +19,23 @@ blu_hq_markername = _markername; publicVariable "blu_hq_markername";
 // make HQ zone notification trigger
 _trg5=createTrigger["EmptyDetector",_hqblu];
 _trg5 triggerAttachVehicle [player];
-_trg5 setTriggerArea[100,100,0,false];
+_trg5 setTriggerArea[200,200,0,false];
 _trg5 setTriggerActivation["VEHICLE","PRESENT",true];
-_trg5 setTriggerStatements["this", format["[""%1"",thislist] execvm 'enterlocation.sqf'",'Main Base'], ""];
+_trg5 setTriggerStatements["this", format["[""%1"",thislist] execvm 'Scripts\enterlocation.sqf'",'Main Base'], ""];
+
+// CREATE MARKER (HQ)
+_HQmarker = createMarker ["HQMarker",_hqblu];
+"HQMarker" setMarkerShape "ELLIPSE";
+"HQMarker" setMarkerBrush "SolidBorder";
+"HQMarker" setMarkerColor "ColorBlue";
+"HQMarker" setMarkerSize [200, 200];
+"HQMarker" setMarkerAlpha 0.1; 
 
 // warning trigger when an enemy approaches the camp
 _trgWarning=createTrigger["EmptyDetector",_hqblu];
 _trgWarning setTriggerArea[500,500,0,false];
 _trgWarning setTriggerActivation["EAST","PRESENT",true];
-_trgWarning setTriggerStatements["this","[]execVM 'warninghq.sqf'", ""];
-
-
-
+_trgWarning setTriggerStatements["this","[]execVM 'Scripts\warninghq.sqf'", ""];
 // CREATE THE OFFICER. UGLY HACKS FOR AI MODS SUPPORT
 _group = createGroup west;
 _hq = _group createUnit ["Blufor_General",(getmarkerpos str(blu_hq_markername)), [], 0, "FORM"];
@@ -51,7 +51,7 @@ _hq disableAI "PRONE";
 //Disable ASR for officer
 //_hq setVariable ["asr_ai_exclude", true];
 //Disable VCOM for officer
-_hq setVariable ["NOAI",1,false];
+_hq setVariable ["NOAI",true];
 hq_blu1 = _hq;
 publicVariable "hq_blu1";
 _hq setpos [_hqblu select 0, _hqblu select 1, .59];
@@ -62,13 +62,11 @@ removeAllAssignedItems _hq;
 _hq setFace "Zee_White_Head_04";
 _hq setSpeaker "rhs_Male02RUS";
 
-
 //GUARDS
 _handle = [getpos hq_blu1] execVM "initHQ\guards.sqf";
 
 //STATIC DEFENSES
 _handle = [getpos hq_blu1] execVM "initHQ\fortify.sqf";
-
 
 // IF THE OFFICER IS DEAD -- BEGIN OF "SPAWN"
 [_hq] spawn {
@@ -98,11 +96,9 @@ _handle = [getpos hq_blu1] execVM "initHQ\fortify.sqf";
 		publicVariable "WARCOM_blufor_ap";
 		};
 		
-		[[[],"spectate.sqf"],"BIS_fnc_execVM",true,true ] call BIS_fnc_MP;
+		[[[],"Scripts\spectate.sqf"],"BIS_fnc_execVM",true,true ] call BIS_fnc_MP;
 //		deleteVehicle _hq;
 		};	
-	
-	
   };
 // IF THE OFFICER IS DEAD -- End OF "SPAWN"
 
@@ -145,7 +141,6 @@ if (!zones_created && !manually_chosen) then {      // CHECK IF ZONES ARE PLACED
 		_zones_create = [50, 0.2] execVM "initZones\locatorZonesV3.sqf";
 		};
 };
-
 
 HQgenerated = true;
 publicVariable "HQgenerated";

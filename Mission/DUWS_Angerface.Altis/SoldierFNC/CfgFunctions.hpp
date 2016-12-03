@@ -11,6 +11,8 @@ class CFGfunctions
 		class GetBluforLightAntiTank {};
 		class GetBluforMedic {};
 		class GetBluforSoldier {};
+		class GetBluforVehAir {};
+		class GetBluforVehGround {};
 		class GetOpforAntiAir {};
 		class GetOpforAntiTank {};
 		class GetOpforAutorifleman {};
@@ -21,6 +23,8 @@ class CFGfunctions
 		class GetOpforSoldier {};
 		class GetOpforSquadleader {};
 		class GetOpforTeamleader {};
+		class GetOpforVehAir {};
+		class GetOpforVehGround {};
 		class RandomBluforIdentity {};
 		class RandomBluforIdentityDiver {};
 		class RandomBluforIdentityPilot {};

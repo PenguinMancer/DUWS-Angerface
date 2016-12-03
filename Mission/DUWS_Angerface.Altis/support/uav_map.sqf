@@ -110,4 +110,3 @@ sleep 300;
 deleteMarker str(_markername);
 deletevehicle _trg;
 deletevehicle _trgwest;
-deletevehicle _plane1;

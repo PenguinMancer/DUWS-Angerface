@@ -11,7 +11,7 @@ protect_officer = {
 	if(_shooter != player) exitwith {};
 	
 
-	[] execvm "damag.sqf";
+	[] execvm "Scripts\damage.sqf";
 	
 	
     };    
