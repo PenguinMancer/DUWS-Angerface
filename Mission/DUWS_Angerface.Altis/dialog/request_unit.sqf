@@ -227,10 +227,6 @@ switch (_index) do
     }; 		
 };
 
-{
-[_x] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
-} forEach (units _group);
-
 //hint format["AI skill: %1",_skill];            
 publicVariable "commandpointsblu1";
 
