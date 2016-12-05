@@ -50,7 +50,7 @@ _trg=createTrigger["EmptyDetector",_trigger];
 _trg setTriggerArea[_size,_size2,0,false];
 _trg setTriggerActivation["WEST SEIZED","PRESENT",false];
 _trg setTriggerStatements["this", format["[""%1"",%2,""%3"",""%4"",%5,%6] execvm 'zonescap\captured.sqf'",_place,_points,_markername,_markername2,_trigger,_size], ""];
-_trg setTriggerTimeout [30, 60, 300, true ];
+_trg setTriggerTimeout [30, 60, 90, true ];
 
 // CREATE VARNAME FOR ZONE TRIGGER --> use the pos of the trigger
 _triggerName = format["trigger%1%2",round (_trigger select 0),round (_trigger select 1)];

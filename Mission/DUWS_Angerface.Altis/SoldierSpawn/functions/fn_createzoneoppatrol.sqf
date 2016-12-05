@@ -8,36 +8,10 @@ _safetrigger = _trigger;
 };
 _trigger = _safetrigger;
 
-if (isNil "WARCOM_opfor_ap") then {
-WARCOM_opfor_ap = 75;
-};
-
-_initGroup = [];
-_PatrolSoldier1 = "";
-_PatrolSoldier2 = "";
-
 //Randomizing Units
-if (WARCOM_opfor_ap > 50) then {
-	if (WARCOM_opfor_ap > 100) then {
-		//Randomizing Units
-		_PatrolSoldier1 = [] call Soldiers_fnc_GetOpforSquadleader;
-		_PatrolSoldier2 = [] call Soldiers_fnc_GetOpforAutorifleman;
-
-		_initGroup = [_PatrolSoldier1,_PatrolSoldier2];
-	} else {
-		//Randomizing Units
-		_PatrolSoldier1 = [] call Soldiers_fnc_GetOpforSquadleader;
-		_PatrolSoldier2 = [] call Soldiers_fnc_GetOpforSoldier;
-
-		_initGroup = [_PatrolSoldier1,_PatrolSoldier2];
-	};
-} else{ 
-//Randomizing Units
-_PatrolSoldier1 = [] call Soldiers_fnc_GetOpforSoldier;
+_PatrolSoldier1 = [] call Soldiers_fnc_GetOpforSquadleader;
 _PatrolSoldier2 = [] call Soldiers_fnc_GetOpforSoldier;
-
 _initGroup = [_PatrolSoldier1,_PatrolSoldier2];
-};
 
 _group = [_trigger, EAST, _initGroup,[],[],opfor_ai_skill] call BIS_fnc_spawnGroup;
 

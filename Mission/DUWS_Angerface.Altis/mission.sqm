@@ -3,7 +3,6 @@ class Mission
 {
 	addOns[]=
 	{
-		"unit_config",
 		"A3_Characters_F_OPFOR",
 		"A3_Characters_F_Civil",
 		"A3_Characters_F_INDEP",
@@ -15,12 +14,16 @@ class Mission
 		"a3_uav_f_characters_f_gamma",
 		"a3_characters_f",
 		"A3_Modules_F",
+		"Custom_DUWS_Core",
+		"Custom_DUWS_Blu",
+		"Custom_DUWS_Opf",
+		"Custom_DUWS_Weapons",
+		"Custom_DUWS_Groups",
 		"ace_medical",
 		"ace_repair"
 	};
 	addOnsAuto[]=
 	{
-		"unit_config",
 		"A3_Characters_F_OPFOR",
 		"a3_characters_f",
 		"A3_Characters_F_Civil",
@@ -29,6 +32,11 @@ class Mission
 		"A3_Characters_F_BLUFOR",
 		"A3_Characters_F_Gamma",
 		"a3_map_altis",
+		"Custom_DUWS_Core",
+		"Custom_DUWS_Blu",
+		"Custom_DUWS_Opf",
+		"Custom_DUWS_Weapons",
+		"Custom_DUWS_Groups",
 		"ace_medical",
 		"ace_repair"
 	};

@@ -14,7 +14,9 @@ switch (_index) do
                commandpointsblu1 = commandpointsblu1 - 2;
                ctrlSetText [1000, format["%1",commandpointsblu1]];
                _group = group player ;
-               "Blufor_Soldier_1" createUnit [_spawnpos, _group, "[this] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];", _skill, "private"];
+			   _blusoldier = call Soldiers_fnc_GetBluforSoldier;
+			   _unit = _group createUnit [_blusoldier, _spawnpos, [], 0, "FORM"];
+			   [_unit] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
              } 
           else 
              {
@@ -30,7 +32,9 @@ switch (_index) do
                commandpointsblu1 = commandpointsblu1 - 3;
                ctrlSetText [1000, format["%1",commandpointsblu1]];
                _group = group player ;
-               "Blufor_Grenadier_1" createUnit [_spawnpos, _group, "[this] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];", _skill, "private"] ;
+			   _blusoldier = call Soldiers_fnc_GetBluforGrenadier;
+			   _unit = _group createUnit [_blusoldier, _spawnpos, [], 0, "FORM"];
+			   [_unit] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
              } 
           else 
              {
@@ -46,7 +50,9 @@ switch (_index) do
                commandpointsblu1 = commandpointsblu1 - 3;
                ctrlSetText [1000, format["%1",commandpointsblu1]];
                _group = group player ;
-               "Blufor_Autorifleman_1" createUnit [_spawnpos, _group, "[this] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];", _skill, "private"] ;
+			   _blusoldier = call Soldiers_fnc_GetBluforAutoRifleman;
+			   _unit = _group createUnit [_blusoldier, _spawnpos, [], 0, "FORM"];
+			   [_unit] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
              } 
           else 
              {
@@ -62,7 +68,9 @@ switch (_index) do
                commandpointsblu1 = commandpointsblu1 - 3;
                ctrlSetText [1000, format["%1",commandpointsblu1]];
                _group = group player ;
-               "Blufor_Light_AntiTank_1" createUnit [_spawnpos, _group, "[this] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];", _skill, "private"] ;
+			   _blusoldier = call Soldiers_fnc_GetBluforLightAntiTank;
+			   _unit = _group createUnit [_blusoldier, _spawnpos, [], 0, "FORM"];
+			   [_unit] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
              } 
           else 
              {
@@ -78,7 +86,9 @@ switch (_index) do
                commandpointsblu1 = commandpointsblu1 - 4;
                ctrlSetText [1000, format["%1",commandpointsblu1]];
                _group = group player ;
-               "Blufor_Medic_1" createUnit [_spawnpos, _group, "[this] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];", _skill, "private"] ;
+			   _blusoldier = call Soldiers_fnc_GetBluforMedic;
+			   _unit = _group createUnit [_blusoldier, _spawnpos, [], 0, "FORM"];
+			   [_unit] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
              } 
           else 
              {
@@ -94,7 +104,8 @@ switch (_index) do
                commandpointsblu1 = commandpointsblu1 - 4;
                ctrlSetText [1000, format["%1",commandpointsblu1]];
                _group = group player ;
-               "Blufor_AntiAir_1" createUnit [_spawnpos, _group, "[this] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];", _skill, "private"] ;
+			   _unit = _group createUnit ["Blufor_AntiAir_1", _spawnpos, [], 0, "FORM"];
+			   [_unit] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
              } 
           else 
              {
@@ -109,7 +120,8 @@ switch (_index) do
                commandpointsblu1 = commandpointsblu1 - 4;
                ctrlSetText [1000, format["%1",commandpointsblu1]];
                _group = group player ;
-               "Blufor_Repair_1" createUnit [_spawnpos, _group, "[this] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];", _skill, "private"] ;
+			   _unit = _group createUnit ["Blufor_Repair_1", _spawnpos, [], 0, "FORM"];
+			   [_unit] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
              } 
           else 
              {
@@ -124,7 +136,9 @@ switch (_index) do
                commandpointsblu1 = commandpointsblu1 - 4;
                ctrlSetText [1000, format["%1",commandpointsblu1]];
                _group = group player ;
-               "Blufor_AntiTank_1" createUnit [_spawnpos, _group, "[this] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];", _skill, "private"] ;
+               _blusoldier = call Soldiers_fnc_GetBluforAntiTank;
+			   _unit = _group createUnit [_blusoldier, _spawnpos, [], 0, "FORM"];
+			   [_unit] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
              } 
           else 
              {
@@ -139,7 +153,8 @@ switch (_index) do
                commandpointsblu1 = commandpointsblu1 - 3;
                ctrlSetText [1000, format["%1",commandpointsblu1]];
                _group = group player ;
-               "B_diver_F" createUnit [_spawnpos, _group, "[this] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];", _skillSF, "private"] ;
+			   _unit = _group createUnit ["Blufor_Diver_1", _spawnpos, [], 0, "FORM"];
+			   [_unit] remoteExecCall ["Soldiers_fnc_RandomBluforIdentityDiver", 0, true];
              } 
           else 
              {
@@ -154,7 +169,8 @@ switch (_index) do
                commandpointsblu1 = commandpointsblu1 - 3;
                ctrlSetText [1000, format["%1",commandpointsblu1]];
                _group = group player ;
-               "Blufor_Marksman_1" createUnit [_spawnpos, _group, "[this] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];", _skill, "private"] ;
+			   _unit = _group createUnit ["Blufor_Marksman_1", _spawnpos, [], 0, "FORM"];
+			   [_unit] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
              } 
           else 
              {
@@ -169,7 +185,8 @@ switch (_index) do
                commandpointsblu1 = commandpointsblu1 - 4;
                ctrlSetText [1000, format["%1",commandpointsblu1]];
                _group = group player ;
-               "Blufor_Sniper_1" createUnit [_spawnpos, _group, "[this] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];", _skillSF, "private"] ;
+			   _unit = _group createUnit ["Blufor_Sniper_1", _spawnpos, [], 0, "FORM"];
+			   [_unit] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
              } 
           else 
              {
@@ -184,7 +201,8 @@ switch (_index) do
                commandpointsblu1 = commandpointsblu1 - 3;
                ctrlSetText [1000, format["%1",commandpointsblu1]];
                _group = group player ;
-               "Blufor_Spotter_1" createUnit [_spawnpos, _group, "[this] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];", _skillSF, "private"] ;
+			   _unit = _group createUnit ["Blufor_Spotter_1", _spawnpos, [], 0, "FORM"];
+			   [_unit] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
              } 
           else 
              {
@@ -199,7 +217,8 @@ switch (_index) do
                commandpointsblu1 = commandpointsblu1 - 4;
                ctrlSetText [1000, format["%1",commandpointsblu1]];
                _group = group player ;
-               "Blufor_Explosives_1" createUnit [_spawnpos, _group, "[this] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];", _skill, "private"] ;
+			   _unit = _group createUnit ["Blufor_Explosives_1", _spawnpos, [], 0, "FORM"];
+			   [_unit] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
              } 
           else 
              {
@@ -207,6 +226,10 @@ switch (_index) do
              };
     }; 		
 };
+
+{
+[_x] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
+} forEach (units _group);
 
 //hint format["AI skill: %1",_skill];            
 publicVariable "commandpointsblu1";

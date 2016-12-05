@@ -12,7 +12,3 @@ Make more enemy base prefabs.
 Go through and make all friendly and enemy units for the next map.
 
 make actual physical alarms that have to be used by opfor units for an alarm to go off.
-
-Make enemy spawns based more on AP, same with our units.
-
-Test if the alterations to the capture scripts allow opfor to recap zones now.

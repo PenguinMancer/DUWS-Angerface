@@ -25,8 +25,8 @@ if (isServer) then {
 zoneundercontrolblu = zoneundercontrolblu + 1;
 publicVariable "zoneundercontrolblu";
 
-if WARCOM_opfor_ap > 149 then {
-_opf_patrol = [_triggerPos,_size] execVM "WARCOM\WARCOM_opf_zonerecapforce.sqf";
+if (WARCOM_opfor_ap > 149) then {
+[_triggerPos,_size] execVM "WARCOM\WARCOM_opf_zonerecapforce.sqf";
 };
 
 // MODIFY ARMY POWER
@@ -73,7 +73,8 @@ _trg=createTrigger["EmptyDetector",_triggerPos];
 _trg setTriggerArea[_size,_size,0,false];
 _trg setTriggerActivation["EAST SEIZED","PRESENT",false];
 _trg setTriggerStatements["this", format["[""%1"",%2,""%3"",""%4"",%5,%6] execvm 'zonescap\opfor_cap.sqf'",_place,_points,_markername,_markername2,_triggerPos,_size], ""];
-_trg setTriggerTimeout [30, 60, 300, true ];
+//_trg setTriggerTimeout [30, 60, 90, true ];
+_trg setTriggerTimeout [1, 1, 1, true ];
 
 // CREATE VARNAME FOR ZONE TRIGGER --> use the pos of the trigger
 _triggerName = format["trigger%1%2",round (_triggerPos select 0),round (_triggerPos select 1)];
