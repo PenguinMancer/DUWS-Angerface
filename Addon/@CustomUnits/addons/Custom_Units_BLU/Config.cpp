@@ -88,11 +88,7 @@ class CfgPatches {
 			"Blufor_Hunter_1", 
 			"Blufor_Jacob_1"
 			};
-		weapons[] = {
-			"TFA_H_HelmetIA_TRI_Blu_Soldier",
-			"rhsusf_mich_bare_norotos_arc_tan_Blu_Soldier",
-			
-			};
+		weapons[] = {};
 		requiredVersion = 0.1;
 		requiredAddons[] = {
 			"A3_Data_F", 
