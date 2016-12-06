@@ -37,15 +37,23 @@ class CfgPatches {
 			"Blufor_Soldier_13", 
 			"Blufor_Soldier_14", 
 			"Blufor_Soldier_15", 
-			"Blufor_Soldier_16", 
-			"Blufor_Soldier_17",
+			"Blufor_Soldier_16",
+			"Blufor_Soldier_17", 
 			"Blufor_Soldier_18", 
 			"Blufor_Soldier_19", 
 			"Blufor_Soldier_20", 
-			"Blufor_Soldier_21", 
-			"Blufor_Soldier_22",
-			"Blufor_Soldier_23",
-			"Blufor_Soldier_24",
+			"Blufor_Soldier_21",
+			"Blufor_Soldier_22", 
+			"Blufor_Soldier_23", 
+			"Blufor_Soldier_24", 
+			"Blufor_Soldier_25", 
+			"Blufor_Soldier_26",
+			"Blufor_Soldier_27",
+			"Blufor_Soldier_28",
+			"Blufor_Soldier_29", 
+			"Blufor_Soldier_30", 
+			"Blufor_Soldier_31", 
+			"Blufor_Soldier_32",
 			"Blufor_TeamLeader_1", 
 			"Blufor_TeamLeader_2", 
 			"Blufor_TeamLeader_3", 
@@ -80,7 +88,11 @@ class CfgPatches {
 			"Blufor_Hunter_1", 
 			"Blufor_Jacob_1"
 			};
-		weapons[] = {};
+		weapons[] = {
+			"TFA_H_HelmetIA_TRI_Blu_Soldier",
+			"rhsusf_mich_bare_norotos_arc_tan_Blu_Soldier",
+			
+			};
 		requiredVersion = 0.1;
 		requiredAddons[] = {
 			"A3_Data_F", 
@@ -90,6 +102,22 @@ class CfgPatches {
 			"A3_Characters_F_Civil", 
 			"A3_Characters_F_INDEP", 
 			"a3_characters_f_beta",
+			"A3_Weapons_F",
+			"rhsusf_c_weapons", 
+			"rhsusf_c_troops", 
+			"rhsusf_c_m1a1", 
+			"rhsusf_c_m1a2", 
+			"RHS_US_A2_AirImport", 
+			"rhsusf_c_m109", 
+			"rhsusf_c_hmmwv", 
+			"rhsusf_c_rg33", 
+			"rhsusf_c_fmtv", 
+			"rhsusf_c_m113", 
+			"RHS_US_A2Port_Armor",
+			"tfa_units",
+			"TRYK_Uniform",
+			"US_ESS_Glasses_tryk",
+			"Shemaghs",
 			"Custom_DUWS_Core",
 			"Custom_DUWS_Weapons"
 			};

@@ -44,7 +44,9 @@ class CfgPatches {
 			"hlcweapons_mp5",
 			"hlcweapons_SAW",
 			"rhs_c_weapons",
+			"rhsusf_c_weapons",
 			"RH_m4_cfg",
+			"bg21_famas_prplredux",
 			"CUP_Weapons_AK",
 			"CUP_Weapons_Saiga12k",
 			"CUP_Weapons_CZ805",
@@ -445,7 +447,7 @@ class RH_hb_b;
 		{
 			class LinkedItemsOptic
 			{
-				slot = "CowsSlot";
+				slot = "asdg_OpticRail_Prpl_Famas";
 				item = "CUP_optic_HoloDesert";
 			};
 		};
