@@ -1,10 +1,5 @@
-_BluLightAntiTank = [
-"Blufor_Light_AntiTank_1", 
-"Blufor_Light_AntiTank_2", 
-"Blufor_Light_AntiTank_3", 
-"Blufor_Light_AntiTank_4"
-];
+_soldiernumber = floor(random 4)+1;
 
-_returnedsoldier = _BluLightAntiTank call BIS_fnc_selectRandom;
+_returnedsoldier = format["Blufor_Light_AntiTank_%1",_soldiernumber];
 
 _returnedsoldier;

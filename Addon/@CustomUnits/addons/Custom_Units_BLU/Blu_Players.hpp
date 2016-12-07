@@ -2,7 +2,6 @@
 		
 		//Sab Unit
 		class Blufor_Sebby_1 : B_DUWS_base_F  {
-		_generalMacro = "Blufor_Sebby_1"; 
 		scope = 2;
 		displayName = "Codename Penguin"; // In-game name of unit
 		genericNames = "DUWS_Sabbers_Name";
@@ -20,7 +19,6 @@
 		
 		//Jayme Unit
 		class Blufor_Jayme_1 : B_DUWS_base_F  {
-		_generalMacro = "Blufor_Jayme_1"; 
 		scope = 2;
 		displayName = "Codename Fox"; // In-game name of unit
 		genericNames = "DUWS_Jayme_Name";
@@ -38,7 +36,6 @@
 		
 		//Kevin Unit
 		class Blufor_Kevin_1 : B_DUWS_base_F  {
-		_generalMacro = "Blufor_Kevin_1"; 
 		scope = 2;
 		displayName = "Codename Wolf"; // In-game name of unit
 		genericNames = "DUWS_Kevin_Name";
@@ -54,7 +51,6 @@
 		
 		//Hunter Unit
 		class Blufor_Hunter_1 : B_DUWS_base_F  {
-		_generalMacro = "Blufor_Hunter_1"; 
 		scope = 2;
 		displayName = "Codename Eagle"; // In-game name of unit
 		genericNames = "DUWS_Hunter_Name";
@@ -70,7 +66,6 @@
 		
 		//Jacob Unit
 		class Blufor_Jacob_1 : B_DUWS_base_F  {
-		_generalMacro = "Blufor_Jacob_1"; 
 		scope = 2;
 		displayName = "Codename Panda"; // In-game name of unit
 		genericNames = "DUWS_Jacob_Name";

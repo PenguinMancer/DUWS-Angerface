@@ -1,36 +1,34 @@
 		//Blufor Missile Specialist (AT)
 		
 		class Blufor_AntiTank_1 : B_DUWS_base_F  {
-		_generalMacro = "Blufor_AntiTank_1"; 
 		scope = 2;
-		displayName = "Marine Missile Specialist"; // In-game name of unit
-		uniformClass = "TRYK_U_B_NATO_UCP_R_CombatUniform";  // Uniform Class
-		backpack = "USAF_SFS_Carryall_ABU"; // Backpack Class
-		linkedItems[] = {"TRYK_V_PlateCarrier_ACU", "rhsusf_ach_helmet_headset_ess_ucp", Standard_Equipment_Blu}; // Item's added to the unit. 
-		respawnLinkedItems[] = {"TRYK_V_PlateCarrier_ACU", "rhsusf_ach_helmet_headset_ess_ucp", Standard_Equipment_Blu}; // Item's added to the unit. Should be identical to the linkedItems section.
-		weapons[] = {"rhs_weap_m4_carryhandle_sighted", "RH_m9", "rhs_weap_smaw_green"}; // Weapons added to the unit.
-		respawnweapons[] = {"rhs_weap_m4_carryhandle_sighted", "RH_m9", "rhs_weap_smaw_green"}; // Weapons added to the unit. Should be identical to the linkedItems section
-		magazines[] = {"30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", Standard_Grenades_Blu, "RH_15Rnd_9x19_M9", "RH_15Rnd_9x19_M9", "RH_15Rnd_9x19_M9", "RH_15Rnd_9x19_M9", "rhs_mag_smaw_HEAA", "rhs_mag_smaw_HEAA"}; //Magazines added to the unit.
-		Respawnmagazines[] = {"30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", Standard_Grenades_Blu, "RH_15Rnd_9x19_M9", "RH_15Rnd_9x19_M9", "RH_15Rnd_9x19_M9", "RH_15Rnd_9x19_M9", "rhs_mag_smaw_HEAA", "rhs_mag_smaw_HEAA"}; //Magazines added to the unit upon respawn, should be the same as above.	
+		displayName = "French Missile Specialist"; // In-game name of unit
+		uniformClass = "Niko_USA_DCUTan";  // Uniform Class
+		backpack = "VSM_OGA_carryall"; // Backpack Class
+		linkedItems[] = {"TRYK_V_PlateCarrier_coyo", "TRYK_H_woolhat_tan", "rhs_googles_black", Standard_Equipment_Blu}; // Item's added to the unit. 
+		respawnLinkedItems[] = {"TRYK_V_PlateCarrier_coyo", "TRYK_H_woolhat_tan", "rhs_googles_black", Standard_Equipment_Blu}; // Item's added to the unit. Should be identical to the linkedItems section.
+		weapons[] = {"bg21_famas_FS_tan_sighted", "CUP_launch_Javelin", "Throw", "Put"}; // Weapons added to the unit.
+		respawnweapons[] = {"bg21_famas_FS_tan_sighted", "CUP_launch_Javelin", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
+		magazines[] = {Famas_Mags_Blu, Standard_Grenades_Blu, "CUP_Javelin_M"}; //Magazines added to the unit.
+		Respawnmagazines[] = {Famas_Mags_Blu, Standard_Grenades_Blu, "CUP_Javelin_M"}; //Magazines added to the unit upon respawn, should be the same as above.	
 		};
-		
+
 		class Blufor_AntiTank_2 : Blufor_AntiTank_1  {
-		_generalMacro = "Blufor_AntiTank_2"; 
 		scope = 2;
-		weapons[] = {"rhs_weap_m4_carryhandle_pmag_sighted", "RH_m9", "rhs_weap_smaw_green"}; // Weapons added to the unit.
-		respawnweapons[] = {"rhs_weap_m4_carryhandle_pmag_sighted", "RH_m9", "rhs_weap_smaw_green"}; // Weapons added to the unit. Should be identical to the linkedItems section	
+		weapons[] = {"bg21_famas_FS_tan", "CUP_launch_Javelin", "Throw", "Put"}; // Weapons added to the unit.
+		respawnweapons[] = {"bg21_famas_FS_tan", "CUP_launch_Javelin", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section	
 		};
 		
 		class Blufor_AntiTank_3 : Blufor_AntiTank_1  {
-		_generalMacro = "Blufor_AntiTank_3"; 
 		scope = 2;
-		weapons[] = {"rhs_weap_m16a4_carryhandle_sighted", "RH_m9", "rhs_weap_smaw_green"}; // Weapons added to the unit.
-		respawnweapons[] = {"rhs_weap_m16a4_carryhandle_sighted", "RH_m9", "rhs_weap_smaw_green"}; // Weapons added to the unit. Should be identical to the linkedItems section	
+		weapons[] = {"RH_hk416_des", "CUP_launch_Javelin", "Throw", "Put"}; // Weapons added to the unit.
+		respawnweapons[] = {"RH_hk416_des", "CUP_launch_Javelin", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
+		magazines[] = {M416_Mags_Blu, Standard_Grenades_Blu, "CUP_Javelin_M"}; //Magazines added to the unit.
+		Respawnmagazines[] = {M416_Mags_Blu, Standard_Grenades_Blu, "CUP_Javelin_M"}; //Magazines added to the unit upon respawn, should be the same as above.	
 		};
 		
-		class Blufor_AntiTank_4 : Blufor_AntiTank_1  {
-		_generalMacro = "Blufor_AntiTank_4"; 
+		class Blufor_AntiTank_4 : Blufor_AntiTank_3  {
 		scope = 2;
-		weapons[] = {"rhs_weap_m16a4_carryhandle_pmag_sighted", "RH_m9", "rhs_weap_smaw_green"}; // Weapons added to the unit.
-		respawnweapons[] = {"rhs_weap_m16a4_carryhandle_pmag_sighted", "RH_m9", "rhs_weap_smaw_green"}; // Weapons added to the unit. Should be identical to the linkedItems section	
+		weapons[] = {"RH_hk416_des_sighted", "CUP_launch_Javelin", "Throw", "Put"}; // Weapons added to the unit.
+		respawnweapons[] = {"RH_hk416_des_sighted", "CUP_launch_Javelin", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section	
 		};

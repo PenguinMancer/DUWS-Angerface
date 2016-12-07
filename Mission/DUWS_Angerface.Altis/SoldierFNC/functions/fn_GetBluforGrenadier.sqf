@@ -1,9 +1,5 @@
-_BluGrenadier = [
-"Blufor_Grenadier_1", 
-"Blufor_Grenadier_2", 
-"Blufor_Grenadier_3"
-];
+_soldiernumber = floor(random 3)+1;
 
-_returnedsoldier = _BluGrenadier call BIS_fnc_selectRandom;
+_returnedsoldier = format["Blufor_Grenadier_%1",_soldiernumber];
 
 _returnedsoldier;

@@ -1,9 +1,8 @@
 		//Blufor Recon Scout
 		
 		class Blufor_Recon_1 : B_DUWS_base_F  {
-		_generalMacro = "Blufor_Recon_1"; 
 		scope = 2;
-		displayName = "Marine Recon Scout"; // In-game name of unit
+		displayName = "French Recon Scout"; // In-game name of unit
 		uniformClass = "U_I_G_resistanceLeader_F";  // Uniform Class
 		backpack = "IP_B_AssaultPack_SnowTiger"; // Backpack Class
 		linkedItems[] = {"TFA_boon_dou", "SP_Balaclava_NodUrban", "IP_V_PlateCarrierSpec_rgrSnowHex", Standard_Equipment_Blu}; // Item's added to the unit. 
@@ -19,9 +18,8 @@
 		//Blufor Recon Marksman
 		
 		class Blufor_Recon_Marksman_1 : B_DUWS_base_F  {
-		_generalMacro = "Blufor_Recon_Marksman_1"; 
 		scope = 2;
-		displayName =  "Marine Recon Marksman"; // In-game name of unit
+		displayName =  "French Recon Marksman"; // In-game name of unit
 		uniformClass = "Niko_USA_TPAT";  // Uniform Class
 		backpack = "TRYK_B_Carryall_wh"; // Backpack Class
 		linkedItems[] = {"SP_Bandolier1_Grey", "SP_Shemagh_White", "G_Shades_Black", Standard_Equipment_Blu}; // Item's added to the unit. 
@@ -37,9 +35,8 @@
 		//Recon Scout (AT)
 		
 		class Blufor_Recon_LAT_1 : B_DUWS_base_F  {
-		_generalMacro = "Blufor_Recon_LAT_1"; 
 		scope = 2;
-		displayName = "Marine Recon scout (AT)"; // In-game name of unit
+		displayName = "French Recon scout (AT)"; // In-game name of unit
 		uniformClass = "Niko_USA_Yeti";  // Uniform Class
 		backpack = "TRYK_B_Carryall_wh"; // Backpack Class
 		linkedItems[] = {"SP_JackEllis1_Grey", "TRYK_H_headset2", "SP_Balaclava_NodUrban", Standard_Equipment_Blu}; // Item's added to the unit. 
@@ -55,9 +52,8 @@
 		//Blufor Recon Explosives Expert
 		
 		class Blufor_Recon_Exp_1 : B_DUWS_base_F  {
-		_generalMacro = "Blufor_Recon_Exp_1"; 
 		scope = 2;
-		displayName = "Marine Recon Explosive Specialist"; // In-game name of unit
+		displayName = "French Recon Explosive Specialist"; // In-game name of unit
 		uniformClass = "Niko_USA_aobalpine";  // Uniform Class
 		backpack = "TRYK_B_Carryall_wh"; // Backpack Class
 		linkedItems[] = {"SP_JackEllis1_White", "TRYK_H_Helmet_Snow", "TRYK_Beard_Gr2", Standard_Equipment_Blu}; // Item's added to the unit. 
@@ -73,9 +69,8 @@
 		//Blufor Recon Medic
 		
 		class Blufor_Recon_Medic_1 : Blufor_Medic_1  {
-		_generalMacro = "Blufor_Recon_Medic_1"; 
 		scope = 2;
-		displayName = "Marine Recon Medic"; // In-game name of unit
+		displayName = "French Recon Medic"; // In-game name of unit
 		uniformClass = "Niko_USA_SnowMARPAT";  // Uniform Class
 		backpack = "TRYK_B_Coyotebackpack_WH"; // Backpack Class
 		linkedItems[] = {"SP_JackEllis1_Grey", "SP_SSh68NetHelmet_White1", "G_mas_wpn_bala_gog", Standard_Equipment_Blu}; // Item's added to the unit. 
@@ -89,9 +84,8 @@
 		//Blufor Recon JTAC
 		
 		class Blufor_Recon_JTAC_1 : B_DUWS_base_F  {
-		_generalMacro = "Blufor_Recon_JTAC_1"; 
 		scope = 2;
-		displayName = "Marine Recon JTAC"; // In-game name of unit
+		displayName = "French Recon JTAC"; // In-game name of unit
 		uniformClass = "TRYK_U_B_Snow_CombatUniform";  // Uniform Class
 		backpack = "IP_B_Kitbag_SnowHex"; // Backpack Class
 		linkedItems[] = {"SP_Harness1_Grey", "TRYK_H_wig", "G_mas_wpn_wrap_gog_t", Standard_Equipment_Blu}; // Item's added to the unit. 
@@ -107,9 +101,8 @@
 		//Blufor Recon Team Leader
 		
 		class Blufor_Recon_TL_1 : B_DUWS_base_F  {
-		_generalMacro = "Blufor_Recon_TL_1"; 
 		scope = 2;
-		displayName = "Marine Recon Team Leader"; // In-game name of unit
+		displayName = "French Recon Team Leader"; // In-game name of unit
 		uniformClass = "Niko_USA_aobalpinepcu";  // Uniform Class
 		backpack = "IP_B_FieldPack_SnowTiger"; // Backpack Class
 		linkedItems[] = {"SP_Tactical1_Grey", "SP_Bandana_NodUrban", "G_Bandanna_beast", Standard_Equipment_Blu}; // Item's added to the unit. 

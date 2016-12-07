@@ -115,7 +115,8 @@ class CfgPatches {
 			"US_ESS_Glasses_tryk",
 			"Shemaghs",
 			"Custom_DUWS_Core",
-			"Custom_DUWS_Weapons"
+			"Custom_DUWS_Weapons",
+			"cba_xeh"
 			};
 		version="1";
 		projectName="Custom_DUWS_Blu";
@@ -125,6 +126,16 @@ class CfgPatches {
 
 #include "script_macros.hpp"
 #include "script_config.hpp"
+
+class CfgFunctions {
+	class BLU {
+		class common {
+			class InitUnit {
+				file = "\Custom_DUWS_Blu\scripts\InitBluUnit.sqf";
+			};
+		};
+	};
+};
 
 class CfgVehicles {
 		
@@ -140,7 +151,6 @@ class CfgVehicles {
 		//Declaring the base soldier class
 		class B_DUWS_base_F: B_Soldier_base_F {
 		author = "Sabrina Penguin";
-		_generalMacro = "B_DUWS_base_F";
 		expansion = 1;
 		faceType = "Man_A3";
 		side = 1;
@@ -165,8 +175,9 @@ class CfgVehicles {
 		//Randomized Units
 		#include "Blu_Antitank.hpp"
 		#include "Blu_Autorifleman.hpp"
-		#include "Blu_Light_AntiTank.hpp"//This and the following on had to be swapped because I accidentally made something in the grenadier units depend on one of these units. Fix that later.
 		#include "Blu_Grenadier.hpp"
+		#include "Blu_Light_AntiTank.hpp"
+		//All units done before here
 		#include "Blu_Medic.hpp"
 		#include "Blu_soldiers.hpp"
 		#include "Blu_TeamLeader.hpp"
@@ -183,7 +194,6 @@ class CfgVehicles {
 		//Blufor General
 		
 		class Blufor_General : B_DUWS_base_F  {
-		_generalMacro = "Blufor_General"; 
 		scope = 2;
 		displayName = "General Moreau"; // In-game name of unit
 		faction = "BLU_DUWS"; // Puts unit under new faction
@@ -201,7 +211,6 @@ class CfgVehicles {
 		//Blufor Pilot (only used in rescue mission)
 		
 		class Blufor_Pilot_Mission : B_DUWS_base_F  {
-		_generalMacro = "Blufor_Pilot_Mission"; 
 		scope = 2;
 		displayName = "Hawk"; // In-game name of unit
 		faction = "BLU_DUWS"; // Puts unit under new faction
@@ -221,9 +230,8 @@ class CfgVehicles {
 		//Blufor Ammo Bearer
 		
 		class Blufor_Ammobearer_1 : B_DUWS_base_F  {
-		_generalMacro = "Blufor_Ammobearer_1"; 
 		scope = 2;
-		displayName = "Marine AmmoBearer"; // In-game name of unit
+		displayName = "French AmmoBearer"; // In-game name of unit
 		uniformClass = "TRYK_U_B_NATO_UCP_R_CombatUniform";  // Uniform Class
 		backpack = "USAF_SFS_Carryall_ABU"; // Backpack Class
 		linkedItems[] = {"TRYK_V_PlateCarrier_ACU", "rhsusf_ach_helmet_headset_ess_ucp", Standard_Equipment_Blu}; // Item's added to the unit. 
@@ -237,9 +245,8 @@ class CfgVehicles {
 		//Blufor Squad Leader
 		
 		class Blufor_SquadLeader_1 : B_DUWS_base_F  {
-		_generalMacro = "Blufor_SquadLeader_1"; 
 		scope = 2;
-		displayName = "Marine Squad Leader"; // In-game name of unit
+		displayName = "French Squad Leader"; // In-game name of unit
 		uniformClass = "TRYK_U_B_NATO_UCP_R_CombatUniform";  // Uniform Class
 		backpack = "USAF_SFS_Carryall_ABU"; // Backpack Class
 		linkedItems[] = {"TRYK_V_PlateCarrier_ACU", "SP_Beret4_Green", Standard_Equipment_Blu}; // Item's added to the unit. 
@@ -253,9 +260,8 @@ class CfgVehicles {
 		//Blufor Assistant Autorifleman
 		
 		class Blufor_Assistant_Autorifleman_1 : B_DUWS_base_F  {
-		_generalMacro = "Blufor_Assistant_Autorifleman_1"; 
 		scope = 2;
-		displayName = "Marine Assistant Autorifleman"; // In-game name of unit
+		displayName = "French Assistant Autorifleman"; // In-game name of unit
 		uniformClass = "TRYK_U_B_NATO_UCP_R_CombatUniform";  // Uniform Class
 		backpack = "USAF_SFS_Carryall_ABU"; // Backpack Class
 		linkedItems[] = {"TRYK_V_PlateCarrier_ACU", "rhsusf_ach_helmet_headset_ess_ucp", Standard_Equipment_Blu}; // Item's added to the unit. 
@@ -269,9 +275,8 @@ class CfgVehicles {
 		//Blufor Assistant Missile Specialist (AT)
 		
 		class Blufor_Assistant_AntiTank_1 : B_DUWS_base_F  {
-		_generalMacro = "Blufor_Assistant_AntiTank_1"; 
 		scope = 2;
-		displayName = "Marine Asst. Missile Specialist"; // In-game name of unit
+		displayName = "French Asst. Missile Specialist"; // In-game name of unit
 		uniformClass = "TRYK_U_B_NATO_UCP_R_CombatUniform";  // Uniform Class
 		backpack = "USAF_SFS_Carryall_ABU"; // Backpack Class
 		linkedItems[] = {"TRYK_V_PlateCarrier_ACU", "rhsusf_ach_helmet_headset_ess_ucp", Standard_Equipment_Blu}; // Item's added to the unit. 
@@ -285,9 +290,8 @@ class CfgVehicles {
 		//Blufor Missile Specialist (AA)
 		
 		class Blufor_AntiAir_1 : B_DUWS_base_F  {
-		_generalMacro = "Blufor_AntiAir_1"; 
 		scope = 2;
-		displayName = "Marine Missile Specialist (AA)"; // In-game name of unit
+		displayName = "French Missile Specialist (AA)"; // In-game name of unit
 		uniformClass = "TRYK_U_B_NATO_UCP_R_CombatUniform";  // Uniform Class
 		backpack = "USAF_SFS_Carryall_ABU"; // Backpack Class
 		linkedItems[] = {"TRYK_V_PlateCarrier_ACU", "rhsusf_ach_helmet_headset_ess_ucp", Standard_Equipment_Blu}; // Item's added to the unit. 
@@ -301,9 +305,8 @@ class CfgVehicles {
 		//Blufor Assistant Missile Specialist (AA)
 		
 		class Blufor_Assistant_AntiAir_1 : B_DUWS_base_F  {
-		_generalMacro = "Blufor_Assistant_AntiAir_1"; 
 		scope = 2;
-		displayName = "Marine Asst. Missile Specialist (AA)"; // In-game name of unit
+		displayName = "French Asst. Missile Specialist (AA)"; // In-game name of unit
 		uniformClass = "TRYK_U_B_NATO_UCP_R_CombatUniform";  // Uniform Class
 		backpack = "USAF_SFS_Carryall_ABU"; // Backpack Class
 		linkedItems[] = {"TRYK_V_PlateCarrier_ACU", "rhsusf_ach_helmet_headset_ess_ucp", Standard_Equipment_Blu}; // Item's added to the unit. 
@@ -317,9 +320,8 @@ class CfgVehicles {
 		//Blufor Repair Specialist
 		
 		class Blufor_Repair_1 : B_DUWS_base_F  {
-		_generalMacro = "Blufor_Repair_1"; 
 		scope = 2;
-		displayName = "Marine Repair Specialist"; // In-game name of unit
+		displayName = "French Repair Specialist"; // In-game name of unit
 		uniformClass = "TRYK_U_B_NATO_UCP_R_CombatUniform";  // Uniform Class
 		backpack = "USAF_SFS_Carryall_ABU"; // Backpack Class
 		linkedItems[] = {"TRYK_V_PlateCarrier_ACU", "rhsusf_ach_helmet_headset_ess_ucp", Standard_Equipment_Blu}; // Item's added to the unit. 
@@ -335,9 +337,8 @@ class CfgVehicles {
 		//Blufor Marksman
 		
 		class Blufor_Marksman_1 : B_DUWS_base_F  {
-		_generalMacro = "Blufor_Marksman_1"; 
 		scope = 2;
-		displayName = "Marine Marksman"; // In-game name of unit
+		displayName = "French Marksman"; // In-game name of unit
 		uniformClass = "TRYK_U_B_NATO_UCP_R_CombatUniform";  // Uniform Class
 		backpack = "USAF_SFS_Carryall_ABU"; // Backpack Class
 		linkedItems[] = {"TRYK_V_PlateCarrier_ACU", "rhsusf_ach_helmet_headset_ess_ucp", Standard_Equipment_Blu}; // Item's added to the unit. 
@@ -351,9 +352,8 @@ class CfgVehicles {
 		//Blufor Sniper
 		
 		class Blufor_Sniper_1 : B_DUWS_base_F  {
-		_generalMacro = "Blufor_Sniper_1"; 
 		scope = 2;
-		displayName = "Marine Sniper"; // In-game name of unit
+		displayName = "French Sniper"; // In-game name of unit
 		uniformClass = "TRYK_U_B_NATO_UCP_R_CombatUniform";  // Uniform Class
 		backpack = "USAF_SFS_Carryall_ABU"; // Backpack Class
 		linkedItems[] = {"TRYK_V_PlateCarrier_ACU", "TRYK_R_CAP_OD_US", "G_Shades_Blue", Standard_Equipment_Blu}; // Item's added to the unit. 
@@ -367,9 +367,8 @@ class CfgVehicles {
 		//Blufor Spotter
 		
 		class Blufor_Spotter_1 : B_DUWS_base_F  {
-		_generalMacro = "Blufor_Spotter_1"; 
 		scope = 2;
-		displayName = "Marine Spotter"; // In-game name of unit
+		displayName = "French Spotter"; // In-game name of unit
 		uniformClass = "TRYK_U_B_NATO_UCP_R_CombatUniform";  // Uniform Class
 		backpack = "USAF_SFS_Carryall_ABU"; // Backpack Class
 		linkedItems[] = {"TRYK_V_PlateCarrier_ACU", "TRYK_r_cap_blk_Glasses", Standard_Equipment_Blu}; // Item's added to the unit. 
@@ -383,9 +382,8 @@ class CfgVehicles {
 		//Blufor Explosive Specialist
 		
 		class Blufor_Explosives_1 : B_DUWS_base_F  {
-		_generalMacro = "Blufor_Explosives_1"; 
 		scope = 2;
-		displayName = "Marine Explosive Specialist"; // In-game name of unit
+		displayName = "French Explosive Specialist"; // In-game name of unit
 		uniformClass = "TRYK_U_B_NATO_UCP_R_CombatUniform";  // Uniform Class
 		backpack = "USAF_SFS_Carryall_ABU"; // Backpack Class
 		linkedItems[] = {"TRYK_V_PlateCarrier_ACU", "rhsusf_ach_helmet_headset_ess_ucp", Standard_Equipment_Blu}; // Item's added to the unit. 
@@ -401,9 +399,8 @@ class CfgVehicles {
 		//Blufor Helo Pilot
 		
 		class Blufor_Pilot_1 : B_DUWS_base_F  {
-		_generalMacro = "Blufor_Pilot_1"; 
 		scope = 2;
-		displayName = "Marine Helo Pilot"; // In-game name of unit
+		displayName = "French Helo Pilot"; // In-game name of unit
 		uniformClass = "TRYK_U_B_NATO_UCP_R_CombatUniform";  // Uniform Class
 		backpack = "B_Parachute"; // Backpack Class
 		linkedItems[] = {"TRYK_V_PlateCarrier_ACU", "TRYK_H_TACEARMUFF_H", Standard_Equipment_Blu}; // Item's added to the unit. 
@@ -447,4 +444,8 @@ class CfgVehicles {
 		class I_mas_cars_LR_soft_Stinger_custom : I_mas_cars_LR_soft_Stinger {
 		crew = "Blufor_Soldier_1";
 		};
+};
+
+class Extended_Init_Eventhandlers {
+	#include "Extendedinit.hpp"
 };

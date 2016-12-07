@@ -6,7 +6,6 @@ class CfgPatches {
 			"rhs_weap_svdp_wd_scoped",
 			"hlc_rifle_aks74u_scoped",
 			"hlc_rifle_M14_Rail_Oldscope",
-			"RH_M27IAR_des_sighted",
 			"rhs_weap_m14ebrri_sighted",
 			"CUP_srifle_M14_DMR_sighted",
 			"RH_Hk416_sighted",
@@ -16,17 +15,16 @@ class CfgPatches {
 			"rhs_weap_m4_carryhandle_pmag_sighted",
 			"rhs_weap_m16a4_carryhandle_sighted",
 			"rhs_weap_m16a4_carryhandle_pmag_sighted",
-			"RH_M4A1_ris_M203s_sighted",
-			"rhs_weap_m4a1_blockII_M203_sighted",
 			"hlc_m249_pip1_sighted",
 			"RH_M27IAR_sighted",
-			"rhs_weap_m240B_CAP_sighted",
+			"rhs_weap_m240G_sighted",
 			"hlc_smg_mp5a4_sighted",
 			"hlc_rifle_m14sopmod_sighted",
 			"CUP_srifle_M24_des_sighted",
 			"RH_hb_b_sighted",
 			"bg21_famas_FS_tan_sighted",
-			"RH_hk416_des_sighted"
+			"RH_hk416_des_sighted",
+			"rhs_weap_hk416d145_m320_sighted"
 			};
 		requiredVersion = 0.1;
 		requiredAddons[] = {
@@ -117,21 +115,6 @@ class hlc_rifle_M14_Rail;
 			
 		};
 	};	
-	
-class RH_M27IAR_des;
-
-	class RH_M27IAR_des_sighted : RH_M27IAR_des
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot = "CowsSlot";
-				item = "optic_MRCO";
-			};
-			
-		};
-	};		
 	
 class rhs_weap_m14ebrri;
 
@@ -284,48 +267,6 @@ class rhs_weap_m16a4_carryhandle_pmag;
 		};
 	};	
 	
-class RH_M4A1_ris_M203s;
-
-	class RH_M4A1_ris_M203s_sighted : RH_M4A1_ris_M203s
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot = "CowsSlot";
-				item = "RH_eotech553";
-			};
-		};
-	};
-	
-class rhs_weap_m4a1_blockII_M203;
-
-	class rhs_weap_m4a1_blockII_M203_sighted : rhs_weap_m4a1_blockII_M203
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot = "CowsSlot";
-				item = "RH_eotech553";
-			};
-		};
-	};
-	
-class rhs_weap_m4a1_carryhandle_m203;
-
-	class rhs_weap_m4a1_carryhandle_m203_sighted : rhs_weap_m4a1_carryhandle_m203
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot = "CowsSlot";
-				item = "RH_eotech553";
-			};
-		};
-	};
-	
 class hlc_m249_pip1;
 
 	class hlc_m249_pip1_sighted : hlc_m249_pip1
@@ -354,9 +295,9 @@ class RH_M27IAR;
 		};
 	};
 	
-class rhs_weap_m240B_CAP;
+class rhs_weap_m240G;
 
-	class rhs_weap_m240B_CAP_sighted : rhs_weap_m240B_CAP
+	class rhs_weap_m240G_sighted : rhs_weap_m240G
 	{
 		class LinkedItems
 		{
@@ -368,8 +309,7 @@ class rhs_weap_m240B_CAP;
 		};
 	};
 	
-class hlc_smg_mp5a4;
-
+	class hlc_smg_mp5a4;
 	class hlc_smg_mp5a4_sighted : hlc_smg_mp5a4
 	{
 		class LinkedItems
@@ -382,8 +322,7 @@ class hlc_smg_mp5a4;
 		};
 	};
 	
-class hlc_rifle_m14sopmod;
-
+	class hlc_rifle_m14sopmod;
 	class hlc_rifle_m14sopmod_sighted : hlc_rifle_m14sopmod
 	{
 		class LinkedItems
@@ -401,8 +340,7 @@ class hlc_rifle_m14sopmod;
 		};
 	};	
 	
-class CUP_srifle_M24_des;
-
+	class CUP_srifle_M24_des;
 	class CUP_srifle_M24_des_sighted : CUP_srifle_M24_des
 	{
 		class LinkedItems
@@ -420,8 +358,7 @@ class CUP_srifle_M24_des;
 		};
 	};	
 	
-class RH_hb_b;
-
+	class RH_hb_b;
 	class RH_hb_b_sighted : RH_hb_b
 	{
 		class LinkedItems
@@ -440,7 +377,6 @@ class RH_hb_b;
 	};	
 	
 	class bg21_famas_FS_tan;
-
 	class bg21_famas_FS_tan_sighted : bg21_famas_FS_tan
 	{
 		class LinkedItems
@@ -454,7 +390,6 @@ class RH_hb_b;
 	};	
 	
 	class RH_hk416_des;
-
 	class RH_hk416_des_sighted : RH_hk416_des
 	{
 		class LinkedItems
@@ -466,8 +401,19 @@ class RH_hb_b;
 			};
 		};
 	};	
+	class rhs_weap_hk416d145_m320;
+	class rhs_weap_hk416d145_m320_sighted : rhs_weap_hk416d145_m320
+	{
+		class LinkedItems
+		{
+			class LinkedItemsOptic
+			{
+				slot = "CowsSlot";
+				item = "RH_eotech553";
+			};
+		};
+	};	
 	class hlc_rifle_G36TAC;
-	
 	class hlc_rifle_G36TAC_sebby : hlc_rifle_G36TAC
 	{
 		class LinkedItems

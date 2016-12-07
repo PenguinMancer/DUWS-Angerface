@@ -1,9 +1,8 @@
 		//Blufor Medic
 		
 		class Blufor_Medic_1 : B_DUWS_base_F  {
-		_generalMacro = "Blufor_Medic_1"; 
 		scope = 2;
-		displayName = "Marine Medic"; // In-game name of unit
+		displayName = "French Medic"; // In-game name of unit
 		uniformClass = "TRYK_U_B_NATO_UCP_R_CombatUniform";  // Uniform Class
 		backpack = "TRYK_B_Medbag_ucp"; // Backpack Class
 		linkedItems[] = {"TRYK_V_PlateCarrier_ACU", "rhsusf_ach_helmet_headset_ess_ucp", "G_Spectacles", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
@@ -17,21 +16,18 @@
 		};
 		
 		class Blufor_Medic_2 : Blufor_Medic_1  {
-		_generalMacro = "Blufor_Medic_3"; 
 		scope = 2;
 		weapons[] = {"rhs_weap_m4_carryhandle_pmag_sighted", "RH_m9"}; // Weapons added to the unit.
 		respawnweapons[] = {"rhs_weap_m4_carryhandle_pmag_sighted", "RH_m9"}; // Weapons added to the unit. Should be identical to the linkedItems section
 		};
 		
 		class Blufor_Medic_3 : Blufor_Medic_1  {
-		_generalMacro = "Blufor_Medic_3"; 
 		scope = 2;
 		weapons[] = {"rhs_weap_m16a4_carryhandle_sighted", "RH_m9"}; // Weapons added to the unit.
 		respawnweapons[] = {"rhs_weap_m16a4_carryhandle_sighted", "RH_m9"}; // Weapons added to the unit. Should be identical to the linkedItems section
 		};
 		
 		class Blufor_Medic_4 : Blufor_Medic_1  {
-		_generalMacro = "Blufor_Medic_4"; 
 		scope = 2;
 		weapons[] = {"rhs_weap_m16a4_carryhandle_pmag_sighted", "RH_m9"}; // Weapons added to the unit.
 		respawnweapons[] = {"rhs_weap_m16a4_carryhandle_pmag_sighted", "RH_m9"}; // Weapons added to the unit. Should be identical to the linkedItems section

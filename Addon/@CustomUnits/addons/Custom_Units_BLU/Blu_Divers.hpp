@@ -1,7 +1,6 @@
 		//Blufor Diver
 		
 		class Blufor_Diver_1 : B_DUWS_base_F  {
-		_generalMacro = "Blufor_Diver_1"; 
 		scope = 2;
 		displayName = "G4S Diver"; // In-game name of unit
 		uniformClass = "U_B_Wetsuit";  // Uniform Class
@@ -19,7 +18,6 @@
 		//Blufor Diver Exp Specialist
 		
 		class Blufor_Diver_exp_1 : B_DUWS_base_F  {
-		_generalMacro = "Blufor_Diver_exp_1"; 
 		scope = 2;
 		displayName = "G4S Diver Explosive Specialist"; // In-game name of unit
 		uniformClass = "U_O_Wetsuit";  // Uniform Class
@@ -37,7 +35,6 @@
 		//Blufor Diver Team Leader
 		
 		class Blufor_Diver_Teamleader_1 : B_DUWS_base_F  {
-		_generalMacro = "Blufor_Diver_Teamleader_1"; 
 		scope = 2;
 		displayName = "G4S Diver Team Leader"; // In-game name of unit
 		uniformClass = "U_I_Wetsuit";  // Uniform Class
