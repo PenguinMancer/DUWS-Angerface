@@ -24,7 +24,8 @@ class CfgPatches {
 			"RH_hb_b_sighted",
 			"bg21_famas_FS_tan_sighted",
 			"RH_hk416_des_sighted",
-			"rhs_weap_hk416d145_m320_sighted"
+			"rhs_weap_hk416d145_m320_sighted",
+			"CUP_arifle_Mk16_STD_sighted"
 			};
 		requiredVersion = 0.1;
 		requiredAddons[] = {
@@ -410,6 +411,18 @@ class rhs_weap_m240G;
 			{
 				slot = "CowsSlot";
 				item = "RH_eotech553";
+			};
+		};
+	};	
+	class CUP_arifle_Mk16_STD;
+	class CUP_arifle_Mk16_STD_sighted : CUP_arifle_Mk16_STD
+	{
+		class LinkedItems
+		{
+			class LinkedItemsOptic
+			{
+				slot = "CUP_PicatinnyTopMountSCAR";
+				item = "FHQ_optic_AIM_tan";
 			};
 		};
 	};	

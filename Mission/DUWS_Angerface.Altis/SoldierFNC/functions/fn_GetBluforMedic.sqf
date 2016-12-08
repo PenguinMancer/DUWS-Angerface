@@ -1,10 +1,5 @@
-_BluMedic = [
-"Blufor_Medic_1", 
-"Blufor_Medic_2", 
-"Blufor_Medic_3", 
-"Blufor_Medic_4"
-];
+_soldiernumber = floor(random 12)+1;
 
-_returnedsoldier = _BluMedic call BIS_fnc_selectRandom;
+_returnedsoldier = format["Blufor_Medic_%1",_soldiernumber];
 
 _returnedsoldier;

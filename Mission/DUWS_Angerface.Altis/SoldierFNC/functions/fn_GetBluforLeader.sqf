@@ -1,10 +1,5 @@
-_BluLeader = [
-"Blufor_TeamLeader_1", 
-"Blufor_TeamLeader_2", 
-"Blufor_TeamLeader_3", 
-"Blufor_TeamLeader_4"
-];
+_soldiernumber = floor(random 12)+1;
 
-_returnedsoldier = _BluLeader call BIS_fnc_selectRandom;
+_returnedsoldier = format["Blufor_TeamLeader_%1",_soldiernumber];
 
 _returnedsoldier;

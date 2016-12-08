@@ -3,30 +3,80 @@
 		class Blufor_TeamLeader_1 : B_DUWS_base_F  {
 		scope = 2;
 		displayName = "French Team Leader"; // In-game name of unit
-		uniformClass = "TRYK_U_B_NATO_UCP_R_CombatUniform";  // Uniform Class
-		backpack = "USAF_SFS_Carryall_ABU"; // Backpack Class
-		linkedItems[] = {"TRYK_V_PlateCarrier_ACU", "SP_Beret4_Green", Standard_Equipment_Blu}; // Item's added to the unit. 
-		respawnLinkedItems[] = {"TRYK_V_PlateCarrier_ACU", "SP_Beret4_Green", Standard_Equipment_Blu}; // Item's added to the unit. Should be identical to the linkedItems section.
-		weapons[] = {"rhs_weap_m4_carryhandle_sighted", "RH_m9"}; // Weapons added to the unit.
-		respawnweapons[] = {"rhs_weap_m4_carryhandle_sighted", "RH_m9"}; // Weapons added to the unit. Should be identical to the linkedItems section
-		magazines[] = {"30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", Standard_Grenades_Blu, "RH_15Rnd_9x19_M9", "RH_15Rnd_9x19_M9", "RH_15Rnd_9x19_M9", "RH_15Rnd_9x19_M9"}; //Magazines added to the unit.
-		Respawnmagazines[] = {"30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", Standard_Grenades_Blu, "RH_15Rnd_9x19_M9", "RH_15Rnd_9x19_M9", "RH_15Rnd_9x19_M9", "RH_15Rnd_9x19_M9"}; //Magazines added to the unit upon respawn, should be the same as above.
+		uniformClass = "Niko_USA_DCUTan";  // Uniform Class
+		backpack = "VSM_OGA_Backpack_Compact"; // Backpack Class
+		linkedItems[] = {"lbt_tl_coy", "SP_Beret_Tan", "LBG_Shemagh_Tan", Standard_Equipment_Blu}; // Item's added to the unit. 
+		respawnLinkedItems[] = {"lbt_tl_coy", "SP_Beret_Tan", "LBG_Shemagh_Tan", Standard_Equipment_Blu}; // Item's added to the unit. Should be identical to the linkedItems section.
+		weapons[] = {"CUP_arifle_Mk16_STD_sighted", "RH_m9", "Throw", "Put"}; // Weapons added to the unit.
+		respawnweapons[] = {"CUP_arifle_Mk16_STD_sighted", "RH_m9"}; // Weapons added to the unit. Should be identical to the linkedItems section
+		magazines[] = {M416_Mags_Blu, Standard_Grenades_Blu, M9_Mags_Blu}; //Magazines added to the unit.
+		Respawnmagazines[] = {M416_Mags_Blu, Standard_Grenades_Blu, M9_Mags_Blu}; //Magazines added to the unit upon respawn, should be the same as above.
 		};
 		
 		class Blufor_TeamLeader_2 : Blufor_TeamLeader_1  {
 		scope = 2;
-		weapons[] = {"rhs_weap_m4_carryhandle_pmag_sighted", "RH_m9"}; // Weapons added to the unit.
-		respawnweapons[] = {"rhs_weap_m4_carryhandle_pmag_sighted", "RH_m9"}; // Weapons added to the unit. Should be identical to the linkedItems section
+		weapons[] = {"CUP_arifle_Mk16_STD", "RH_m9", "Throw", "Put"}; // Weapons added to the unit.
+		respawnweapons[] = {"CUP_arifle_Mk16_STD", "RH_m9", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
 		};
 		
 		class Blufor_TeamLeader_3 : Blufor_TeamLeader_1  {
 		scope = 2;
-		weapons[] = {"rhs_weap_m16a4_carryhandle_sighted", "RH_m9"}; // Weapons added to the unit.
-		respawnweapons[] = {"rhs_weap_m16a4_carryhandle_sighted", "RH_m9"}; // Weapons added to the unit. Should be identical to the linkedItems section
+		weapons[] = {"RH_hk416_des", "RH_m9", "Throw", "Put"}; // Weapons added to the unit.
+		respawnweapons[] = {"RH_hk416_des", "RH_m9", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
 		};
-		
-		class Blufor_TeamLeader_4 : Blufor_TeamLeader_1  {
+
+		class Blufor_TeamLeader_4 : Blufor_TeamLeader_1 {
 		scope = 2;
-		weapons[] = {"rhs_weap_m16a4_carryhandle_pmag_sighted", "RH_m9"}; // Weapons added to the unit.
-		respawnweapons[] = {"rhs_weap_m16a4_carryhandle_pmag_sighted", "RH_m9"}; // Weapons added to the unit. Should be identical to the linkedItems section
+		weapons[] = {"RH_hk416_des_sighted", "RH_m9", "Throw", "Put"}; // Weapons added to the unit.
+		respawnweapons[] = {"RH_hk416_des_sighted", "RH_m9", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
+		};
+
+		class Blufor_TeamLeader_5 : Blufor_TeamLeader_1 {
+		scope = 2;
+		weapons[] = {"CUP_arifle_Mk16_STD_sighted", "RH_m9c", "Throw", "Put"}; // Weapons added to the unit.
+		respawnweapons[] = {"CUP_arifle_Mk16_STD_sighted", "RH_m9c", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
+		};
+			
+		class Blufor_TeamLeader_6 : Blufor_TeamLeader_1 {
+		scope = 2;
+		weapons[] = {"CUP_arifle_Mk16_STD", "RH_m9c", "Throw", "Put"}; // Weapons added to the unit.
+		respawnweapons[] = {"CUP_arifle_Mk16_STD", "RH_m9c", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
+		};
+			
+		class Blufor_TeamLeader_7 : Blufor_TeamLeader_1 {
+		scope = 2;
+		weapons[] = {"RH_hk416_des", "RH_m9c", "Throw", "Put"}; // Weapons added to the unit.
+		respawnweapons[] = {"RH_hk416_des", "RH_m9c", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
+		};
+			
+		class Blufor_TeamLeader_8 : Blufor_TeamLeader_1 {
+		scope = 2;
+		weapons[] = {"RH_hk416_des_sighted", "RH_m9c", "Throw", "Put"}; // Weapons added to the unit.
+		respawnweapons[] = {"RH_hk416_des_sighted", "RH_m9c", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
+		};
+
+		class Blufor_TeamLeader_9 : Blufor_TeamLeader_1 {
+		scope = 2;
+		weapons[] = {"CUP_arifle_Mk16_STD_sighted", "RH_g17", "Throw", "Put"}; // Weapons added to the unit.
+		respawnweapons[] = {"CUP_arifle_Mk16_STD_sighted", "RH_g17", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
+		magazines[] = {M416_Mags_Blu, Standard_Grenades_Blu, G17_Mags_Blu}; //Magazines added to the unit.
+		Respawnmagazines[] = {M416_Mags_Blu, Standard_Grenades_Blu, G17_Mags_Blu}; //Magazines added to the unit upon respawn, should be the same as above.
+		};
+			
+		class Blufor_TeamLeader_10 : Blufor_TeamLeader_9 {
+		scope = 2;
+		weapons[] = {"CUP_arifle_Mk16_STD", "RH_g17", "Throw", "Put"}; // Weapons added to the unit.
+		respawnweapons[] = {"CUP_arifle_Mk16_STD", "RH_g17", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
+		};
+			
+		class Blufor_TeamLeader_11 : Blufor_TeamLeader_9 {
+		scope = 2;
+		weapons[] = {"RH_hk416_des", "RH_g17", "Throw", "Put"}; // Weapons added to the unit.
+		respawnweapons[] = {"RH_hk416_des", "RH_g17", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
+		};
+			
+		class Blufor_TeamLeader_12 : Blufor_TeamLeader_9 {
+		scope = 2;
+		weapons[] = {"RH_hk416_des_sighted", "RH_g17", "Throw", "Put"}; // Weapons added to the unit.
+		respawnweapons[] = {"RH_hk416_des_sighted", "RH_g17", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
 		};

@@ -33,6 +33,18 @@ _GrenadierVest = [
 "CUP_V_BAF_Osprey_Mk2_DDPM_Grenadier"
 ];
 
+_MedicVest = [
+"CUP_V_BAF_Osprey_Mk2_DDPM_Medic",
+"lbt_medical_mc",
+"lbt_medical_coy"
+];
+
+_LeaderVest = [
+"lbt_tl_coy",
+"lbt_tl_mc",
+"rhsusf_iotv_ocp_Squadleader"
+];
+
 _soldierfacewear = [
 "LBG_Shemagh_Tan",
 "L_Shemagh_Tan",
@@ -56,6 +68,11 @@ _soldierheadgear = [
 "TRYK_r_cap_tan_Glasses"
 ];
 
+_leaderheadgear = [
+"TRYK_H_Booniehat_MARPAT_Desert",
+"SP_Beret_Tan"
+];
+
 // lets strip them down
 _magazines = magazines _unit; 
 _items = items _unit; // Medkits, ToolKits etc. 
@@ -73,26 +90,40 @@ switch (_typeofUnit) do
     removeHeadgear _unit; _unit addHeadgear (_soldierheadgear call BIS_fnc_selectRandom); 
     removeVest _unit; _unit addVest (_soldiervest call BIS_fnc_selectRandom); 
     }; 
-	case "AT": 
+	case "at": 
     { 
 	removeUniform _unit; _unit forceAddUniform (_Uniforms call BIS_fnc_selectRandom); 
 	removeGoggles _unit; _unit addGoggles (_soldierfacewear call BIS_fnc_selectRandom); 
     removeHeadgear _unit; _unit addHeadgear (_soldierheadgear call BIS_fnc_selectRandom); 
     removeVest _unit; _unit addVest (_ATvest call BIS_fnc_selectRandom); 
     }; 
-	case "AR": 
+	case "ar": 
     { 
 	removeUniform _unit; _unit forceAddUniform (_Uniforms call BIS_fnc_selectRandom); 
 	removeGoggles _unit; _unit addGoggles (_soldierfacewear call BIS_fnc_selectRandom); 
     removeHeadgear _unit; _unit addHeadgear (_soldierheadgear call BIS_fnc_selectRandom); 
     removeVest _unit; _unit addVest (_ARvest call BIS_fnc_selectRandom); 
     }; 
-	case "Grenadier": 
+	case "grenadier": 
     { 
 	removeUniform _unit; _unit forceAddUniform (_Uniforms call BIS_fnc_selectRandom); 
 	removeGoggles _unit; _unit addGoggles (_soldierfacewear call BIS_fnc_selectRandom); 
     removeHeadgear _unit; _unit addHeadgear (_soldierheadgear call BIS_fnc_selectRandom); 
     removeVest _unit; _unit addVest (_GrenadierVest call BIS_fnc_selectRandom); 
+    }; 
+	case "medic": 
+    { 
+	removeUniform _unit; _unit forceAddUniform (_Uniforms call BIS_fnc_selectRandom); 
+	removeGoggles _unit; _unit addGoggles (_soldierfacewear call BIS_fnc_selectRandom); 
+    removeHeadgear _unit; _unit addHeadgear (_soldierheadgear call BIS_fnc_selectRandom); 
+    removeVest _unit; _unit addVest (_MedicVest call BIS_fnc_selectRandom); 
+    }; 
+	case "Leader": 
+    { 
+	removeUniform _unit; _unit forceAddUniform (_Uniforms call BIS_fnc_selectRandom); 
+	removeGoggles _unit; _unit addGoggles (_soldierfacewear call BIS_fnc_selectRandom); 
+    removeHeadgear _unit; _unit addHeadgear (_leaderheadgear call BIS_fnc_selectRandom); 
+    removeVest _unit; _unit addVest (_LeaderVest call BIS_fnc_selectRandom); 
     }; 
 	
 }; 
