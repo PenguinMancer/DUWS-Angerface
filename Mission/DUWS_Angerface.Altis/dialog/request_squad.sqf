@@ -171,29 +171,6 @@ _spawnPos = [(_spawnPos select 0)+25, _spawnPos select 1];
 
     case 7:  
     {
-    _cost = 12;
-    _grouptype = (configFile >> "CfgGroups" >> "West" >> "BLU_DUWS" >> "SpecOps" >> "BUS_DiverTeam");
-         if (commandpointsblu1 >= _cost) then 
-             {
-              _group = [_spawnPos, WEST, _grouptype, [], [], [0.9,1]] call BIS_fnc_spawnGroup;  // these have special AI skill range
-              player hcsetgroup [_group,""];
-              commandpointsblu1 = commandpointsblu1 - _cost;
-              ctrlSetText [1000, format["%1",commandpointsblu1]];
-			  DUWS_number_divers = DUWS_number_divers + 1;
-			  _group setGroupId [format["Divers team %1",DUWS_number_divers]];
-              hint "Squad ready !\nAccess it with [L.CTRL - SPACE]";
-				{
-				[_x] remoteExecCall ["Soldiers_fnc_RandomBluforIdentityDiver", 0, true];
-				} forEach (units _group);
-             } 
-          else 
-             {
-               hint "Not enough command points";
-             };
-    };
-
-    case 8:  
-    {
     _cost = 8;
     _grouptype = (configFile >> "CfgGroups" >> "West" >> "BLU_DUWS" >> "Infantry" >> "BUS_SniperTeam");
          if (commandpointsblu1 >= _cost) then 
@@ -215,7 +192,7 @@ _spawnPos = [(_spawnPos select 0)+25, _spawnPos select 1];
              };
     };
 
-    case 9:  
+    case 8:  
     {
     _cost = 10;
     _grouptype = (configFile >> "CfgGroups" >> "West" >> "BLU_DUWS" >> "Support" >> "BUS_Support_CLS");
@@ -240,7 +217,7 @@ _spawnPos = [(_spawnPos select 0)+25, _spawnPos select 1];
              };
     };
     
-    case 10:  
+    case 9:  
     {
     _cost = 28;
     _grouptype = (configFile >> "CfgGroups" >> "West" >> "BLU_DUWS" >> "Motorized" >> "BUS_MotInf_Team");
@@ -263,7 +240,7 @@ _spawnPos = [(_spawnPos select 0)+25, _spawnPos select 1];
              };
     };
     
-    case 11:  
+    case 10:  
     {
     _cost = 36;
     _grouptype = (configFile >> "CfgGroups" >> "West" >> "BLU_DUWS" >> "Mechanized" >> "BUS_MechInfSquad");
@@ -286,7 +263,7 @@ _spawnPos = [(_spawnPos select 0)+25, _spawnPos select 1];
              };
     };
 	
-	case 12:  
+	case 11:  
     {
     _cost = 40;
     _grouptype = (configFile >> "CfgGroups" >> "West" >> "BLU_DUWS" >> "Armored" >> "BUS_TankSection");
@@ -309,7 +286,7 @@ _spawnPos = [(_spawnPos select 0)+25, _spawnPos select 1];
              };
     };
 	
-	case 13:  
+	case 12:  
     {
     _cost = 40;
     _grouptype = (configFile >> "CfgGroups" >> "West" >> "BLU_DUWS" >> "Armored" >> "BUS_TankPlatoon_AA");

@@ -15,11 +15,10 @@ _index = lbAdd [2100, "Medic(4CP)"];                     // 4
 _index = lbAdd [2100, "AA Specialist(4CP)"];             // 5
 _index = lbAdd [2100, "Repair Specialist(4CP)"];         // 6
 _index = lbAdd [2100, "AT Specialist(4CP)"];             // 7
-_index = lbAdd [2100, "SF Diver(3CP)"];                  // 8
-_index = lbAdd [2100, "Marksman(3CP)"];                  // 9
-_index = lbAdd [2100, "Sniper(4CP)"]; 	                 // 10
-_index = lbAdd [2100, "Spotter(3CP)"];                   // 11
-_index = lbAdd [2100, "Explosive specialist(4CP)"];      // 12
+_index = lbAdd [2100, "Marksman(3CP)"];                  // 8
+_index = lbAdd [2100, "Sniper(4CP)"]; 	                 // 9
+_index = lbAdd [2100, "Spotter(3CP)"];                   // 10
+_index = lbAdd [2100, "Explosive specialist(4CP)"];      // 11
 
 lbSetCurSel [2100, 0];
 
@@ -31,13 +30,12 @@ _index0 = lbAdd [2101, "AT Team(12CP)"];                   // 3
 _index0 = lbAdd [2101, "AA Team(15CP)"];                   // 4
 _index0 = lbAdd [2101, "SF Recon Team(12CP)"];             // 5
 _index0 = lbAdd [2101, "SF Recon Squad(20CP)"];            // 6
-_index0 = lbAdd [2101, "Divers Team(12CP)"];               // 7
-_index0 = lbAdd [2101, "Sniper Team(8CP)"];                // 8
-_index0 = lbAdd [2101, "Medical Team(10CP)"];              // 9
-_index0 = lbAdd [2101, "Motorized scouts(28CP)"];          // 10
-_index0 = lbAdd [2101, "Mechanized squad(36CP)"];          // 11
-_index0 = lbAdd [2101, "Tank Section Slammer(40CP)"];      // 12
-_index0 = lbAdd [2101, "Tank Platoon AA(40CP)"];           // 13
+_index0 = lbAdd [2101, "Sniper Team(8CP)"];                // 7
+_index0 = lbAdd [2101, "Medical Team(10CP)"];              // 8
+_index0 = lbAdd [2101, "Motorized scouts(28CP)"];          // 9
+_index0 = lbAdd [2101, "Mechanized squad(36CP)"];          // 10
+_index0 = lbAdd [2101, "Tank Section Slammer(40CP)"];      // 11
+_index0 = lbAdd [2101, "Tank Platoon AA(40CP)"];           // 12
 
 
 lbSetCurSel [2101, 0];

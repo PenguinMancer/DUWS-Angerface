@@ -42,7 +42,7 @@ class CfgWorlds {
 				General = "General";
 			};
 			class LastNames {
-				Moreau = "Moreau";
+				Toutain = "Toutain";
 			};
 		};
 		class DUWS_Sabbers_Name {

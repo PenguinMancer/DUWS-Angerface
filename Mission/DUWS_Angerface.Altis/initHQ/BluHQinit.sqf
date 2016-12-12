@@ -56,11 +56,7 @@ hq_blu1 = _hq;
 publicVariable "hq_blu1";
 _hq setpos [_hqblu select 0, _hqblu select 1, .59];
 _handle = [hq_blu1] execVM "initHQ\HQaddactions.sqf";
-removeAllWeapons _hq;
-removeAllItems _hq;
-removeAllAssignedItems _hq;
-_hq setFace "Zee_White_Head_04";
-_hq setSpeaker "rhs_Male02RUS";
+[_hq] remoteExecCall ["Soldiers_fnc_RandomBluforIdentityGeneral", 0, true];
 
 //GUARDS
 _handle = [getpos hq_blu1] execVM "initHQ\guards.sqf";

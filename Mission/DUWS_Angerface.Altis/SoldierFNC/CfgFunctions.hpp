@@ -26,7 +26,7 @@ class CFGfunctions
 		class GetOpforVehAir {};
 		class GetOpforVehGround {};
 		class RandomBluforIdentity {};
-		class RandomBluforIdentityDiver {};
+		class RandomBluforIdentityGeneral {};
 		class RandomBluforIdentityPilot {};
 		class RandomOpforIdentity {};
 		class RandomOpforIdentityOfficer {};

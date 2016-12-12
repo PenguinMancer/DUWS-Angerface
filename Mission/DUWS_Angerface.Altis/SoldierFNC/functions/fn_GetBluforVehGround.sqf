@@ -1,9 +1,11 @@
 _vehicles = [
-"CUP_B_MCV80_GB_D_SLAT_custom", 
-"RHS_M2A2_BUSKI_custom", 
-"CUP_B_HMMWV_M2_GPK_USA_custom", 
-"rhsusf_m1a2sep1tuskid_usarmy_custom", 
-"I_mas_cars_LR_soft_Stinger_custom"
+"rhsusf_m1025_d_DUWS", 
+"rhsusf_m1025_d_m2_DUWS", 
+"CUP_B_M1128_MGS_Desert_DUWS", 
+"CUP_B_Ridgback_HMG_GB_D_DUWS", 
+"CUP_B_FV432_Bulldog_GB_D_RWS_DUWS", 
+"CUP_B_M1A1_DES_USMC_DUWS", 
+"RHS_M2A3_BUSKIII_DUWS"
 ];
 
 _returnedvehicle = _vehicles call BIS_fnc_selectRandom;

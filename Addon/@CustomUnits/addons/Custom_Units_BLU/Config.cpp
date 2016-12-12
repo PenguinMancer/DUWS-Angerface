@@ -1,4 +1,3 @@
-class DefaultEventhandlers;
 class CfgPatches {
 	class Custom_DUWS_Blu {
 		units[] = {
@@ -11,6 +10,7 @@ class CfgPatches {
 			"Blufor_Autorifleman_3", 
 			"Blufor_Autorifleman_4", 
 			"Blufor_Autorifleman_5",
+			"Blufor_Autorifleman_6",
 			"Blufor_Grenadier_1", 
 			"Blufor_Grenadier_2", 
 			"Blufor_Grenadier_3", 
@@ -22,6 +22,14 @@ class CfgPatches {
 			"Blufor_Medic_2", 
 			"Blufor_Medic_3", 
 			"Blufor_Medic_4", 
+			"Blufor_Medic_5", 
+			"Blufor_Medic_6", 
+			"Blufor_Medic_7", 
+			"Blufor_Medic_8", 
+			"Blufor_Medic_9", 
+			"Blufor_Medic_10", 
+			"Blufor_Medic_11", 
+			"Blufor_Medic_12", 
 			"Blufor_Soldier_1", 
 			"Blufor_Soldier_2", 
 			"Blufor_Soldier_3", 
@@ -34,33 +42,18 @@ class CfgPatches {
 			"Blufor_Soldier_10",
 			"Blufor_Soldier_11",
 			"Blufor_Soldier_12",
-			"Blufor_Soldier_13", 
-			"Blufor_Soldier_14", 
-			"Blufor_Soldier_15", 
-			"Blufor_Soldier_16",
-			"Blufor_Soldier_17", 
-			"Blufor_Soldier_18", 
-			"Blufor_Soldier_19", 
-			"Blufor_Soldier_20", 
-			"Blufor_Soldier_21",
-			"Blufor_Soldier_22", 
-			"Blufor_Soldier_23", 
-			"Blufor_Soldier_24", 
-			"Blufor_Soldier_25", 
-			"Blufor_Soldier_26",
-			"Blufor_Soldier_27",
-			"Blufor_Soldier_28",
-			"Blufor_Soldier_29", 
-			"Blufor_Soldier_30", 
-			"Blufor_Soldier_31", 
-			"Blufor_Soldier_32",
 			"Blufor_TeamLeader_1", 
 			"Blufor_TeamLeader_2", 
 			"Blufor_TeamLeader_3", 
 			"Blufor_TeamLeader_4",
-			"Blufor_Diver_1", 
-			"Blufor_Diver_exp_1", 
-			"Blufor_Diver_Teamleader_1", 
+			"Blufor_TeamLeader_5", 
+			"Blufor_TeamLeader_6", 
+			"Blufor_TeamLeader_7", 
+			"Blufor_TeamLeader_8",
+			"Blufor_TeamLeader_9", 
+			"Blufor_TeamLeader_10", 
+			"Blufor_TeamLeader_11", 
+			"Blufor_TeamLeader_12",
 			"Blufor_Recon_1", 
 			"Blufor_Recon_Marksman_1", 
 			"Blufor_Recon_LAT_1", 
@@ -133,8 +126,8 @@ class CfgPatches {
 
 class CfgFunctions {
 	class BLU {
-		class common {
-			class InitUnit {
+		class BLUcommon {
+			class BLUInitUnit {
 				file = "\Custom_DUWS_Blu\scripts\InitBluUnit.sqf";
 			};
 		};
@@ -187,7 +180,6 @@ class CfgVehicles {
 		//All units done before here
 
 		//Group Units
-		#include "Blu_divers.hpp"
 		#include "Blu_recon.hpp"
 		
 		//Players
@@ -197,13 +189,13 @@ class CfgVehicles {
 		
 		class Blufor_General : B_DUWS_base_F  {
 		scope = 2;
-		displayName = "General Moreau"; // In-game name of unit
+		displayName = "General Toutain"; // In-game name of unit
 		faction = "BLU_DUWS"; // Puts unit under new faction
 		genericNames = "DUWS_General_Name";
-		uniformClass = "TRYK_U_B_NATO_UCP_R_CombatUniform";  // Uniform Class
+		uniformClass = "CUP_U_B_USMC_FROG1_DMARPAT";  // Uniform Class
 		backpack = ""; // Backpack Class
-		linkedItems[] = {"SP_Beret2_Green", "TRYK_V_PlateCarrier_ACU", "G_Aviator"}; // Item's added to the unit. 
-		respawnLinkedItems[] = {"SP_Beret2_Green", "TRYK_V_PlateCarrier_ACU", "G_Aviator"}; // Item's added to the unit. Should be identical to the linkedItems section.
+		linkedItems[] = {"H_Bandanna_sgg", "CUP_V_B_MTV_noCB", "G_Aviator"}; // Item's added to the unit. 
+		respawnLinkedItems[] = {"H_Bandanna_sgg", "CUP_V_B_MTV_noCB", "G_Aviator"}; // Item's added to the unit. Should be identical to the linkedItems section.
 		weapons[] = {}; // Weapons added to the unit.
 		respawnweapons[] = {}; // Weapons added to the unit. Should be identical to the linkedItems section
 		magazines[] = {}; //Magazines added to the unit.
@@ -417,29 +409,53 @@ class CfgVehicles {
 		
 		//Blufor Vehicles
 		
-		class CUP_B_MCV80_GB_D_SLAT;
-		class CUP_B_MCV80_GB_D_SLAT_custom : CUP_B_MCV80_GB_D_SLAT {
+		class rhsusf_m1025_d;
+		class rhsusf_m1025_d_DUWS : rhsusf_m1025_d {
 		crew = "Blufor_Soldier_1";
+		typicalCargo[] = {"Blufor_Soldier_1"};
+		unloadInCombat = true;
 		};
 		
-		class RHS_M2A2_BUSKI;
-		class RHS_M2A2_BUSKI_custom : RHS_M2A2_BUSKI {
+		class rhsusf_m1025_d_m2;
+		class rhsusf_m1025_d_m2_DUWS : rhsusf_m1025_d_m2 {
 		crew = "Blufor_Soldier_1";
+		typicalCargo[] = {"Blufor_Soldier_1"};
+		unloadInCombat = false;
 		};
 		
-		class CUP_B_HMMWV_M2_GPK_USA;
-		class CUP_B_HMMWV_M2_GPK_USA_custom : CUP_B_HMMWV_M2_GPK_USA {
+		class CUP_B_M1128_MGS_Desert;
+		class CUP_B_M1128_MGS_Desert_DUWS : CUP_B_M1128_MGS_Desert {
 		crew = "Blufor_Soldier_1";
+		typicalCargo[] = {"Blufor_Soldier_1"};
+		unloadInCombat = false;
 		};
 		
-		class rhsusf_m1a2sep1tuskid_usarmy;
-		class rhsusf_m1a2sep1tuskid_usarmy_custom : rhsusf_m1a2sep1tuskid_usarmy {
+		class CUP_B_Ridgback_HMG_GB_D;
+		class CUP_B_Ridgback_HMG_GB_D_DUWS : CUP_B_Ridgback_HMG_GB_D {
 		crew = "Blufor_Soldier_1";
+		typicalCargo[] = {"Blufor_Soldier_1"};
+		unloadInCombat = false;
 		};
 		
-		class I_mas_cars_LR_soft_Stinger;
-		class I_mas_cars_LR_soft_Stinger_custom : I_mas_cars_LR_soft_Stinger {
+		class CUP_B_FV432_Bulldog_GB_D_RWS;
+		class CUP_B_FV432_Bulldog_GB_D_RWS_DUWS : CUP_B_FV432_Bulldog_GB_D_RWS {
 		crew = "Blufor_Soldier_1";
+		typicalCargo[] = {"Blufor_Soldier_1"};
+		unloadInCombat = false;
+		};
+		
+		class CUP_B_M1A1_DES_USMC;
+		class CUP_B_M1A1_DES_USMC_DUWS : CUP_B_M1A1_DES_USMC {
+		crew = "Blufor_Soldier_1";
+		typicalCargo[] = {"Blufor_Soldier_1"};
+		unloadInCombat = false;
+		};
+		
+		class RHS_M2A3_BUSKIII;
+		class RHS_M2A3_BUSKIII_DUWS : RHS_M2A3_BUSKIII {
+		crew = "Blufor_Soldier_1";
+		typicalCargo[] = {"Blufor_Soldier_1"};
+		unloadInCombat = false;
 		};
 };
 

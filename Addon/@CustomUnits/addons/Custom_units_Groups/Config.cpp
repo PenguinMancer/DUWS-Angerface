@@ -362,40 +362,6 @@ class CfgGroups
 					};
 				};
 			};
-			class SpecOps {
-				name = "Special Forces";
-
-				class BUS_DiverTeam {
-					name = "Diver Team";
-					side = 1;
-					faction = "BLU_DUWS";
-					icon = "\A3\ui_f\data\map\markers\nato\b_inf.paa";
-					class Unit0 {
-						side = 1;
-						vehicle = "Blufor_Diver_Teamleader_1";
-						rank = "SERGEANT";
-						position[] = {0, 0, 0};
-					};
-					class Unit1 {
-						side = 1;
-						vehicle = "Blufor_Diver_exp_1";
-						rank = "CORPORAL";
-						position[] = {5, -5, 0};
-					};
-					class Unit2 {
-						side = 1;
-						vehicle = "Blufor_Diver_1";
-						rank = "PRIVATE";
-						position[] = {-5, -5, 0};
-					};
-					class Unit3 {
-						side = 1;
-						vehicle = "Blufor_Diver_1";
-						rank = "PRIVATE";
-						position[] = {10, -10, 0};
-					};
-				};
-			};
 			class Support {
 				name = "Support Infantry";
 				

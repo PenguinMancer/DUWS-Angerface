@@ -41,7 +41,7 @@ _spawnPos = [_posplayer, 400,500,10,2,5,0,[],[[0,0],[0,0]]] call BIS_fnc_findSaf
 // create the boat
 _helo = createVehicle ["B_Lifeboat", _spawnPos,[], 0, "FLY"];
 _helogroup = createGroup west; 
-_pilot = _helogroup createUnit ["B_diver_F", [5,5,5], [], 0, "NONE"];
+_pilot = _helogroup createUnit ["Blufor_Soldier_1", [5,5,5], [], 0, "NONE"];
 
 _helo addAction ["<t color='#00b7ff'>Tell the driver where to go</t>", "support\taxi\mapclickboat.sqf", "", 0, true, true, "", "vehicle _this == _target"];
 _pilot setcaptive true;

@@ -145,23 +145,7 @@ switch (_index) do
                hint "Not enough command points";
              };
     }; 
-    case 8:
-    {
-         if (commandpointsblu1 >= 3) then 
-             {
-               hint "Unit ready !";
-               commandpointsblu1 = commandpointsblu1 - 3;
-               ctrlSetText [1000, format["%1",commandpointsblu1]];
-               _group = group player ;
-			   _unit = _group createUnit ["Blufor_Diver_1", _spawnpos, [], 0, "FORM"];
-			   [_unit] remoteExecCall ["Soldiers_fnc_RandomBluforIdentityDiver", 0, true];
-             } 
-          else 
-             {
-               hint "Not enough command points";
-             };
-    }; 
-	    case 9:
+	case 8:
     {
          if (commandpointsblu1 >= 3) then 
              {
@@ -177,7 +161,7 @@ switch (_index) do
                hint "Not enough command points";
              };
     }; 
-    case 10:
+    case 9:
     {
          if (commandpointsblu1 >= 4) then 
              {
@@ -193,7 +177,7 @@ switch (_index) do
                hint "Not enough command points";
              };
     }; 
-    case 11:
+    case 10:
     {
          if (commandpointsblu1 >= 3) then 
              {
@@ -209,7 +193,7 @@ switch (_index) do
                hint "Not enough command points";
              };
     }; 	
-    case 12:
+    case 11:
     {
          if (commandpointsblu1 >= 4) then 
              {

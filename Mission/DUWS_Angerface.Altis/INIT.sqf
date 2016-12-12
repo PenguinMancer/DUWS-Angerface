@@ -192,7 +192,7 @@ setDate [2016, 8, 6, (paramsArray select 2), 1];
 _getsize_script = [player] spawn Recurring_fnc_getMapSize;
 
 //enable ZBE units caching
-ZbeCacheStatus = paramsArray select 7;
+ZbeCacheStatus = paramsArray select 8;
 
 if (ZbeCacheStatus == 1) then {
 	if (isServer) then {[1000,-1,false,100,1000,1000]execvm "zbe_cache\main.sqf"};
@@ -208,6 +208,7 @@ if (isMultiplayer) then {
 	TrkAllPlayer = paramsArray select 4; //disbale/enable player markers
 	UseSiren = paramsArray select 5;
 	MisEndCond = paramsArray select 6;
+	Timescale = paramsArray select 7;
 
 	if (AttackHeli == 0) then {Attack = false};
 	if (AttackHeli == 1) then {Attack = true};
@@ -218,6 +219,9 @@ if (isMultiplayer) then {
 	if (support_halo_available) then {hq_blu1 addAction ["<t color='#15ff00'>HALO Group (5CP)</t>", "COB_HALO\grphalo.sqf", "", 0, true, true, "", "_this == player"]};
 	if (support_satcom_available) then {_hq addAction ["<t color='#ff0066'>SATCOM</t>", {call PXS_startSatellite;}, "", 0, true, true, "", "_this == player"];};
 
+	_timemult = Timescale;
+	setTimeMultiplier _timemult;
+	
 	PlayerKilledEH = player addEventHandler ["killed", {commandpointsblu1 = commandpointsblu1 - DUWSMP_CP_death_cost; publicVariable "commandpointsblu1"}];
 	"support_specialized_training_available" addPublicVariableEventHandler {lbSetColor [2103, 11, [0, 1, 0, 1]];};
 	"commandpointsblu1" addPublicVariableEventHandler {ctrlSetText [1000, format["%1",commandpointsblu1]];}; // change the shown CP for request dialog

@@ -47,7 +47,12 @@ class Params {
         texts[] = {"Cap All Zones/Officer Killed","Cap All Zones/Officer & Players Killed"};
         default = 0;
     };
-
+   class TimeScale {
+	   title = "Timescale:";
+       values[] = {1,2,3,4,5,6,7,8,9,10,11,12};
+       texts[] = {"Number of hours that pass in game time, for every real time hour."};
+       default = 1;
+   };
    class ZbeCache {
         title = "Zbe Cache status:";
         values[] = {0,1};
