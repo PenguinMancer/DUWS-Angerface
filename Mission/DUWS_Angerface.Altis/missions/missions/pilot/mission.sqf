@@ -38,45 +38,79 @@ str(_markername2) setMarkerAlpha 0.5;
 // CREATE WRECK
 _choppa = "Land_Wreck_Heli_Attack_01_F" createVehicle (_missionpos);
 
-_group = createGroup west; // CREATE PILOT
-_pilot = _group createUnit ["Blufor_Pilot_Mission", [((_missionpos select 0)+1), ((_missionpos select 1)+3)], [], 0, "FORM"];
+_group = createGroup west;
 
-[_pilot] remoteExecCall ["Soldiers_fnc_RandomBluforIdentityPilot", 0, true];
-_pilot setcaptive true; 
-_pilot switchMove "acts_CrouchingIdleRifle01";
+_RescueSoldier1 = [] call Soldiers_fnc_GetBluforSoldier;
+_RescueSoldier2 = [] call Soldiers_fnc_GetBluforSoldier;
+_RescueSoldier3 = [] call Soldiers_fnc_GetBluforSoldier;
 
+_soldier1 = _group createUnit [_RescueSoldier1, [((_missionpos select 0)+1), ((_missionpos select 1)+3)], [], 0, "FORM"];
+_soldier2 = _group createUnit [_RescueSoldier2, [((_missionpos select 0)+1), ((_missionpos select 1)+3)], [], 0, "FORM"];
+_soldier3 = _group createUnit [_RescueSoldier3, [((_missionpos select 0)+1), ((_missionpos select 1)+3)], [], 0, "FORM"];
+
+_soldier1 setcaptive true; 
+_soldier2 setcaptive true; 
+_soldier3 setcaptive true; 
+_soldier1 switchMove "acts_CrouchingIdleRifle01";
+_soldier2 switchMove "acts_CrouchingIdleRifle01";
+_soldier3 switchMove "acts_CrouchingIdleRifle01";
+
+{
+[_x] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
+} forEach (units _group);
 
 // TASK AND NOTIFICATION
 _tasklocation = getMarkerPos str(_markername);
 
-[west,["taskhandle"],["Rescue the pilot<br/>Find Hawk and bring him back to HQ safely<br/><br/>Men, grave news. Yesterday at 0900 a G4S aircraft carrying supplies and backup troops to you was shot down somewhere in the mountains. The Pilot, codenamed Hawk, survived the crash and is radioing in for assistance Now, Hawk’s tough, as tough as a two-dollar steak, but in the jungle lies tigers. Find him and bring him back to HQ. I won’t leave one of my own bleeding on the field.",_mission_name,""],_tasklocation,true,2,true,"heal"] call BIS_fnc_taskCreate;
+[west,["taskhandle"],["Rescue the Patrol<br/>Find the downed patrol and bring them home<br/><br/>Black hawk down stuff.",_mission_name,""],_tasklocation,true,2,true,"heal"] call BIS_fnc_taskCreate;
 
 ["TaskAssigned",["",_mission_name]] call bis_fnc_showNotification;
 
-waitUntil {sleep 1; (player distance _pilot)<6 OR !(alive _pilot)};  // PLAYER IS WITH THE PILOT --
+rescued = false;
+rescuedreturn = false;
 
+// CREATE TRIGGER ZONES
+_missiontrg=createTrigger["EmptyDetector",_MissionPos];
+_missiontrg setTriggerArea[10,10,0,false];
+_missiontrg setTriggerActivation["WEST","PRESENT",false];
+_missiontrg setTriggerStatements["this","rescued = true;",""];
+_missiontrg setTriggerTimeout [10, 10, 10, true ];  
 
-if (!(alive _pilot)) exitWith { // CHECK IF PILOT ALIVE
+waitUntil {sleep 1; (rescued)};  
+
+if (!(alive _soldier1) && !(alive _soldier2) && !(alive _soldier3)) exitWith { // CHECK IF PATROL ALIVE
 deleteMarker str(_markername2);
 deleteMarker str(_markername);
 
 ["taskhandle"] call BIS_fnc_deleteTask;
-["TaskFailed",["","The pilot is dead"]] call bis_fnc_showNotification;
+["TaskFailed",["","The patrol is dead"]] call bis_fnc_showNotification;
 }; // END IF FAILED
 
-_pilot setcaptive false;
-_pilot switchMove "AidlPknlMstpSrasWrflDnon_AI";
-[_pilot] joinSilent player;
-titleText ["Thanks sir, this place is crawling with OPFOR forces, bring me back to base", "PLAIN DOWN"]; 
+// JOIN PLAYER
+_soldier1 setcaptive false;
+_soldier2 setcaptive false;
+_soldier3 setcaptive false;
+_soldier1 switchMove "AmovPpneMstpSnonWnonDnon";
+_soldier2 switchMove "AmovPpneMstpSnonWnonDnon";
+_soldier3 switchMove "AmovPpneMstpSnonWnonDnon";
+[_soldier1, _soldier2, _soldier3] joinSilent player;
+titleText ["Thanks for the rescue, can you give us an escort to base?", "PLAIN DOWN"]; 
 
-waitUntil {sleep 1; (_pilot distance _initpos)<50 OR !(alive _pilot)};  // PLAYER IS AT BASE WITH PILOT OR PILOT DEAD --
+// CREATE TRIGGER ZONES
+_missiontrg2=createTrigger["EmptyDetector",_initpos];
+_missiontrg2 setTriggerArea[50,50,0,false];
+_missiontrg2 setTriggerActivation["WEST","PRESENT",false];
+_missiontrg2 setTriggerStatements["this","rescuedreturn = true;",""];
+_missiontrg2 setTriggerTimeout [5, 5, 5, true ];  
 
-if (!(alive _pilot)) exitWith { // CHECK IF PILOT ALIVE
+waitUntil {sleep 1; (rescuedreturn)};  
+
+if (!(alive _soldier1) && !(alive _soldier2) && !(alive _soldier3)) exitWith { // CHECK IF PATROL ALIVE
 deleteMarker str(_markername2);
 deleteMarker str(_markername);
 
 ["taskhandle"] call BIS_fnc_deleteTask;
-["TaskFailed",["","The pilot is dead"]] call bis_fnc_showNotification;
+["TaskFailed",["","The patrol is dead"]] call bis_fnc_showNotification;
 }; // END IF FAILED
 
 // remove markers
@@ -88,11 +122,16 @@ deleteMarker str(_markername);
 sleep 1;
 
 titleText ["Home, sweet home! Thanks for the rescue.", "PLAIN DOWN"];
-deleteVehicle _pilot;
+deleteVehicle _soldier1;
+deleteVehicle _soldier2;
+deleteVehicle _soldier3;
+rescued = false;
+rescuedreturn = false;
+deleteVehicle _missiontrg;
+deleteVehicle _missiontrg2;
 
 // Give cookies  (bonus & notifications)
 _reward = [_cpreward, _apreward, _appenalty, _mission_name] execvm "missions\mission_reward.sqf";
-
 
 // ADD PERSISTENT STAT
 _addmission = call persistent_fnc_incrementCompletedMissions;

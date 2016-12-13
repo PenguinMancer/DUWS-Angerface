@@ -3,7 +3,7 @@ _allFound = false;
 _counter = 0;
 
 if (isnil ("Mission_timeout_request")) then {Mission_timeout_request = true;};
-if (!Mission_timeout_request) exitWith {PAPABEAR=[West,"HQ"]; PAPABEAR SideChat "We don't have any other missions for you right now, try again in 10 minutes";};
+if (!Mission_timeout_request) exitWith {PAPABEAR=[West,"HQ"]; PAPABEAR SideChat "We don't have any other missions for you right now, try again in 5 minutes";};
 if (!((getPlayerUID player) in [LeaderUID])) exitWith {hint "Only the host can request side missions for now"};
 if (officedead) exitWith {hint "Your commanding officer is dead, so there are no side-missions allowed!"};
 
@@ -392,9 +392,10 @@ if (_found_dist_away) then {};
         _radius = 300;
         MissionNameCase18 = call Recurring_fnc_generateSideMissionName;
 		
-		_towns = nearestLocations [getPosATL hq_blu1, ["NameVillage","NameCity","NameCityCapital"], 25000];
-
-		_RandomTownPosition = position (_towns select (floor (random (count _towns))));
+		_towns = nearestLocations [getPosATL hq_blu1, ["NameVillage","NameCity","NameCityCapital"], half_of_map];
+		_Chosentown = _towns call BIS_fnc_selectRandom;
+		
+		_RandomTownPosition = position (_Chosentown);
 		
         PosOfCase18Mission = _RandomTownPosition;
         
@@ -433,39 +434,3 @@ _array_of_missions,                                                             
 1,                                                                            // 6: NUMBER - value in range <0-1> defining weather on strategic map (i.e. density of clouds)
 _isNight                                                                         // 7: BOOL - true for night version of strategic map (darker with blue tone)
 ] call BIS_fnc_strategicMapOpen;
-
-/*
-Parameter(s):
-		0: DISPLAY - parent display. When empty, mission display is used.
-		1: ARRAY - default view position in format [x,y,y] or [x,y]
-		2: ARRAY - list of missions in format:
-			0: ARRAY - mission position in format [x,y,y] or [x,y]
-			1: CODE - expression executed when user clicks on mission icon
-			2: STRING - mission name
-			3: STRING - short description
-			4: STRING - name of mission's player
-			5: STRING - path to overview image
-			6: NUMBER - size multiplier, 1 means default size
-			7: ARRAY - parameters for the -on click- code; referenced from the script as (_this select 9)
-		3: ARRAY - list of ORBAT groups in format:
-			0: ARRAY - group position in format [x,y,y] or [x,y]
-			1: CONFIG - preview CfgORBAT group
-			2: CONFIG - topmost displayed CfgORBAT group
-			3: ARRAY - list of allowed tags
-			4: NUMBER - maximum number of displayed tiers
-		4: ARRAY - list of markers revealed in strategic map (will be hidden when map is closed)
-		5: ARRAY - list of custom images in format:
-			0: STRING - texture path
-			1: ARRAY - color in format [R,G,B,A]
-			2: ARRAY - image position
-			3: NUMBER - image width (in metres)
-			4: NUMBER - image height (in metres)
-			5: NUMBER - image angle (in degrees)
-			6: STRING - text displayed next to the image
-			7: BOOL - true to display shadow
-		6: NUMBER - value in range <0-1> defining weather on strategic map (i.e. density of clouds)
-		7: BOOL - true for night version of strategic map (darker with blue tone)
-
-	Returns:
-	DISPLAY - RscDisplayStrategicMap
-	*/

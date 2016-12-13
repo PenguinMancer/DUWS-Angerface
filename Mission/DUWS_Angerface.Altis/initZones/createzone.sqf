@@ -81,9 +81,15 @@ _fortified = _prefab_array select 1;
 _path = _prefab_array select 2;
 
 if (_prefab) then {
-_prefab_create = [_trigger] execVM _path;
-str(_markername) setMarkerText _place;
+	_prefabspot = [_trigger, 0,25,20,0,0.2,0,[],[[0,0],[0,0]]] call BIS_fnc_findSafePos;
+	if (0 == _prefabspot select 0 && 0 == _prefabspot select 1) then {
+		//If our safe position is empty, it ain't safe.
+	} else {
+		_prefabplace = [_prefabspot] execVM _path;						//A safe location was found, so we spawn the prefab, and it's patrol.
+		str(_markername) setMarkerText _place;
+	};
 };
+
 // CREATE ZONE NOTIFICATION TRIGGER
 _trg3=createTrigger["EmptyDetector",_trigger];
 _trg3 triggerAttachVehicle [player];

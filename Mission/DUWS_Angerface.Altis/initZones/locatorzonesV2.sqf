@@ -69,19 +69,19 @@ for [{_i=1}, {_i<=zones_number}, {_i=_i+1}] do  // BEGIN "FOR" LOOP --
                 _missionPos = [round(_missionPos select 0),round(_missionPos select 1)];
 				
                 if (type (_nearestLocation) == "NameVillage") then {//_generatezonescript = Name,Point Val ( (avg. of w + h) /10),w,h,position,not fortified(?),prefab
-                _generatezonescript = [format ["%1",text (_nearestLocation)],_points_zone,_zone_radius,_zone_radius,_missionPos,_fortified,false,false] execvm "initZones\createzone.sqf";
+                _generatezonescript = [format ["%1",text (_nearestLocation)],_points_zone,_zone_radius,_zone_radius,_missionPos,_fortified,true,false] execvm "initZones\createzone.sqf";
                 player globalChat "Village Zone location accepted!";
                 player globalChat format["Generating zone #%1",_i];
                 waituntil {scriptdone _generatezonescript};
                 };
                 if (type (_nearestLocation) == "NameCity") then {//That doesn't even clarify that well, however.
-                _generatezonescript = [format ["%1",text (_nearestLocation)],_points_zone,_zone_radius,_zone_radius,_missionPos,_fortified,false,false] execvm "initZones\createzone.sqf";
+                _generatezonescript = [format ["%1",text (_nearestLocation)],_points_zone,_zone_radius,_zone_radius,_missionPos,_fortified,true,false] execvm "initZones\createzone.sqf";
                 player globalChat "City Zone location accepted!";
                 player globalChat format["Generating zone #%1",_i];
                 waituntil {scriptdone _generatezonescript};
                 };
                 if (type (_nearestLocation) == "NameCityCapital") then {//I just want to apologize to whoever has to read this - I regret nothing.
-                _generatezonescript = [format ["%1",text (_nearestLocation)],_points_zone,_zone_radius,_zone_radius,_missionPos,_fortified,false,false] execvm "initZones\createzone.sqf";
+                _generatezonescript = [format ["%1",text (_nearestLocation)],_points_zone,_zone_radius,_zone_radius,_missionPos,_fortified,true,false] execvm "initZones\createzone.sqf";
                 player globalChat "Capital Zone location accepted!";
                 player globalChat format["Generating zone #%1",_i];
                 waituntil {scriptdone _generatezonescript};

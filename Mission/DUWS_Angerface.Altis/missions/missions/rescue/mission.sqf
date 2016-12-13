@@ -57,9 +57,7 @@ _tasklocation = getMarkerPos str(_markername);
 
 ["TaskAssigned",["",_mission_name]] call bis_fnc_showNotification;
 
-call compile format ["%1 = taskhandle",_VARtaskgeneratedName]; // create variable using the generated name and inject taskhandle into it
-
-rescued = false; publicVariable "rescued";
+rescued = false;
 
 // CREATE TRIGGER ZONES
 _trg=createTrigger["EmptyDetector",_MissionPos];

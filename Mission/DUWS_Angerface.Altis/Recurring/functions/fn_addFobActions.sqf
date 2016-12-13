@@ -10,6 +10,6 @@ _fob addaction ["<t color='#15ff00'>FOB/Teleport</t>","dialog\fob\FOBmanageropen
 _fob addaction ["<t color='#99ff00'>REQUESTS MENU>></t>","dialog\request_fob.sqf", "", 6, true, true, "", "_this == player"];
 _fob addaction ["<t color='#ffb700'>Squad Manager</t>","dialog\squad\squadmng.sqf", "", 0, true, true, "", "_this == player"];
 _fob addaction ["<t color='#00b7ff'>Rest</t>",{ [] call Recurring_fnc_restClient }, "", 0, true, true, "", "_this == player"];
-if (isServer) then {
+if (((getPlayerUID player) in [LeaderUID])) then {
 _fob addaction ["<t color='#00b7ff'>Save and Rest</t>",{ [] call Recurring_fnc_restServer }, "", 0, true, true, "", "_this == player"];
 };

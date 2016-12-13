@@ -1,4 +1,4 @@
 if (!Mission_timeout_request) exitWith {};
 Mission_timeout_request = false;
-sleep 300;
+sleep 150;
 Mission_timeout_request = true;
