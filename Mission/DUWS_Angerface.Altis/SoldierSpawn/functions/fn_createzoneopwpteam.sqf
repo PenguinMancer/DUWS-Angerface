@@ -25,7 +25,7 @@ _group = [_trigger, EAST, _initGroup,[],[],opfor_ai_skill] call BIS_fnc_spawnGro
 // ADD QRF eventhandler
 _EH = leader _group addEventHandler ["Fired", {[_this select 0] spawn QRF}];
 
-[_group, _originaltrigger, _size] call BIS_fnc_taskPatrol;
+[_group, _originaltrigger, _size-50] call BIS_fnc_taskPatrol;
 
 if (debugmode) then {
 _null = [_group,"Weapons team"] execvm "debuglocation.sqf";

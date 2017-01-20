@@ -27,42 +27,42 @@ _radius = 130;
 
 _parachute1 = "Steerable_Parachute_F" CreateVehicle _lz;  
 _parachute1 setPos [_lz select 0, _lz select 1, (_lz select 2)+150];
-_soldier1 = _group createUnit [_ParachuteSoldier1,[0,0,0],["[this] remoteExecCall [],0,"form"];
+_soldier1 = _group createUnit [_ParachuteSoldier1,[0,0,0],[],0,"form"];
 _soldier1 moveindriver _parachute1;
 
 _parachute2 = "Steerable_Parachute_F" CreateVehicle _lz;  
 _parachute2 setPos [(_lz select 0)+(random _radius)-(random _radius), (_lz select 1)+(random _radius)-(random _radius), (_lz select 2)+150];
-_soldier2 = _group createUnit [_ParachuteSoldier2,[0,0,0],["[this] remoteExecCall [],0,"form"];
+_soldier2 = _group createUnit [_ParachuteSoldier2,[0,0,0],[],0,"form"];
 _soldier2 moveindriver _parachute2;
 
 _parachute3 = "Steerable_Parachute_F" CreateVehicle _lz;  
 _parachute3 setPos [(_lz select 0)+(random _radius)-(random _radius), (_lz select 1)+(random _radius)-(random _radius), (_lz select 2)+150];
-_soldier3 = _group createUnit [_ParachuteSoldier3,[0,0,0],["[this] remoteExecCall [],0,"form"];
+_soldier3 = _group createUnit [_ParachuteSoldier3,[0,0,0],[],0,"form"];
 _soldier3 moveindriver _parachute3;
 
 _parachute4 = "Steerable_Parachute_F" CreateVehicle _lz;  
 _parachute4 setPos [_lz select 0, _lz select 1, (_lz select 2)+150];
-_soldier4 = _group createUnit [_ParachuteSoldier4,[0,0,0],["[this] remoteExecCall [],0,"form"];
+_soldier4 = _group createUnit [_ParachuteSoldier4,[0,0,0],[],0,"form"];
 _soldier4 moveindriver _parachute4;
 
 _parachute5 = "Steerable_Parachute_F" CreateVehicle _lz;  
 _parachute5 setPos [(_lz select 0)+(random _radius)-(random _radius), (_lz select 1)+(random _radius)-(random _radius), (_lz select 2)+150];
-_soldier5 = _group createUnit [_ParachuteSoldier5,[0,0,0],["[this] remoteExecCall [],0,"form"];
+_soldier5 = _group createUnit [_ParachuteSoldier5,[0,0,0],[],0,"form"];
 _soldier5 moveindriver _parachute5;
 
 _parachute6 = "Steerable_Parachute_F" CreateVehicle _lz;  
 _parachute6 setPos [(_lz select 0)+(random _radius)-(random _radius), (_lz select 1)+(random _radius)-(random _radius), (_lz select 2)+150];
-_soldier6 = _group createUnit [_ParachuteSoldier6,[0,0,0],["[this] remoteExecCall [],0,"form"];
+_soldier6 = _group createUnit [_ParachuteSoldier6,[0,0,0],[],0,"form"];
 _soldier6 moveindriver _parachute6;
 
 _parachute7 = "Steerable_Parachute_F" CreateVehicle _lz;  
 _parachute7 setPos [(_lz select 0)+(random _radius)-(random _radius), (_lz select 1)+(random _radius)-(random _radius), (_lz select 2)+150];
-_soldier7 = _group createUnit [_ParachuteSoldier7,[0,0,0],["[this] remoteExecCall [],0,"form"];
+_soldier7 = _group createUnit [_ParachuteSoldier7,[0,0,0],[],0,"form"];
 _soldier7 moveindriver _parachute7;
 
 _parachute8 = "Steerable_Parachute_F" CreateVehicle _lz;  
 _parachute8 setPos [(_lz select 0)+(random _radius)-(random _radius), (_lz select 1)+(random _radius)-(random _radius), (_lz select 2)+150];
-_soldier8 = _group createUnit [_ParachuteSoldier8,[0,0,0],["[this] remoteExecCall [],0,"form"];
+_soldier8 = _group createUnit [_ParachuteSoldier8,[0,0,0],[],0,"form"];
 _soldier8 moveindriver _parachute8;
 
 {

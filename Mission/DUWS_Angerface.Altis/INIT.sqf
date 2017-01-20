@@ -11,7 +11,6 @@ diag_log format ["------------------ DUWS Angerface START ----v1.00 based on Uno
 	PlayerMrkrs = true;
 	zoneFound = false;
 
-
 	if (isNil "enable_fast_travel") then {
 	enable_fast_travel = true; 									// allow fast travel or not
 	};
@@ -20,6 +19,9 @@ diag_log format ["------------------ DUWS Angerface START ----v1.00 based on Uno
 	};
 	if (isNil "commandpointsblu1") then {
 	commandpointsblu1 = 20;            							// Starting CP
+	};
+	if (isNil "USDbudget") then {
+	USDbudget = 500;            									// Starting USD
 	};
     if (isNil "blufor_ap") then {
 	blufor_ap = 0;												// Starting Blu AP
@@ -58,15 +60,10 @@ enemy_waypoint_num = 0;
 
 missions_success = 0; // number of missions succeeded (!!dont touch!!)
 zones_created = false;
-blu_hq_created = false;
-can_get_mission = true;
 failsafe_zones_not_found = false;
 createcenter sideLogic;
 LogicGroup = createGroup SideLogic;
 PAPABEAR=[West,"HQ"];
-locator_hq_actived = false;
-op_zones_index = 0;
-clientisSync = false;
 fobSwitch = false;
 player_is_choosing_hqpos = false;
 
@@ -120,6 +117,8 @@ if (isNil "WindVar") then
 {
 WindVar = 0;
 };
+/*
+*/
 if (isNil "Array_of_FOBS") then // this is a special one (if/else)
 {	// if the player is sp or server or no fobs have been created
 Array_of_FOBS = [];

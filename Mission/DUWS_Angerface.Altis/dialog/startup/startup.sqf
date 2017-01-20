@@ -46,7 +46,7 @@ lbSetCurSel [2102, index_amount_zones_4];
 
 
 // STARTING CP AVAILABLE
-index_amount_cp_2 = lbAdd [2103, "2 (very hard start)"];
+index_amount_cp_2 = lbAdd [2103, "2"];
 index_amount_cp_5 = lbAdd [2103, "5"];
 index_amount_cp_10 = lbAdd [2103, "10"];
 index_amount_cp_20 = lbAdd [2103, "20"];
@@ -57,8 +57,8 @@ index_amount_cp_60 = lbAdd [2103, "60"];
 index_amount_cp_100 = lbAdd [2103, "100"];
 index_amount_cp_200 = lbAdd [2103, "200 (default)"];
 index_amount_cp_300 = lbAdd [2103, "300"];
-index_amount_cp_400 = lbAdd [2103, "400 (large groups sharing in MP)"];
-index_amount_cp_600 = lbAdd [2103, "600 (open servers - max unlock points!)"];
+index_amount_cp_400 = lbAdd [2103, "400"];
+index_amount_cp_600 = lbAdd [2103, "600"];
 lbSetCurSel [2103, index_amount_cp_200];
 
 // BLUFOR AP
@@ -89,12 +89,6 @@ index_weather_type_rainy = lbAdd [2106, "Super Rainy"];
 index_weather_type_varied = lbAdd [2106, "Variable & Dynamic (default)"];
 index_weather_type_disable = lbAdd [2106, "Disable dynamic weather"];
 lbSetCurSel [2106, index_weather_type_varied];
-
-
-/*
-index_weather_type_tropical = lbAdd [2106, "Disabled due to AI bugs"];
-lbSetCurSel [2106, index_weather_type_tropical];
-*/
 
 // AI OPF SKILL
 index_op_skill_elite = lbAdd [2107, "Elite (0.80-1.0)"];
@@ -140,3 +134,28 @@ index_max_dist_hq_300 = lbAdd [2188, "30 km"];
 index_max_dist_hq_400 = lbAdd [2188, "40 km"];
 index_max_dist_hq_500 = lbAdd [2188, "50 km"];
 lbSetCurSel [2188, index_max_dist_hq_60];
+
+// MAX DISTANCE FROM HQ
+index_start_usd_50 = lbAdd [9288, "50k"];
+index_start_usd_100 = lbAdd [9288, "100k"];
+index_start_usd_250 = lbAdd [9288, "250k"];
+index_start_usd_500 = lbAdd [9288, "500k"];
+index_start_usd_1000 = lbAdd [9288, "1m"];
+index_start_usd_2000 = lbAdd [9288, "2m"];
+index_start_usd_3000 = lbAdd [9288, "3m"];
+index_start_usd_4000 = lbAdd [9288, "4m"];
+index_start_usd_5000 = lbAdd [9288, "5m"];
+index_start_usd_6000 = lbAdd [9288, "6m"];
+index_start_usd_7000 = lbAdd [9288, "7m"];
+index_start_usd_8000 = lbAdd [9288, "8m"];
+index_start_usd_9000 = lbAdd [9288, "9m"];
+index_start_usd_10000 = lbAdd [9288, "10m"];
+index_start_usd_15000 = lbAdd [9288, "15m"];
+index_start_usd_20000 = lbAdd [9288, "20m"];
+index_start_usd_25000 = lbAdd [9288, "25m"];
+index_start_usd_30000 = lbAdd [9288, "30m"];
+index_start_usd_35000 = lbAdd [9288, "35m"];
+index_start_usd_40000 = lbAdd [9288, "40m"];
+index_start_usd_45000 = lbAdd [9288, "45m"];
+index_start_usd_50000 = lbAdd [9288, "50m"];
+lbSetCurSel [9288, index_start_usd_10000];

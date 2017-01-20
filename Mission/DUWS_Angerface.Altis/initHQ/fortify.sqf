@@ -97,8 +97,3 @@ _atpod2 allowdamage true;
 _atpod3 allowdamage true;
 _gl1pod allowdamage true;
 _aapod allowdamage true;
-_light1 allowdamage true;
-_light2 allowdamage true;
-_light3 allowdamage true;
-_light4 allowdamage true;
-_light5 allowdamage true;

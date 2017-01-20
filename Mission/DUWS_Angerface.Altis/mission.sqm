@@ -534,11 +534,17 @@ class Mission
 	};
 	class Markers
 	{
-		items=1;
+		items=2;
 		class Item0
 		{
 			position[]={91.06839,0.14840496,23.99707};
 			name="respawn_west";
+			type="Empty";
+		};
+		class Item1
+		{
+			position[]={491.89044,-0.0045730919,666.49109};
+			name="ghost_spot";
 			type="Empty";
 		};
 	};

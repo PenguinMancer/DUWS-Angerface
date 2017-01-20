@@ -1,8 +1,4 @@
 _hqblu = _this select 0;
-blu_hq_created = true;
-PosOfBLUHQ = _hqblu;
-publicVariable "PosOfBLUHQ";
-// create the building
 _hq = "Land_Cargo_HQ_V1_F" createVehicle _hqblu; //  	Land_Medevac_house_V1_F // Land_Cargo_HQ_V3_F
 
 // create marker on HQ
@@ -19,7 +15,7 @@ blu_hq_markername = _markername; publicVariable "blu_hq_markername";
 // make HQ zone notification trigger
 _trg5=createTrigger["EmptyDetector",_hqblu];
 _trg5 triggerAttachVehicle [player];
-_trg5 setTriggerArea[200,200,0,false];
+_trg5 setTriggerArea[250,250,0,false];
 _trg5 setTriggerActivation["VEHICLE","PRESENT",true];
 _trg5 setTriggerStatements["this", format["[""%1"",thislist] execvm 'Scripts\enterlocation.sqf'",'Main Base'], ""];
 
@@ -28,7 +24,7 @@ _HQmarker = createMarker ["HQMarker",_hqblu];
 "HQMarker" setMarkerShape "ELLIPSE";
 "HQMarker" setMarkerBrush "SolidBorder";
 "HQMarker" setMarkerColor "ColorBlue";
-"HQMarker" setMarkerSize [200, 200];
+"HQMarker" setMarkerSize [250, 250];
 "HQMarker" setMarkerAlpha 0.1; 
 
 // warning trigger when an enemy approaches the camp
@@ -38,7 +34,7 @@ _trgWarning setTriggerActivation["EAST","PRESENT",true];
 _trgWarning setTriggerStatements["this","[]execVM 'Scripts\warninghq.sqf'", ""];
 // CREATE THE OFFICER. UGLY HACKS FOR AI MODS SUPPORT
 _group = createGroup west;
-_hq = _group createUnit ["Blufor_General",(getmarkerpos str(blu_hq_markername)), [], 0, "FORM"];
+_hq = _group createUnit ["Blufor_General",_hqblu, [], 0, "FORM"];
 sleep 0.2;
 _hq setformdir 240;
 sleep 1;
@@ -63,6 +59,9 @@ _handle = [getpos hq_blu1] execVM "initHQ\guards.sqf";
 
 //STATIC DEFENSES
 _handle = [getpos hq_blu1] execVM "initHQ\fortify.sqf";
+
+//REQUEST LAPTOP
+_handle = [getpos hq_blu1] execVM "initHQ\laptop.sqf";
 
 // IF THE OFFICER IS DEAD -- BEGIN OF "SPAWN"
 [_hq] spawn {
@@ -98,11 +97,9 @@ _handle = [getpos hq_blu1] execVM "initHQ\fortify.sqf";
   };
 // IF THE OFFICER IS DEAD -- End OF "SPAWN"
 
-
 // TELEPORT PLAYER
 player setpos [(_hqblu select 0)-1.5, (_hqblu select 1) +1];
 player setdir 110;
-
 
 //////// HQ GENERATED /////
 "respawn_west" setMarkerPos _hqblu;

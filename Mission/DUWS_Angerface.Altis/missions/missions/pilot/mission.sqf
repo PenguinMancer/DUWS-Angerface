@@ -96,14 +96,7 @@ _soldier3 switchMove "AmovPpneMstpSnonWnonDnon";
 [_soldier1, _soldier2, _soldier3] joinSilent player;
 titleText ["Thanks for the rescue, can you give us an escort to base?", "PLAIN DOWN"]; 
 
-// CREATE TRIGGER ZONES
-_missiontrg2=createTrigger["EmptyDetector",_initpos];
-_missiontrg2 setTriggerArea[50,50,0,false];
-_missiontrg2 setTriggerActivation["WEST","PRESENT",false];
-_missiontrg2 setTriggerStatements["this","rescuedreturn = true;",""];
-_missiontrg2 setTriggerTimeout [5, 5, 5, true ];  
-
-waitUntil {sleep 1; (rescuedreturn)};  
+waitUntil {sleep 1; ( ((_soldier1 distance _initpos)<50) || ((_soldier2 distance _initpos)<50) || ((_soldier3 distance _initpos)<50) || (!(alive _soldier1) && !(alive _soldier2) && !(alive _soldier3)) )};  
 
 if (!(alive _soldier1) && !(alive _soldier2) && !(alive _soldier3)) exitWith { // CHECK IF PATROL ALIVE
 deleteMarker str(_markername2);
@@ -128,7 +121,6 @@ deleteVehicle _soldier3;
 rescued = false;
 rescuedreturn = false;
 deleteVehicle _missiontrg;
-deleteVehicle _missiontrg2;
 
 // Give cookies  (bonus & notifications)
 _reward = [_cpreward, _apreward, _appenalty, _mission_name] execvm "missions\mission_reward.sqf";

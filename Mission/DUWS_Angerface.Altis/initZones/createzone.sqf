@@ -87,7 +87,12 @@ if (_prefab) then {
 	} else {
 		_prefabplace = [_prefabspot] execVM _path;						//A safe location was found, so we spawn the prefab, and it's patrol.
 		str(_markername) setMarkerText _place;
+		_prefabspot = [(_prefabspot select 0)+10,_prefabspot select 1];
+		_handle = [_prefabspot, 25] spawn SoldierSpawn_fnc_createoppatrol;
 	};
+} else {
+	_handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneoppatrol;
+	waituntil {sleep .1;scriptdone _handle};
 };
 
 // CREATE ZONE NOTIFICATION TRIGGER
@@ -101,18 +106,11 @@ _trg3 setTriggerStatements["this", format["[""%1"",thislist] execvm 'Scripts\ent
 // Check if fortified is true
 if (_fortified) then  
 {
-      [_trigger,_size] spawn SoldierSpawn_fnc_createzoneopfortified;
-      sleep 2;
+      _handle = [_trigger,_size] spawn SoldierSpawn_fnc_createzoneopfortified;
+      waituntil {sleep .1;scriptdone _handle};
 };
 
-// Check if radius is 100m or smaller => create 2 patrols then exit the script
-if ((_size + _size2)/2 < 101) exitWith  
-{
-      _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneoppatrol;
-      waituntil {sleep .1;scriptdone _handle};
-      _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneoppatrol;
-};
-// Check if radius is 250m-100m => create 2 patrols and 1 fireteam then exit the script
+// Check if radius is 250m or less => create 2 patrols and 1 fireteam then exit the script
 if ((_size + _size2)/2 < 251) exitWith  
 {
 	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneoppatrol;

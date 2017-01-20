@@ -43,29 +43,29 @@ class hq_placement_random_button: RscButton
 class hq_placement_manual_button: RscButton
 {
 	idc = 1601;
-	text = "MANUAL PLACEMENT";
+	text = "MANUAL (QUICK)";
 	x = 11 * GUI_GRID_W + GUI_GRID_X;
 	y = 16 * GUI_GRID_H + GUI_GRID_Y;
 	w = 18 * GUI_GRID_W;
 	h = 2.5 * GUI_GRID_H;
-	tooltip = "You choose where the HQ is placed on the island";
+	tooltip = "You choose where the HQ is placed on the island from the map.";
 	action = "_nul = [] execvm ""dialog\startup\hq_placement\manual.sqf""; closedialog 0;";	
 };
 class hq_vehicle_manual_button: RscButton
 {
 	idc = 1602;
-	text = "MANUAL VEHICLE";
+	text = "MANUAL (PRECISE)";
 	x = 11 * GUI_GRID_W + GUI_GRID_X;
 	y = 19.5 * GUI_GRID_H + GUI_GRID_Y;
 	w = 18 * GUI_GRID_W;
 	h = 2.5 * GUI_GRID_H;
-	tooltip = "The HQ is loaded into a vehicle and is manually unloaded in the desired location";
+	tooltip = "You are placed on the island, then given an option to place the HQ with a preview.";
 	action = "_nul = [] execvm ""dialog\startup\hq_placement\manualvehicle.sqf""; closedialog 0;";	
 };
 class hq_vehicle_forced_button: RscButton
 {
 	idc = 1603;
-	text = "MANUAL PLACEMENT";
+	text = "FORCED ENTRY";
 	x = 11 * GUI_GRID_W + GUI_GRID_X;
 	y = 23 * GUI_GRID_H + GUI_GRID_Y;
 	w = 18 * GUI_GRID_W;

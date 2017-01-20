@@ -1,5 +1,4 @@
 player_is_choosing_hqpos = true;
-//chosen_hq_placement = true;
 
 clicked = false;
   
@@ -26,6 +25,6 @@ while {true} do {
 	};  
     
     };
-  sleep 0.2;
-  if (chosen_hq_placement) exitwith {};
+	sleep 0.2;
+	if (chosen_hq_placement) exitwith {};
 };

@@ -18,7 +18,7 @@ _initGroup = [_PatrolSoldier1,_PatrolSoldier2,_PatrolSoldier3,_PatrolSoldier4,_P
 
 _group = [_trigger, EAST, _initGroup,[],[],opfor_ai_skill] call BIS_fnc_spawnGroup;
 
-[_group, _originaltrigger, _size] call bis_fnc_taskPatrol;
+[_group, _originaltrigger, _size-50] call bis_fnc_taskPatrol;
 
 //randomize identity
 {

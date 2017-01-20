@@ -104,7 +104,7 @@ class cp_start_frame: RscFrame
 	y = 4.5 * GUI_GRID_H + GUI_GRID_Y;
 	w = 18.5 * GUI_GRID_W;
 	h = 2.5 * GUI_GRID_H;
-	tooltip = "Define how much Command Points you start with";
+	tooltip = "Define how many Command Points you start with";
 };
 class cp_start_combo: RscCombo
 {
@@ -114,7 +114,7 @@ class cp_start_combo: RscCombo
 	y = 5.5 * GUI_GRID_H + GUI_GRID_Y;
 	w = 17.5 * GUI_GRID_W;
 	h = 1 * GUI_GRID_H;
-	tooltip = "Define how much Command Points you start with";
+	tooltip = "Define how many Command Points you start with";
 };
 class bap_start_frame: RscFrame
 {
@@ -135,7 +135,7 @@ class bap_start_combo: RscCombo
 	y = 8.5 * GUI_GRID_H + GUI_GRID_Y;
 	w = 17.5 * GUI_GRID_W;
 	h = 1 * GUI_GRID_H;
-	tooltip = "Define the starting ressources your HQ has at the beginning";
+	tooltip = "Define the starting resources your HQ has at the beginning";
 };
 class oap_start_frame: RscFrame
 {
@@ -146,7 +146,7 @@ class oap_start_frame: RscFrame
 	y = 7.5 * GUI_GRID_H + GUI_GRID_Y;
 	w = 18.5 * GUI_GRID_W;
 	h = 2.5 * GUI_GRID_H;
-	tooltip = "Define the starting ressources the OPFOR has at the beginning";
+	tooltip = "Define the starting resources OPFOR has at the beginning";
 };
 class oap_start_combo: RscCombo
 {
@@ -156,7 +156,7 @@ class oap_start_combo: RscCombo
 	y = 8.5 * GUI_GRID_H + GUI_GRID_Y;
 	w = 17.5 * GUI_GRID_W;
 	h = 1 * GUI_GRID_H;
-	tooltip = "Define the starting resources the OPFOR has at the beginning";
+	tooltip = "Define the starting resources OPFOR has at the beginning";
 };
 class text_information: RscText
 {
@@ -334,6 +334,26 @@ class max_dist_from_hq_list: RscCombo
 	w = 17.5 * GUI_GRID_W;
 	h = 1 * GUI_GRID_H;
 	tooltip = "Set the max. distance between the created zones and the HQ";
+};
+class starting_usd_frame: RscFrame
+{
+	idc = 3788;
+	text = "Starting USD";
+	x = 20.5 * GUI_GRID_W + GUI_GRID_X;
+	y = 19.5 * GUI_GRID_H + GUI_GRID_Y;
+	w = 18.5 * GUI_GRID_W;
+	h = 2.5 * GUI_GRID_H;
+	tooltip = "Set the amount of USD you start with.";
+};
+class starting_usd_list: RscCombo
+{
+	idc = 9288;
+
+	x = 21 * GUI_GRID_W + GUI_GRID_X;
+	y = 20.5 * GUI_GRID_H + GUI_GRID_Y;
+	w = 17.5 * GUI_GRID_W;
+	h = 1 * GUI_GRID_H;
+	tooltip = "Set the amount of USD you start with.";
 };
 ////////////////////////////////////////////////////////
 // GUI EDITOR OUTPUT END

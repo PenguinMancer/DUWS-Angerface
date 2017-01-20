@@ -41,6 +41,8 @@ __EXEC (MISSION_ROOT = __FILE__ select [0, count __FILE__ - 15])
 #include "dialog\squad\squadmng.hpp"
 #include "dialog\squad\rename\renamesquad.hpp"
 #include "dialog\request.hpp"
+#include "dialog\requestvehicle.hpp"
+#include "dialog\requestvehiclefob.hpp"
 #include "dialog\request_fob.hpp"
 #include "dialog\request_remote.hpp"
 #include "dialog\fob\fobmanager.hpp"

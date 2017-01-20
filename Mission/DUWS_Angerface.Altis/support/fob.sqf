@@ -1,10 +1,26 @@
+private [ "_ghost_spot", "_vehicle", "_dist", "_actualdir" ];
 _position = _this select 0;
-_size = _this select 1;
 zoneFound = false;
+build_invalid = 0;
+buildconfirmation = 1;
 
-{
-if (player distance _x < 250) exitWith {zoneFound = true};
-} forEach WARCOM_zones_controled_by_BLUFOR;
+_ignorecollisionwhenbuilding = [
+	"Land_Flush_Light_red_F",
+	"Land_Flush_Light_green_F",
+	"Land_Flush_Light_yellow_F",
+	"Land_runway_edgelight",
+	"Land_runway_edgelight_blue_F",
+	"Land_HelipadSquare_F",
+	"Sign_Sphere100cm_F",
+	"TMR_Autorest_Georef",
+	"Land_ClutterCutter_large_F"
+];
+
+_vehicle = "Land_HelipadEmpty_F";
+_classname = "Land_Cargo_HQ_V3_F"; // this is the desert one
+
+_closest = [WARCOM_zones_controled_by_BLUFOR, _position] call BIS_fnc_nearestPosition;
+if (_position distance _closest < 250) then {zoneFound = true};
 
 if (!zoneFound) exitWith {
 	["Info",["NO FOB ALLOWED HERE","You Must Be Within 250m of a Green Zone's Center"]] call bis_fnc_showNotification;
@@ -24,8 +40,8 @@ if (commandpointsblu1 < 10) exitWith {
 Hint "Requesting a FOB...";
 player sidechat "Requesting a FOB on my position...";
 
-_trg=createTrigger["EmptyDetector",_position];
-_trg setTriggerArea[_size,_size,0,false];
+_trg=createTrigger["EmptyDetector",_closest];
+_trg setTriggerArea[500,500,0,false];
 _trg setTriggerActivation["EAST","PRESENT",true];
 _trg setTriggerStatements["this", "", ""];
 sleep 10;
@@ -41,22 +57,90 @@ sleep 15;
   DUWSrepfob = _repfob;
 };
 
-// try to find a pos, if no pos is found exit the script
-_foundPickupPos = [_position, 0,50,10,0,0.2,0,[],[[0,0],[0,0]]] call BIS_fnc_findSafePos; // find a valid pos
-if (0 == _foundPickupPos select 0 && 0 == _foundPickupPos select 1) exitWith {hint "No valid FOB pos nearby\nTry to go near a flat, object free zone."; sleep 5; _art = [player,"fob_support"] call BIS_fnc_addCommMenuItem;};
+actcancel = -1;
+actplace = -1;
 
-// LA ZONE EST OK
+while {buildconfirmation == 1} do {
+
+	actcancel = player addAction ["<t color='#B0FF00'>Cancel</t>","scripts\buildcancel.sqf","",-725,false,true];
+	actplace = player addAction ["<t color='#B0FF00'>Place</t>","scripts\buildplace.sqf","",-775,false,true,"","build_invalid == 0"];
+
+	_ghost_spot = getmarkerpos "ghost_spot";
+
+	_vehicle = _classname createVehicleLocal _ghost_spot;
+	_vehicle allowdamage false;
+	_vehicle setVehicleLock "LOCKED";
+	_vehicle enableSimulationGlobal false;
+
+	_dist = 0.6 * (sizeOf _classname);
+	if (_dist < 3.5) then { _dist = 3.5 };
+	_dist = _dist + 0.5;
+
+	for [{_i=0}, {_i<5}, {_i=_i+1}] do {
+		_vehicle setObjectTextureGlobal [_i, '#(rgb,8,8,3)color(0,1,0,0.8)'];
+	};
+
+	while {buildconfirmation == 1 && alive player} do {
+		_truedir = 90 - (getdir player);
+		_truepos = [((getpos player) select 0) + (_dist * (cos _truedir)), ((getpos player) select 1) + (_dist * (sin _truedir)),0];
+		
+		if ( ((_truepos distance _closest) < 250) && ((!surfaceIsWater _truepos) && (!surfaceIsWater getpos player)) ) then {
+			_vehicle setpos _truepos;
+			_vehicle setVectorUp [0,0,1]; //for HQ/FOBs only. 
+			build_invalid = 0;
+		} else {
+			_vehicle setpos _ghost_spot;
+			build_invalid = 1;
+			if ((surfaceIsWater _truepos) || (surfaceIsWater getpos player)) then {
+				hint "Can't build on water.";
+			} else {
+				hint "Too far away from zone center."
+			};
+		};
+		sleep 0.05;
+	};
+	
+	if (!alive player) then {
+		buildconfirmation = 2;
+	};
+	
+};
+
+if (actcancel != -1) then {
+player removeAction actcancel;
+};
+if (actplace != -1) then {
+player removeAction actplace;
+};
+
+if (buildconfirmation == 2) exitwith {
+deleteVehicle _vehicle;
+sleep 15;
+_repfob = [player,"fob_support"] call BIS_fnc_addCommMenuItem;
+DUWSrepfob = _repfob;
+};
 
 commandpointsblu1 = commandpointsblu1 - 10;
 publicVariable "commandpointsblu1";
 PAPABEAR sidechat "Roger that, the FOB is being deployed...";
 
+_vehpos = getpos _vehicle;
+deleteVehicle _vehicle;
+sleep 0.1;
+_fob = _classname createVehicle _vehpos;
+_fob allowDamage false;
+_fob setpos _vehpos;
+_fob setVectorUp [0,0,1];
+sleep 0.3;
+_fob allowDamage true;
+_fob setDamage 0;
+
 _fobname = [] call Recurring_fnc_getRandomCallsign;
 
 // create marker on FOB
-_markername = format["fob%1%2",round (_foundPickupPos select 0),round (_foundPickupPos select 1)]; // Define marker name
+_markername = format["fob%1%2",round (_vehpos select 0),round (_vehpos select 1)]; // Define marker name
 //hint _markername;
-_markerstr = createMarker [str(_markername), _foundPickupPos];
+_markerstr = createMarker [str(_markername), _vehpos];
 _markerstr setMarkerShape "ICON";
 str(_markername) setMarkerType "loc_Bunker";
 str(_markername) setMarkerColor "ColorBLUFOR";
@@ -67,8 +151,6 @@ publicvariable "fobname";
 
 sleep 5;
 
-_fob = "Land_Cargo_HQ_V1_F" createVehicle _foundPickupPos;
-
 [_fob] remoteExecCall ["Recurring_fnc_addFobActions", 0, true];
 
 // For fortifying
@@ -77,23 +159,21 @@ _fob addaction ["<t color='#ff0000'>Fortify FOB(4CP)</t>","inithq\fortifyFOB.sqf
 PAPABEAR sidechat "The FOB has been deployed.";
 
 /////////////////////////////////////////////////////////////////////////////
-[_foundPickupPos, _size] spawn SoldierSpawn_fnc_createblupatrol;
-[_foundPickupPos, _size] spawn SoldierSpawn_fnc_createblupatrol;
-[_foundPickupPos, _size] spawn SoldierSpawn_fnc_createblupatrol;
-_handle = [_foundPickupPos] execVM "initHQ\guards.sqf";
+[_vehpos, 250] spawn SoldierSpawn_fnc_createblupatrol;
+[_vehpos, 250] spawn SoldierSpawn_fnc_createblupatrol;
+[_vehpos, 250] spawn SoldierSpawn_fnc_createblupatrol;
+_handle = [_vehpos] execVM "initHQ\guards.sqf";
 ////////////////////////////////////////////////////////////////////////////
 
-
 // CREATE ZONE NOTIFICATION TRIGGER
-_size = 75;
-_trg23=createTrigger["EmptyDetector",_foundPickupPos];
+_trg23=createTrigger["EmptyDetector",_vehpos];
 _trg23 triggerAttachVehicle [player];
-_trg23 setTriggerArea[_size,_size,0,false];
+_trg23 setTriggerArea[250,250,0,false];
 _trg23 setTriggerActivation["VEHICLE","PRESENT",true];
 _trg23 setTriggerStatements["this", format["[""FOB %1"",thislist] execvm 'Scripts\enterlocation.sqf'",_fobname], ""];
 
 // warning trigger when an enemy approaches the camp
-_trgWarning=createTrigger["EmptyDetector",_foundPickupPos];
+_trgWarning=createTrigger["EmptyDetector",_vehpos];
 _trgWarning setTriggerArea[500,500,0,false];
 _trgWarning setTriggerActivation["EAST","PRESENT",true];
 _trgWarning setTriggerStatements["this","[]execVM 'Scripts\warningfob.sqf'", ""];
@@ -118,6 +198,3 @@ sleep 1;
 sleep 300;
 _repfob = [player,"fob_support"] call BIS_fnc_addCommMenuItem;
 DUWSrepfob = _repfob;
-
-
-// Land_Cargo_HQ_V1_F

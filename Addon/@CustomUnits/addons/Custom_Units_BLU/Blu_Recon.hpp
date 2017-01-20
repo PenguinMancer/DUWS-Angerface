@@ -7,8 +7,8 @@
 		backpack = "IP_B_AssaultPack_SnowTiger"; // Backpack Class
 		linkedItems[] = {"TFA_boon_dou", "SP_Balaclava_NodUrban", "IP_V_PlateCarrierSpec_rgrSnowHex", Standard_Equipment_Blu}; // Item's added to the unit. 
 		respawnLinkedItems[] = {"TFA_boon_dou", "SP_Balaclava_NodUrban", "IP_V_PlateCarrierSpec_rgrSnowHex", Standard_Equipment_Blu}; // Item's added to the unit. Should be identical to the linkedItems section.
-		weapons[] = {"rhs_weap_ak74m_2mag", "RH_mak"}; // Weapons added to the unit.
-		respawnweapons[] = {"rhs_weap_ak74m_2mag", "RH_mak"}; // Weapons added to the unit. Should be identical to the linkedItems section
+		weapons[] = {"rhs_weap_ak74m_2mag", "RH_mak", "Throw", "Put"}; // Weapons added to the unit.
+		respawnweapons[] = {"rhs_weap_ak74m_2mag", "RH_mak", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
 		magazines[] = {"rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK", "MiniGrenade", "ACE_HandFlare_Red", "RH_8Rnd_9x18_Mak", "RH_8Rnd_9x18_Mak", "RH_8Rnd_9x18_Mak"}; //Magazines added to the unit.
 		Respawnmagazines[] = {"rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK", "MiniGrenade", "ACE_HandFlare_Red", "RH_8Rnd_9x18_Mak", "RH_8Rnd_9x18_Mak", "RH_8Rnd_9x18_Mak"};  //Magazines added to the unit upon respawn, should be the same as above.
 		Items[] = {"ACE_fieldDressing", "ACE_fieldDressing", "ACE_morphine"};
@@ -24,8 +24,8 @@
 		backpack = "TRYK_B_Carryall_wh"; // Backpack Class
 		linkedItems[] = {"SP_Bandolier1_Grey", "SP_Shemagh_White", "G_Shades_Black", Standard_Equipment_Blu}; // Item's added to the unit. 
 		respawnLinkedItems[] = {"SP_Bandolier1_Grey", "SP_Shemagh_White", "G_Shades_Black", Standard_Equipment_Blu}; // Item's added to the unit. Should be identical to the linkedItems section.
-		weapons[] = {"rhs_weap_svdp_scoped", "RH_g17"}; // Weapons added to the unit.
-		respawnweapons[] = {"rhs_weap_svdp_scoped", "RH_g17"}; // Weapons added to the unit. Should be identical to the linkedItems section
+		weapons[] = {"rhs_weap_svdp_scoped", "RH_g17", "Throw", "Put"}; // Weapons added to the unit.
+		respawnweapons[] = {"rhs_weap_svdp_scoped", "RH_g17", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
 		magazines[] = {"rhs_10Rnd_762x54mmR_7N1", "rhs_10Rnd_762x54mmR_7N1", "rhs_10Rnd_762x54mmR_7N1", "rhs_10Rnd_762x54mmR_7N1", "ACE_HandFlare_Red", "RH_17Rnd_9x19_g17", "RH_17Rnd_9x19_g17", "RH_17Rnd_9x19_g17"}; //Magazines added to the unit.
 		Respawnmagazines[] = {"rhs_10Rnd_762x54mmR_7N1", "rhs_10Rnd_762x54mmR_7N1", "rhs_10Rnd_762x54mmR_7N1", "rhs_10Rnd_762x54mmR_7N1", "ACE_HandFlare_Red", "RH_17Rnd_9x19_g17", "RH_17Rnd_9x19_g17", "RH_17Rnd_9x19_g17"};  //Magazines added to the unit upon respawn, should be the same as above.
 		Items[] = {"ACE_fieldDressing", "ACE_fieldDressing", "ACE_morphine"};
@@ -41,8 +41,8 @@
 		backpack = "TRYK_B_Carryall_wh"; // Backpack Class
 		linkedItems[] = {"SP_JackEllis1_Grey", "TRYK_H_headset2", "SP_Balaclava_NodUrban", Standard_Equipment_Blu}; // Item's added to the unit. 
 		respawnLinkedItems[] = {"SP_JackEllis1_Grey", "TRYK_H_headset2", "SP_Balaclava_NodUrban", Standard_Equipment_Blu}; // Item's added to the unit. Should be identical to the linkedItems section.
-		weapons[] = {"arifle_mas_ak74", "RH_gsh18", "launch_RPG32_F"}; // Weapons added to the unit.
-		respawnweapons[] = {"arifle_mas_ak74", "RH_gsh18", "launch_RPG32_F"}; // Weapons added to the unit. Should be identical to the linkedItems section
+		weapons[] = {"arifle_mas_ak74", "RH_gsh18", "launch_RPG32_F", "Throw", "Put"}; // Weapons added to the unit.
+		respawnweapons[] = {"arifle_mas_ak74", "RH_gsh18", "launch_RPG32_F", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
 		magazines[] = {"30Rnd_mas_545x39_T_mag", "30Rnd_mas_545x39_T_mag", "30Rnd_mas_545x39_T_mag", "30Rnd_mas_545x39_T_mag", "ACE_HandFlare_Red", "RH_18Rnd_9x19_gsh", "RH_18Rnd_9x19_gsh", "RH_18Rnd_9x19_gsh", "RPG32_F"}; //Magazines added to the unit.
 		Respawnmagazines[] = {"30Rnd_mas_545x39_T_mag", "30Rnd_mas_545x39_T_mag", "30Rnd_mas_545x39_T_mag", "30Rnd_mas_545x39_T_mag", "ACE_HandFlare_Red", "RH_18Rnd_9x19_gsh", "RH_18Rnd_9x19_gsh", "RH_18Rnd_9x19_gsh", "RPG32_F"};  //Magazines added to the unit upon respawn, should be the same as above.
 		Items[] = {"ACE_fieldDressing", "ACE_fieldDressing", "ACE_morphine"};
@@ -58,8 +58,8 @@
 		backpack = "TRYK_B_Carryall_wh"; // Backpack Class
 		linkedItems[] = {"SP_JackEllis1_White", "TRYK_H_Helmet_Snow", "TRYK_Beard_Gr2", Standard_Equipment_Blu}; // Item's added to the unit. 
 		respawnLinkedItems[] = {"SP_JackEllis1_White", "TRYK_H_Helmet_Snow", "TRYK_Beard_Gr2", Standard_Equipment_Blu}; // Item's added to the unit. Should be identical to the linkedItems section.
-		weapons[] = {"rhs_weap_ak103", "RH_mak"}; // Weapons added to the unit.
-		respawnweapons[] = {"rhs_weap_ak103", "RH_mak"}; // Weapons added to the unit. Should be identical to the linkedItems section
+		weapons[] = {"rhs_weap_ak103", "RH_mak", "Throw", "Put"}; // Weapons added to the unit.
+		respawnweapons[] = {"rhs_weap_ak103", "RH_mak", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
 		magazines[] = {"rhs_30Rnd_762x39mm", "rhs_30Rnd_762x39mm", "rhs_30Rnd_762x39mm", "rhs_30Rnd_762x39mm", "MiniGrenade", "MiniGrenade", "MiniGrenade", "DemoCharge_Remote_Mag", "DemoCharge_Remote_Mag", "ACE_HandFlare_Red", "RH_8Rnd_9x18_Mak", "RH_8Rnd_9x18_Mak", "RH_8Rnd_9x18_Mak"}; //Magazines added to the unit.
 		Respawnmagazines[] = {"rhs_30Rnd_762x39mm", "rhs_30Rnd_762x39mm", "rhs_30Rnd_762x39mm", "rhs_30Rnd_762x39mm", "MiniGrenade", "MiniGrenade", "MiniGrenade", "DemoCharge_Remote_Mag", "DemoCharge_Remote_Mag", "ACE_HandFlare_Red", "RH_8Rnd_9x18_Mak", "RH_8Rnd_9x18_Mak", "RH_8Rnd_9x18_Mak"};  //Magazines added to the unit upon respawn, should be the same as above.
 		Items[] = {"ACE_fieldDressing", "ACE_fieldDressing", "ACE_morphine", "ATMine_Range_Mag", "SatchelCharge_Remote_Mag", "APERSBoundingMine_Range_Mag"};
@@ -75,8 +75,8 @@
 		backpack = "TRYK_B_Coyotebackpack_WH"; // Backpack Class
 		linkedItems[] = {"SP_JackEllis1_Grey", "SP_SSh68NetHelmet_White1", "G_mas_wpn_bala_gog", Standard_Equipment_Blu}; // Item's added to the unit. 
 		respawnLinkedItems[] = {"SP_JackEllis1_Grey", "SP_SSh68NetHelmet_White1", "G_mas_wpn_bala_gog", Standard_Equipment_Blu}; // Item's added to the unit. Should be identical to the linkedItems section.
-		weapons[] = {"hlc_rifle_aku12", "RH_mak"}; // Weapons added to the unit.
-		respawnweapons[] = {"hlc_rifle_aku12", "RH_mak"}; // Weapons added to the unit. Should be identical to the linkedItems section
+		weapons[] = {"hlc_rifle_aku12", "RH_mak", "Throw", "Put"}; // Weapons added to the unit.
+		respawnweapons[] = {"hlc_rifle_aku12", "RH_mak", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
 		magazines[] = {"rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK", "ACE_HandFlare_Red", "RH_8Rnd_9x18_Mak", "RH_8Rnd_9x18_Mak", "RH_8Rnd_9x18_Mak"}; //Magazines added to the unit.
 		Respawnmagazines[] = {"rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK", "ACE_HandFlare_Red", "RH_8Rnd_9x18_Mak", "RH_8Rnd_9x18_Mak", "RH_8Rnd_9x18_Mak"};  //Magazines added to the unit upon respawn, should be the same as above.
 		};
@@ -90,8 +90,8 @@
 		backpack = "IP_B_Kitbag_SnowHex"; // Backpack Class
 		linkedItems[] = {"SP_Harness1_Grey", "TRYK_H_wig", "G_mas_wpn_wrap_gog_t", Standard_Equipment_Blu}; // Item's added to the unit. 
 		respawnLinkedItems[] = {"SP_Harness1_Grey", "TRYK_H_wig", "G_mas_wpn_wrap_gog_t", Standard_Equipment_Blu}; // Item's added to the unit. Should be identical to the linkedItems section.
-		weapons[] = {"rhs_weap_ak74m_folded", "RH_gsh18", "Laserdesignator_mas_h"}; // Weapons added to the unit.
-		respawnweapons[] = {"rhs_weap_ak74m_folded", "RH_gsh18", "Laserdesignator_mas_h"}; // Weapons added to the unit. Should be identical to the linkedItems section
+		weapons[] = {"rhs_weap_ak74m_folded", "RH_gsh18", "Laserdesignator_mas_h", "Throw", "Put"}; // Weapons added to the unit.
+		respawnweapons[] = {"rhs_weap_ak74m_folded", "RH_gsh18", "Laserdesignator_mas_h", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
 		magazines[] = {"rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK", "ACE_HandFlare_Red", "RH_18Rnd_9x19_gsh", "RH_18Rnd_9x19_gsh", "RH_18Rnd_9x19_gsh"}; //Magazines added to the unit.
 		Respawnmagazines[] = {"rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK", "ACE_HandFlare_Red", "RH_18Rnd_9x19_gsh", "RH_18Rnd_9x19_gsh", "RH_18Rnd_9x19_gsh"};  //Magazines added to the unit upon respawn, should be the same as above.
 		Items[] = {"ACE_fieldDressing", "ACE_fieldDressing", "ACE_morphine", "ACE_SpottingScope", "ACE_Tripod"};
@@ -107,8 +107,8 @@
 		backpack = "IP_B_FieldPack_SnowTiger"; // Backpack Class
 		linkedItems[] = {"SP_Tactical1_Grey", "SP_Bandana_NodUrban", "G_Bandanna_beast", Standard_Equipment_Blu}; // Item's added to the unit. 
 		respawnLinkedItems[] = {"SP_Tactical1_Grey", "SP_Bandana_NodUrban", "G_Bandanna_beast", Standard_Equipment_Blu}; // Item's added to the unit. Should be identical to the linkedItems section.
-		weapons[] = {"hlc_rifle_aks74", "RH_g17", "Rangefinder_mas_h"}; // Weapons added to the unit.
-		respawnweapons[] = {"hlc_rifle_aks74", "RH_g17", "Rangefinder_mas_h"}; // Weapons added to the unit. Should be identical to the linkedItems section
+		weapons[] = {"hlc_rifle_aks74", "RH_g17", "Rangefinder_mas_h", "Throw", "Put"}; // Weapons added to the unit.
+		respawnweapons[] = {"hlc_rifle_aks74", "RH_g17", "Rangefinder_mas_h", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
 		magazines[] = {"rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK", "ACE_HandFlare_Red", "RH_17Rnd_9x19_g17", "RH_17Rnd_9x19_g17", "RH_17Rnd_9x19_g17"}; //Magazines added to the unit.
 		Respawnmagazines[] = {"rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK", "ACE_HandFlare_Red", "RH_17Rnd_9x19_g17", "RH_17Rnd_9x19_g17", "RH_17Rnd_9x19_g17"};  //Magazines added to the unit upon respawn, should be the same as above.
 		Items[] = {"ACE_fieldDressing", "ACE_fieldDressing", "ACE_morphine"};

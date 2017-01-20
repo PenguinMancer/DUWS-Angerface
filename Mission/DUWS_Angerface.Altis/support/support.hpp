@@ -84,7 +84,7 @@ class CfgCommunicationMenu
     {
         text = "Establish FOB (10 CP)"; // Text displayed in the menu and in a notification
         submenu = ""; // Submenu opened upon activation
-        expression = "_null = [getpos player, 500] execVM 'support\fob.sqf'"; 
+        expression = "_null = [getpos player] execVM 'support\fob.sqf'"; 
         icon = "\a3\ui_f\data\gui\cfg\hints\Head_ca.paa";
         cursor = ""; // Custom cursor displayed when the item is selected
         enable = "1"; // Simple expression condition for enabling the item

@@ -1,3 +1,5 @@
+if (!chosen_settings) exitwith {};
+
 	WARCOM_opfor_ap = WARCOM_opfor_ap + 5;
 	WARCOM_blufor_ap = WARCOM_blufor_ap - 5;
 	publicVariable "WARCOM_opfor_ap";

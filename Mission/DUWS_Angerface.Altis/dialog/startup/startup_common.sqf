@@ -596,9 +596,120 @@ switch (_index) do
     {
     zones_max_dist_from_hq = 50000;
     };
+};
 
-
-
+_index = lbCurSel 9288;
+switch (_index) do
+{
+    case index_start_usd_50:
+    {
+    USDbudget = 50;
+    };
+	
+	case index_start_usd_100:
+    {
+    USDbudget = 100;
+    };
+	
+	case index_start_usd_250:
+    {
+    USDbudget = 250;
+    };
+	
+	case index_start_usd_500:
+    {
+    USDbudget = 500;
+    };
+	
+	case index_start_usd_1000:
+    {
+    USDbudget = 1000;
+    };
+	
+	case index_start_usd_2000:
+    {
+    USDbudget = 2000;
+    };
+	
+	case index_start_usd_3000:
+    {
+    USDbudget = 3000;
+    };
+	
+	case index_start_usd_4000:
+    {
+    USDbudget = 4000;
+    };
+	
+	case index_start_usd_5000:
+    {
+    USDbudget = 5000;
+    };
+	
+	case index_start_usd_6000:
+    {
+    USDbudget = 6000;
+    };
+	
+	case index_start_usd_7000:
+    {
+    USDbudget = 7000;
+    };
+	
+	case index_start_usd_8000:
+    {
+    USDbudget = 8000;
+    };
+	
+	case index_start_usd_9000:
+    {
+    USDbudget = 9000;
+    };
+	
+	case index_start_usd_10000:
+    {
+    USDbudget = 10000;
+    };
+	
+	case index_start_usd_15000:
+    {
+    USDbudget = 15000;
+    };
+	
+	case index_start_usd_20000:
+    {
+    USDbudget = 20000;
+    };
+	
+	case index_start_usd_25000:
+    {
+    USDbudget = 25000;
+    };
+	
+	case index_start_usd_30000:
+    {
+    USDbudget = 30000;
+    };
+	
+	case index_start_usd_35000:
+    {
+    USDbudget = 35000;
+    };
+	
+	case index_start_usd_40000:
+    {
+    USDbudget = 40000;
+    };
+	
+	case index_start_usd_45000:
+    {
+    USDbudget = 45000;
+    };
+	
+	case index_start_usd_50000:
+    {
+    USDbudget = 50000;
+    };
 };
 
 if (zones_max_radius <= zones_min_radius) exitWith {Hint "Unable to generate campaign:\nMaximum radius of a zone\nmust be superior to\nMinimum radius of a zone"}; // CHECK IF MAX/MIN RADIUS PARAMETERS CORRECT
@@ -611,3 +722,4 @@ publicVariable "opfor_ap";
 publicVariable "blufor_ai_skill";
 publicVariable "opfor_ai_skill";
 publicVariable "enableChopperFastTravel";
+publicVariable "USDbudget";
