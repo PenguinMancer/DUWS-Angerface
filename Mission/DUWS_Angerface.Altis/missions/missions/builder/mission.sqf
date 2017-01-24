@@ -6,7 +6,6 @@ _appenalty = 0;
 if (!isNil "BLD1") then
 {
     if (alive BLD1) exitWith {_exiting = true;hint "**YOUR Builder IS STILL INTACT**\n\nOnly 1 buider vehicle is permitted on the map at a time, please choose another mission for now."};
-    
 };
  
 if (_exiting) exitWith {true};
@@ -92,8 +91,6 @@ if (getdammage BLD1>0.95) exitWith
 
 [[{hint"**Side Mission**\n\nSuccessfuly Completed!"}],"BIS_fnc_Spawn",true] call BIS_fnc_MP;
 sleep 2;
-//[[{hint"Adding building options to truck..."}],"BIS_fnc_Spawn",true] call BIS_fnc_MP;
-
 
 // Give cookies  (bonus & notifications)
 _reward = [_cpreward, _apreward, _appenalty, _mission_name] execvm "missions\mission_reward.sqf";
@@ -102,19 +99,11 @@ _reward = [_cpreward, _apreward, _appenalty, _mission_name] execvm "missions\mis
 // ADD PERSISTENT STAT
 _addmission = call persistent_fnc_incrementCompletedMissions;
 
-// ADD VEHICLE MARKER
+// ENABLE BUILDING
 
-BLD1cap = true;
+BLD1cap = 1;
 publicvariable "BLD1cap";
-
-_init_code =
-{
-	waitUntil {!isNil "BLD1"};
-	[BLD1] call AdvLog_fnc_factoryInit;
-	[BLD1, "mil_triangle", "ColorBlue", "2", "2", "BLD-1"] call kndr_assignMarker;
-};
-
-[[[], _init_code], "BIS_fnc_spawn", true, true] spawn BIS_fnc_MP;
 
 sleep 5;
 [[{hint"...Truck modifications complete!\nYou can now use the Boxer Truck as a building factory!"}],"BIS_fnc_Spawn",true] call BIS_fnc_MP;
+BLD1 addEventHandler ["killed", {BLD1cap = 0;publicvariable "BLD1cap"}];

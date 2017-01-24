@@ -10,8 +10,7 @@ switch (_index2) do
                 {
                 commandpointsblu1 = commandpointsblu1 - 30;
                 ctrlSetText [1000, format["%1",commandpointsblu1]];
-                hq_blu1 addAction ["<t color='#ff0066'>SATCOM</t>", {call PXS_startSatellite;}, "", 0, true, true, "", "_this == player"];
-                {_x addaction["<t color='#ff0066'>SATCOM</t>", {call PXS_startSatellite;}, "", 0, true, true, "", "_this == player"]} forEach (Array_of_FOBS);
+				Satellite = 1;publicvariable "Satellite";
                 lbSetColor [2103, 0, [0, 1, 0, 1]];
                 support_satcom_available = true;
                 playSound "loadgun";
@@ -471,14 +470,10 @@ case 15:
                 {
                   commandpointsblu1 = commandpointsblu1 - 15;
                   ctrlSetText [1000, format["%1",commandpointsblu1]];
-                  hq_blu1 addaction ["<t color='#15ff00'>HALO Alone (5CP)</t>", "ATM_airdrop\atm_airdrop.sqf", "", 0, true, true, "", "_this == player"];
-				  hq_blu1 addaction ["<t color='#15ff00'>HALO Group (5CP)</t>", "COB_HALO\grphalo.sqf", "", 0, true, true, "", "_this == player"];
+				  Halojump = 1;publicvariable "Halojump";
                   lbSetColor [2103, 15, [0, 1, 0, 1]];
                   support_halo_available = true;
-				  {_x addaction ["<t color='#15ff00'>HALO Alone (5CP)</t>", "ATM_airdrop\atm_airdrop.sqf", "", 0, true, true, "", "_this == player"]} forEach (Array_of_FOBS);
-				  {_x addaction ["<t color='#15ff00'>HALO Group (5CP)</t>", "COB_HALO\grphalo.sqf", "", 0, true, true, "", "_this == player"]} forEach (Array_of_FOBS);
 				  playSound "loadgun";
-				 // publicVariable "support_halo_available";
                   ["halo",["Halo Unlocked","Access Halo Jumping at the HQ and at FOB's"]] call bis_fnc_showNotification;
                 }
               else

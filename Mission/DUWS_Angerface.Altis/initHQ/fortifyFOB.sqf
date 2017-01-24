@@ -28,7 +28,8 @@ _laptop allowdamage false;
 _laptop setdamage 0;
 _laptop setpos _laptopposition;
 
-_laptop addaction ["<t color='#ffb700'>Request Vehicle</t>","dialog\requestvehiclefob.sqf", "", 0, true, true, "", "_this == player"];
+[[_laptop,["<t color='#ffb700'>Request Vehicle</t>","dialog\requestvehiclefob.sqf", "", 0, true, true]],"addAction",true,true] call BIS_fnc_MP;
+[[_laptop,["<t color='#ffb700'>Build Fortifications</t>","dialog\Buildfortificationsfob.sqf", "", 0, true, true, "", "BLD1cap == 1"]],"addAction",true,true] call BIS_fnc_MP;
 
 //Randomizing Units
 _GuardSoldier1 = [] call Soldiers_fnc_GetBluforSoldier;

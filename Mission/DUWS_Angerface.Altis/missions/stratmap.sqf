@@ -10,7 +10,7 @@ if (officedead) exitWith {hint "Your commanding officer is dead, so there are no
 startLoadingScreen ["Loading zones..."];
 _kibot_pos_array_missionPos = [[-99999,-99999,-99999]];
 
-while {_counter < 19;} do {
+while {_counter < 18;} do {
 _foundSafePos = [center_of_map, 0,half_of_map,5,0,0.1,0] call BIS_fnc_findSafePos;
 
 _array_exist = true;
@@ -234,26 +234,7 @@ if (_found_dist_away) then {};
         _array_of_missions = _array_of_missions + [_missionArray];
     };
 
-    case 10: // mission TRANSPORTHELI
-    {
-        //add the mission into the strat map
-        _radius = 300;
-        MissionNameCase10 = call Recurring_fnc_generateSideMissionName;
-        PosOfCase10Mission = _foundSafepos;
-
-        _missionArray = [[(_foundSafepos select 0)+(random _radius)-(random _radius),(_foundSafepos select 1)+(random _radius)-(random _radius)],
-        {_handle = [PosOfCase10Mission] execVM "missions\missions\transportheli\mission.sqf"; _handle = execVM "missions\missionTimer.sqf"},
-        MissionNameCase10,
-        "Recover transport helicopter<br/>Find and capture the CH-49 Mohawk<br/><br/>Eagle, hope the beach mission back in N’Ziwasogo wasn’t a one time thing, because the enemy got their hands on a CH-49 Mohawk. Take it from them, and you’ll be able to parachute into enemy territory.",
-        "",
-        "\a3\ui_f\data\gui\cfg\hints\Annoucning_ca.paa",
-        1,
-        []
-        ];
-        _array_of_missions = _array_of_missions + [_missionArray];
-    };
-
-    case 11: // mission build
+    case 10: // mission build
     {
         //add the mission into the strat map
         _radius = 300;
@@ -272,7 +253,7 @@ if (_found_dist_away) then {};
         _array_of_missions = _array_of_missions + [_missionArray];
     };
 
-	case 12: // mission RADAR
+	case 11: // mission RADAR
     {
         //add the mission into the strat map
         _radius = 300;
@@ -291,7 +272,7 @@ if (_found_dist_away) then {};
         _array_of_missions = _array_of_missions + [_missionArray];
     };
 
-    case 13: // mission Hunt
+    case 12: // mission Hunt
     {
         //add the mission into the strat map
         _radius = 300;
@@ -310,7 +291,7 @@ if (_found_dist_away) then {};
         _array_of_missions = _array_of_missions + [_missionArray];
     };
 
-    case 14: // mission ARMOUR
+    case 13: // mission ARMOUR
     {
         //add the mission into the strat map
         _radius = 300;
@@ -329,7 +310,7 @@ if (_found_dist_away) then {};
         _array_of_missions = _array_of_missions + [_missionArray];
     };	
 	
-	case 15: // mission ARMS
+	case 14: // mission ARMS
     {
         //add the mission into the strat map
         _radius = 300;
@@ -348,7 +329,7 @@ if (_found_dist_away) then {};
         _array_of_missions = _array_of_missions + [_missionArray];
     };
 
-	case 16: // mission Armour
+	case 15: // mission Armour
     {
         //add the mission into the strat map
         _radius = 300;
@@ -367,7 +348,7 @@ if (_found_dist_away) then {};
         _array_of_missions = _array_of_missions + [_missionArray];
     };
 	
-	case 17: // mission Sling
+	case 16: // mission Sling
     {
         //add the mission into the strat map
         _radius = 300;
@@ -386,7 +367,7 @@ if (_found_dist_away) then {};
         _array_of_missions = _array_of_missions + [_missionArray];
     };
 	
-	case 18: // mission CQC
+	case 17: // mission CQC
     {
         //add the mission into the strat map
         _radius = 300;

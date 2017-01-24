@@ -1,0 +1,65 @@
+_handle = createDialog "ressourceheaderbuildfortificationsfob";
+waitUntil {dialog};
+ctrlSetText [9806, format["%1",commandpointsblu1]];
+
+// VEHICLES
+_index1 = lbAdd [9808, "Sandbag Wall (Short)"];					// 0
+_index1 = lbAdd [9808, "Sandbag Wall (Long)"];					// 1
+_index1 = lbAdd [9808, "Sandbag Wall (Round)"];					// 2
+_index1 = lbAdd [9808, "Sandbag Wall (Corner)"];				// 3
+_index1 = lbAdd [9808, "Sandbag Wall (End)"];					// 4
+_index1 = lbAdd [9808, "H-Barrier (Block)"];					// 5
+_index1 = lbAdd [9808, "H-Barrier (3 Blocks)"];					// 6
+_index1 = lbAdd [9808, "H-Barrier (5 Blocks)"];					// 7
+_index1 = lbAdd [9808, "H-Barrier (Big)"];						// 8
+_index1 = lbAdd [9808, "H-Barrier Tower"];						// 9
+_index1 = lbAdd [9808, "H-Barrier Wall (Short)"];				// 10
+_index1 = lbAdd [9808, "H-Barrier Wall (Long)"];				// 11
+_index1 = lbAdd [9808, "H-Barrier Wall Corner"];				// 12
+_index1 = lbAdd [9808, "H-Barrier Wall Corridor"];				// 13
+_index1 = lbAdd [9808, "Camo Net"];								// 14
+_index1 = lbAdd [9808, "Camo Net (Open)"];						// 15
+_index1 = lbAdd [9808, "Camo Net (Big)"];						// 16
+_index1 = lbAdd [9808, "Concrete Wall (Short)"];				// 17
+_index1 = lbAdd [9808, "Concrete Wall (Tall)"];					// 18
+_index1 = lbAdd [9808, "Traffic Barrier"];						// 19
+_index1 = lbAdd [9808, "Traffic Barrier (tall)"];				// 20
+_index1 = lbAdd [9808, "Concrete Pipe Wall"];					// 21
+_index1 = lbAdd [9808, "Industrial Fence"];						// 22
+_index1 = lbAdd [9808, "Wire Fence"];							// 23
+_index1 = lbAdd [9808, "Barbed Wire Fence"];					// 24
+_index1 = lbAdd [9808, "Campfire"];								// 25
+_index1 = lbAdd [9808, "Camping Chair"];						// 26
+_index1 = lbAdd [9808, "Camping Table (Small)"];				// 27
+_index1 = lbAdd [9808, "Camping Table"];						// 28
+_index1 = lbAdd [9808, "Sleeping Bag"];							// 29
+_index1 = lbAdd [9808, "Empty Pallet"];							// 30
+_index1 = lbAdd [9808, "Brick Pallet"];							// 31
+_index1 = lbAdd [9808, "Cinderblock Pallet"];					// 32
+_index1 = lbAdd [9808, "Concrete Pipe"];						// 33
+_index1 = lbAdd [9808, "Iron Pipes"];							// 34
+_index1 = lbAdd [9808, "Empty Wooden Box"];						// 35
+_index1 = lbAdd [9808, "Worktable"];							// 36
+_index1 = lbAdd [9808, "Small Sandbag Bunker"];					// 37
+_index1 = lbAdd [9808, "Large Sandbag Bunker"];					// 38
+_index1 = lbAdd [9808, "Sandbag Tower Bunker"];					// 39
+_index1 = lbAdd [9808, "Tent Hanger 5CP)"];						// 40
+_index1 = lbAdd [9808, "Small Cargo House (5CP)"];				// 41
+_index1 = lbAdd [9808, "Small Cargo Tower (5CP)"];				// 42
+_index1 = lbAdd [9808, "Large Cargo Tower (10CP)"];				// 43
+_index1 = lbAdd [9808, "Shooting Position"];					// 44
+_index1 = lbAdd [9808, "Target"];								// 45
+_index1 = lbAdd [9808, "Ammo Box"];								// 46
+_index1 = lbAdd [9808, "Weapon Box"];							// 47
+_index1 = lbAdd [9808, "Special Weapons Box"];					// 48
+_index1 = lbAdd [9808, "Launcher Weapons box"];					// 49
+_index1 = lbAdd [9808, "Ammo Box 2"];							// 50
+_index1 = lbAdd [9808, "Explosives Ammo Box"];					// 51
+_index1 = lbAdd [9808, "Grenade Box"];							// 52
+_index1 = lbAdd [9808, "Support Weapons Box"];					// 53
+_index1 = lbAdd [9808, "Vehicle Ammo Box"];						// 54
+_index1 = lbAdd [9808, "M2 HMG tripod (CP15)"];					// 55
+_index1 = lbAdd [9808, "M2 HMG tripod Tall (CP15)"];			// 56
+_index1 = lbAdd [9808, "M252 Mortar (CP15)"];					// 57
+_index1 = lbAdd [9808, "MK 19 40mm MG (CP15)"];					// 58
+lbSetCurSel [9808, 0];

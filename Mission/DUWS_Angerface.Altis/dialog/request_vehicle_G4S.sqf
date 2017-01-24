@@ -55,9 +55,9 @@ switch (_index) do
     };
 	case 3:
     {
-          if (USDbudget >= 7500) then
+          if (USDbudget >= 7) then
           {
-           _USDcost = 7500;
+           _USDcost = 7;
            _classname = "CUP_B_UAZ_Open_CDF";
           }
           else
@@ -718,18 +718,6 @@ switch (_index) do
           };
     };
 };
-
-_ignorecollisionwhenbuilding = [
-	"Land_Flush_Light_red_F",
-	"Land_Flush_Light_green_F",
-	"Land_Flush_Light_yellow_F",
-	"Land_runway_edgelight",
-	"Land_runway_edgelight_blue_F",
-	"Land_HelipadSquare_F",
-	"Sign_Sphere100cm_F",
-	"TMR_Autorest_Georef",
-	"Land_ClutterCutter_large_F"
-];
 
 actcancel = -1;
 actplace = -1;

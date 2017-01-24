@@ -1,5 +1,5 @@
 private [ "_ghost_spot", "_vehicle", "_dist", "_actualdir" ];
-_index = lbCurSel 5607;
+_index = lbCurSel 7612;
 
 closeDialog 0;
 
@@ -7,7 +7,7 @@ _USDcost = 0;
 _vehicle = "Land_HelipadEmpty_F";
 _classname = "";
 _position = getpos player;
-_posFOB = [WARCOM_zones_controled_by_BLUFOR, _position] call BIS_fnc_nearestPosition;
+_posFOB = [Array_of_FOBS, _position] call BIS_fnc_nearestPosition;
 isboat = false;
 build_invalid = 0;
 buildconfirmation = 1;
@@ -56,9 +56,9 @@ switch (_index) do
     };
 	case 3:
     {
-          if (USDbudget >= 7500) then
+          if (USDbudget >= 7) then
           {
-           _USDcost = 7500;
+           _USDcost = 7;
            _classname = "CUP_B_UAZ_Open_CDF";
           }
           else
@@ -720,18 +720,6 @@ switch (_index) do
     };
 };
 
-_ignorecollisionwhenbuilding = [
-	"Land_Flush_Light_red_F",
-	"Land_Flush_Light_green_F",
-	"Land_Flush_Light_yellow_F",
-	"Land_runway_edgelight",
-	"Land_runway_edgelight_blue_F",
-	"Land_HelipadSquare_F",
-	"Sign_Sphere100cm_F",
-	"TMR_Autorest_Georef",
-	"Land_ClutterCutter_large_F"
-];
-
 actcancel = -1;
 actplace = -1;
 actrotate = -1;
@@ -779,7 +767,7 @@ while {buildconfirmation == 1} do {
 			if (((surfaceIsWater _truepos) || (surfaceIsWater getpos player)) && !(isboat)) then {
 				hint "Can't build on water.";
 			} else {
-				hint "Too far away from HQ."
+				hint "Too far away from FOB."
 			};
 		};
 		sleep 0.05;

@@ -5,9 +5,10 @@ Vehicleaction = player1 addaction ["<t color='#ff0066'>Deploy HQ</t>","initHQ\De
 PlayerRespawnEHDeployment = player1 addEventHandler ["respawn",{Vehicleaction = player1 addaction ["<t color='#ff0066'>Deploy HQ</t>","initHQ\DeployVehicleManual.sqf",["player1"], 0, false, true,"","_target == _this"]}];
 
 // TELEPORT PLAYER
-player setpos [(_foundPickupPos select 0), (_foundPickupPos select 1)];
+player setpos [(_foundPickupPos select 0)-1.5, (_foundPickupPos select 1) +1];
+player setdir 110;
 
-// BROADCAST, TELL THE HQ POS IS FOUND
-"respawn_west" setMarkerPos _foundPickupPos;//Putting this before the variable change to make sure clients aren't fucked
-publicVariable "HQ_pos_found";
+"respawn_west" setMarkerPos _foundPickupPos;
+sleep 0.5;
 HQ_pos_found = true;
+publicVariable "HQ_pos_found";

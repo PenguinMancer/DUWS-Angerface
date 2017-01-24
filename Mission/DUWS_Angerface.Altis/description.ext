@@ -1,8 +1,8 @@
-OnLoadMission = "A procedurally generated campaign that is constantly being modified because the mission dev can always find something to improve.";
-onLoadName = "DUWS Angerface";
+OnLoadMission = "One of the first signs of the beginning of understanding is the wish to die.";
+onLoadName = "Heavy Waters";
 dev = "dev";
 author = "Kibot / BigShot / rlex / TeorgeGakei";
-overviewText = "I like Penguins.";
+overviewText = "One of the first signs of the beginning of understanding is the wish to die.";
 overviewPicture = "rtipic.jpg";
 LoadScreen = "rtipic.jpg";
 
@@ -43,6 +43,8 @@ __EXEC (MISSION_ROOT = __FILE__ select [0, count __FILE__ - 15])
 #include "dialog\request.hpp"
 #include "dialog\requestvehicle.hpp"
 #include "dialog\requestvehiclefob.hpp"
+#include "dialog\Buildfortifications.hpp"
+#include "dialog\Buildfortificationsfob.hpp"
 #include "dialog\request_fob.hpp"
 #include "dialog\request_remote.hpp"
 #include "dialog\fob\fobmanager.hpp"

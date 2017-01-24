@@ -1,4 +1,3 @@
-
 [] spawn {
 waitUntil {sleep 1; zoneundercontrolblu >= 1};  
 sleep 10;

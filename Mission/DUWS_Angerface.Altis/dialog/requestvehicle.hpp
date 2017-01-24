@@ -1,4 +1,4 @@
-class ressourceheadervehiclefob
+class ressourceheadervehicle
 {
 	idd = -1;
 	movingenable = true;

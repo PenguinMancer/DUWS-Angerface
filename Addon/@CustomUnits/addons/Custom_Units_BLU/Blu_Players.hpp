@@ -39,10 +39,10 @@
 		scope = 2;
 		displayName = "Codename Wolf"; // In-game name of unit
 		genericNames = "DUWS_Kevin_Name";
-		uniformClass = "TRYK_U_B_NATO_UCP_R_CombatUniform";  // Uniform Class
-		backpack = "USAF_SFS_Carryall_ABU"; // Backpack Class
-		linkedItems[] = {"TRYK_V_PlateCarrier_ACU", "rhsusf_ach_helmet_headset_ess_ucp", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
-		respawnLinkedItems[] = {"TRYK_V_PlateCarrier_ACU", "rhsusf_ach_helmet_headset_ess_ucp", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemRadio", "ItemGPS"}; // Item's added to the unit. Should be identical to the linkedItems section.
+		uniformClass = "TRYK_B_TRYK_OCP_T";  // Uniform Class
+		backpack = "VSM_OCP_Backpack_Kitbag"; // Backpack Class
+		linkedItems[] = {"rhsusf_ach_helmet_ESS_ucp", "rhs_6b23_ML", "TRYK_Shemagh_shade_N", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
+		respawnLinkedItems[] = {"rhsusf_ach_helmet_ESS_ucp", "rhs_6b23_ML", "TRYK_Shemagh_shade_N", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemRadio", "ItemGPS"}; // Item's added to the unit. Should be identical to the linkedItems section.
 		weapons[] = {"rhs_weap_m14ebrri_sighted", "RH_g19", "Binocular", "Throw", "Put"}; // Weapons added to the unit.
 		respawnweapons[] = {"rhs_weap_m14ebrri_sighted", "RH_g19", "Binocular", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
 		magazines[] = {"rhsusf_20Rnd_762x51_m118_special_Mag", "rhsusf_20Rnd_762x51_m118_special_Mag", "rhsusf_20Rnd_762x51_m118_special_Mag", "rhsusf_20Rnd_762x51_m118_special_Mag", "rhsusf_20Rnd_762x51_m118_special_Mag", "RH_17Rnd_9x19_g17", "RH_17Rnd_9x19_g17", "RH_17Rnd_9x19_g17"}; //Magazines added to the unit.

@@ -1,6 +1,6 @@
 class Persistent {
   class Functions {
-      tag = "persistent"
+      tag = "persistent";
       file = "persistent\functions";
       class initPersistentStats { preinit = 1 };
       class addMissionWin {};

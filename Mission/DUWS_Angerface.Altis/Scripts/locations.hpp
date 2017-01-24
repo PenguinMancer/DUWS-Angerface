@@ -114,11 +114,11 @@ class CfgNotifications
 		priority = 0;
 		difficulty[] = {};
 	};
-		class CPzonehold
+		class USDzonehold
 	{
-		title = "CP Bonus: Zones under control";
+		title = "USD Bonus: Zones under control";
 		iconText = "+%1";
-		description = "Received additional CP for controlling %2 zones";
+		description = "Received additional USD for controlling %2 zones";
 		color[] = {0.5,1,1,1};
 		priority = 0;
 		difficulty[] = {};

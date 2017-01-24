@@ -1,6 +1,6 @@
 class Spawnsoldiers
 {
-	tag = "SoldierSpawn"
+	tag = "SoldierSpawn";
 	class SoldierSpawn
 	{
 		file = "SoldierSpawn\functions";

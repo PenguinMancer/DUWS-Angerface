@@ -67,7 +67,6 @@ _tasklocation = getMarkerPos str(_markername);
 ["TaskAssigned",["",_mission_name]] call bis_fnc_showNotification;
 
 rescued = false;
-rescuedreturn = false;
 
 // CREATE TRIGGER ZONES
 _missiontrg=createTrigger["EmptyDetector",_MissionPos];
@@ -119,7 +118,6 @@ deleteVehicle _soldier1;
 deleteVehicle _soldier2;
 deleteVehicle _soldier3;
 rescued = false;
-rescuedreturn = false;
 deleteVehicle _missiontrg;
 
 // Give cookies  (bonus & notifications)

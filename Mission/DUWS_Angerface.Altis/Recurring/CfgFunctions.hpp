@@ -1,15 +1,16 @@
 class Recurring 
 {
-	tag = "Recurring"
+	tag = "Recurring";
 	class Functions 
 	{
 		file = "Recurring\functions";
+		class addFobActions {};
+		class addHQactions {};
+		class generateSideMissionName {};
 		class getMapSize {};
+		class getRandomCallsign {};
 		class restClient {};
 		class restServer {};
-		class addFobActions {};
-		class getRandomCallsign {};
-		class generateSideMissionName {};
 		class VA {};
 	};
 };

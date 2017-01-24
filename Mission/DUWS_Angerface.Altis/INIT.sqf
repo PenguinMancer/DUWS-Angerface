@@ -53,7 +53,7 @@ QRF_WP = compile preprocessFile "WARCOM\WARCOM_wp_opf_qrf.sqf";
 
 ///////////////////////////////////////////////////
 /// ------------- DEBUG VARIABLES ------------- ///
-debugmode = true;
+debugmode = false;
 enemy_marker_num = 0;
 enemy_waypoint_num = 0;
 ///////////////////////////////////////////////////
@@ -169,6 +169,18 @@ if (isNil "Zonesgenerated") then
 {
 Zonesgenerated = false;publicVariable "Zonesgenerated";
 };
+if (isNil "BLD1cap") then
+{
+BLD1cap = 0;publicvariable "BLD1cap";
+};
+if (isNil "Satellite") then
+{
+Satellite = 0;publicvariable "Satellite";
+};
+if (isNil "Halojump") then
+{
+Halojump = 0;publicvariable "Halojump";
+};
 
 //MTV MARKER JIP
 if (!isServer) then{
@@ -213,10 +225,6 @@ if (isMultiplayer) then {
 	if (AttackHeli == 1) then {Attack = true};
 	if (TrkAllPlayer == 0) then {PlayerMrkrs = false};
 	if (player_fatigue == 0) then {[]execVM "Scripts\fatigue.sqf"};
-	
-	if (support_halo_available) then {hq_blu1 addAction ["<t color='#15ff00'>HALO Alone (5CP)</t>", "ATM_airdrop\atm_airdrop.sqf", "", 0, true, true, "", "_this == player"]};
-	if (support_halo_available) then {hq_blu1 addAction ["<t color='#15ff00'>HALO Group (5CP)</t>", "COB_HALO\grphalo.sqf", "", 0, true, true, "", "_this == player"]};
-	if (support_satcom_available) then {_hq addAction ["<t color='#ff0066'>SATCOM</t>", {call PXS_startSatellite;}, "", 0, true, true, "", "_this == player"];};
 
 	_timemult = Timescale;
 	setTimeMultiplier _timemult;
@@ -259,13 +267,15 @@ if (isMultiplayer) then {
 
 };
 
-_null = [] execVM "dialog\startup\hq_placement\placement.sqf";
-waitUntil {chosen_hq_placement};
+if (((vehiclevarname player) in game_master)) then {
+	_null = [] execVM "dialog\startup\hq_placement\placement.sqf";
+	waitUntil {chosen_hq_placement};
 
-// create random HQ
-if (!player_is_choosing_hqpos) then {
-    hq_create = [20, 0.015] execVM "initHQ\locatorHQ.sqf";
-    waitUntil {scriptDone hq_create};	
+	// create random HQ
+	if (!player_is_choosing_hqpos) then {
+		hq_create = [20, 0.015] execVM "initHQ\locatorHQ.sqf";
+		waitUntil {scriptDone hq_create};	
+	};
 };
 
 // group cleaning script

@@ -1,4 +1,4 @@
-class ressourceheadervehicle
+class ressourceheadervehiclefob
 {
 	idd = -1;
 	movingenable = true;
@@ -8,7 +8,7 @@ class ressourceheadervehicle
 	{
 		class background_request: RscText
 		{
-			idc = 4500;
+			idc = 7600;
 			x = 6.5 * GUI_GRID_W + GUI_GRID_X;
 			y = 16 * GUI_GRID_H + GUI_GRID_Y;
 			w = 27.5 * GUI_GRID_W;
@@ -17,7 +17,7 @@ class ressourceheadervehicle
 		};
 		class mainframebackground: RscFrame
 		{
-			idc = 4501;
+			idc = 7601;
 			moving = 1;
 			x = 7 * GUI_GRID_W + GUI_GRID_X;
 			y = 16.5 * GUI_GRID_H + GUI_GRID_Y;
@@ -27,7 +27,7 @@ class ressourceheadervehicle
 		};
 		class emptyvehicleframelocal: RscFrame
 		{
-			idc = 4502;
+			idc = 7602;
 			text = "LOCAL VEHICLE";
 			x = 20.5 * GUI_GRID_W + GUI_GRID_X;
 			y = 19 * GUI_GRID_H + GUI_GRID_Y;
@@ -36,7 +36,7 @@ class ressourceheadervehicle
 		};
 		class emptyvehicleframeg4s: RscFrame
 		{
-			idc = 5602;
+			idc = 7603;
 			text = "G4S VEHICLE";
 			x = 7.5 * GUI_GRID_W + GUI_GRID_X;
 			y = 19 * GUI_GRID_H + GUI_GRID_Y;
@@ -45,29 +45,29 @@ class ressourceheadervehicle
 		};
 		class requestvehiclebuttonlocal: RscButton
 		{
-			idc = 4503;
+			idc = 7604;
 			text = "REQUEST LOCAL";
 			x = 21 * GUI_GRID_W + GUI_GRID_X;
 			y = 21.5 * GUI_GRID_H + GUI_GRID_Y;
 			w = 11.5 * GUI_GRID_W;
 			h = 1 * GUI_GRID_H;
 			tooltip = "Request an empty vehicle to spawn at your position";
-			action = "_nil=[]ExecVM ""dialog\request_vehicle_local.sqf""";
+			action = "_nil=[]ExecVM ""dialog\request_vehicle_localfob.sqf""";
 		};
 		class requestvehiclebuttong4s: RscButton
 		{
-			idc = 5603;
+			idc = 7605;
 			text = "REQUEST G4S";
 			x = 8 * GUI_GRID_W + GUI_GRID_X;
 			y = 21.5 * GUI_GRID_H + GUI_GRID_Y;
 			w = 11.5 * GUI_GRID_W;
 			h = 1 * GUI_GRID_H;
 			tooltip = "Request an empty vehicle to spawn at your position";
-			action = "_nil=[]ExecVM ""dialog\request_vehicle_G4S.sqf""";
+			action = "_nil=[]ExecVM ""dialog\request_vehicle_G4Sfob.sqf""";
 		};
 		class exitbutton: RscButton
 		{
-			idc = 4504;
+			idc = 7606;
 			text = "EXIT";
 			x = 16 * GUI_GRID_W + GUI_GRID_X;
 			y = 23.5 * GUI_GRID_H + GUI_GRID_Y;
@@ -77,7 +77,7 @@ class ressourceheadervehicle
 		};
 		class CPtotal: RscText
 		{
-			idc = 4505;
+			idc = 7607;
 			text = "CP: XXX";
 			x = 21 * GUI_GRID_W + GUI_GRID_X;
 			y = 16.5 * GUI_GRID_H + GUI_GRID_Y;
@@ -87,7 +87,7 @@ class ressourceheadervehicle
 		};
 		class RscFrame_1805: RscFrame
 		{
-			idc = 4506;
+			idc = 7608;
 			text = "Command points";
 			x = 20.5 * GUI_GRID_W + GUI_GRID_X;
 			y = 16.5 * GUI_GRID_H + GUI_GRID_Y;
@@ -97,7 +97,7 @@ class ressourceheadervehicle
 		};
 		class USDtotal: RscText
 		{
-			idc = 5605;
+			idc = 7609;
 			text = "USD: XXX";
 			x = 8 * GUI_GRID_W + GUI_GRID_X;
 			y = 16.5 * GUI_GRID_H + GUI_GRID_Y;
@@ -107,7 +107,7 @@ class ressourceheadervehicle
 		};
 		class RscFrame_2935: RscFrame
 		{
-			idc = 5639;
+			idc = 7610;
 			text = "USD";
 			x = 7.5 * GUI_GRID_W + GUI_GRID_X;
 			y = 16.5 * GUI_GRID_H + GUI_GRID_Y;
@@ -117,7 +117,7 @@ class ressourceheadervehicle
 		};
 		class emptyvehiclelistlocal: RscCombo
 		{
-			idc = 4507;
+			idc = 7611;
 			x = 21 * GUI_GRID_W + GUI_GRID_X;
 			y = 20 * GUI_GRID_H + GUI_GRID_Y;
 			w = 11.5 * GUI_GRID_W;
@@ -126,7 +126,7 @@ class ressourceheadervehicle
 		};
 		class emptyvehiclelistg4s: RscCombo
 		{
-			idc = 5607;
+			idc = 7612;
 			x = 8 * GUI_GRID_W + GUI_GRID_X;
 			y = 20 * GUI_GRID_H + GUI_GRID_Y;
 			w = 11.5 * GUI_GRID_W;

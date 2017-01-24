@@ -4,20 +4,15 @@ zoneFound = false;
 build_invalid = 0;
 buildconfirmation = 1;
 
-_ignorecollisionwhenbuilding = [
-	"Land_Flush_Light_red_F",
-	"Land_Flush_Light_green_F",
-	"Land_Flush_Light_yellow_F",
-	"Land_runway_edgelight",
-	"Land_runway_edgelight_blue_F",
-	"Land_HelipadSquare_F",
-	"Sign_Sphere100cm_F",
-	"TMR_Autorest_Georef",
-	"Land_ClutterCutter_large_F"
-];
-
 _vehicle = "Land_HelipadEmpty_F";
 _classname = "Land_Cargo_HQ_V3_F"; // this is the desert one
+
+if (count WARCOM_zones_controled_by_BLUFOR == 0) exitWith {
+["Info",["NO ZONES CONTROLLED","Blufor currently controls no zones."]] call bis_fnc_showNotification;
+sleep 15;
+_repfob = [player,"fob_support"] call BIS_fnc_addCommMenuItem;
+DUWSrepfob = _repfob;
+};
 
 _closest = [WARCOM_zones_controled_by_BLUFOR, _position] call BIS_fnc_nearestPosition;
 if (_position distance _closest < 250) then {zoneFound = true};
@@ -83,7 +78,7 @@ while {buildconfirmation == 1} do {
 	while {buildconfirmation == 1 && alive player} do {
 		_truedir = 90 - (getdir player);
 		_truepos = [((getpos player) select 0) + (_dist * (cos _truedir)), ((getpos player) select 1) + (_dist * (sin _truedir)),0];
-		
+
 		if ( ((_truepos distance _closest) < 250) && ((!surfaceIsWater _truepos) && (!surfaceIsWater getpos player)) ) then {
 			_vehicle setpos _truepos;
 			_vehicle setVectorUp [0,0,1]; //for HQ/FOBs only. 
@@ -151,10 +146,10 @@ publicvariable "fobname";
 
 sleep 5;
 
-[_fob] remoteExecCall ["Recurring_fnc_addFobActions", 0, true];
+[_fob,"Recurring_fnc_addFobActions",true,true] spawn BIS_fnc_MP;
 
 // For fortifying
-_fob addaction ["<t color='#ff0000'>Fortify FOB(4CP)</t>","inithq\fortifyFOB.sqf", getpos _fob, 0, true, true, "", "_this == player"];
+[[_fob,["<t color='#ff0000'>Fortify FOB(4CP)</t>","inithq\fortifyFOB.sqf", getpos _fob, 0, true, true, "", "_this == player"]],"addAction",true,true] call BIS_fnc_MP;
 
 PAPABEAR sidechat "The FOB has been deployed.";
 

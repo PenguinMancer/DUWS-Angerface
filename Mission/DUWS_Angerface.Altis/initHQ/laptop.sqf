@@ -16,4 +16,5 @@ _laptop allowdamage false;
 _laptop setdamage 0;
 _laptop setpos _laptopposition;
 
-_laptop addaction ["<t color='#ffb700'>Request Vehicle</t>","dialog\requestvehicle.sqf", "", 0, true, true, "", "_this == player"];
+[[_laptop,["<t color='#ffb700'>Request Vehicle</t>","dialog\requestvehicle.sqf", "", 0, true, true]],"addAction",true,true] call BIS_fnc_MP;
+[[_laptop,["<t color='#ffb700'>Build Fortifications</t>","dialog\Buildfortifications.sqf", "", 0, true, true, "", "BLD1cap == 1"]],"addAction",true,true] call BIS_fnc_MP;

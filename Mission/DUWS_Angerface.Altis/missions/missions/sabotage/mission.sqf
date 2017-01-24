@@ -31,7 +31,7 @@ sabotage = false; publicVariable "sabotage";
 
 // create TOWER 
 _tower = createVehicle ["Land_dp_transformer_F", _MissionPos, [], 0, "NONE"]; publicvariable "Mistower";
-_tower addAction [("<t color='#ff0011'>" + ("SABOTAGE") + "</t>"),"sabotage = true;",[],6,true,true,"","(_target distance _this) < 5"];
+[[_tower,[("<t color='#ff0011'>" + ("SABOTAGE") + "</t>"),"sabotage = true;",[],6,true,true,"","(_target distance _this) < 5"]],"addAction",true,true] call BIS_fnc_MP;
 _tower allowDamage false; 
 
 // TASK AND NOTIFICATION

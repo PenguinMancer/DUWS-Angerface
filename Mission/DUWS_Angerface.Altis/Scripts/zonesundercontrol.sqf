@@ -1,15 +1,11 @@
-// CP every 30 mins (1800)
-
-_undercontrol = true;
-
-while {_undercontrol} do {
+while {true} do {
 
  waitUntil {sleep 60;zoneundercontrolblu > 0};  // make sure there is at least 1 zone under control
  sleep 1800;
  waitUntil {sleep 60;zoneundercontrolblu > 0}; // check if there is still at least 1 zone under control
- ["CPzonehold",[(zoneundercontrolblu*5),zoneundercontrolblu]] call bis_fnc_showNotification;
- commandpointsblu1 = commandpointsblu1 + (zoneundercontrolblu*5);
- publicVariable "commandpointsblu1";
- ctrlSetText [1000, format["%1",commandpointsblu1]];
+ ["USDzonehold",[(zoneundercontrolblu*5),zoneundercontrolblu]] call bis_fnc_showNotification;
+ USDbudget = USDbudget + (zoneundercontrolblu*30);
+ publicVariable "USDbudget";
+ ctrlSetText [1000, format["%1",USDbudget]];
 
 };

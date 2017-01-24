@@ -1,14 +1,14 @@
 private [ "_ghost_spot", "_vehicle", "_dist", "_actualdir" ];
-_index = lbCurSel 7611;
+_index = lbCurSel 9808;
 
 closeDialog 0;
 
 _cpcost = 0;
 _vehicle = "Land_HelipadEmpty_F";
 _classname = "";
-_position = getpos player;
-_posFOB = [Array_of_FOBS, _position] call BIS_fnc_nearestPosition;
+_posFOB = getpos hq_blu1;
 isboat = false;
+Deletemode = 0;
 build_invalid = 0;
 buildconfirmation = 1;
 build_rotation = 0;
@@ -17,76 +17,170 @@ switch (_index) do
 {
     case 0:
     {
-          if (commandpointsblu1 >= 1) then
-          {
-           _cpcost = 1;
-           _classname = "B_Quadbike_01_F";
-          }
-          else
-          {
-		  hint "Not enough command points.";
-          buildconfirmation = 2;
-          };
+	_classname = "Land_BagFence_Short_F";
     };
     case 1:
     {
-          if (commandpointsblu1 >= 4) then
-          {
-           _cpcost = 4;
-           _classname = "I_G_Offroad_01_F";
-          }
-          else
-          {
-          hint "Not enough command points.";
-          buildconfirmation = 2;
-          };
+	_classname = "Land_BagFence_Long_F";
     };
 	case 2:
     {
-          if (commandpointsblu1 >= 6) then
-          {
-           _cpcost = 6;
-           _classname = "I_G_Van_01_transport_F";
-          }
-          else
-          {
-          hint "Not enough command points.";
-          buildconfirmation = 2;
-          };
+	_classname = "Land_BagFence_Round_F";
     };
-    case 3:
+	case 3:
     {
-          if (commandpointsblu1 >= 8) then
-          {
-           _cpcost = 8;
-           _classname = "B_Truck_01_covered_F";
-          }
-          else
-          {
-          hint "Not enough command points.";
-          buildconfirmation = 2;
-          };
+	_classname = "Land_BagFence_Corner_F";
     };
-    case 4:
+	case 4:
     {
-          if (commandpointsblu1 >= 8) then
-          {
-           _cpcost = 8;
-           _classname = "rhsusf_M1078A1P2_wd_fmtv_usarmy";
-          }
-          else
-          {
-          hint "Not enough command points.";
-          buildconfirmation = 2;
-          };
+	_classname = "Land_BagFence_End_F";
     };
-//SEMI Armored
 	case 5:
+    {
+	_classname = "Land_HBarrier_1_F";
+    };
+	case 6:
+    {
+	_classname = "Land_HBarrier_3_F";
+    };
+	case 7:
+    {
+	_classname = "Land_HBarrier_5_F";
+    };
+	case 8:
+    {
+	_classname = "Land_HBarrierBig_F";
+    };
+	case 9:
+    {
+	_classname = "Land_HBarrierTower_F";
+    };
+	case 10:
+    {
+	_classname = "Land_HBarrierWall4_F";
+    };
+	case 11:
+    {
+	_classname = "Land_HBarrierWall6_F";
+    };
+	case 12:
+    {
+	_classname = "Land_HBarrierWall_corner_F";
+    };
+	case 13:
+    {
+	_classname = "Land_HBarrierWall_corridor_F";
+    };
+	case 14:
+    {
+	_classname = "CamoNet_BLUFOR_F";
+    };
+	case 15:
+    {
+	_classname = "CamoNet_BLUFOR_open_F";
+    };
+	case 16:
+    {
+	_classname = "CamoNet_BLUFOR_big_F";
+    };
+	case 17:
+    {
+	_classname = "Land_Concrete_SmallWall_4m_F";
+    };
+	case 18:
+    {
+	_classname = "Land_CncWall1_F";
+    };
+	case 19:
+    {
+	_classname = "Land_CncBarrier_F";
+    };
+	case 20:
+    {
+	_classname = "Land_CncBarrierMedium_F";
+    };
+	case 21:
+    {
+	_classname = "land_PipeWall_concretel_8m_F";
+    };
+	case 22:
+    {
+	_classname = "Land_IndFnc_3_F";
+    };
+	case 23:
+    {
+	_classname = "Land_Wired_Fence_4m_F";
+    };
+	case 24:
+    {
+	_classname = "Land_New_WiredFence_5m_F";
+    };
+	case 25:
+    {
+	_classname = "Land_Campfire_F";
+    };
+	case 26:
+    {
+	_classname = "Land_CampingChair_V1_F";
+    };
+	case 27:
+    {
+	_classname = "Land_CampingTable_small_F";
+    };
+	case 28:
+    {
+	_classname = "Land_CampingTable_F";
+    };
+	case 29:
+    {
+	_classname = "Land_Sleeping_bag_F";
+    };
+	case 30:
+    {
+	_classname = "Land_Pallet_F";
+    };
+	case 31:
+    {
+	_classname = "Land_Bricks_V1_F";
+    };
+	case 32:
+    {
+	_classname = "Land_CinderBlocks_F";
+    };
+	case 33:
+    {
+	_classname = "Land_ConcretePipe_F";
+    };
+	case 34:
+    {
+	_classname = "Land_IronPipes_F";
+    };
+	case 35:
+    {
+	_classname = "Land_WoodenBox_F";
+    };
+	case 36:
+    {
+	_classname = "Land_WorkStand_F";
+    };
+	case 37:
+    {
+	_classname = "Land_BagBunker_Small_F";
+    };
+	case 38:
+    {
+	_classname = "Land_BagBunker_Large_F";
+    };
+	case 39:
+    {
+	_classname = "Land_BagBunker_Tower_F";
+    };
+	case 40:
     {
           if (commandpointsblu1 >= 5) then
           {
            _cpcost = 5;
-           _classname = "rhsusf_m1025_w";
+           _classname = "Land_TentHangar_V1_F";
           }
           else
           {
@@ -94,12 +188,12 @@ switch (_index) do
           buildconfirmation = 2;
           };
     };
-	case 6:
+	case 41:
     {
-          if (commandpointsblu1 >= 18) then
+          if (commandpointsblu1 >= 5) then
           {
-           _cpcost = 18;
-           _classname = "rhsusf_m1025_w_m2";
+           _cpcost = 5;
+           _classname = "Land_Cargo_House_V1_F";
           }
           else
           {
@@ -107,13 +201,12 @@ switch (_index) do
           buildconfirmation = 2;
           };
     };
-//APCS
-	case 7:
+	case 42:
     {
-          if (commandpointsblu1 >= 30) then
+          if (commandpointsblu1 >= 5) then
           {
-           _cpcost = 30;
-           _classname = "RHS_M2A3_BUSKIII";
+           _cpcost = 5;
+           _classname = "Land_Cargo_Patrol_V1_F";
           }
           else
           {
@@ -121,12 +214,12 @@ switch (_index) do
           buildconfirmation = 2;
           };
     };
-	case 8:
+	case 43:
     {
-          if (commandpointsblu1 >= 30) then
+          if (commandpointsblu1 >= 10) then
           {
-           _cpcost = 30;
-           _classname = "rhsusf_m113_usarmy_M240";
+           _cpcost = 10;
+           _classname = "Land_Cargo_Tower_V1_F";
           }
           else
           {
@@ -134,67 +227,56 @@ switch (_index) do
           buildconfirmation = 2;
           };
     };
-	case 9:
+	case 44:
     {
-          if (commandpointsblu1 >= 35) then
-          {
-           _cpcost = 25;
-           _classname = "CUP_B_Ridgback_HMG_GB_D";
-          }
-          else
-          {
-          hint "Not enough command points.";
-          buildconfirmation = 2;
-          };
+	_classname = "ShootingPos_F";
     };
-//Artillery
-	case 10:
+	case 45:
     {
-          if (commandpointsblu1 >= 75) then
-          {
-           _cpcost = 75;
-           _classname = "B_MBT_01_mlrs_F";
-          }
-          else
-          {
-          hint "Not enough command points.";
-          buildconfirmation = 2;
-          };
+	_classname = "TargetP_Inf_F";
     };
-	case 11:
+	case 46:
     {
-          if (commandpointsblu1 >= 75) then
-          {
-           _cpcost = 75;
-           _classname = "rhsusf_m109_usarmy";
-          }
-          else
-          {
-          hint "Not enough command points.";
-          buildconfirmation = 2;
-          };
+	_classname = "Land_Ammobox_rounds_F";
     };
-//Tanks
-	case 12:
+	case 47:
     {
-          if (commandpointsblu1 >= 60) then
-          {
-           _cpcost = 60;
-           _classname = "rhsusf_m1a2sep1tuskiwd_usarmy";
-          }
-          else
-          {
-          hint "Not enough command points.";
-          buildconfirmation = 2;
-          };
+	_classname = "Box_NATO_Wps_F";
     };
-//Unarmed Helicopters
-    case 13:
+	case 48:
+    {
+	_classname = "Box_NATO_WpsSpecial_F";
+    };
+	case 49:
+    {
+	_classname = "Box_NATO_WpsLaunch_F";
+    };
+	case 50:
+    {
+	_classname = "Box_NATO_Ammo_F";
+    };
+	case 51:
+    {
+	_classname = "Box_NATO_AmmoOrd_F";
+    };
+	case 52:
+    {
+	_classname = "Box_NATO_Grenades_F";
+    };
+	case 53:
+    {
+	_classname = "Box_NATO_Support_F";
+    };
+	case 54:
+    {
+	_classname = "Box_NATO_AmmoVeh_F";
+    };
+	case 55:
     {
           if (commandpointsblu1 >= 15) then
           {
            _cpcost = 15;
-           _classname = "B_Heli_Light_01_F";
+           _classname = "RHS_M2StaticMG_MiniTripod_D";
           }
           else
           {
@@ -202,13 +284,12 @@ switch (_index) do
           buildconfirmation = 2;
           };
     };
-//Armed Helicopters
-	case 14:
+	case 56:
     {
-          if (commandpointsblu1 >= 25) then
+          if (commandpointsblu1 >= 15) then
           {
-           _cpcost = 25;
-           _classname = "B_Heli_Light_01_armed_F";
+           _cpcost = 15;
+           _classname = "RHS_M2StaticMG_D";
           }
           else
           {
@@ -216,12 +297,12 @@ switch (_index) do
           buildconfirmation = 2;
           };
     };
-	case 15:
+	case 57:
     {
-          if (commandpointsblu1 >= 40) then
+          if (commandpointsblu1 >= 15) then
           {
-           _cpcost = 40;
-           _classname = "rhs_ah64d_wd";
+           _cpcost = 15;
+           _classname = "RHS_M252_D";
           }
           else
           {
@@ -229,39 +310,12 @@ switch (_index) do
           buildconfirmation = 2;
           };
     };
-//Fighter Jets
-	case 16:
+	case 58:
     {
-          if (commandpointsblu1 >= 45) then
+          if (commandpointsblu1 >= 15) then
           {
-           _cpcost = 45;
-           _classname = "B_Plane_CAS_01_F";
-          }
-          else
-          {
-          hint "Not enough command points.";
-          buildconfirmation = 2;
-          };
-    };
-	case 17:
-    {
-          if (commandpointsblu1 >= 60) then
-          {
-           _cpcost = 60;
-           _classname = "rhs_a10";
-          }
-          else
-          {
-          hint "Not enough command points.";
-          buildconfirmation = 2;
-          };
-    };
-	case 18:
-    {
-          if (commandpointsblu1 >= 30) then
-          {
-           _cpcost = 30;
-           _classname = "RHS_C130J";
+           _cpcost = 15;
+           _classname = "RHS_MK19_TriPod_D";
           }
           else
           {
@@ -318,7 +372,7 @@ while {buildconfirmation == 1} do {
 			if (((surfaceIsWater _truepos) || (surfaceIsWater getpos player)) && !(isboat)) then {
 				hint "Can't build on water.";
 			} else {
-				hint "Too far away from FOB."
+				hint "Too far away from HQ."
 			};
 		};
 		sleep 0.05;
@@ -354,8 +408,8 @@ _vehicle setpos _vehpos;
 _vehicle setDir _vehdir;
 _vehicle setVectorUp [0,0,1];
 sleep 0.3;
-_vehicle allowDamage true;
 _vehicle setDamage 0;
+[[_vehicle,["<t color='#B0FF00'>Delete Fortification</t>","dialog\Delete_fortification.sqf",[_vehicle],-900,false,true,"","Deletemode == 1"]],"addAction",true,true] call BIS_fnc_MP;
 
 commandpointsblu1 = commandpointsblu1 - _cpcost;
 

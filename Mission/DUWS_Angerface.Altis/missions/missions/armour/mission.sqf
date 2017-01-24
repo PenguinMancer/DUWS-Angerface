@@ -34,8 +34,7 @@ str(_markername2) setMarkerAlpha 0.5;
       [_randompos, _radius] spawn SoldierSpawn_fnc_createoppatrol;
       [_randompos, _radius] spawn SoldierSpawn_fnc_createopteam;
 	  [_randompos, _radius] spawn SoldierSpawn_fnc_createopteam;
-     // "O_APC_Tracked_02_cannon_F" createVehicle ([(_missionpos select 0)+(random 150),(_missionpos select 1)+(random 150)]); //  	O_APC_Wheeled_02_rcws_F
-	  _group = [_randompos, EAST, WARCOM_opf_attack_wave_type,[],[],[0.90,1.0]] call BIS_fnc_spawnGroup;
+	  "O_APC_Tracked_02_cannon_F" createVehicle ([(_missionpos select 0)+(random 150),(_missionpos select 1)+(random 150)]); //  	O_APC_Wheeled_02_rcws_F
 	  _group setCombatMode "RED";
       _wp = _group addWaypoint [_randompos, 50];
       _wp setWaypointType "MOVE";

@@ -1,6 +1,6 @@
 class CFGfunctions
 {
-	tag = "Soldiers"
+	tag = "Soldiers";
 	class SoldierFunctions
 	{
 		file = "SoldierFNC\functions";

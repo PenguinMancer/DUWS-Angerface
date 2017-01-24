@@ -5,18 +5,6 @@ _hqvehicle removeAction Vehicleaction;
 build_invalid = 0;
 buildconfirmation = 1;
 
-_ignorecollisionwhenbuilding = [
-	"Land_Flush_Light_red_F",
-	"Land_Flush_Light_green_F",
-	"Land_Flush_Light_yellow_F",
-	"Land_runway_edgelight",
-	"Land_runway_edgelight_blue_F",
-	"Land_HelipadSquare_F",
-	"Sign_Sphere100cm_F",
-	"TMR_Autorest_Georef",
-	"Land_ClutterCutter_large_F"
-];
-
 _vehicle = "Land_HelipadEmpty_F";
 _classname = "Land_Cargo_HQ_V3_F"; // this is the desert one
 
@@ -134,12 +122,8 @@ _hq setVariable ["NOAI",true];
 hq_blu1 = _hq;
 publicVariable "hq_blu1";
 _hq setpos [_vehpos select 0, _vehpos select 1, .59];
-_handle = [hq_blu1] execVM "initHQ\HQaddactions.sqf";
-removeAllWeapons _hq;
-removeAllItems _hq;
-removeAllAssignedItems _hq;
-_hq setFace "Zee_White_Head_04";
-_hq setSpeaker "rhs_Male02RUS";
+[[hq_blu1],"Recurring_fnc_addHQactions",true,true] spawn BIS_fnc_MP;
+[_hq] remoteExecCall ["Soldiers_fnc_RandomBluforIdentityGeneral", 0, true];
 
 //GUARDS
 _handle = [getpos hq_blu1] execVM "initHQ\guards.sqf";

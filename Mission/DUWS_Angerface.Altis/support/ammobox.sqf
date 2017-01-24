@@ -27,7 +27,7 @@ clearMagazineCargo _ammo;
 clearWeaponCargo _ammo;
 clearItemCargoGlobal _ammo;
 
-_ammo addaction ["<t color='#ff0066'>Armory</t>",{ [] call Recurring_fnc_VA }, "", 0, true, true, "", "_this == player"];
+[[_ammo,["<t color='#ff1111'>Armory</t>",{ [] call Recurring_fnc_VA },[], 0, true, true, "", "_this distance _target < 4"]],"addAction",true,true] call BIS_fnc_MP;
 
 // Land safely
 WaitUntil {sleep 0.5; ((((position _ammo) select 2) < 3) || (isNil "_parachute"))};

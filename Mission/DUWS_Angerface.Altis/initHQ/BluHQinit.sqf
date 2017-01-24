@@ -51,7 +51,7 @@ _hq setVariable ["NOAI",true];
 hq_blu1 = _hq;
 publicVariable "hq_blu1";
 _hq setpos [_hqblu select 0, _hqblu select 1, .59];
-_handle = [hq_blu1] execVM "initHQ\HQaddactions.sqf";
+[[hq_blu1],"Recurring_fnc_addHQactions",true,true] spawn BIS_fnc_MP;
 [_hq] remoteExecCall ["Soldiers_fnc_RandomBluforIdentityGeneral", 0, true];
 
 //GUARDS

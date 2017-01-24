@@ -36,7 +36,7 @@ lbSetCurSel [4507, 0];
 _index1 = lbAdd [5607, "ATV (5K)"];                       		// 0
 _index1 = lbAdd [5607, "Transport Truck 6 seats (10K)"];       	// 1
 _index1 = lbAdd [5607, "Transport Truck 9 seats (12K)"];       	// 2
-_index1 = lbAdd [5607, "UAZ open (7.5K)"];       				// 3
+_index1 = lbAdd [5607, "UAZ open (7K)"];       					// 3
 _index1 = lbAdd [5607, "Transport Truck Armed (15K)"];       	// 4
 _index1 = lbAdd [5607, "Black SUV Armed (150K)"];       		// 5
 _index1 = lbAdd [5607, "HEMTT Transport Covered (20K)"];        // 6
