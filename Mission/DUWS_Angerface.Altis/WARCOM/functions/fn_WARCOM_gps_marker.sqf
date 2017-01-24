@@ -33,6 +33,3 @@ WARCOM_marker_num = WARCOM_marker_num + 1;
 
 
 };
-
-
-// fin du script

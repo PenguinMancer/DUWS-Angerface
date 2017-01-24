@@ -57,8 +57,8 @@ actplace = -1;
 
 while {buildconfirmation == 1} do {
 
-	actcancel = player addAction ["<t color='#B0FF00'>Cancel</t>","scripts\buildcancel.sqf","",-725,false,true];
-	actplace = player addAction ["<t color='#B0FF00'>Place</t>","scripts\buildplace.sqf","",-775,false,true,"","build_invalid == 0"];
+	actcancel = player addAction ["<t color='#B0FF00'>Cancel</t>","dialog\building\buildcancel.sqf","",-725,false,true];
+	actplace = player addAction ["<t color='#B0FF00'>Place</t>","dialog\building\buildplace.sqf","",-775,false,true,"","build_invalid == 0"];
 
 	_ghost_spot = getmarkerpos "ghost_spot";
 
@@ -147,6 +147,7 @@ publicvariable "fobname";
 sleep 5;
 
 [_fob,"Recurring_fnc_addFobActions",true,true] spawn BIS_fnc_MP;
+[missionNamespace, _vehpos] remoteExecCall ["BIS_fnc_addRespawnPosition", 0, true];
 
 // For fortifying
 [[_fob,["<t color='#ff0000'>Fortify FOB(4CP)</t>","inithq\fortifyFOB.sqf", getpos _fob, 0, true, true, "", "_this == player"]],"addAction",true,true] call BIS_fnc_MP;
@@ -165,23 +166,20 @@ _trg23=createTrigger["EmptyDetector",_vehpos];
 _trg23 triggerAttachVehicle [player];
 _trg23 setTriggerArea[250,250,0,false];
 _trg23 setTriggerActivation["VEHICLE","PRESENT",true];
-_trg23 setTriggerStatements["this", format["[""FOB %1"",thislist] execvm 'Scripts\enterlocation.sqf'",_fobname], ""];
+_trg23 setTriggerStatements["this", format["[""FOB %1"",thislist] spawn Recurring_fnc_enterlocation",_fobname], ""];
 
 // warning trigger when an enemy approaches the camp
 _trgWarning=createTrigger["EmptyDetector",_vehpos];
 _trgWarning setTriggerArea[500,500,0,false];
 _trgWarning setTriggerActivation["EAST","PRESENT",true];
-_trgWarning setTriggerStatements["this","[]execVM 'Scripts\warningfob.sqf'", ""];
-
+_trgWarning setTriggerStatements["this","[] call Recurring_fnc_warningfob", ""];
 
 //ADD THE FOB TO Array_of_FOBS
-fobSwitch = true; // tell that this is the player who created the FOB (to avoid variableEventHandler to trigger)
 Array_of_FOBS = Array_of_FOBS + [_fob];
 publicVariable "Array_of_FOBS";
 
 Array_of_FOBname = Array_of_FOBname + [_fobname];
 publicVariable "Array_of_FOBname";
-
 
 sleep 1;
 enableSaving true;

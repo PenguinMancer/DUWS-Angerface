@@ -123,8 +123,8 @@ player globalChat format["All zones found. Welcome to %1, %2",_worldName,profile
 [[{player globalChat "MISSION INITIALIZATION COMPLETE!"}],"BIS_fnc_Spawn",true,false] call BIS_fnc_MP;
 [[{hint format["MISSION INITIALIZATION COMPLETE!\nCampaign generated\nzones: %1\nmaximum radius: %2m\nminimum radius: %3m\nmax. distance from HQ: %4m\n\nIf you experience performance issues, restart the mission and try reducing the amount of zones/and or their radius",zones_number,zones_max_radius,zones_min_radius,zones_max_dist_from_hq]}],"BIS_fnc_Spawn",true,false] call BIS_fnc_MP;
 [] spawn {
-    sleep 9;
-    [] execVM "Scripts\bottom_right_message.sqf";
+sleep 9;
+[] spawn Recurring_fnc_bottom_right_message;
 };
 
 

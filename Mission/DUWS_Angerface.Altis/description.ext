@@ -27,10 +27,10 @@ respawnDelay = 4;
 respawnDialog = 0;
 respawnTemplates[] = {"MenuPosition"};
 respawnOnStart = 0;
-
-
+corpseManagerMode = 0;
+wreckManagerMode = 0;
 disabledAI = 1;
-//allowFunctionsLog = 0;
+//allowFunctionsLog = 1;
 
 __EXEC (MISSION_ROOT = __FILE__ select [0, count __FILE__ - 15])
 
@@ -66,4 +66,5 @@ class CfgFunctions
 	#include "persistent\CfgFunctions.hpp"
 	#include "SoldierFNC\CfgFunctions.hpp"
 	#include "SoldierSpawn\CfgFunctions.hpp"
+	#include "WARCOM\CfgFunctions.hpp"
 };

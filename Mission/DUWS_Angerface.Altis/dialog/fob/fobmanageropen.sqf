@@ -1,11 +1,7 @@
 if (((count Array_of_FOBname) < 1) && (!MTV1cap)) exitWith {hint "You must have at least one FOB or MTV to access the FOB manager"};
 
-
-
-
   _handle = createDialog "fob_mng_dialog";  
   waitUntil {dialog};
-  
     
 //// CREATE THE ARRAY OF FOBS w/ POSITION
 _array_of_fobs_list = [];  // init the array of fobs

@@ -726,8 +726,8 @@ actrotate = -1;
 
 while {buildconfirmation == 1} do {
 
-	actcancel = player addAction ["<t color='#B0FF00'>Cancel</t>","scripts\buildcancel.sqf","",-725,false,true];
-	actplace = player addAction ["<t color='#B0FF00'>Place</t>","scripts\buildplace.sqf","",-775,false,true,"","build_invalid == 0"];
+	actcancel = player addAction ["<t color='#B0FF00'>Cancel</t>","dialog\building\buildcancel.sqf","",-725,false,true];
+	actplace = player addAction ["<t color='#B0FF00'>Place</t>","dialog\building\buildplace.sqf","",-775,false,true,"","build_invalid == 0"];
 	actrotate = player addAction ["<t color='#B0FF00'>Rotation</t>","build_rotation = build_rotation + 90","",-750,false,false];
 
 	_ghost_spot = getmarkerpos "ghost_spot";

@@ -26,7 +26,7 @@ zoneundercontrolblu = zoneundercontrolblu + 1;
 publicVariable "zoneundercontrolblu";
 
 if (WARCOM_opfor_ap > 149) then {
-[_triggerPos,_size] execVM "WARCOM\WARCOM_opf_zonerecapforce.sqf";
+[_triggerPos,_size] spawn Warcom_fnc_WARCOM_opf_zonerecapforce;
 };
 
 // MODIFY ARMY POWER

@@ -20,7 +20,7 @@ WARCOM_zones_controled_by_OPFOR = WARCOM_zones_controled_by_OPFOR - [_triggerPos
 publicVariable "WARCOM_zones_controled_by_OPFOR";
 
 if (WARCOM_opfor_ap > 149) then {
-[_triggerPos,_size] execVM "WARCOM\WARCOM_opf_zonerecapforce.sqf";
+[_triggerPos,_size] spawn Warcom_fnc_WARCOM_opf_zonerecapforce;
 };
 
 // MODIFY ARMY POWER

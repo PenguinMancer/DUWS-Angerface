@@ -159,7 +159,7 @@ class Mission
 					rank="SERGEANT";
 					skill=0.60000002;
 					text="player1";
-					init="null = [this] execVM 'Scripts\DeathAPLeader.sqf';";
+					init="[this] call Recurring_fnc_DeathAPLeader;";
 				};
 				class Item1
 				{
@@ -172,7 +172,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="player2";
-					init="null = [this] execVM 'Scripts\DeathAP.sqf';";
+					init="[this] call Recurring_fnc_DeathAP;";
 				};
 				class Item2
 				{
@@ -185,7 +185,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="player3";
-					init="null = [this] execVM 'Scripts\DeathAP.sqf';";
+					init="[this] call Recurring_fnc_DeathAP;";
 				};
 				class Item3
 				{
@@ -198,7 +198,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="player4";
-					init="null = [this] execVM 'Scripts\DeathAP.sqf';";
+					init="[this] call Recurring_fnc_DeathAP;";
 				};
 				class Item4
 				{
@@ -211,7 +211,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="player5";
-					init="null = [this] execVM 'Scripts\DeathAP.sqf';";
+					init="[this] call Recurring_fnc_DeathAP;";
 				};
 			};
 		};

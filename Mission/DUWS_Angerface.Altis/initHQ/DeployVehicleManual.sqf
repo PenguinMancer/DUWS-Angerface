@@ -10,8 +10,8 @@ _classname = "Land_Cargo_HQ_V3_F"; // this is the desert one
 
 while {buildconfirmation == 1} do {
 
-	actcancel = _hqvehicle addAction ["<t color='#B0FF00'>Cancel</t>","scripts\buildcancel.sqf","",-725,false,true];
-	actplace = _hqvehicle addAction ["<t color='#B0FF00'>Place</t>","scripts\buildplace.sqf","",-775,false,true,"","build_invalid == 0"];
+	actcancel = _hqvehicle addAction ["<t color='#B0FF00'>Cancel</t>","dialog\building\buildcancel.sqf","",-725,false,true];
+	actplace = _hqvehicle addAction ["<t color='#B0FF00'>Place</t>","dialog\building\buildplace.sqf","",-775,false,true,"","build_invalid == 0"];
 
 	_ghost_spot = getmarkerpos "ghost_spot";
 
@@ -88,7 +88,7 @@ _trg5=createTrigger["EmptyDetector",_vehpos];
 _trg5 triggerAttachVehicle [player];
 _trg5 setTriggerArea[250,250,0,false];
 _trg5 setTriggerActivation["VEHICLE","PRESENT",true];
-_trg5 setTriggerStatements["this", format["[""%1"",thislist] execvm 'Scripts\enterlocation.sqf'",'Main Base'], ""];
+_trg5 setTriggerStatements["this", format["[""%1"",thislist] spawn Recurring_fnc_enterlocation",'Main Base'], ""];
 
 // CREATE MARKER (HQ)
 _HQmarker = createMarker ["HQMarker",_vehpos];
@@ -101,7 +101,7 @@ _HQmarker = createMarker ["HQMarker",_vehpos];
 _trgWarning=createTrigger["EmptyDetector",_vehpos];
 _trgWarning setTriggerArea[500,500,0,false];
 _trgWarning setTriggerActivation["EAST","PRESENT",true];
-_trgWarning setTriggerStatements["this","[]execVM 'Scripts\warninghq.sqf'", ""];
+_trgWarning setTriggerStatements["this","[] call Recurring_fnc_warninghq", ""];
 
 // CREATE THE OFFICER. UGLY HACKS FOR AI MODS SUPPORT
 _group = createGroup west;

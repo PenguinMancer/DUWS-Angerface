@@ -1,10 +1,4 @@
-// _handle = [[zones],posHQblu,posHQop,blufor AP,opfor AP, blu attack delay, blu skill range, opfor skill range, opf attack delay] execVM "WARCOM\WARCOM_init.sqf"
-//               |         |     |        |          |            |
-//         array of arrays |   array      |        number         |
-//                      array           number                  number
-
 player globalchat "Initializing WARCOM...";
-WARCOM_init_done = false;
 
 _array_of_zones_total =_this select 0;
 _blu_hq_pos =_this select 1;
@@ -47,25 +41,23 @@ WARCOM_zones_controled_by_OPFOR = [] + _WARCOM_zones_controled_by_OPFOR;
 publicvariable "WARCOM_zones_controled_by_OPFOR";
 
 // Init BLU patrols
-_blu_patrol = [] execVM "WARCOM\WARCOM_blu_patrol.sqf";
+_blu_patrol = [] spawn Warcom_fnc_WARCOM_blu_patrol;
 waitUntil {scriptDone _blu_patrol};
 
 // Init OPF patrols
-_opf_patrol = [] execVM "WARCOM\WARCOM_opf_patrol.sqf";
+_opf_patrol = [] spawn Warcom_fnc_WARCOM_opf_patrol;
 waitUntil {scriptDone _opf_patrol};
 
 // Initialize the BLU attack waves
-_blu_assault = [] execVM "WARCOM\WARCOM_blu_assault.sqf";
+_blu_assault = [] spawn Warcom_fnc_WARCOM_blu_assault;
 waitUntil {scriptDone _blu_assault};
 
 // Init the OPF attack waves
-_opf_assault = [] execVM "WARCOM\WARCOM_opf_assault.sqf";
+_opf_assault = [] spawn Warcom_fnc_WARCOM_opf_assault;
 waitUntil {scriptDone _opf_assault};
 
 // Init the OPF town Patrols
-_opf_town = [] execVM "WARCOM\WARCOM_opf_townpatrol.sqf";
+_opf_town = [] spawn Warcom_fnc_WARCOM_opf_townpatrol;
 waitUntil {scriptDone _opf_town};
 
-
-WARCOM_init_done = true;
 player globalchat "WARCOM initialized !";

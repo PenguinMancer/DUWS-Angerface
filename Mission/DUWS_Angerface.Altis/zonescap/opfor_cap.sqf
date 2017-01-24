@@ -65,5 +65,5 @@ call compile format["%1 = _trg",_triggerName];
 //// MAKE QRF TRIGGER DO SOMETHING AGAIN
 _trgQRF setTriggerArea[_size,_size,0,false];
 _trgQRF setTriggerActivation["WEST","EAST D",true];
-_trgQRF setTriggerStatements["this", format["[%1,%2] spawn QRF_zone",_trigger,_size], ""];
+_trgQRF setTriggerStatements["this", format["[%1,%2] spawn WARCOM_opf_qrf_zone",_trigger,_size], ""];
 _trgQRF setTriggerTimeout [5, 7, 10, true ];

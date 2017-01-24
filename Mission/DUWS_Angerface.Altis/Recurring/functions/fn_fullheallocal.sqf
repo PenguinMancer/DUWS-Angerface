@@ -1,15 +1,5 @@
-/**
- * fn_healLocal.sqf
- * @Descr: N/A
- * @Author: Glowbal
- *
- * @Arguments: []
- * @Return:
- * @PublicAPI: false
- */
-
 private "_allUsedMedication";
-_unit = _this select 0;
+params ["_unit"];
 
 if (alive _unit) exitWith {
 

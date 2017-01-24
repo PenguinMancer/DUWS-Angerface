@@ -102,11 +102,6 @@ _reward = [_cpreward, _apreward, _appenalty, _mission_name] execvm "missions\mis
 // ADD PERSISTENT STAT
 _addmission = call persistent_fnc_incrementCompletedMissions;
 
-// ADD VEHICLE MARKER
-
-ARM1cap = true;
-publicvariable "ARM1cap";
-[[{[ARM1, "mil_triangle", "ColorRed", "2", "2", "ARM-1"] call kndr_assignMarker}],"BIS_fnc_Spawn",true,true] call BIS_fnc_MP;
 sleep 1;
 [[{ARM1 addaction["<t color='#ff0066'>Armory</t>", {["Open", true] call BIS_fnc_arsenal;}, "", 0, true, true, "", "_this == player"]}],"BIS_fnc_Spawn",true,true] call BIS_fnc_MP;
 

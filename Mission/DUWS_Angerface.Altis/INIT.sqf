@@ -44,13 +44,6 @@ zones_min_radius = 200; // Determine the minium radius a generated zone can have
 zone_fortified = false; // Only used for advanced zone generation, allows you to turn fortification on and off.
 zone_compound = false; //Only used for advanced zone generation. Compounds have twice as many prefabs as normal.
 /////////////////////////////////////////////////////////////
-
-//initialize various scripts
-QRF = compile preprocessFile "WARCOM\WARCOM_opf_qrf.sqf";
-QRF_zone = compile preprocessFile "WARCOM\WARCOM_opf_qrf_zone.sqf";
-QRF_WP = compile preprocessFile "WARCOM\WARCOM_wp_opf_qrf.sqf";
-[] call compile preprocessFile "Scripts\kndr_unit_markers.sqf";
-
 ///////////////////////////////////////////////////
 /// ------------- DEBUG VARIABLES ------------- ///
 debugmode = false;
@@ -64,7 +57,6 @@ failsafe_zones_not_found = false;
 createcenter sideLogic;
 LogicGroup = createGroup SideLogic;
 PAPABEAR=[West,"HQ"];
-fobSwitch = false;
 player_is_choosing_hqpos = false;
 
 
@@ -182,11 +174,6 @@ if (isNil "Halojump") then
 Halojump = 0;publicvariable "Halojump";
 };
 
-//MTV MARKER JIP
-if (!isServer) then{
-if ((MTV1cap) && (alive MTV1)) then {[MTV1, "mil_triangle", "ColorGreen", "2", "2", "MTV-1"] call kndr_assignMarker};
-};
-
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 game_master = ["player1"];
@@ -233,19 +220,6 @@ if (isMultiplayer) then {
 	"support_specialized_training_available" addPublicVariableEventHandler {lbSetColor [2103, 11, [0, 1, 0, 1]];};
 	"commandpointsblu1" addPublicVariableEventHandler {ctrlSetText [1000, format["%1",commandpointsblu1]];}; // change the shown CP for request dialog
 
-
-	// each time there is a new FOB
-	"Array_of_FOBS" addPublicVariableEventHandler {
-
-		fobSwitch = false;
-		//Add the FoB to the list of revive locations.
-		_fobAmount = count Array_of_FOBS;
-		_fobIndex = _fobAmount - 1;
-		_createdFOB = Array_of_FOBS select _fobIndex;
-
-		[missionNamespace, _createdFOB] call BIS_fnc_addRespawnPosition;
-	};
-
 	if (!isServer) then {
 		"savegameNumber" addPublicVariableEventHandler { call Recurring_fnc_restClient };
 		"capturedZonesNumber" addPublicVariableEventHandler { call persistent_fnc_incrementCapturedZones }; // change the shown CP for request dialog
@@ -280,14 +254,14 @@ if (((vehiclevarname player) in game_master)) then {
 
 // group cleaning script
 if (isServer) then {
-clean = [
+	clean = [
 		5*60, // seconds to delete dead bodies (0 means don't delete)
 		5*60, // seconds to delete dead vehicles (0 means don't delete)
 		0, // seconds to delete immobile vehicles (0 means don't delete)
 		5*60, // seconds to delete dropped weapons (0 means don't delete)
 		0, // seconds to deleted planted explosives (0 means don't delete)
 		10*60 // seconds to delete dropped smokes/chemlights (0 means don't delete)
-] execVM 'Scripts\repetitive_cleanup.sqf';
+	] spawn Recurring_fnc_repetitive_cleanup;
 };
 
 ///////////////////////////FOR JIP////////////////////////////////////////////////////////
@@ -312,12 +286,12 @@ if (!isServer) then { // WHEN CLIENT CONNECTS INIT (might need sleep)
 
 
 if (isServer) then {
-// initialise the ressources per zone bonus
-_basepoint = [] execVM "Scripts\zonesundercontrol.sqf";
+// initialise the resources per zone bonus
+_basepoint = [] spawn Recurring_fnc_zonesundercontrol;
 };
 
 // init the bonuses you get when capturing zones
-_basepoint = [] execVM "Scripts\zones_bonus.sqf";
+_basepoint = [] spawn Recurring_fnc_zones_bonus;
 
 // INIT the operative list
 execVM "dialog\operative\operator_init.sqf";
@@ -350,7 +324,7 @@ capture_island_obj setSimpleTaskDescription ["The enemy is controlling the islan
 waitUntil {sleep 1; (HQgenerated)};
 waitUntil {sleep 1; (Zonesgenerated)};
 sleep 1;
-_warcom_init = [Array_of_OPFOR_zones, getpos hq_blu1, [0,0,0], blufor_ap, opfor_ap, 900,blufor_ai_skill,opfor_ai_skill, 900] execVM "WARCOM\WARCOM_init.sqf";
+[Array_of_OPFOR_zones, getpos hq_blu1, [0,0,0], blufor_ap, opfor_ap, 900,blufor_ai_skill,opfor_ai_skill, 900] spawn Warcom_fnc_WARCOM_init;
 
 //Cleanup unused players.
 for[{_x = 2},{_x <= 12},{_x = _x + 1}] do
@@ -365,7 +339,7 @@ for[{_x = 2},{_x <= 12},{_x = _x + 1}] do
 	};
 };
 
-trk = ["player"] execVM 'Scripts\player_markers.sqf';
+trk = ["player"] spawn Recurring_fnc_player_markers;
 
 BOMBCODE1 = [];
 [] call compile preprocessfilelinenumbers "Scripts\protectofficer.sqf";
@@ -375,8 +349,8 @@ BOMBCODE1 = [];
 waitUntil {!isNil "hq_blu1"};
 waitUntil {!isNil "protect_officer"};
 hq_blu1 addeventhandler ["firednear", {_this call protect_officer}];
-execVM "Scripts\grenadeStop.sqf";
-execVM "Scripts\EnemyAPGain.sqf";
+[] spawn Recurring_fnc_enemyAPGain;
+[] spawn Recurring_fnc_grenadeStop;
 
 _satcom1 = [] execVM "pxs_satcom_a3\init_satellite.sqf";
 

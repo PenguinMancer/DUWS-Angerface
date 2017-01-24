@@ -1,4 +1,3 @@
-
 if (UseSiren==1) then {
 [[{playSound "siren"}],"BIS_fnc_Spawn",true,false] call BIS_fnc_MP;
 };

@@ -44,7 +44,7 @@ WARCOM_opf_attack_wave_type = "";
 		  _randomZonesafe = [(_randomZone select 0)+20,_randomZone select 1];
 		  };
           _group = [_randomZonesafe, EAST, WARCOM_opf_attack_wave_type,[],[],WARCOM_opf_ai_skill_range] call BIS_fnc_spawnGroup;		          
-          _opf_assault = [_group] execVM "WARCOM\WARCOM_wp_opf.sqf";
+          _opf_assault = [_group] spawn Warcom_fnc_WARCOM_wp_opf;
 		  
 		  if (debugmode) then {
 		  _null = [_group,"assault"] execvm "debuglocation.sqf";

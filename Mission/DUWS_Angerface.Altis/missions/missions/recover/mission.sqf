@@ -111,7 +111,6 @@ _addmission = call persistent_fnc_incrementCompletedMissions;
 
 MTV1cap = true;
 publicvariable "MTV1cap";
-[[{[MTV1, "mil_triangle", "ColorGreen", "2", "2", "MTV-1"] call kndr_assignMarker}],"BIS_fnc_Spawn",true,true] call BIS_fnc_MP;
 sleep 1;
 [[{MTV1 addaction ["<t color='#15ff00'>FOB/Teleport</t>","dialog\fob\FOBmanageropen.sqf", "", 0, true, true, "", "_this == player"]}],"BIS_fnc_Spawn",true,true] call BIS_fnc_MP;
 

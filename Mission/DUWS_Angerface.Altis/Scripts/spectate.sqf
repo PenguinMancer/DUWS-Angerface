@@ -17,4 +17,3 @@ cutText ["", "PLAIN"];
 titleFadeOut 1;
 sleep 3;
 [["officerandplayerskilled",true,true],"BIS_fnc_endMission"] call BIS_fnc_MP;
-

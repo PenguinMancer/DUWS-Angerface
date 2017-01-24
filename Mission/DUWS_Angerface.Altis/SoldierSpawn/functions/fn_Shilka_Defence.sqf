@@ -6,4 +6,4 @@ _patrolRadius = round(_radius/2);
 [_group, _position, _patrolradius] call bis_fnc_taskPatrol;
 
 // ADD QRF eventhandler
-_EH = leader _group addEventHandler ["Fired", {[_this select 0] spawn QRF}];
+_EH = leader _group addEventHandler ["Fired", {[_this select 0] spawn WARCOM_opf_qrf}];

@@ -14,4 +14,4 @@ protect_officer = {
 	[] execvm "Scripts\damage.sqf";
 	
 	
-    };    
+    };

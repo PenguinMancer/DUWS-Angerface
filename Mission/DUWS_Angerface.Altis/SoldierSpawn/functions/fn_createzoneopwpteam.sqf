@@ -23,7 +23,7 @@ _group = [_trigger, EAST, _initGroup,[],[],opfor_ai_skill] call BIS_fnc_spawnGro
 } forEach (units _group);
 
 // ADD QRF eventhandler
-_EH = leader _group addEventHandler ["Fired", {[_this select 0] spawn QRF}];
+_EH = leader _group addEventHandler ["Fired", {[_this select 0] spawn WARCOM_opf_qrf}];
 
 [_group, _originaltrigger, _size-50] call BIS_fnc_taskPatrol;
 

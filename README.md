@@ -46,7 +46,7 @@ After a location for the HQ has been selected the player will be prompted with a
 ## Credits / Thanks
 * DUWS Mission made by kibot.
 * Thanks to Kempco for the map size script.
-* Thanks to Aeroson for repetitive clean up script.
+* Thanks to Aeroson for repetitive clean up script, and soldier tracker script.
 * Thanks to pokertour for the airdrop script.
 * Thanks to Pixel Art Studio for the SATCOM script.
 * Thanks to Haleks for Unlocked uniforms, which I have modified slightly for the purposes of my addon. 

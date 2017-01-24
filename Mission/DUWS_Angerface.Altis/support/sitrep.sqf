@@ -10,7 +10,7 @@ enableSaving false;
   ["sitrepinfo",["SITREP","The game has been saved"]] call bis_fnc_showNotification;
   PAPABEAR sidechat format["SITREP received, we have %1 command points and our army power is at %2",commandpointsblu1,WARCOM_blufor_ap];
   sleep 1;
-[] execVM "Scripts\bottom_right_message.sqf";
+[] spawn Recurring_fnc_bottom_right_message;
 };
 
   ["sitrepinfo",["SITREP","Not enough Command Points (1CP)"]] call bis_fnc_showNotification;
