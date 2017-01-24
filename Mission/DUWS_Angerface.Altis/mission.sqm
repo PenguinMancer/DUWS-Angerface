@@ -153,7 +153,7 @@ class Mission
 					azimut=135;
 					id=4;
 					side="WEST";
-					vehicle="Blufor_Sebby_1";
+					vehicle="Blufor_Penguin_1";
 					player="PLAYER COMMANDER";
 					leader=1;
 					rank="SERGEANT";
@@ -168,7 +168,7 @@ class Mission
 					azimut=135;
 					id=5;
 					side="WEST";
-					vehicle="Blufor_Hunter_1";
+					vehicle="Blufor_Eagle_1";
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="player2";
@@ -181,7 +181,7 @@ class Mission
 					azimut=135;
 					id=6;
 					side="WEST";
-					vehicle="Blufor_Jayme_1";
+					vehicle="Blufor_Fox_1";
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="player3";
@@ -194,7 +194,7 @@ class Mission
 					azimut=135;
 					id=7;
 					side="WEST";
-					vehicle="Blufor_Kevin_1";
+					vehicle="Blufor_Wolf_1";
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="player4";
@@ -207,7 +207,7 @@ class Mission
 					azimut=135;
 					id=8;
 					side="WEST";
-					vehicle="Blufor_Jacob_1";
+					vehicle="Blufor_Panda_1";
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="player5";

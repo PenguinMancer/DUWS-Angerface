@@ -252,7 +252,7 @@ class CfgWorlds {
 				Toutain = "Toutain";
 			};
 		};
-		class DUWS_Sabbers_Name {
+		class DUWS_Penguin_Name {
 			class FirstNames {
 				Codename = "Codename";
 			};
@@ -260,7 +260,7 @@ class CfgWorlds {
 				Penguin = "Penguin";
 			};
 		};
-		class DUWS_Jayme_Name {
+		class DUWS_Fox_Name {
 			class FirstNames {
 				Codename = "Codename";
 			};
@@ -268,7 +268,7 @@ class CfgWorlds {
 				Fox = "Fox";
 			};
 		};
-		class DUWS_Hunter_Name {
+		class DUWS_Eagle_Name {
 			class FirstNames {
 				Codename = "Codename";
 			};
@@ -276,7 +276,7 @@ class CfgWorlds {
 				Eagle = "Eagle";
 			};
 		};
-		class DUWS_Kevin_Name {
+		class DUWS_Wolf_Name {
 			class FirstNames {
 				Codename = "Codename";
 			};
@@ -284,7 +284,7 @@ class CfgWorlds {
 				Wolf = "Wolf";
 			};
 		};
-		class DUWS_Jacob_Name {
+		class DUWS_Panda_Name {
 			class FirstNames {
 				Codename = "Codename";
 			};

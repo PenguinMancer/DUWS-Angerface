@@ -1,10 +1,9 @@
 		//Player Units
 		
-		//Sab Unit
-		class Blufor_Sebby_1 : B_DUWS_base_F  {
+		class Blufor_Penguin_1 : B_DUWS_base_F  {
 		scope = 2;
 		displayName = "Codename Penguin"; // In-game name of unit
-		genericNames = "DUWS_Sabbers_Name";
+		genericNames = "DUWS_Penguin_Name";
 		uniformClass = "VSM_AOR1_Crye_tan_pants_Camo";  // Uniform Class
 		backpack = "B_Kitbag_cbr"; // Backpack Class
 		linkedItems[] = {"VSM_OGA_Vest_2", "VSM_Peltor_OCP", "PU_shemagh_TanBLK", "TAC_SG", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
@@ -17,11 +16,10 @@
 		respawnItems[] = {"ACE_fieldDressing", "ACE_fieldDressing", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_quikclot", "ACE_quikclot", "ACE_packingBandage", "ACE_packingBandage", "ACE_morphine", "ACE_morphine"};
 		};
 		
-		//Jayme Unit
-		class Blufor_Jayme_1 : B_DUWS_base_F  {
+		class Blufor_Fox_1 : B_DUWS_base_F  {
 		scope = 2;
 		displayName = "Codename Fox"; // In-game name of unit
-		genericNames = "DUWS_Jayme_Name";
+		genericNames = "DUWS_Fox_Name";
 		uniformClass = "TRYK_U_B_NATO_UCP_R_CombatUniform";  // Uniform Class
 		backpack = "USAF_SFS_Carryall_ABU"; // Backpack Class
 		linkedItems[] = {"TRYK_V_PlateCarrier_ACU", "rhsusf_ach_helmet_headset_ess_ucp", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
@@ -34,11 +32,10 @@
 		respawnItems[] = {"ACE_adenosine", "ACE_adenosine", "ACE_adenosine", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_quikclot", "ACE_quikclot", "ACE_bloodIV_250", "ACE_bloodIV_250", "ACE_bloodIV_250", "ACE_epinephrine", "ACE_epinephrine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_packingBandage", "ACE_packingBandage", "ACE_personalAidKit", "ACE_personalAidKit", "ACE_personalAidKit", "ACE_salineIV_250", "ACE_salineIV_250", "ACE_plasmaIV_250", "ACE_plasmaIV_250", "ACE_surgicalKit"};
 		};
 		
-		//Kevin Unit
-		class Blufor_Kevin_1 : B_DUWS_base_F  {
+		class Blufor_Wolf_1 : B_DUWS_base_F  {
 		scope = 2;
 		displayName = "Codename Wolf"; // In-game name of unit
-		genericNames = "DUWS_Kevin_Name";
+		genericNames = "DUWS_Wolf_Name";
 		uniformClass = "TRYK_B_TRYK_OCP_T";  // Uniform Class
 		backpack = "VSM_OCP_Backpack_Kitbag"; // Backpack Class
 		linkedItems[] = {"rhsusf_ach_helmet_ESS_ucp", "rhs_6b23_ML", "TRYK_Shemagh_shade_N", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
@@ -49,11 +46,10 @@
 		Respawnmagazines[] = {"rhsusf_20Rnd_762x51_m118_special_Mag", "rhsusf_20Rnd_762x51_m118_special_Mag", "rhsusf_20Rnd_762x51_m118_special_Mag", "rhsusf_20Rnd_762x51_m118_special_Mag", "rhsusf_20Rnd_762x51_m118_special_Mag", "RH_17Rnd_9x19_g17", "RH_17Rnd_9x19_g17", "RH_17Rnd_9x19_g17"}; //Magazines added to the unit upon respawn, should be the same as above.
 		};
 		
-		//Hunter Unit
-		class Blufor_Hunter_1 : B_DUWS_base_F  {
+		class Blufor_Eagle_1 : B_DUWS_base_F  {
 		scope = 2;
 		displayName = "Codename Eagle"; // In-game name of unit
-		genericNames = "DUWS_Hunter_Name";
+		genericNames = "DUWS_Eagle_Name";
 		uniformClass = "TRYK_U_B_NATO_UCP_R_CombatUniform";  // Uniform Class
 		backpack = "USAF_SFS_Carryall_ABU"; // Backpack Class
 		linkedItems[] = {"TRYK_V_PlateCarrier_ACU", "rhsusf_ach_helmet_headset_ess_ucp", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
@@ -64,11 +60,10 @@
 		Respawnmagazines[] = {"20Rnd_762x51_Mag", "20Rnd_762x51_Mag", "20Rnd_762x51_Mag", "20Rnd_762x51_Mag", "20Rnd_762x51_Mag", "RH_12Rnd_45cal_usp", "RH_12Rnd_45cal_usp", "RH_12Rnd_45cal_usp", "CUP_HandGrenade_M67", "CUP_HandGrenade_M67", "CUP_HandGrenade_M67"}; //Magazines added to the unit upon respawn, should be the same as above.
 		};
 		
-		//Jacob Unit
-		class Blufor_Jacob_1 : B_DUWS_base_F  {
+		class Blufor_Panda_1 : B_DUWS_base_F  {
 		scope = 2;
 		displayName = "Codename Panda"; // In-game name of unit
-		genericNames = "DUWS_Jacob_Name";
+		genericNames = "DUWS_Panda_Name";
 		uniformClass = "CUP_U_O_SLA_Desert";  // Uniform Class
 		backpack = "B_AssaultPack_ocamo"; // Backpack Class
 		linkedItems[] = {"rhsusf_spc", "H_HelmetSpecO_ocamo", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemRadio", "ItemGPS", "TRYK_Shemagh_TAN_NV"}; // Item's added to the unit. 
