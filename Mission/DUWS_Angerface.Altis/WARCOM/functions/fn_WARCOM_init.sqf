@@ -25,14 +25,11 @@ WARCOM_opf_attack_delay = _opfor_assault_delay;
 publicVariable "WARCOM_blufor_ap";
 publicVariable "WARCOM_opfor_ap";
 
-
-
 // SORT ARRAY OF OPFOR ZONES ACCORDING TO DISTANCE FROM BLUHQ 
 WARCOM_createdZones = [_array_of_zones_total,[WARCOM_blu_hq_pos],{_input0 distance _x},"ASCEND"] call BIS_fnc_sortBy;
 
 // ARRAY OF ZONES UNDER BLUFOR CONTROL
 WARCOM_zones_controled_by_BLUFOR = [];
-
 
 // ARRAY OF ZONES UNDER OPFOR CONTROL 
 // make sure it's not a reference
@@ -41,23 +38,23 @@ WARCOM_zones_controled_by_OPFOR = [] + _WARCOM_zones_controled_by_OPFOR;
 publicvariable "WARCOM_zones_controled_by_OPFOR";
 
 // Init BLU patrols
-_blu_patrol = [] spawn Warcom_fnc_WARCOM_blu_patrol;
+_blu_patrol = [[],"Warcom_fnc_WARCOM_blu_patrol"] spawn BIS_fnc_MP;
 waitUntil {scriptDone _blu_patrol};
 
 // Init OPF patrols
-_opf_patrol = [] spawn Warcom_fnc_WARCOM_opf_patrol;
+_opf_patrol = [[],"Warcom_fnc_WARCOM_opf_patrol"] spawn BIS_fnc_MP;
 waitUntil {scriptDone _opf_patrol};
 
 // Initialize the BLU attack waves
-_blu_assault = [] spawn Warcom_fnc_WARCOM_blu_assault;
+_blu_assault = [[],"Warcom_fnc_WARCOM_blu_assault"] spawn BIS_fnc_MP;
 waitUntil {scriptDone _blu_assault};
 
 // Init the OPF attack waves
-_opf_assault = [] spawn Warcom_fnc_WARCOM_opf_assault;
+_opf_assault = [[],"Warcom_fnc_WARCOM_opf_assault"] spawn BIS_fnc_MP;
 waitUntil {scriptDone _opf_assault};
 
 // Init the OPF town Patrols
-_opf_town = [] spawn Warcom_fnc_WARCOM_opf_townpatrol;
+_opf_town = [[],"Warcom_fnc_WARCOM_opf_townpatrol"] spawn BIS_fnc_MP;
 waitUntil {scriptDone _opf_town};
 
 player globalchat "WARCOM initialized !";

@@ -1,7 +1,6 @@
 WARCOM_opf_patrol_type = "";
 
 // Attack waves main
-
 [] spawn {
 		while {True} do {
 		
@@ -63,7 +62,7 @@ WARCOM_opf_patrol_type = "";
 				sleep 2;
 				aliveAllAir = {_x isKindOf "Air" AND alive _x} count vehicles;
 				
-				if ((Attack) && (WARCOM_opfor_ap>149) && (aliveAllAir<4)) then {				
+				if ((Attack) && (WARCOM_opfor_ap>149) && (aliveAllAir<4)) then {			
 					[_randomZone] spawn SoldierSpawn_fnc_randomvehpatrolopfair;
 					
 				};

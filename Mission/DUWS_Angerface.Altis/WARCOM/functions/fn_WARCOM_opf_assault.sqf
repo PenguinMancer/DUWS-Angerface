@@ -1,6 +1,5 @@
 WARCOM_opf_attack_wave_type = "";
 
-
 // Attack waves main
 [] spawn {
 	while {true} do {
