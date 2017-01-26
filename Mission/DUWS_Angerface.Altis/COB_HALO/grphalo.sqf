@@ -48,4 +48,3 @@ ATM_Jump_mapclick = if(true) then{
 	openMap false;
     deleteMarker "mkr_halo";	
 };
-//{[_x, 2500, true, true, true] execVM "COB_HALO\functions\fn_halo.sqf";} forEach units group player;

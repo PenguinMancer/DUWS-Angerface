@@ -64,27 +64,22 @@ if (isNil "amount_zones_created") then
 {
 amount_zones_created = 0;
 };
-
 if (isNil "HQ_pos_found") then
 {
 HQ_pos_found = false;
 };
-
 if (isNil "chosen_settings") then
 {
 chosen_settings = false;
 };
-
 if (isNil "chosen_hq_placement") then
 {
 chosen_hq_placement = false;
 };
-
 if (isNil "zoneundercontrolblu") then
 {
 zoneundercontrolblu = 0;
 };
-
 if (isNil "savegameNumber") then
 {
 savegameNumber = 0;
@@ -109,17 +104,9 @@ if (isNil "WindVar") then
 {
 WindVar = 0;
 };
-/*
-*/
-if (isNil "Array_of_FOBS") then // this is a special one (if/else)
-{	// if the player is sp or server or no fobs have been created
-Array_of_FOBS = [];
-}
-else /// JIP for the client
+if (isNil "Array_of_FOBS") then
 {
-	{
-	[_x] execVM "support\FOBactions.sqf";
-	} forEach Array_of_FOBS;
+Array_of_FOBS = [];
 };
 if (isNil "Array_of_FOBname") then
 {
@@ -173,7 +160,6 @@ if (isNil "Halojump") then
 {
 Halojump = 0;publicvariable "Halojump";
 };
-
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 game_master = ["player1"];
