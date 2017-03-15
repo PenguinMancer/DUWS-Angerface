@@ -61,7 +61,7 @@ _soldierfacewear = [
 ];
 
 _soldierheadgear = [
-"TFA_H_HelmetIA_TRI",
+"CUP_H_USMC_LWH_DES",
 "rhsusf_mich_bare_norotos_arc_tan",
 "H_HelmetB_light_sand",
 "TRYK_H_woolhat_tan",

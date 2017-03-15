@@ -5,8 +5,8 @@
 		displayName = "French Soldier"; // In-game name of unit
 		uniformClass = "Niko_USA_DCUTan";  // Uniform Class
 		backpack = "VSM_OGA_Backpack_Compact"; // Backpack Class
-		linkedItems[] = {"lbt_light_coy", "TFA_H_HelmetIA_TRI", "LBG_Shemagh_Tan", Standard_Equipment_Blu}; // Item's added to the unit. 
-		respawnLinkedItems[] = {"lbt_light_coy", "TFA_H_HelmetIA_TRI", "LBG_Shemagh_Tan", Standard_Equipment_Blu}; // Item's added to the unit. Should be identical to the linkedItems section.
+		linkedItems[] = {"lbt_light_coy", "CUP_H_USMC_LWH_DES", "LBG_Shemagh_Tan", Standard_Equipment_Blu}; // Item's added to the unit. 
+		respawnLinkedItems[] = {"lbt_light_coy", "CUP_H_USMC_LWH_DES", "LBG_Shemagh_Tan", Standard_Equipment_Blu}; // Item's added to the unit. Should be identical to the linkedItems section.
 		weapons[] = {"bg21_famas_FS_tan_sighted", "RH_m9", "Throw", "Put"}; // Weapons added to the unit.
 		respawnweapons[] = {"bg21_famas_FS_tan_sighted", "RH_m9", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
 		magazines[] = {Famas_Mags_Blu, Standard_Grenades_Blu, M9_Mags_Blu}; //Magazines added to the unit.

@@ -20,16 +20,16 @@
 		scope = 2;
 		displayName = "Codename Fox"; // In-game name of unit
 		genericNames = "DUWS_Fox_Name";
-		uniformClass = "TRYK_U_B_NATO_UCP_R_CombatUniform";  // Uniform Class
-		backpack = "USAF_SFS_Carryall_ABU"; // Backpack Class
-		linkedItems[] = {"TRYK_V_PlateCarrier_ACU", "rhsusf_ach_helmet_headset_ess_ucp", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
-		respawnLinkedItems[] = {"TRYK_V_PlateCarrier_ACU", "rhsusf_ach_helmet_headset_ess_ucp", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemRadio", "ItemGPS"}; // Item's added to the unit. Should be identical to the linkedItems section.
-		weapons[] = {"rhs_weap_m4_pmag_Jayme", "RH_m9", "Binocular", "Throw", "Put"}; // Weapons added to the unit.
-		respawnweapons[] = {"rhs_weap_m4_pmag_Jayme", "RH_m9", "Binocular", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
-		magazines[] = {"30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "RH_15Rnd_9x19_M9", "RH_15Rnd_9x19_M9", "RH_15Rnd_9x19_M9", "rhs_mag_m18_red", "rhs_mag_m18_red", "rhs_mag_m18_red"}; //Magazines added to the unit.
-		Respawnmagazines[] = {"30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "30Rnd_556x45_Stanag", "RH_15Rnd_9x19_M9", "RH_15Rnd_9x19_M9", "RH_15Rnd_9x19_M9", "rhs_mag_m18_red", "rhs_mag_m18_red", "rhs_mag_m18_red"}; //Magazines added to the unit upon respawn, should be the same as above.
-		Items[] = {"ACE_adenosine", "ACE_adenosine", "ACE_adenosine", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_quikclot", "ACE_quikclot", "ACE_bloodIV_250", "ACE_bloodIV_250", "ACE_bloodIV_250", "ACE_epinephrine", "ACE_epinephrine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_packingBandage", "ACE_packingBandage", "ACE_personalAidKit", "ACE_personalAidKit", "ACE_personalAidKit", "ACE_salineIV_250", "ACE_salineIV_250", "ACE_plasmaIV_250", "ACE_plasmaIV_250", "ACE_surgicalKit"};
-		respawnItems[] = {"ACE_adenosine", "ACE_adenosine", "ACE_adenosine", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_quikclot", "ACE_quikclot", "ACE_bloodIV_250", "ACE_bloodIV_250", "ACE_bloodIV_250", "ACE_epinephrine", "ACE_epinephrine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_packingBandage", "ACE_packingBandage", "ACE_personalAidKit", "ACE_personalAidKit", "ACE_personalAidKit", "ACE_salineIV_250", "ACE_salineIV_250", "ACE_plasmaIV_250", "ACE_plasmaIV_250", "ACE_surgicalKit"};
+		uniformClass = "AFG_2001Lizard_TacticalUniform_SS";  // Uniform Class
+		backpack = "VSM_M81_carryall"; // Backpack Class
+		linkedItems[] = {"TAC_V_Sheriff_BA_TBL3_OD", "VSM_M81_Boonie", "G_Aviator", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
+		respawnLinkedItems[] = {"TAC_V_Sheriff_BA_TBL3_OD", "VSM_M81_Boonie", "G_Aviator", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemRadio", "ItemGPS"}; // Item's added to the unit. Should be identical to the linkedItems section.
+		weapons[] = {"arifle_AK12_F_fox", "Rangefinder", "Throw", "Put"}; // Weapons added to the unit.
+		respawnweapons[] = {"arifle_AK12_F_fox", "Rangefinder", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
+		magazines[] = {"30Rnd_762x39_Mag_F", "30Rnd_762x39_Mag_F", "30Rnd_762x39_Mag_F", "30Rnd_762x39_Mag_F", "30Rnd_762x39_Mag_F", "30Rnd_762x39_Mag_F", "30Rnd_762x39_Mag_F", "ACE_HandFlare_Red", "ACE_HandFlare_Red", "SmokeShellRed", "SmokeShellRed"}; //Magazines added to the unit.
+		Respawnmagazines[] = {"30Rnd_762x39_Mag_F", "30Rnd_762x39_Mag_F", "30Rnd_762x39_Mag_F", "30Rnd_762x39_Mag_F", "30Rnd_762x39_Mag_F", "30Rnd_762x39_Mag_F", "30Rnd_762x39_Mag_F", "ACE_HandFlare_Red", "ACE_HandFlare_Red", "SmokeShellRed", "SmokeShellRed"}; //Magazines added to the unit upon respawn, should be the same as above.
+		Items[] = {"ACE_adenosine", "ACE_adenosine", "ACE_adenosine", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_quikclot", "ACE_quikclot", "ACE_bloodIV_250", "ACE_bloodIV_250", "ACE_bloodIV_250", "ACE_epinephrine", "ACE_epinephrine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_packingBandage", "ACE_packingBandage", "ACE_personalAidKit", "ACE_personalAidKit", "ACE_personalAidKit", "ACE_salineIV_250", "ACE_salineIV_250", "ACE_plasmaIV_250", "ACE_plasmaIV_250", "ACE_surgicalKit", "ACE_SpraypaintBlack"};
+		respawnItems[] = {"ACE_adenosine", "ACE_adenosine", "ACE_adenosine", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_quikclot", "ACE_quikclot", "ACE_bloodIV_250", "ACE_bloodIV_250", "ACE_bloodIV_250", "ACE_epinephrine", "ACE_epinephrine", "ACE_morphine", "ACE_morphine", "ACE_morphine", "ACE_packingBandage", "ACE_packingBandage", "ACE_personalAidKit", "ACE_personalAidKit", "ACE_personalAidKit", "ACE_salineIV_250", "ACE_salineIV_250", "ACE_plasmaIV_250", "ACE_plasmaIV_250", "ACE_surgicalKit", "ACE_SpraypaintBlack"};
 		};
 		
 		class Blufor_Wolf_1 : B_DUWS_base_F  {
@@ -46,30 +46,32 @@
 		Respawnmagazines[] = {"rhsusf_20Rnd_762x51_m118_special_Mag", "rhsusf_20Rnd_762x51_m118_special_Mag", "rhsusf_20Rnd_762x51_m118_special_Mag", "rhsusf_20Rnd_762x51_m118_special_Mag", "rhsusf_20Rnd_762x51_m118_special_Mag", "RH_17Rnd_9x19_g17", "RH_17Rnd_9x19_g17", "RH_17Rnd_9x19_g17"}; //Magazines added to the unit upon respawn, should be the same as above.
 		};
 		
-		class Blufor_Eagle_1 : B_DUWS_base_F  {
+		class Blufor_Crow_1 : B_DUWS_base_F  {
 		scope = 2;
-		displayName = "Codename Eagle"; // In-game name of unit
-		genericNames = "DUWS_Eagle_Name";
-		uniformClass = "TRYK_U_B_NATO_UCP_R_CombatUniform";  // Uniform Class
-		backpack = "USAF_SFS_Carryall_ABU"; // Backpack Class
-		linkedItems[] = {"TRYK_V_PlateCarrier_ACU", "rhsusf_ach_helmet_headset_ess_ucp", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
-		respawnLinkedItems[] = {"TRYK_V_PlateCarrier_ACU", "rhsusf_ach_helmet_headset_ess_ucp", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemRadio", "ItemGPS"}; // Item's added to the unit. Should be identical to the linkedItems section.
-		weapons[] = {"CUP_srifle_M14_DMR_sighted", "RH_usp_suppressed", "Binocular", "Throw", "Put"}; // Weapons added to the unit.
-		respawnweapons[] = {"CUP_srifle_M14_DMR_sighted", "RH_usp_suppressed", "Binocular", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
-		magazines[] = {"20Rnd_762x51_Mag", "20Rnd_762x51_Mag", "20Rnd_762x51_Mag", "20Rnd_762x51_Mag", "20Rnd_762x51_Mag", "RH_12Rnd_45cal_usp", "RH_12Rnd_45cal_usp", "RH_12Rnd_45cal_usp", "CUP_HandGrenade_M67", "CUP_HandGrenade_M67", "CUP_HandGrenade_M67"}; //Magazines added to the unit.
-		Respawnmagazines[] = {"20Rnd_762x51_Mag", "20Rnd_762x51_Mag", "20Rnd_762x51_Mag", "20Rnd_762x51_Mag", "20Rnd_762x51_Mag", "RH_12Rnd_45cal_usp", "RH_12Rnd_45cal_usp", "RH_12Rnd_45cal_usp", "CUP_HandGrenade_M67", "CUP_HandGrenade_M67", "CUP_HandGrenade_M67"}; //Magazines added to the unit upon respawn, should be the same as above.
+		displayName = "Codename Crow"; // In-game name of unit
+		genericNames = "DUWS_Crow_Name";
+		uniformClass = "TRYK_U_B_MARPAT_Desert_Tshirt";  // Uniform Class
+		backpack = "B_AssaultPack_mcamo"; // Backpack Class
+		linkedItems[] = {"SP_Bandolier1_Tan", "rhs_googles_orange", "CUP_H_PMC_Cap_Back_EP_Tan", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemRadio", "ItemGPS", "NVGoggles_INDEP"}; // Item's added to the unit. 
+		respawnLinkedItems[] = {"SP_Bandolier1_Tan", "rhs_googles_orange", "CUP_H_PMC_Cap_Back_EP_Tan", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemRadio", "ItemGPS", "NVGoggles_INDEP"}; // Item's added to the unit. Should be identical to the linkedItems section.
+		weapons[] = {"rhs_weap_M107_d_crow", "RH_mateba", "Laserdesignator_02", "Throw", "Put"}; // Weapons added to the unit.
+		respawnweapons[] = {"rhs_weap_M107_d_crow", "RH_mateba", "Laserdesignator_02", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
+		magazines[] = {"rhsusf_mag_10Rnd_STD_50BMG_M33", "rhsusf_mag_10Rnd_STD_50BMG_M33", "RH_6Rnd_44_Mag", "RH_6Rnd_44_Mag", "SmokeShellYellow", "SmokeShellRed", "SmokeShellGreen"}; //Magazines added to the unit.
+		Respawnmagazines[] = {"rhsusf_mag_10Rnd_STD_50BMG_M33", "rhsusf_mag_10Rnd_STD_50BMG_M33", "RH_6Rnd_44_Mag", "RH_6Rnd_44_Mag", "SmokeShellYellow", "SmokeShellRed", "SmokeShellGreen"}; //Magazines added to the unit upon respawn, should be the same as above.
+		Items[] = {"ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_quikclot", "ACE_quikclot", "ACE_packingBandage" , "ACE_packingBandage", "ACE_morphine", "ACE_morphine", "ACE_atropine", "ACE_epinephrine", "ToolKit"};
+		respawnItems[] = {"ACE_fieldDressing", "ACE_fieldDressing", "ACE_fieldDressing", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_quikclot", "ACE_quikclot", "ACE_packingBandage" , "ACE_packingBandage", "ACE_morphine", "ACE_morphine", "ACE_atropine", "ACE_epinephrine", "ToolKit"};
 		};
 		
-		class Blufor_Panda_1 : B_DUWS_base_F  {
+		class Blufor_Tarrasque_1 : B_DUWS_base_F  {
 		scope = 2;
-		displayName = "Codename Panda"; // In-game name of unit
-		genericNames = "DUWS_Panda_Name";
-		uniformClass = "CUP_U_O_SLA_Desert";  // Uniform Class
-		backpack = "B_AssaultPack_ocamo"; // Backpack Class
-		linkedItems[] = {"rhsusf_spc", "H_HelmetSpecO_ocamo", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemRadio", "ItemGPS", "TRYK_Shemagh_TAN_NV"}; // Item's added to the unit. 
-		respawnLinkedItems[] = {"rhsusf_spc", "H_HelmetSpecO_ocamo", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemRadio", "ItemGPS", "TRYK_Shemagh_TAN_NV"}; // Item's added to the unit. Should be identical to the linkedItems section.
-		weapons[] = {"RH_Hk416_sighted", "RH_bullb", "Binocular", "Throw", "Put"}; // Weapons added to the unit.
-		respawnweapons[] = {"RH_Hk416_sighted", "RH_bullb", "Binocular", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
-		magazines[] = {"30Rnd_556x45_Stanag_Tracer_Red", "30Rnd_556x45_Stanag_Tracer_Red", "30Rnd_556x45_Stanag_Tracer_Red", "CUP_HandGrenade_RGD5", "CUP_HandGrenade_RGD5", "RH_6Rnd_454_Mag", "RH_6Rnd_454_Mag", "RH_6Rnd_454_Mag"}; //Magazines added to the unit.
-		Respawnmagazines[] = {"30Rnd_556x45_Stanag_Tracer_Red", "30Rnd_556x45_Stanag_Tracer_Red", "30Rnd_556x45_Stanag_Tracer_Red", "CUP_HandGrenade_RGD5", "CUP_HandGrenade_RGD5", "RH_6Rnd_454_Mag", "RH_6Rnd_454_Mag", "RH_6Rnd_454_Mag"}; //Magazines added to the unit upon respawn, should be the same as above.
+		displayName = "Codename Tarrasque"; // In-game name of unit
+		genericNames = "DUWS_Tarrasque_Name";
+		uniformClass = "VSM_AOR1_Camo";  // Uniform Class
+		backpack = "VSM_AOR1_Backpack_Kitbag"; // Backpack Class
+		linkedItems[] = {"cpc_Fast_mc", "H_HelmetB_light_desert", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemRadio", "ItemGPS", "SP_Kneepads_Black"}; // Item's added to the unit. 
+		respawnLinkedItems[] = {"cpc_Fast_mc", "H_HelmetB_light_desert", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemRadio", "ItemGPS", "SP_Kneepads_Black"}; // Item's added to the unit. Should be identical to the linkedItems section.
+		weapons[] = {"RH_M16A4_tarrasque", "RH_Deaglem", "Rangefinder", "Throw", "Put"}; // Weapons added to the unit.
+		respawnweapons[] = {"RH_M16A4_tarrasque", "RH_Deaglem", "Rangefinder", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
+		magazines[] = {"30Rnd_556x45_Stanag_Tracer_Red", "30Rnd_556x45_Stanag_Tracer_Red", "30Rnd_556x45_Stanag_Tracer_Red", "30Rnd_556x45_Stanag_Tracer_Red", "RH_7Rnd_50_AE", "RH_7Rnd_50_AE", "RH_7Rnd_50_AE", "SmokeShellGreen", "SmokeShellGreen", "Chemlight_green", "Chemlight_green"}; //Magazines added to the unit.
+		Respawnmagazines[] = {"30Rnd_556x45_Stanag_Tracer_Red", "30Rnd_556x45_Stanag_Tracer_Red", "30Rnd_556x45_Stanag_Tracer_Red", "30Rnd_556x45_Stanag_Tracer_Red", "RH_7Rnd_50_AE", "RH_7Rnd_50_AE", "RH_7Rnd_50_AE", "SmokeShellGreen", "SmokeShellGreen", "Chemlight_green", "Chemlight_green"}; //Magazines added to the unit upon respawn, should be the same as above.
 		};

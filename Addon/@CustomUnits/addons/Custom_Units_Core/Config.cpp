@@ -19,10 +19,14 @@ class CfgPatches {
 	};
 };
 
-class CfgWorlds {
-	class GenericNames {
-		class DUWS_Blu_Names {
-			class FirstNames {
+class CfgWorlds 
+	{
+	class GenericNames 
+	{
+		class DUWS_Blu_Names 
+		{
+			class FirstNames 
+			{			
 				JeanPierre = "Jean Pierre";
 				Philippe = "Philippe";
 				Jean = "Jean";
@@ -128,7 +132,8 @@ class CfgWorlds {
 				Josuke = "Josuke";
 				Noriaki = "Noriaki";
 			};
-			class LastNames {
+			class LastNames 
+			{
 				Polnareff = "Polnareff";
 				Joestar = "Joestar";
 				Avdol = "Avdol";
@@ -268,12 +273,12 @@ class CfgWorlds {
 				Fox = "Fox";
 			};
 		};
-		class DUWS_Eagle_Name {
+		class DUWS_Crow_Name {
 			class FirstNames {
 				Codename = "Codename";
 			};
 			class LastNames {
-				Eagle = "Eagle";
+				Crow = "Crow";
 			};
 		};
 		class DUWS_Wolf_Name {
@@ -284,12 +289,12 @@ class CfgWorlds {
 				Wolf = "Wolf";
 			};
 		};
-		class DUWS_Panda_Name {
+		class DUWS_Tarrasque_Name {
 			class FirstNames {
 				Codename = "Codename";
 			};
 			class LastNames {
-				Panda = "Panda";
+				Tarrasque = "Tarrasque";
 			};
 		};
 		class DUWS_Pilot_Name {

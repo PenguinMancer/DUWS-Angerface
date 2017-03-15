@@ -82,7 +82,7 @@ class CfgPatches {
 			"Blufor_Jacob_1"
 			};
 		weapons[] = {
-			"TFA_H_HelmetIA_TRI_Blu_Soldier",
+			"CUP_H_USMC_LWH_DES_Blu_Soldier",
 			"rhsusf_mich_bare_norotos_arc_tan_Blu_Soldier",
 			
 			};
@@ -107,7 +107,6 @@ class CfgPatches {
 			"rhsusf_c_fmtv", 
 			"rhsusf_c_m113", 
 			"RHS_US_A2Port_Armor",
-			"tfa_units",
 			"TRYK_Uniform",
 			"US_ESS_Glasses_tryk",
 			"Shemaghs",
@@ -228,8 +227,8 @@ class CfgVehicles {
 		displayName = "French AmmoBearer"; // In-game name of unit
 		uniformClass = "Niko_USA_DCUTan";  // Uniform Class
 		backpack = "VSM_OGA_carryall"; // Backpack Class
-		linkedItems[] = {"lbt_operator_coy", "TFA_H_HelmetIA_TRI", "LBG_Shemagh_Tan", Standard_Equipment_Blu}; // Item's added to the unit. 
-		respawnLinkedItems[] = {"lbt_operator_coy", "TFA_H_HelmetIA_TRI", "LBG_Shemagh_Tan", Standard_Equipment_Blu}; // Item's added to the unit. Should be identical to the linkedItems section.
+		linkedItems[] = {"lbt_operator_coy", "CUP_H_USMC_LWH_DES", "LBG_Shemagh_Tan", Standard_Equipment_Blu}; // Item's added to the unit. 
+		respawnLinkedItems[] = {"lbt_operator_coy", "CUP_H_USMC_LWH_DES", "LBG_Shemagh_Tan", Standard_Equipment_Blu}; // Item's added to the unit. Should be identical to the linkedItems section.
 		weapons[] = {"bg21_famas_FS_tan_sighted", "RH_m9", "Throw", "Put"}; // Weapons added to the unit.
 		respawnweapons[] = {"bg21_famas_FS_tan_sighted", "RH_m9", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
 		magazines[] = {Famas_Mags_Blu, M416_Mags_Blu, Standard_Grenades_Blu, M9_Mags_Blu, "hlc_200rnd_556x45_M_SAW"}; //Magazines added to the unit.
@@ -258,8 +257,8 @@ class CfgVehicles {
 		displayName = "French Assistant Autorifleman"; // In-game name of unit
 		uniformClass = "Niko_USA_DCUTan";  // Uniform Class
 		backpack = "VSM_OGA_carryall"; // Backpack Class
-		linkedItems[] = {"lbt_light_coy", "TFA_H_HelmetIA_TRI", "LBG_Shemagh_Tan", Standard_Equipment_Blu}; // Item's added to the unit. 
-		respawnLinkedItems[] = {"lbt_light_coy", "TFA_H_HelmetIA_TRI", "LBG_Shemagh_Tan", Standard_Equipment_Blu}; // Item's added to the unit. Should be identical to the linkedItems section.
+		linkedItems[] = {"lbt_light_coy", "CUP_H_USMC_LWH_DES", "LBG_Shemagh_Tan", Standard_Equipment_Blu}; // Item's added to the unit. 
+		respawnLinkedItems[] = {"lbt_light_coy", "CUP_H_USMC_LWH_DES", "LBG_Shemagh_Tan", Standard_Equipment_Blu}; // Item's added to the unit. Should be identical to the linkedItems section.
 		weapons[] = {"bg21_famas_FS_tan_sighted", "RH_m9", "Throw", "Put"}; // Weapons added to the unit.
 		respawnweapons[] = {"bg21_famas_FS_tan_sighted", "RH_m9", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
 		magazines[] = {Famas_Mags_Blu, Standard_Grenades_Blu, M9_Mags_Blu, "hlc_200rnd_556x45_M_SAW", "hlc_200rnd_556x45_M_SAW"}; //Magazines added to the unit.
@@ -273,8 +272,8 @@ class CfgVehicles {
 		displayName = "French Asst. Missile Specialist"; // In-game name of unit
 		uniformClass = "Niko_USA_DCUTan";  // Uniform Class
 		backpack = "VSM_OGA_carryall"; // Backpack Class
-		linkedItems[] = {"lbt_light_coy", "TFA_H_HelmetIA_TRI", "LBG_Shemagh_Tan", Standard_Equipment_Blu}; // Item's added to the unit. 
-		respawnLinkedItems[] = {"lbt_light_coy", "TFA_H_HelmetIA_TRI", "LBG_Shemagh_Tan", Standard_Equipment_Blu}; // Item's added to the unit. Should be identical to the linkedItems section.
+		linkedItems[] = {"lbt_light_coy", "CUP_H_USMC_LWH_DES", "LBG_Shemagh_Tan", Standard_Equipment_Blu}; // Item's added to the unit. 
+		respawnLinkedItems[] = {"lbt_light_coy", "CUP_H_USMC_LWH_DES", "LBG_Shemagh_Tan", Standard_Equipment_Blu}; // Item's added to the unit. Should be identical to the linkedItems section.
 		weapons[] = {"bg21_famas_FS_tan_sighted", "RH_m9", "Throw", "Put"}; // Weapons added to the unit.
 		respawnweapons[] = {"bg21_famas_FS_tan_sighted", "RH_m9", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
 		magazines[] = {Famas_Mags_Blu, Standard_Grenades_Blu, M9_Mags_Blu, "CUP_Javelin_M"}; //Magazines added to the unit.
@@ -303,8 +302,8 @@ class CfgVehicles {
 		displayName = "French Asst. Missile Specialist (AA)"; // In-game name of unit
 		uniformClass = "Niko_USA_DCUTan";  // Uniform Class
 		backpack = "VSM_OGA_carryall"; // Backpack Class
-		linkedItems[] = {"lbt_light_coy", "TFA_H_HelmetIA_TRI", "LBG_Shemagh_Tan", Standard_Equipment_Blu}; // Item's added to the unit. 
-		respawnLinkedItems[] = {"lbt_light_coy", "TFA_H_HelmetIA_TRI", "LBG_Shemagh_Tan", Standard_Equipment_Blu}; // Item's added to the unit. Should be identical to the linkedItems section.
+		linkedItems[] = {"lbt_light_coy", "CUP_H_USMC_LWH_DES", "LBG_Shemagh_Tan", Standard_Equipment_Blu}; // Item's added to the unit. 
+		respawnLinkedItems[] = {"lbt_light_coy", "CUP_H_USMC_LWH_DES", "LBG_Shemagh_Tan", Standard_Equipment_Blu}; // Item's added to the unit. Should be identical to the linkedItems section.
 		weapons[] = {"bg21_famas_FS_tan_sighted", "RH_m9", "Throw", "Put"}; // Weapons added to the unit.
 		respawnweapons[] = {"bg21_famas_FS_tan_sighted", "RH_m9", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
 		magazines[] = {Famas_Mags_Blu, Standard_Grenades_Blu, M9_Mags_Blu, "CUP_Javelin_M"}; //Magazines added to the unit.
@@ -318,8 +317,8 @@ class CfgVehicles {
 		displayName = "French Repair Specialist"; // In-game name of unit
 		uniformClass = "Niko_USA_DCUTan";  // Uniform Class
 		backpack = "VSM_OGA_carryall"; // Backpack Class
-		linkedItems[] = {"lbt_light_coy", "TFA_H_HelmetIA_TRI", "LBG_Shemagh_Tan", Standard_Equipment_Blu}; // Item's added to the unit. 
-		respawnLinkedItems[] = {"lbt_light_coy", "TFA_H_HelmetIA_TRI", "LBG_Shemagh_Tan", Standard_Equipment_Blu}; // Item's added to the unit. Should be identical to the linkedItems section.
+		linkedItems[] = {"lbt_light_coy", "CUP_H_USMC_LWH_DES", "LBG_Shemagh_Tan", Standard_Equipment_Blu}; // Item's added to the unit. 
+		respawnLinkedItems[] = {"lbt_light_coy", "CUP_H_USMC_LWH_DES", "LBG_Shemagh_Tan", Standard_Equipment_Blu}; // Item's added to the unit. Should be identical to the linkedItems section.
 		weapons[] = {"SMG_03C_khaki", "RH_m9", "Throw", "Put"}; // Weapons added to the unit.
 		respawnweapons[] = {"SMG_03C_khaki", "RH_m9", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
 		magazines[] = {"50Rnd_570x28_SMG_03", "50Rnd_570x28_SMG_03", "50Rnd_570x28_SMG_03", Standard_Grenades_Blu, M9_Mags_Blu}; //Magazines added to the unit.
@@ -335,8 +334,8 @@ class CfgVehicles {
 		displayName = "French Marksman"; // In-game name of unit
 		uniformClass = "Niko_USA_DCUTan";  // Uniform Class
 		backpack = "VSM_OGA_Backpack_Compact"; // Backpack Class
-		linkedItems[] = {"lbt_light_coy", "TFA_H_HelmetIA_TRI", "LBG_Shemagh_Tan", Standard_Equipment_Blu}; // Item's added to the unit. 
-		respawnLinkedItems[] = {"lbt_light_coy", "TFA_H_HelmetIA_TRI", "LBG_Shemagh_Tan", Standard_Equipment_Blu}; // Item's added to the unit. Should be identical to the linkedItems section.
+		linkedItems[] = {"lbt_light_coy", "CUP_H_USMC_LWH_DES", "LBG_Shemagh_Tan", Standard_Equipment_Blu}; // Item's added to the unit. 
+		respawnLinkedItems[] = {"lbt_light_coy", "CUP_H_USMC_LWH_DES", "LBG_Shemagh_Tan", Standard_Equipment_Blu}; // Item's added to the unit. Should be identical to the linkedItems section.
 		weapons[] = {"hlc_rifle_psg1", "RH_m9", "Throw", "Put"}; // Weapons added to the unit.
 		respawnweapons[] = {"hlc_rifle_psg1", "RH_m9", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
 		magazines[] = {"hlc_20rnd_762x51_b_G3", "hlc_20rnd_762x51_b_G3", "hlc_20rnd_762x51_b_G3", Standard_Grenades_Blu, M9_Mags_Blu}; //Magazines added to the unit.
@@ -412,49 +411,49 @@ class CfgVehicles {
 		class rhsusf_m1025_d;
 		class rhsusf_m1025_d_DUWS : rhsusf_m1025_d {
 		crew = "Blufor_Soldier_1";
-		typicalCargo[] = {"Blufor_Soldier_1"};
+		typicalCargo[] = {"Blufor_Soldier_1","Blufor_Soldier_1"};
 		unloadInCombat = true;
 		};
 		
 		class rhsusf_m1025_d_m2;
 		class rhsusf_m1025_d_m2_DUWS : rhsusf_m1025_d_m2 {
 		crew = "Blufor_Soldier_1";
-		typicalCargo[] = {"Blufor_Soldier_1"};
+		typicalCargo[] = {"Blufor_Soldier_1","Blufor_Soldier_1"};
 		unloadInCombat = false;
 		};
 		
 		class CUP_B_M1128_MGS_Desert;
 		class CUP_B_M1128_MGS_Desert_DUWS : CUP_B_M1128_MGS_Desert {
 		crew = "Blufor_Soldier_1";
-		typicalCargo[] = {"Blufor_Soldier_1"};
+		typicalCargo[] = {"Blufor_Soldier_1","Blufor_Soldier_1"};
 		unloadInCombat = false;
 		};
 		
 		class CUP_B_Ridgback_HMG_GB_D;
 		class CUP_B_Ridgback_HMG_GB_D_DUWS : CUP_B_Ridgback_HMG_GB_D {
 		crew = "Blufor_Soldier_1";
-		typicalCargo[] = {"Blufor_Soldier_1"};
+		typicalCargo[] = {"Blufor_Soldier_1","Blufor_Soldier_1"};
 		unloadInCombat = false;
 		};
 		
 		class CUP_B_FV432_Bulldog_GB_D_RWS;
 		class CUP_B_FV432_Bulldog_GB_D_RWS_DUWS : CUP_B_FV432_Bulldog_GB_D_RWS {
 		crew = "Blufor_Soldier_1";
-		typicalCargo[] = {"Blufor_Soldier_1"};
+		typicalCargo[] = {"Blufor_Soldier_1","Blufor_Soldier_1"};
 		unloadInCombat = false;
 		};
 		
 		class CUP_B_M1A1_DES_USMC;
 		class CUP_B_M1A1_DES_USMC_DUWS : CUP_B_M1A1_DES_USMC {
 		crew = "Blufor_Soldier_1";
-		typicalCargo[] = {"Blufor_Soldier_1"};
+		typicalCargo[] = {"Blufor_Soldier_1","Blufor_Soldier_1"};
 		unloadInCombat = false;
 		};
 		
 		class RHS_M2A3_BUSKIII;
 		class RHS_M2A3_BUSKIII_DUWS : RHS_M2A3_BUSKIII {
 		crew = "Blufor_Soldier_1";
-		typicalCargo[] = {"Blufor_Soldier_1"};
+		typicalCargo[] = {"Blufor_Soldier_1","Blufor_Soldier_1"};
 		unloadInCombat = false;
 		};
 };

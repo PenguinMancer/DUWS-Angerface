@@ -10,7 +10,6 @@ class CfgPatches {
 			"CUP_srifle_M14_DMR_sighted",
 			"RH_Hk416_sighted",
 			"RH_usp_suppressed",
-			"rhs_weap_m4_pmag_Jayme",
 			"rhs_weap_m4_carryhandle_sighted",
 			"rhs_weap_m4_carryhandle_pmag_sighted",
 			"rhs_weap_m16a4_carryhandle_sighted",
@@ -198,20 +197,6 @@ class RH_usp;
 		};
 	};	
 	
-class rhs_weap_m4_pmag;
-
-	class rhs_weap_m4_pmag_Jayme : rhs_weap_m4_pmag
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot = "CowsSlot";
-				item = "FHQ_optic_AC12136";
-			};
-		};
-	};	
-
 class rhs_weap_m4_carryhandle;
 	
 	class rhs_weap_m4_carryhandle_sighted : rhs_weap_m4_carryhandle
@@ -452,5 +437,51 @@ class rhs_weap_m240G;
 				item = "acc_pointer_IR";
 			};
 		};
-	};	
+	};
+	class rhs_weap_M107_d;
+	class rhs_weap_M107_d_crow : rhs_weap_M107_d
+	{
+		class LinkedItems
+		{
+			class LinkedItemsOptic
+			{
+				slot = "CowsSlot";
+				item = "ACE_optic_LRPS_2D";
+			};
+		};
+	};
+	class arifle_AK12_F;
+	class arifle_AK12_F_fox : arifle_AK12_F
+	{
+		class LinkedItems
+		{
+			class LinkedItemsOptic
+			{
+				slot = "CowsSlot";
+				item = "optic_MRCO";
+			};
+			class LinkedItemsUnder
+			{
+				slot = "UnderBarrelSlot";
+				item = "bipod_03_F_blk";
+			};
+			class LinkedItemsAcc
+			{
+				slot = "PointerSlot";
+				item = "ACE_acc_pointer_green";
+			};
+		};
+	};
+	class RH_M16A4;
+	class RH_M16A4_tarrasque : RH_M16A4
+	{
+		class LinkedItems
+		{
+			class LinkedItemsOptic
+			{
+				slot = "CowsSlot";
+				item = "FHQ_optic_AC11704";
+			};
+		};
+	};
 };

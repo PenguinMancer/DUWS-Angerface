@@ -406,7 +406,7 @@ class CfgGroups
 					icon = "\A3\ui_f\data\map\markers\nato\b_motor_inf.paa";
 					class Unit0 {
 						side = 1;
-						vehicle = "CUP_B_HMMWV_M2_GPK_USA_custom";
+						vehicle = "rhsusf_m1025_d_m2_DUWS";
 						rank = "SERGEANT";
 						position[] = {0, 0, 0};
 					};
@@ -434,7 +434,7 @@ class CfgGroups
 					icon = "\A3\ui_f\data\map\markers\nato\b_mech_inf.paa";
 					class Unit0 {
 						side = 1;
-						vehicle = "RHS_M2A2_BUSKI_custom";
+						vehicle = "RHS_M2A3_BUSKIII_DUWS";
 						rank = "LIEUTENANT";
 						position[] = {0, 0, 0};
 					};
@@ -495,7 +495,7 @@ class CfgGroups
 
 					class Unit0 {
 						side = 1;
-						vehicle = "CUP_B_MCV80_GB_D_SLAT_custom";
+						vehicle = "RHS_M2A3_BUSKIII_DUWS";
 						rank = "LIEUTENANT";
 						position[] = {0, 0, 0};
 					};
@@ -567,13 +567,13 @@ class CfgGroups
 					icon = "\A3\ui_f\data\map\markers\nato\b_armor.paa";
 					class Unit0 {
 						side = 1;
-						vehicle = "rhsusf_m1a2sep1tuskid_usarmy_custom";
+						vehicle = "CUP_B_M1A1_DES_USMC_DUWS";
 						rank = "LIEUTENANT";
 						position[] = {0, 0, 0};
 					};
 					class Unit1 {
 						side = 1;
-						vehicle = "rhsusf_m1a2sep1tuskid_usarmy_custom";
+						vehicle = "CUP_B_M1A1_DES_USMC_DUWS";
 						rank = "SERGEANT";
 						position[] = {20, -30, 0};
 					};
@@ -585,25 +585,25 @@ class CfgGroups
 					icon = "\A3\ui_f\data\map\markers\nato\b_armor.paa";
 					class Unit0 {
 						side = 1;
-						vehicle = "rhsusf_m1a2sep1tuskid_usarmy_custom";
+						vehicle = "CUP_B_M1A1_DES_USMC_DUWS";
 						rank = "LIEUTENANT";
 						position[] = {0, 0, 0};
 					};
 					class Unit1 {
 						side = 1;
-						vehicle = "I_mas_cars_LR_soft_Stinger_custom";
+						vehicle = "CUP_B_M1128_MGS_Desert_DUWS";
 						rank = "SERGEANT";
 						position[] = {20, -30, 0};
 					};
 					class Unit2 {
 						side = 1;
-						vehicle = "rhsusf_m1a2sep1tuskid_usarmy_custom";
+						vehicle = "CUP_B_M1A1_DES_USMC_DUWS";
 						rank = "SERGEANT";
 						position[] = {-20, -30, 0};
 					};
 					class Unit3 {
 						side = 1;
-						vehicle = "I_mas_cars_LR_soft_Stinger_custom";
+						vehicle = "CUP_B_M1128_MGS_Desert_DUWS";
 						rank = "CORPORAL";
 						position[] = {-40, -60, 2};
 					};
@@ -792,7 +792,7 @@ class CfgGroups
 
 					class Unit0 {
 						side = 0;
-						vehicle = "CUP_C_Ural_Open_Civ_custom";
+						vehicle = "CUP_C_Ural_Open_Civ_DUWS";
 						rank = "LIEUTENANT";
 						position[] = {0, 0, 0};
 					};
@@ -862,7 +862,7 @@ class CfgGroups
 
 					class Unit0 {
 						side = 0;
-						vehicle = "CUP_C_LR_Transport_CTK_custom";
+						vehicle = "CUP_I_Datsun_PK_TK_Random_DUWS";
 						rank = "LIEUTENANT";
 						position[] = {0, 0, 0};
 					};

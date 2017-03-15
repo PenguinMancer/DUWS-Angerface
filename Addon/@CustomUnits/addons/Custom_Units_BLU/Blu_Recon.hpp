@@ -5,8 +5,8 @@
 		displayName = "French Recon Scout"; // In-game name of unit
 		uniformClass = "U_I_G_resistanceLeader_F";  // Uniform Class
 		backpack = "IP_B_AssaultPack_SnowTiger"; // Backpack Class
-		linkedItems[] = {"TFA_boon_dou", "SP_Balaclava_NodUrban", "IP_V_PlateCarrierSpec_rgrSnowHex", Standard_Equipment_Blu}; // Item's added to the unit. 
-		respawnLinkedItems[] = {"TFA_boon_dou", "SP_Balaclava_NodUrban", "IP_V_PlateCarrierSpec_rgrSnowHex", Standard_Equipment_Blu}; // Item's added to the unit. Should be identical to the linkedItems section.
+		linkedItems[] = {"VSM_M81_Boonie", "SP_Balaclava_NodUrban", "IP_V_PlateCarrierSpec_rgrSnowHex", Standard_Equipment_Blu}; // Item's added to the unit. 
+		respawnLinkedItems[] = {"VSM_M81_Boonie", "SP_Balaclava_NodUrban", "IP_V_PlateCarrierSpec_rgrSnowHex", Standard_Equipment_Blu}; // Item's added to the unit. Should be identical to the linkedItems section.
 		weapons[] = {"rhs_weap_ak74m_2mag", "RH_mak", "Throw", "Put"}; // Weapons added to the unit.
 		respawnweapons[] = {"rhs_weap_ak74m_2mag", "RH_mak", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
 		magazines[] = {"rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK", "rhs_30Rnd_545x39_AK", "MiniGrenade", "ACE_HandFlare_Red", "RH_8Rnd_9x18_Mak", "RH_8Rnd_9x18_Mak", "RH_8Rnd_9x18_Mak"}; //Magazines added to the unit.

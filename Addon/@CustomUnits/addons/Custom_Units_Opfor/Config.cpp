@@ -83,7 +83,6 @@ class CfgPatches {
 			"rhsusf_c_fmtv", 
 			"rhsusf_c_m113", 
 			"RHS_US_A2Port_Armor",
-			"tfa_units",
 			"TRYK_Uniform",
 			"US_ESS_Glasses_tryk",
 			"Shemaghs",
