@@ -100,7 +100,7 @@ _trg3=createTrigger["EmptyDetector",_trigger];
 _trg3 triggerAttachVehicle [player];
 _trg3 setTriggerArea[_size,_size2,0,false];
 _trg3 setTriggerActivation["VEHICLE","PRESENT",true];
-_trg3 setTriggerStatements["this", format["[""%1"",thislist] execvm 'Scripts\enterlocation.sqf'",_place], ""];
+_trg3 setTriggerStatements["this", format["[""%1"",thislist] spawn Recurring_fnc_enterlocation",_place], ""];
 
 // CREATE OPFOR. HEAVY CLUSTERFUCK INCOMING.
 // Check if fortified is true
@@ -118,6 +118,8 @@ if ((_size + _size2)/2 < 251) exitWith
 	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneoppatrol;
       waituntil {sleep .1;scriptdone _handle};
 	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopteam;
+	  waituntil {sleep .1;scriptdone _handle};
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopteam;
 };
 // Check if radius is 250m-500m => create 2 patrols and 2 fireteams then exit the script
 if ((_size + _size2)/2 < 501) exitWith  
@@ -125,6 +127,10 @@ if ((_size + _size2)/2 < 501) exitWith
 	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneoppatrol;
       waituntil {sleep .1;scriptdone _handle};
 	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneoppatrol;
+      waituntil {sleep .1;scriptdone _handle};
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopteam;
+      waituntil {sleep .1;scriptdone _handle};
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopteam;
       waituntil {sleep .1;scriptdone _handle};
 	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopteam;
       waituntil {sleep .1;scriptdone _handle};
@@ -138,6 +144,8 @@ if ((_size + _size2)/2 <= 1000) exitWith
       waituntil {sleep .1;scriptdone _handle};
 	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopteam;
       waituntil {sleep .1;scriptdone _handle};
+	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopteam;
+	  waituntil {sleep .1;scriptdone _handle};
 	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopteam;
       waituntil {sleep .1;scriptdone _handle};
 	  _handle = [_trigger, _size] spawn SoldierSpawn_fnc_createzoneopwpteam;

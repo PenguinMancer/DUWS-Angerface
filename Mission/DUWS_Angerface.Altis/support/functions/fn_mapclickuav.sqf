@@ -12,7 +12,7 @@ UavInUse = false;
 
 hint "Click on your map to scan a location using the UAV";
 UavInUse = true;
-OnMapSingleClick "_null = [_pos,500] execVM 'support\uav_map.sqf';clicked=true;onMapSingleClick ''; hint 'Coordinates received'";
+OnMapSingleClick "[_pos,500] spawn Support_fnc_uav_map;clicked=true;onMapSingleClick ''; hint 'Coordinates received'";
 
 // TIMER
 while {_timer>0 AND !clicked} do {

@@ -12,6 +12,7 @@ str(_markername) setMarkerType "o_inf";
 str(_markername) setMarkerColor "ColorRed";
 str(_markername) setMarkerText format["Enemy QRF Waypoint"];
 enemy_waypoint_num = enemy_waypoint_num + 1;
+publicVariable "enemy_waypoint_num";
 };
 
 _group setCombatMode "RED";

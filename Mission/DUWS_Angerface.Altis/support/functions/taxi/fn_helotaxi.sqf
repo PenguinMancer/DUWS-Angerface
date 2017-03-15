@@ -2,25 +2,25 @@ _posplayer = _this select 0;
 _radius = _this select 1;
 _foundPickupPos = [];
 taxiCanTakeOff = false;
-Htaximh9InUse = true;
+HtaxiInUse = true;
 
 
-_music = call compile preprocessFile "support\taxi\random_music.sqf";
+_music = call compile preprocessFile "support\functions\taxi\random_music.sqf";
 
 
 if (commandpointsblu1 < 5) exitWith {
   ["info",["Not enough command points","Not enough Command Points (1 CP required)"]] call bis_fnc_showNotification;
   sleep 15;
-  _helotaxmh9 = [player,"helo_taximh9"] call BIS_fnc_addCommMenuItem;
-  helotaxmh9 = _helotaxmh9;
-  Htaximh9InUse = false;
+  _helotax = [player,"helo_taxi"] call BIS_fnc_addCommMenuItem;
+  helotax = _helotax;
+  HtaxiInUse = false;
 };
 
 
 _foundPickupPos = [_posplayer, 0,_radius,10,0,0.2,0,[],[[0,0],[0,0]]] call BIS_fnc_findSafePos; // find a valid pos
 
 // try to find a pos, if no pos is found exit the script
-if (0 == _foundPickupPos select 0 && 0 == _foundPickupPos select 1) exitWith {hint "No valid LZ nearby"; sleep 5; _art = [player,"helo_taximh9"] call BIS_fnc_addCommMenuItem;};
+if (0 == _foundPickupPos select 0 && 0 == _foundPickupPos select 1) exitWith {hint "No valid LZ nearby"; sleep 5; _art = [player,"helo_taxi"] call BIS_fnc_addCommMenuItem;};
 
 
 
@@ -44,7 +44,7 @@ _helogroup = createGroup west;
 _pilot = _helogroup createUnit ["Blufor_Pilot_1", [5,5,5], [], 0, "NONE"];
 _copilot = _helogroup createUnit ["Blufor_Pilot_1", [5,5,5], [], 0, "NONE"];
 _helo flyInHeight 150;
-_helo addAction ["<t color='#00b7ff'>Give a LZ to the pilot</t>", "support\taxi\mapclickhelo.sqf", "", 0, true, true, "", "vehicle _this == _target"];
+_helo addAction ["<t color='#00b7ff'>Give a LZ to the pilot</t>", "support\functions\taxi\mapclickhelo.sqf", "", 0, true, true, "", "vehicle _this == _target"];
  
 _pilot setcaptive true;
 _pilot allowfleeing 0;
@@ -69,8 +69,7 @@ _random2 = round random 9;
 _pilot sideChat format["This is %1 %2-%3, we're approaching your location for pick up, check your map for the LZ",_fobname,_random1,_random2];
 
 // ADD ACTION MENU TO CANCEL CHOPPER IF DESIRED**********
-_id = player addaction ["<t color='#F00000'>Detonate Taxi</t>","support\taxi\canceltaximh9.sqf",[_pilot,_copilot,_helo], 0, true, true, "", "_this == player"];
-
+_id = player addaction ["<t color='#F00000'>Detonate Taxi</t>","support\functions\taxi\cancelhelotaxi.sqf",[_pilot,_copilot,_helo], 0, true, true, "", "_this == player"];
 
 waitUntil {_foundpickuppos distance _helo < 350 or (getdammage _helo > 0.7 or !alive _pilot)}; // wait until the helo is near the lz
 // IF THE PILOT IS DEAD OR CHOPPA DOWN ******************
@@ -80,9 +79,9 @@ deleteMarker str(_markerpickup);
 hint format["%1 %2-%2 is too damaged to continue the mission",_fobname,_random1,_random2];
 // --- AJOUTER DE NOUVEAU LE SUPPORT
 sleep 15;
-_helotaxmh9 = [player,"helo_taximh9"] call BIS_fnc_addCommMenuItem;
-helotaxmh9 = _helotaxmh9;
-Htaximh9InUse = false;
+_helotax = [player,"helo_taxi"] call BIS_fnc_addCommMenuItem;
+helotax = _helotax;
+HtaxiInUse = false;
 }; 
 // ****************************************************
 
@@ -97,9 +96,14 @@ _helo land "GET IN";
 _inVehCheck = true;
 while {_inVehCheck} do {
 waitUntil {sleep 0.1;taxiCanTakeOff or (getdammage _helo > 0.7 or !alive _pilot)}; // wait until the player has given a validpos
-if (getdammage _helo > 0.7 or !alive _pilot) exitWith {}; // get out of the loop if choopa is down
 // check if player is inside choppa
-if (vehicle player != _helo) then {taxiCanTakeOff = false; _pilot sidechat format["This is %1 %2-%3, get back in, I can't transport you're not inside the chopper !",_fobname,_random1,_random2]; _helo addAction ["<t color='#00b7ff'>Give a LZ to the pilot</t>", "support\taxi\mapclickhelo.sqf", "", 0, true, true, "", "vehicle _this == _target"];} else {_inVehCheck = false;};
+if (vehicle player != _helo) then {
+	taxiCanTakeOff = false;
+	_pilot sidechat format["This is %1 %2-%3, get back in, I can't transport you if you're not inside the chopper!",_fobname,_random1,_random2];
+	_helo addAction ["<t color='#00b7ff'>Give a LZ to the pilot</t>", "support\functions\taxi\mapclickhelo.sqf", "", 0, true, true, "", "vehicle _this == _target"];
+		} else {
+	_inVehCheck = false;
+	};
 };
 
 // IF THE PILOT IS DEAD OR CHOPPA DOWN  **************
@@ -108,9 +112,9 @@ deleteVehicle _helipad1;
 deleteMarker str(_markerpickup);
 hint format["%1 %2-%2 is too damaged to continue the mission",_fobname,_random1,_random2];
 sleep 15;
-_helotaxmh9 = [player,"helo_taximh9"] call BIS_fnc_addCommMenuItem;
-helotaxmh9 = _helotaxmh9;
-Htaximh9InUse = false;
+_helotax = [player,"helo_taxi"] call BIS_fnc_addCommMenuItem;
+helotax = _helotax;
+HtaxiInUse = false;
 // --- AJOUTER DE NOUVEAU LE SUPPORT
 }; 
 // *****************************
@@ -139,9 +143,9 @@ deleteMarker str(_markerpickup);
 hint format["%1 %2-%2 is too damaged to continue the mission",_fobname,_random1,_random2];
 // --- AJOUTER DE NOUVEAU LE SUPPORT
 sleep 15;
-_helotaxmh9 = [player,"helo_taximh9"] call BIS_fnc_addCommMenuItem;
-helotaxmh9 = _helotaxmh9;
-Htaximh9InUse = false;
+_helotax = [player,"helo_taxi"] call BIS_fnc_addCommMenuItem;
+helotax = _helotax;
+HtaxiInUse = false;
 }; 
 // *****************************
 if (enableChopperFastTravel) then {
@@ -164,9 +168,9 @@ deleteMarker str(_markerpickup);
 hint format["%1 %2-%2 is too damaged to continue the mission",_fobname,_random1,_random2];
 // --- AJOUTER DE NOUVEAU LE SUPPORT
 sleep 15;
-_helotaxmh9 = [player,"helo_taximh9"] call BIS_fnc_addCommMenuItem;
-helotaxmh9 = _helotaxmh9;
-Htaximh9InUse = false;
+_helotax = [player,"helo_taxi"] call BIS_fnc_addCommMenuItem;
+helotax = _helotax;
+HtaxiInUse = false;
 }; 
 // *****************************
 _helo land "GET OUT";
@@ -191,9 +195,9 @@ deleteVehicle _helipad;
 hint format["%1 %2-%2 is too damaged to continue the mission",_fobname,_random1,_random2];
 // --- AJOUTER DE NOUVEAU LE SUPPORT
 sleep 15;
-_helotaxmh9 = [player,"helo_taximh9"] call BIS_fnc_addCommMenuItem;
-helotaxmh9 = _helotaxmh9;
-Htaximh9InUse = false;
+_helotax = [player,"helo_taxi"] call BIS_fnc_addCommMenuItem;
+helotax = _helotax;
+HtaxiInUse = false;
 }; 
 // *****************************
 titleText ["Pilot: We've arrived at the LZ", "PLAIN DOWN"];
@@ -214,9 +218,9 @@ if (getdammage _helo > 0.7 or !alive _pilot) exitWith {
 hint format["%1 %2-%2 is too damaged to continue the mission",_fobname,_random1,_random2];
 // --- AJOUTER DE NOUVEAU LE SUPPORT
 sleep 300;
-_helotaxmh9 = [player,"helo_taximh9"] call BIS_fnc_addCommMenuItem;
-helotaxmh9 = _helotaxmh9;
-Htaximh9InUse = false;
+_helotax = [player,"helo_taxi"] call BIS_fnc_addCommMenuItem;
+helotax = _helotax;
+HtaxiInUse = false;
 }; 
 // *****************************
 _pilot sideChat format["This is %1 %2-%3, we are RTB",_fobname,_random1,_random2];
@@ -228,6 +232,6 @@ deleteVehicle _helo;
 player removeAction _id;
 
 sleep 240;
-_helotaxmh9 = [player,"helo_taximh9"] call BIS_fnc_addCommMenuItem;
-helotaxmh9 = _helotaxmh9;
-Htaximh9InUse = false;
+_helotax = [player,"helo_taxi"] call BIS_fnc_addCommMenuItem;
+helotax = _helotax;
+HtaxiInUse = false;

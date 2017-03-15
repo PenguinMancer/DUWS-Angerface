@@ -7,8 +7,6 @@ class Recurring
 		class addFobActions {};
 		class addHQactions {};
 		class bottom_right_message {};
-		class DeathAP {};
-		class DeathAPLeader {};
 		class DeathAPLoss {};
 		class enemyAPGain {};
 		class enterlocation {};

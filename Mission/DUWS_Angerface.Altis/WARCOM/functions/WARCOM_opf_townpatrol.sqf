@@ -51,6 +51,6 @@ WARCOM_opf_patroltown_type = "";
 			  };
 				
 				};
-		sleep (WARCOM_opf_attack_delay + (random 900));	// patrol delay		   
+		sleep (900 + (random 900));	// patrol delay		   
 	};
 };

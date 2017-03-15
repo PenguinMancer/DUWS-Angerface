@@ -277,17 +277,17 @@ switch (_index2) do
 
     case 9:
     {
-         if (!support_helotaximh9_available) then
+         if (!support_helotaxi_available) then
              {
               if (commandpointsblu1>=10) then
                 {
                   commandpointsblu1 = commandpointsblu1 - 10;
                   ctrlSetText [1000, format["%1",commandpointsblu1]];
-                  _helotaxmh9 = [player,"helo_taximh9"] call BIS_fnc_addCommMenuItem;
-				  helotaxmh9 = _helotaxmh9;
+                  _helotax = [player,"helo_taxi"] call BIS_fnc_addCommMenuItem;
+				  helotax = _helotax;
                   lbSetColor [2103, 9, [0, 1, 0, 1]];
 				  playSound "boots";
-                  support_helotaximh9_available = true;
+                  support_helotaxi_available = true;
                 }
               else
                 {
@@ -296,82 +296,18 @@ switch (_index2) do
              }
           else
              {
-               if (Htaximh9InUse) exitWith {hint "You must wait a few minutes for item to return to 0-8 menu before re-locking it!"};
+               if (HtaxiInUse) exitWith {hint "You must wait a few minutes for item to return to 0-8 menu before re-locking it!"};
 			   commandpointsblu1 = commandpointsblu1 + 5;
 				  ctrlSetText [1000, format["%1",commandpointsblu1]];
-				  [player,helotaxmh9] call BIS_fnc_removeCommMenuItem;
+				  [player,helotax] call BIS_fnc_removeCommMenuItem;
 				  lbSetColor [2103, 9, [1, 0, 0, 1]];
 				  playSound "boots";
-				  support_helotaximh9_available = false;
+				  support_helotaxi_available = false;
 				  hint "Support Locked & 50% Refunded";
              };
     };
 
-	case 10:
-    {
-         if (!support_helotaxi80_available) then
-             {
-              if (commandpointsblu1>=10) then
-                {
-                  commandpointsblu1 = commandpointsblu1 - 10;
-                  ctrlSetText [1000, format["%1",commandpointsblu1]];
-                  _helotax80 = [player,"helo_taxi80"] call BIS_fnc_addCommMenuItem;
-				  helotax80 = _helotax80;
-                  lbSetColor [2103, 10, [0, 1, 0, 1]];
-				  playSound "boots";
-                  support_helotaxi80_available = true;
-                }
-              else
-                {
-				  hint "Not enough command points";
-                };
-             }
-          else
-             {
-               if (Htaxi80InUse) exitWith {hint "You must wait a few minutes for item to return to 0-8 menu before re-locking it!"};
-			   commandpointsblu1 = commandpointsblu1 + 5;
-				  ctrlSetText [1000, format["%1",commandpointsblu1]];
-				  [player,helotax80] call BIS_fnc_removeCommMenuItem;
-				  lbSetColor [2103, 10, [1, 0, 0, 1]];
-				  playSound "boots";
-				  support_helotaxi80_available = false;
-				  hint "Support Locked & 50% Refunded";
-             };
-    };
-
-	case 11:
-    {
-         if (!support_helotaxi290_available) then
-             {
-              if (commandpointsblu1>=10) then
-                {
-                  commandpointsblu1 = commandpointsblu1 - 10;
-                  ctrlSetText [1000, format["%1",commandpointsblu1]];
-                  _helotax290 = [player,"helo_taxi290"] call BIS_fnc_addCommMenuItem;
-				  helotax290 = _helotax290;
-                  lbSetColor [2103, 11, [0, 1, 0, 1]];
-				  playSound "boots";
-                  support_helotaxi290_available = true;
-                }
-              else
-                {
-				  hint "Not enough command points";
-                };
-             }
-          else
-             {
-               if (Htaxi290InUse) exitWith {hint "You must wait a few minutes for item to return to 0-8 menu before re-locking it!"};
-			   commandpointsblu1 = commandpointsblu1 + 5;
-				  ctrlSetText [1000, format["%1",commandpointsblu1]];
-				  [player,helotax290] call BIS_fnc_removeCommMenuItem;
-				  lbSetColor [2103, 11, [1, 0, 0, 1]];
-				  playSound "boots";
-				  support_helotaxi290_available = false;
-				  hint "Support Locked & 50% Refunded";
-             };
-    };
-
-    case 12:
+    case 10:
     {
          if (!support_cluster_available) then
              {
@@ -381,7 +317,7 @@ switch (_index2) do
                   ctrlSetText [1000, format["%1",commandpointsblu1]];
                   _cluster = [player,"cluster"] call BIS_fnc_addCommMenuItem;
 				  cluster = _cluster;
-                  lbSetColor [2103, 12, [0, 1, 0, 1]];
+                  lbSetColor [2103, 10, [0, 1, 0, 1]];
 				  playSound "boots";
                   support_cluster_available = true;
                 }
@@ -396,14 +332,14 @@ switch (_index2) do
 			   commandpointsblu1 = commandpointsblu1 + 7.5;
 				  ctrlSetText [1000, format["%1",commandpointsblu1]];
 				  [player,cluster] call BIS_fnc_removeCommMenuItem;
-				  lbSetColor [2103, 12, [1, 0, 0, 1]];
+				  lbSetColor [2103, 10, [1, 0, 0, 1]];
 				  playSound "boots";
 				  support_cluster_available = false;
 				  hint "Support Locked & 50% Refunded";
              };
     };
 
-    case 13:
+    case 11:
     {
          if (!support_specialized_training_available) then
              {
@@ -413,7 +349,7 @@ switch (_index2) do
                   ctrlSetText [1000, format["%1",commandpointsblu1]];
                   ["inf_training",["Specialized Infantry training","Our troops are now more skilled in battle"]] call bis_fnc_showNotification;
 				  blufor_ai_skill = [(blufor_ai_skill select 0)+0.3,(blufor_ai_skill select 1)+0.3];
-                  lbSetColor [2103, 13, [0, 1, 0, 1]];
+                  lbSetColor [2103, 11, [0, 1, 0, 1]];
                   support_specialized_training_available = true;
 				  publicVariable "support_specialized_training_available";
 				  playSound "boots";
@@ -430,18 +366,18 @@ switch (_index2) do
              };
     };
 
-    case 14:
+    case 12:
     {
-         if (!support_boattaxi_available) then
+         if (!support_portableboat_available) then
              {
-              if (commandpointsblu1>=2) then
+              if (commandpointsblu1>=5) then
                 {
-                  commandpointsblu1 = commandpointsblu1 - 2;
+                  commandpointsblu1 = commandpointsblu1 - 5;
                   ctrlSetText [1000, format["%1",commandpointsblu1]];
-                  lbSetColor [2103, 14, [0, 1, 0, 1]];
-                  support_boattaxi_available = true;
-				  _boattaxi = [player,"boat_taxi"] call BIS_fnc_addCommMenuItem;
-				  boattaxi = _boattaxi;
+                  lbSetColor [2103, 12, [0, 1, 0, 1]];
+                  support_portableboat_available = true;
+				  _portableboat = [player,"Deployable_Boat"] call BIS_fnc_addCommMenuItem;
+				  portableboat = _portableboat;
 				  playSound "boots";
                 }
               else
@@ -451,18 +387,17 @@ switch (_index2) do
              }
           else
              {
-               if (BtaxiInUse) exitWith {hint "You must wait a few minutes for item to return to 0-8 menu before re-locking it!"};
-			   commandpointsblu1 = commandpointsblu1 + 1;
+			   commandpointsblu1 = commandpointsblu1 + 2;
 				  ctrlSetText [1000, format["%1",commandpointsblu1]];
-				  [player,boattaxi] call BIS_fnc_removeCommMenuItem;
-				  lbSetColor [2103, 14, [1, 0, 0, 1]];
+				  [player,portableboat] call BIS_fnc_removeCommMenuItem;
+				  lbSetColor [2103, 12, [1, 0, 0, 1]];
 				  playSound "boots";
-				  support_boattaxi_available = false;
+				  support_portableboat_available = false;
 				  hint "Support Locked & 50% Refunded";
              };
     };
 
-case 15:
+	case 13:
     {
          if (!support_halo_available) then
              {
@@ -471,7 +406,7 @@ case 15:
                   commandpointsblu1 = commandpointsblu1 - 15;
                   ctrlSetText [1000, format["%1",commandpointsblu1]];
 				  Halojump = 1;publicvariable "Halojump";
-                  lbSetColor [2103, 15, [0, 1, 0, 1]];
+                  lbSetColor [2103, 13, [0, 1, 0, 1]];
                   support_halo_available = true;
 				  playSound "loadgun";
                   ["halo",["Halo Unlocked","Access Halo Jumping at the HQ and at FOB's"]] call bis_fnc_showNotification;
@@ -487,7 +422,7 @@ case 15:
              };
     };
 
-case 16:
+	case 14:
     {
          if (!support_hcCAS_available) then
              {
@@ -497,7 +432,7 @@ case 16:
                   ctrlSetText [1000, format["%1",commandpointsblu1]];
                   _hcCAS = [player,"hc_CAS"] call BIS_fnc_addCommMenuItem;
 				  hcCAS = _hcCAS;
-                  lbSetColor [2103, 16, [0, 1, 0, 1]];
+                  lbSetColor [2103, 14, [0, 1, 0, 1]];
 				  playSound "boots";
                   support_hcCAS_available = true;
                 }
@@ -512,14 +447,14 @@ case 16:
 			   commandpointsblu1 = commandpointsblu1 + 10;
 				  ctrlSetText [1000, format["%1",commandpointsblu1]];
 				  [player,hcCAS] call BIS_fnc_removeCommMenuItem;
-				  lbSetColor [2103, 16, [1, 0, 0, 1]];
+				  lbSetColor [2103, 14, [1, 0, 0, 1]];
 				  playSound "boots";
 				  support_hcCAS_available = false;
 				  hint "Support Locked & 50% Refunded";
              };
     };
 
-case 17:
+	case 15:
     {
          if (!support_hcAttChop_available) then
              {
@@ -529,7 +464,7 @@ case 17:
                   ctrlSetText [1000, format["%1",commandpointsblu1]];
                   _hcAttChop = [player,"hc_ATTchop"] call BIS_fnc_addCommMenuItem;
 				  hcAttChop = _hcAttChop;
-                  lbSetColor [2103, 17, [0, 1, 0, 1]];
+                  lbSetColor [2103, 15, [0, 1, 0, 1]];
 				  playSound "boots";
                   support_hcAttChop_available = true;
                 }
@@ -544,14 +479,14 @@ case 17:
 			   commandpointsblu1 = commandpointsblu1 + 10;
 				  ctrlSetText [1000, format["%1",commandpointsblu1]];
 				  [player,hcAttChop] call BIS_fnc_removeCommMenuItem;
-				  lbSetColor [2103, 17, [1, 0, 0, 1]];
+				  lbSetColor [2103, 15, [1, 0, 0, 1]];
 				  playSound "boots";
 				  support_hcAttChop_available = false;
 				  hint "Support Locked & 50% Refunded";
              };
     };
 
-case 18:
+	case 16:
     {
          if (!support_hcAIRTRANS_available) then
              {
@@ -561,7 +496,7 @@ case 18:
                   ctrlSetText [1000, format["%1",commandpointsblu1]];
                   _hcAIRTRANS = [player,"hc_AIRTRANS"] call BIS_fnc_addCommMenuItem;
 				  hcAIRTRANS = _hcAIRTRANS;
-                  lbSetColor [2103, 18, [0, 1, 0, 1]];
+                  lbSetColor [2103, 16, [0, 1, 0, 1]];
 				  playSound "boots";
                   support_hcAIRTRANS_available = true;
                 }
@@ -575,14 +510,14 @@ case 18:
                commandpointsblu1 = commandpointsblu1 + 5;
 				  ctrlSetText [1000, format["%1",commandpointsblu1]];
 				  [player,hcAIRTRANS] call BIS_fnc_removeCommMenuItem;
-				  lbSetColor [2103, 18, [1, 0, 0, 1]];
+				  lbSetColor [2103, 16, [1, 0, 0, 1]];
 				  playSound "boots";
 				  support_hcAIRTRANS_available = false;
 				  hint "Support Locked & 50% Refunded";
              };
     };
 
-case 19:
+	case 17:
     {
          if (!support_hcGRTRANS_available) then
              {
@@ -592,7 +527,7 @@ case 19:
                   ctrlSetText [1000, format["%1",commandpointsblu1]];
                   _hcGRTRANS = [player,"hc_GRTRANS"] call BIS_fnc_addCommMenuItem;
 				  hcGRTRANS = _hcGRTRANS;
-                  lbSetColor [2103, 19, [0, 1, 0, 1]];
+                  lbSetColor [2103, 17, [0, 1, 0, 1]];
 				  playSound "boots";
                   support_hcGRTRANS_available = true;
                 }
@@ -606,14 +541,14 @@ case 19:
                commandpointsblu1 = commandpointsblu1 + 4;
 				  ctrlSetText [1000, format["%1",commandpointsblu1]];
 				  [player,hcGRTRANS] call BIS_fnc_removeCommMenuItem;
-				  lbSetColor [2103, 19, [1, 0, 0, 1]];
+				  lbSetColor [2103, 17, [1, 0, 0, 1]];
 				  playSound "boots";
 				  support_hcGRTRANS_available = false;
 				  hint "Support Locked & 50% Refunded";
              };
     };
 
-case 20:
+	case 18:
     {
          if (!support_hcBob_available) then
              {
@@ -623,7 +558,7 @@ case 20:
                   ctrlSetText [1000, format["%1",commandpointsblu1]];
                   _hcBOBCATREP = [player,"hc_BOBCATREP"] call BIS_fnc_addCommMenuItem;
 				  hcBOBCATREP = _hcBOBCATREP;
-                  lbSetColor [2103, 20, [0, 1, 0, 1]];
+                  lbSetColor [2103, 18, [0, 1, 0, 1]];
 				  playSound "boots";
                   support_hcBob_available = true;
                 }
@@ -638,14 +573,14 @@ case 20:
                commandpointsblu1 = commandpointsblu1 + 12.5;
 				  ctrlSetText [1000, format["%1",commandpointsblu1]];
 				  [player,hcBOBCATREP] call BIS_fnc_removeCommMenuItem;
-				  lbSetColor [2103, 20, [1, 0, 0, 1]];
+				  lbSetColor [2103, 18, [1, 0, 0, 1]];
 				  playSound "boots";
 				  support_hcBob_available = false;
 				  hint "Support Locked & 50% Refunded";
              };
     };
 
-case 21:
+	case 19:
     {
          if (!support_hcREPAIR_available) then
              {
@@ -655,7 +590,7 @@ case 21:
                   ctrlSetText [1000, format["%1",commandpointsblu1]];
                   _hcREPAIR = [player,"hc_REPAIR"] call BIS_fnc_addCommMenuItem;
 				  hcREPAIR = _hcREPAIR;
-                  lbSetColor [2103, 21, [0, 1, 0, 1]];
+                  lbSetColor [2103, 19, [0, 1, 0, 1]];
 				  playSound "boots";
                   support_hcREPAIR_available = true;
 				}
@@ -669,14 +604,14 @@ case 21:
                commandpointsblu1 = commandpointsblu1 + 4;
 			   ctrlSetText [1000, format["%1",commandpointsblu1]];
 				  [player,hcREPAIR] call BIS_fnc_removeCommMenuItem;
-				  lbSetColor [2103, 21, [1, 0, 0, 1]];
+				  lbSetColor [2103, 19, [1, 0, 0, 1]];
 				  playSound "boots";
 				  support_hcREPAIR_available = false;
 				  hint "Support Locked & 50% Refunded";
              };
     };
 
-case 22:
+	case 20:
     {
          if (!support_hcREFUEL_available) then
              {
@@ -686,7 +621,7 @@ case 22:
                   ctrlSetText [1000, format["%1",commandpointsblu1]];
                   _hcREFUEL = [player,"hc_REFUEL"] call BIS_fnc_addCommMenuItem;
 				  hcREFUEL = _hcREFUEL;
-                  lbSetColor [2103, 22, [0, 1, 0, 1]];
+                  lbSetColor [2103, 20, [0, 1, 0, 1]];
 				  playSound "boots";
                   support_hcREFUEL_available = true;
                   }
@@ -700,7 +635,7 @@ case 22:
 			   commandpointsblu1 = commandpointsblu1 + 4;
 			   ctrlSetText [1000, format["%1",commandpointsblu1]];
 			   [player,hcREFUEL] call BIS_fnc_removeCommMenuItem;
-			   lbSetColor [2103, 22, [1, 0, 0, 1]];
+			   lbSetColor [2103, 20, [1, 0, 0, 1]];
 			   playSound "boots";
 			   support_hcREFUEL_available = false;
 			   hint "Support Locked & 50% Refunded";
@@ -708,7 +643,7 @@ case 22:
 
 	};
 
-	case 23:
+	case 21:
     {
          if (!support_vehicledrop_available) then
              {
@@ -718,7 +653,7 @@ case 22:
                   ctrlSetText [1000, format["%1",commandpointsblu1]];
                   _vehicledrop = [player,"vehicle"] call BIS_fnc_addCommMenuItem;
 				  DUWSvehicledrop =_vehicledrop;
-                  lbSetColor [2103, 23, [0, 1, 0, 1]];
+                  lbSetColor [2103, 21, [0, 1, 0, 1]];
 				  playSound "boots";
                   support_vehicledrop_available = true;
                 }
@@ -732,14 +667,14 @@ case 22:
                commandpointsblu1 = commandpointsblu1 + 5;
 				  ctrlSetText [1000, format["%1",commandpointsblu1]];
 				  [player,DUWSvehicledrop] call BIS_fnc_removeCommMenuItem;
-				  lbSetColor [2103, 23, [1, 0, 0, 1]];
+				  lbSetColor [2103, 21, [1, 0, 0, 1]];
 				  playSound "boots";
 				  support_vehicledrop_available = false;
 				  hint "Support Locked & 50% Refunded";
              };
     };
 	
-	case 24:
+	case 22:
     {
          if (zoneundercontrolblu >= 1) then
              {
@@ -749,7 +684,7 @@ case 22:
                   ctrlSetText [1000, format["%1",commandpointsblu1]];
                   _repfob = [player,"fob_support"] call BIS_fnc_addCommMenuItem;
 				  DUWSrepfob = _repfob;
-                  lbSetColor [2103, 24, [0, 1, 0, 1]];
+                  lbSetColor [2103, 22, [0, 1, 0, 1]];
 				  playSound "boots";
                   support_FOB_available = true;
                 }
@@ -758,7 +693,7 @@ case 22:
 				  commandpointsblu1 = commandpointsblu1 + 0;
 				  ctrlSetText [1000, format["%1",commandpointsblu1]];
 				  [player,DUWSrepfob] call BIS_fnc_removeCommMenuItem;
-				  lbSetColor [2103, 24, [1, 0, 0, 1]];
+				  lbSetColor [2103, 22, [1, 0, 0, 1]];
 				  playSound "boots";
 				  support_FOB_available = false;
                   hint "Support removed from comm menu";

@@ -45,22 +45,20 @@ index_support_jdam = lbAdd [2103, "JDAM strike(15CP)"];               			  	// 5
 index_support_pFLIR = lbAdd [2103, "Personal FLIR display(12CP)"];    			 	// 6
 index_support_uavrecon = lbAdd [2103, "UAV Recon(15CP)"];             		 		// 7
 index_support_refit = lbAdd [2103, "Vehicle Refit(5CP)"];             		  		// 8
-index_support_helotaximh9 = lbAdd [2103, "HeliTaxi MH9-6PAX (10CP)"];          		// 9
-index_support_helotaxi80 = lbAdd [2103, "HeliTaxi CH67-18PAX (10CP)"];          	// 10
-index_support_helotaxi290 = lbAdd [2103, "HeliTaxi TARU bench-8PAX (10CP)"];        // 11
-index_support_cluster = lbAdd [2103, "Mk.20 II CBU(15CP)"];             			// 12
-index_support_training = lbAdd [2103, "Specialized Infantry training(20CP)"];		// 13
-index_support_boattaxi = lbAdd [2103, "Boat Taxi(2CP)"];				 			// 14
-index_support_halo = lbAdd [2103, "Halo(15CP)"];                     				// 15
-index_support_hcCAS = lbAdd [2103, "High Command Close Air Support(20CP)"];         // 16
-index_support_hcAttChop = lbAdd [2103, "High Command Attack Chopper(20CP)"];        // 17
-index_support_hcAIRTRANS = lbAdd [2103, "High Command Air Transport(10CP)"];        // 18
-index_support_hcGRTRANS = lbAdd [2103, "High Command Ground Transport(8CP)"];       // 19
-index_support_hcBob = lbAdd [2103, "High Command Bobcat Refit(25CP)"];              // 20
-index_support_hcREPAIR = lbAdd [2103, "High Command Repair Team(8CP)"];             // 21
-index_support_hcREFUEL = lbAdd [2103, "High Command Refuel Team(8CP)"];             // 22
-index_support_vehicle = lbAdd [2103, "Remote Vehicle Request(10CP)"];				// 23
-index_support_fob = lbAdd [2103, "**911 ONLY!** ADD FOB Reqst to 0-8"];             // 24
+index_support_helotaxi = lbAdd [2103, "HeliTaxi (10CP)"];          					// 9
+index_support_cluster = lbAdd [2103, "Mk.20 II CBU(15CP)"];             			// 10
+index_support_training = lbAdd [2103, "Specialized Infantry training(20CP)"];		// 11
+index_support_portableboat = lbAdd [2103, "Deployable Boat(5CP)"];				 	// 12
+index_support_halo = lbAdd [2103, "Halo(15CP)"];                     				// 13
+index_support_hcCAS = lbAdd [2103, "High Command Close Air Support(20CP)"];         // 14
+index_support_hcAttChop = lbAdd [2103, "High Command Attack Chopper(20CP)"];        // 15
+index_support_hcAIRTRANS = lbAdd [2103, "High Command Air Transport(10CP)"];        // 16
+index_support_hcGRTRANS = lbAdd [2103, "High Command Ground Transport(8CP)"];       // 17
+index_support_hcBob = lbAdd [2103, "High Command Bobcat Refit(25CP)"];              // 18
+index_support_hcREPAIR = lbAdd [2103, "High Command Repair Team(8CP)"];             // 19
+index_support_hcREFUEL = lbAdd [2103, "High Command Refuel Team(8CP)"];             // 20
+index_support_vehicle = lbAdd [2103, "Remote Vehicle Request(10CP)"];				// 21
+index_support_fob = lbAdd [2103, "**911 ONLY!** ADD FOB Reqst to 0-8"];             // 22
 
 if (support_satcom_available) then
 {
@@ -98,67 +96,59 @@ if (support_uav_recon_available) then
 {
   lbSetColor [2103, 8, [0, 1, 0, 1]];
 };
-if (support_helotaximh9_available) then
+if (support_helotaxi_available) then
 {
   lbSetColor [2103, 9, [0, 1, 0, 1]];
 };
-if (support_helotaxi80_available) then
+if (support_cluster_available) then
 {
   lbSetColor [2103, 10, [0, 1, 0, 1]];
 };
-if (support_helotaxi290_available) then
+if (support_specialized_training_available) then
 {
   lbSetColor [2103, 11, [0, 1, 0, 1]];
 };
-if (support_cluster_available) then
+if (support_portableboat_available) then
 {
   lbSetColor [2103, 12, [0, 1, 0, 1]];
 };
-if (support_specialized_training_available) then
+if (support_halo_available) then
 {
   lbSetColor [2103, 13, [0, 1, 0, 1]];
 };
-if (support_boattaxi_available) then
+if (support_hcCAS_available) then
 {
   lbSetColor [2103, 14, [0, 1, 0, 1]];
 };
-if (support_halo_available) then
+if (support_hcAttChop_available) then
 {
   lbSetColor [2103, 15, [0, 1, 0, 1]];
 };
-if (support_hcCAS_available) then
+if (support_hcAIRTRANS_available) then
 {
   lbSetColor [2103, 16, [0, 1, 0, 1]];
 };
-if (support_hcAttChop_available) then
+if (support_hcGRTRANS_available) then
 {
   lbSetColor [2103, 17, [0, 1, 0, 1]];
 };
-if (support_hcAIRTRANS_available) then
+if (support_hcBob_available) then
 {
   lbSetColor [2103, 18, [0, 1, 0, 1]];
 };
-if (support_hcGRTRANS_available) then
+if (support_hcREPAIR_available) then
 {
   lbSetColor [2103, 19, [0, 1, 0, 1]];
 };
-if (support_hcBob_available) then
+if (support_hcREFUEL_available) then
 {
   lbSetColor [2103, 20, [0, 1, 0, 1]];
 };
-if (support_hcREPAIR_available) then
+if (support_vehicledrop_available) then
 {
   lbSetColor [2103, 21, [0, 1, 0, 1]];
 };
-if (support_hcREFUEL_available) then
-{
-  lbSetColor [2103, 22, [0, 1, 0, 1]];
-};
-if (support_vehicledrop_available) then
-{
-  lbSetColor [2103, 23, [0, 1, 0, 1]];
-};
 if (support_FOB_available) then
 {
-  lbSetColor [2103, 24, [0, 1, 0, 1]];
+  lbSetColor [2103, 22, [0, 1, 0, 1]];
 };

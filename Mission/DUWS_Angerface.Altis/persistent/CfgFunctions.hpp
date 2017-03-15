@@ -2,7 +2,7 @@ class Persistent {
   class Functions {
       tag = "persistent";
       file = "persistent\functions";
-      class initPersistentStats { preinit = 1 };
+      class initPersistentStats {};
       class addMissionWin {};
       class resetStats {};
       class incrementCompletedMissions {};

@@ -1,7 +1,3 @@
-// _null = [salvos, radius, interval between salvos(in seconds), shots per salvo, support type, CP cost, ammotype] execVM "support\arty.sqf"
-//  AMMO TYPES: R_60mm_HE / R_80mm_HE /Bo_Air_LGB(no sounds)/ Grenade / Bo_Mk82
-//  SUPPORT TYPE: 1 = arty, 2 = mortar, 3 = jdam
-
 _salvos = _this select 0;
 _radius = _this select 1;
 _interval = _this select 2;
@@ -43,8 +39,7 @@ hint "Click on your map to give the coordinates or wait 60 seconds to cancel the
 if (_supportype==1) then {ArtyInUse = true;};
 if (_supportype==2) then {MortInUse = true;};
 if (_supportype==3) then {JdamInUse = true;};
-OnMapSingleClick format["_null = [_pos,%2,%3,%4,%5,%6,%7,'%8'] execVM 'support\arty.sqf';clicked=true;onMapSingleClick ''",_pos,_salvos,_radius,_interval,_rps,_supportype,_cost,_ammotype];
-//hint format["Position: %1\nSalvos:%2\nRadius:%3\nInterval:%4\nRPS:%5\nSupport type:%6\nCost:%7\nAmmo type:'%8'", _position, _salvos, _radius, _interval, _rps, _supportype, _cost, _ammotype];
+OnMapSingleClick format["_null = [_pos,%2,%3,%4,%5,%6,%7,'%8'] spawn Support_fnc_arty;clicked=true;onMapSingleClick ''",_pos,_salvos,_radius,_interval,_rps,_supportype,_cost,_ammotype];
 
 // TIMER
 while {_timer>0 AND !clicked} do {

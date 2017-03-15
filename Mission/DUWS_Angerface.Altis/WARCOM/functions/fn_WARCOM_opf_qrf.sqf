@@ -48,7 +48,7 @@ WARCOM_opf_response_type = "";
 		      _randomZonesafe = [(_randomZone select 0)+20,_randomZone select 1];
 		      };
 			  _group = [_randomZonesafe, EAST, WARCOM_opf_response_type,[],[],WARCOM_opf_ai_skill_range] call BIS_fnc_spawnGroup;
-			  _opf_assault = [_group,_unitPos] spawn WARCOM_wp_opf_qrf;
+			  _opf_assault = [_group,_unitPos] spawn Warcom_fnc_WARCOM_wp_opf_qrf;
 			  
 		  if (debugmode) then {
 		  _null = [_group,"QRF"] execvm "debuglocation.sqf";

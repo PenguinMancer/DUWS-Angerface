@@ -116,6 +116,8 @@ sleep 9;
 // For some reasons I had to add a zone [0,0,0] in _zones_array, now I must remove it:
 _zones_array = [_zones_array, 0] call BIS_fnc_removeIndex;
 
+_warcom_init = [Array_of_OPFOR_zones, getpos hq_blu1, [0,0,0], blufor_ap, opfor_ap,blufor_ai_skill,opfor_ai_skill] spawn Warcom_fnc_WARCOM_init;
+waitUntil {scriptDone _warcom_init};
 sleep 0.1;
 //savegame;
 enableSaving [ false, false ];

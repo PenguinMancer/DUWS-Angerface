@@ -1,4 +1,4 @@
-_index = lbCurSel 2152;
+_index = lbCurSel 1667;
 
 switch (_index) do
 {
@@ -8,7 +8,7 @@ switch (_index) do
           {
            _pointcost =  6;
            _vehic = "I_G_Offroad_01_F";
-		   _request = [_vehic, _pointcost] execvm "support\Vehicledrop.sqf";
+		   _request = [_vehic, _pointcost] spawn Support_fnc_Vehicledrop;
           }
           else
           {
@@ -22,7 +22,7 @@ switch (_index) do
           {
            _pointcost = 9;
            _vehic = "I_G_Van_01_transport_F";
-		   _request = [_vehic, _pointcost] execvm "support\Vehicledrop.sqf";
+		   _request = [_vehic, _pointcost] spawn Support_fnc_Vehicledrop;
           }
           else
           {
@@ -35,8 +35,8 @@ switch (_index) do
           if (commandpointsblu1 >= 8) then
           {
            _pointcost = 8;
-           _vehic = "B_MRAP_01_F";
-		   _request = [_vehic, _pointcost] execvm "support\Vehicledrop.sqf";
+           _vehic = "B_Truck_01_covered_F";
+		   _request = [_vehic, _pointcost] spawn Support_fnc_Vehicledrop;
           }
           else
           {
@@ -49,8 +49,8 @@ switch (_index) do
           if (commandpointsblu1 >= 24) then
           {
            _pointcost = 24;
-           _vehic = "B_MRAP_01_hmg_F";
-		   _request = [_vehic, _pointcost] execvm "support\Vehicledrop.sqf";
+           _vehic = "rhsusf_M1078A1P2_wd_fmtv_usarmy";
+		   _request = [_vehic, _pointcost] spawn Support_fnc_Vehicledrop;
           }
           else
           {
@@ -65,22 +65,8 @@ switch (_index) do
           if (commandpointsblu1 >= 12) then
           {
            _pointcost = 12;
-           _vehic = "B_Truck_01_covered_F";
-		   _request = [_vehic, _pointcost] execvm "support\Vehicledrop.sqf";
-          }
-          else
-          {
-          hint "Not enough command points";
-          };
-    };
-
-    case 5:
-    {
-          if (commandpointsblu1 >= 2) then
-          {
-           _pointcost = 2;
-           _vehic = "B_Quadbike_01_F";
-		   _request = [_vehic, _pointcost] execvm "support\Vehicledrop.sqf";
+           _vehic = "rhsusf_m1025_w";
+		   _request = [_vehic, _pointcost] spawn Support_fnc_Vehicledrop;
           }
           else
           {

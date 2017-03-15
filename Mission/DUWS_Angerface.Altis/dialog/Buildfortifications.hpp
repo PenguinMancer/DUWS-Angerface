@@ -2,7 +2,6 @@ class ressourceheaderbuildfortifications
 {
 	idd = -1;
 	movingenable = true;
-	//  onLoad = "_this call FRAME_01_Load";
 
 	class controls
 	{
@@ -25,7 +24,7 @@ class ressourceheaderbuildfortifications
 			h = 10 * GUI_GRID_H;
 			colorBackground[] = {0,0,0,0.5};
 		};
-		class emptyvehicleframeg4s: RscFrame
+		class Fortificationframe: RscFrame
 		{
 			idc = 9702;
 			text = "Build Fortifications";
@@ -34,7 +33,7 @@ class ressourceheaderbuildfortifications
 			w = 13 * GUI_GRID_W;
 			h = 4 * GUI_GRID_H;
 		};
-		class requestvehiclebuttong4s: RscButton
+		class Fortificationbutton: RscButton
 		{
 			idc = 9703;
 			text = "Build Selected";

@@ -159,7 +159,7 @@ class Mission
 					rank="SERGEANT";
 					skill=0.60000002;
 					text="player1";
-					init="[this] call Recurring_fnc_DeathAPLeader;";
+					init="null = [this] execVM 'Scripts\DeathAPLeader.sqf';";
 				};
 				class Item1
 				{
@@ -168,11 +168,11 @@ class Mission
 					azimut=135;
 					id=5;
 					side="WEST";
-					vehicle="Blufor_Eagle_1";
+					vehicle="Blufor_Crow_1";
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="player2";
-					init="[this] call Recurring_fnc_DeathAP;";
+					init="null = [this] execVM 'Scripts\DeathAP.sqf';";
 				};
 				class Item2
 				{
@@ -185,7 +185,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="player3";
-					init="[this] call Recurring_fnc_DeathAP;";
+					init="null = [this] execVM 'Scripts\DeathAP.sqf';";
 				};
 				class Item3
 				{
@@ -198,7 +198,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="player4";
-					init="[this] call Recurring_fnc_DeathAP;";
+					init="null = [this] execVM 'Scripts\DeathAP.sqf';";
 				};
 				class Item4
 				{
@@ -207,11 +207,11 @@ class Mission
 					azimut=135;
 					id=8;
 					side="WEST";
-					vehicle="Blufor_Panda_1";
+					vehicle="Blufor_Tarrasque_1";
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="player5";
-					init="[this] call Recurring_fnc_DeathAP;";
+					init="null = [this] execVM 'Scripts\DeathAP.sqf';";
 				};
 			};
 		};

@@ -16,6 +16,7 @@ str(_markername) setMarkerType "o_inf";
 str(_markername) setMarkerColor "ColorRed";
 str(_markername) setMarkerText format["Enemy %1",_grouptype];
 enemy_marker_num = enemy_marker_num + 1;
+publicVariable "enemy_marker_num";
 
     while {_loop} do {
     _units_alive = {alive _x }count units _group;

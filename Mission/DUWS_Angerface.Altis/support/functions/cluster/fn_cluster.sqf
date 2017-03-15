@@ -1,9 +1,3 @@
-
-// R_60mm_HE / R_80mm_HE /Bo_Air_LGB(no sounds)/ Grenade / Bo_Mk82
-//
-// _null = [1, 250, 1, 90, 1, 5, "grenade"] execVM "support\cluster\mapclickcluster.sqf"
-//
-
 _position = _this select 0;
 _salvos = _this select 1;
 _radius = _this select 2;

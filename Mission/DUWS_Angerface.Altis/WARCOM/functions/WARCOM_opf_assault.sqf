@@ -23,7 +23,8 @@ WARCOM_opf_attack_wave_type = "";
 		WARCOM_opf_attack_wave_type = (configFile >> "CfgGroups" >> "East" >> "OPFOR_DUWS" >> "Infantry" >> "OIA_InfTeam");
 		};
 		  
-          sleep 15;
+          if (count WARCOM_zones_controled_by_OPFOR > 1) then { // make sure opfor is controlling at least 2 zones
+		  sleep 2;
 		            
           // find a zone where to spawn OPF wave *** BEGIN
           _found = false;
@@ -39,7 +40,7 @@ WARCOM_opf_attack_wave_type = "";
             };
           // find a zone *** end ////////////////Spawn Troops
 		  _randomZonesafe = [_randomZone, 0,100,10,0,0.2,0,[],[[0,0],[0,0]]] call BIS_fnc_findSafePos;//Find a safe spawn position.
-		  if (0 == _randomZonesafe select 0 && 0 == _randomZonesafe select 1) then {//If not found, then simply default to the center again.
+			if (0 == _randomZonesafe select 0 && 0 == _randomZonesafe select 1) then {//If not found, then simply default to the center again.
 		  _randomZonesafe = [(_randomZone select 0)+20,_randomZone select 1];
 		  };
           _group = [_randomZonesafe, EAST, WARCOM_opf_attack_wave_type,[],[],WARCOM_opf_ai_skill_range] call BIS_fnc_spawnGroup;		          
@@ -48,7 +49,7 @@ WARCOM_opf_attack_wave_type = "";
 		  if (debugmode) then {
 		  _null = [_group,"assault"] execvm "debuglocation.sqf";
 		  };
-		  
-          sleep (WARCOM_opf_attack_delay + (random 900));
+	   };
+    sleep (900 + (random 900));
 	};
 };
