@@ -125,6 +125,21 @@ switch (_typeofUnit) do
     removeHeadgear _unit; _unit addHeadgear (_leaderheadgear call BIS_fnc_selectRandom); 
     removeVest _unit; _unit addVest (_LeaderVest call BIS_fnc_selectRandom); 
     }; 
+	case "general": 
+    {
+	removeAllWeapons _unit;
+	removeAllItems _unit;
+	removeAllAssignedItems _unit;
+	[_unit,"ARC_Patch_FR"] call bis_fnc_setUnitInsignia;
+	_unit setSpeaker "ACE_NoVoice";
+	_unit setFace "WhiteHead_10";
+    };
+	case "pilot": 
+    { 
+	[_unit,"GryffinRegiment"] call bis_fnc_setUnitInsignia;
+	_unit setSpeaker "Male02ENGB";
+	_unit setFace "Zee_White_Head_08";
+    }; 
 	
 }; 
 

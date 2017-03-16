@@ -123,7 +123,6 @@ hq_blu1 = _hq;
 publicVariable "hq_blu1";
 _hq setpos [_vehpos select 0, _vehpos select 1, .59];
 [[hq_blu1],"Recurring_fnc_addHQactions",true,true] spawn BIS_fnc_MP;
-[_hq] remoteExecCall ["Soldiers_fnc_RandomBluforIdentityGeneral", 0, true];
 
 //GUARDS
 _handle = [getpos hq_blu1] execVM "initHQ\guards.sqf";
@@ -203,6 +202,4 @@ publicVariable "HQgenerated";
 
 player allowDamage true;
 
-if (isServer) then {
-_sitrep = [player,"sitrep"] call BIS_fnc_addCommMenuItem;
-};
+[player,"sitrep"] remoteExecCall ["BIS_fnc_addCommMenuItem", 0, true];

@@ -64,10 +64,6 @@ _target = _group createUnit [_PatrolOfficer1, _missionpos, [], 0, "FORM"];
 _unit1 = _group createUnit [_PatrolSoldier1, _missionpos, [], 0, "FORM"];
 _unit2 = _group createUnit [_PatrolSoldier2, _missionpos, [], 0, "FORM"];
 
-[_target] remoteExecCall ["Soldiers_fnc_RandomOpforIdentityOfficer", 0, true];
-[_unit1] remoteExecCall ["Soldiers_fnc_RandomOpforIdentity", 0, true];
-[_unit2] remoteExecCall ["Soldiers_fnc_RandomOpforIdentity", 0, true];
-
 // TASK AND NOTIFICATION
 _tasklocation = getMarkerPos str(_markername);
 

@@ -20,6 +20,11 @@ WARCOM_blu_ai_skill_range = _blu_ai_skill_range;  // !! IS USING blufor_ai_skill
 WARCOM_opf_ai_skill_range = _opfor_ai_skill;
 publicVariable "WARCOM_blufor_ap";
 publicVariable "WARCOM_opfor_ap";
+publicVariable "WARCOM_marker_num";
+publicVariable "WARCOM_qrf_ready";
+publicVariable "WARCOM_qrf_zones_ready";
+publicVariable "WARCOM_blu_ai_skill_range";
+publicVariable "WARCOM_opf_ai_skill_range";
 
 // SORT ARRAY OF OPFOR ZONES ACCORDING TO DISTANCE FROM BLUHQ 
 WARCOM_createdZones = [_array_of_zones_total,[WARCOM_blu_hq_pos],{_input0 distance _x},"ASCEND"] call BIS_fnc_sortBy;
@@ -34,23 +39,23 @@ WARCOM_zones_controled_by_OPFOR = [] + _WARCOM_zones_controled_by_OPFOR;
 publicvariable "WARCOM_zones_controled_by_OPFOR";
 
 // Init BLU patrols
-_blu_patrol = [] execVM "WARCOM\functions\WARCOM_blu_patrol.sqf";
+_blu_patrol = [] spawn Warcom_fnc_WARCOM_blu_patrol;
 waitUntil {scriptDone _blu_patrol};
 
 // Init OPF patrols
-_opf_patrol = [] execVM "WARCOM\functions\WARCOM_opf_patrol.sqf";
+_opf_patrol = [] spawn Warcom_fnc_WARCOM_opf_patrol;
 waitUntil {scriptDone _opf_patrol};
 
 // Initialize the BLU attack waves
-_blu_assault = [] execVM "WARCOM\functions\WARCOM_blu_assault.sqf";
+_blu_assault = [] spawn Warcom_fnc_WARCOM_blu_assault;
 waitUntil {scriptDone _blu_assault};
 
 // Init the OPF attack waves
-_opf_assault = [] execVM "WARCOM\functions\WARCOM_opf_assault.sqf";
+_opf_assault = [] spawn Warcom_fnc_WARCOM_opf_assault;
 waitUntil {scriptDone _opf_assault};
 
 // Init the OPF town Patrols
-_opf_town = [] execVM "WARCOM\functions\WARCOM_opf_townpatrol.sqf";
+_opf_town = [] spawn Warcom_fnc_WARCOM_opf_townpatrol;
 waitUntil {scriptDone _opf_town};
 
 player globalchat "WARCOM initialized !";

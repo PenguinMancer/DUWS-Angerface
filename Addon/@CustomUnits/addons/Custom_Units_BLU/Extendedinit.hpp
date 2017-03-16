@@ -157,6 +157,12 @@
 	class Blufor_TeamLeader_12 {
 		init = "[(_this select 0),'LEADER'] call BLU_fnc_InitBluUnit";
 	};
+	class Blufor_General {
+		init = "[(_this select 0),'GENERAL'] call BLU_fnc_InitBluUnit";
+	};
+	class Blufor_Pilot_Mission {
+		init = "[(_this select 0),'PILOT'] call BLU_fnc_InitBluUnit";
+	};
 	class Blufor_Ammobearer_1 {
 		init = "[(_this select 0),'AR'] call BLU_fnc_InitBluUnit";
 	};

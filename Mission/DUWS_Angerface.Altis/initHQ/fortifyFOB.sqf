@@ -84,14 +84,6 @@ _atpod3 setpos [(_centerpos select 0)+7, (_centerpos select 1)+8];
 _HQguard1 = _groupGuard createUnit [_GuardSoldier5, _centerPos, [], 0, "FORM"]; 
 _HQguard1 moveinGunner _atpod3;
 
-
-// Setting Identities
-_HQunits=units _groupGuard;
-{
-[_x] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
-} forEach _HQunits;
-
-
 // LIGHTS
 _light1 = createVehicle ["Land_Camping_Light_F", [0,0,0], [], 0, "NONE"];
 _light1 allowdamage false;

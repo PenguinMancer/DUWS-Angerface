@@ -42,9 +42,6 @@ _Rescueleader createUnit [[(_missionpos select 0)+(random 10),(_missionpos selec
 _RescueSoldier createUnit [[(_missionpos select 0),(_missionpos select 1)], _group,format["this setcaptive true; this switchMove ""acts_InjuredLookingRifle02""; %1 = this",_soldier2]];
 _Rescueautorifleman createUnit [[(_missionpos select 0)+(random 5),(_missionpos select 1)+(random 5)], _group,format["this setcaptive true; this switchMove ""acts_InjuredLookingRifle03""; %1 = this",_soldier3]];
 
-{
-[_x] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
-} forEach (units _group);
 
 // END CREATE SOLDIERS
 

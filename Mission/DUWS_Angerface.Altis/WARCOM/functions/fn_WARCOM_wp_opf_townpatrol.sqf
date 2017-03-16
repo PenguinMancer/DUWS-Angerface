@@ -17,7 +17,3 @@ publicVariable "enemy_waypoint_num";
 };
 
 _pat = [_group, _RandomTownPosition, 50] call BIS_fnc_taskPatrol;
-
-{
-[_x] remoteExecCall ["Soldiers_fnc_RandomOpforIdentity", 0, true];
-} forEach (units _group);

@@ -14,8 +14,3 @@ _createdVehFnc = [[(_trigger select 0), (_trigger select 1)],0,_foundVeh, EAST] 
 
 _vehGroup = _createdVehFnc select 2;
 [_vehGroup, _trigger, _size] call bis_fnc_taskPatrol;
-
- // Setting Identities
-{
-[_x] remoteExecCall ["Soldiers_fnc_RandomOpforIdentity", 0, true];
-} forEach (units _vehGroup);

@@ -27,7 +27,7 @@ WARCOM_blu_attack_wave_type = "";
 		  _group = [WARCOM_blu_hq_pos, WEST, WARCOM_blu_attack_wave_type,[],[],blufor_ai_skill] call BIS_fnc_spawnGroup;
            _TFname = [] call Recurring_fnc_getRandomCallsign;
           [West,"HQ"] sidechat format["This is HQ, We are sending Task Force %1, we will try to push as far as possible into enemy territory",_TFname];
-          _blu_assault = [_group] spawn Warcom_fnc_WARCOM_wp;
+		  _blu_assault = [_group] remoteExecCall ["Warcom_fnc_WARCOM_wp", 0];
           _blu_assault = [_group,_TFname] spawn Warcom_fnc_WARCOM_gps_marker;
           sleep (900 + (random 1800));
           };

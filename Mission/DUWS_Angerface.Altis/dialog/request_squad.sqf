@@ -20,9 +20,6 @@ _spawnPos = [(_spawnPos select 0)+25, _spawnPos select 1];
 			  DUWS_number_fireteam = DUWS_number_fireteam + 1;
 			  _group setGroupId [format["Fireteam %1",DUWS_number_fireteam]];
               hint "Squad ready !\nAccess it with [L.CTRL - SPACE]";
-				{
-				[_x] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
-				} forEach (units _group);
              } 
           else 
              {
@@ -43,9 +40,6 @@ _spawnPos = [(_spawnPos select 0)+25, _spawnPos select 1];
 			  DUWS_number_riflesquad = DUWS_number_riflesquad + 1;
 			  _group setGroupId [format["Rifle squad %1",DUWS_number_riflesquad]];
               hint "Squad ready !\nAccess it with [L.CTRL - SPACE]";
-				{
-				[_x] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
-				} forEach (units _group);
              } 
           else 
              {
@@ -66,9 +60,6 @@ _spawnPos = [(_spawnPos select 0)+25, _spawnPos select 1];
 			  DUWS_number_weaponsquad = DUWS_number_weaponsquad + 1;
 			  _group setGroupId [format["Wpns squad %1",DUWS_number_weaponsquad]];
               hint "Squad ready !\nAccess it with [L.CTRL - SPACE]";
-				{
-				[_x] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
-				} forEach (units _group);
              } 
           else 
              {
@@ -89,9 +80,6 @@ _spawnPos = [(_spawnPos select 0)+25, _spawnPos select 1];
 			  DUWS_number_at = DUWS_number_at + 1;
 			  _group setGroupId [format["AT team %1",DUWS_number_at]];
               hint "Squad ready !\nAccess it with [L.CTRL - SPACE]";
-				{
-				[_x] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
-				} forEach (units _group);
              } 
           else 
              {
@@ -112,9 +100,6 @@ _spawnPos = [(_spawnPos select 0)+25, _spawnPos select 1];
 			  DUWS_number_aa = DUWS_number_aa + 1;
 			  _group setGroupId [format["AA team %1",DUWS_number_aa]];
               hint "Squad ready !\nAccess it with [L.CTRL - SPACE]";
-				{
-				[_x] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
-				} forEach (units _group);
              } 
           else 
              {
@@ -135,9 +120,6 @@ _spawnPos = [(_spawnPos select 0)+25, _spawnPos select 1];
 			  DUWS_number_sfteam = DUWS_number_sfteam + 1;
 			  _group setGroupId [format["SF team %1",DUWS_number_sfteam]];
               hint "Squad ready !\nAccess it with [L.CTRL - SPACE]";
-				{
-				[_x] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
-				} forEach (units _group);
              } 
           else 
              {
@@ -159,9 +141,6 @@ _spawnPos = [(_spawnPos select 0)+25, _spawnPos select 1];
 			  DUWS_number_sfsquad = DUWS_number_sfsquad + 1;
 			  _group setGroupId [format["SF squad %1",DUWS_number_sfsquad]];
               hint "Squad ready !\nAccess it with [L.CTRL - SPACE]";
-				{
-				[_x] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
-				} forEach (units _group);
              } 
           else 
              {
@@ -182,9 +161,6 @@ _spawnPos = [(_spawnPos select 0)+25, _spawnPos select 1];
 			  DUWS_number_sniper = DUWS_number_sniper + 1;
 			  _group setGroupId [format["Sniper team %1",DUWS_number_sniper]];
               hint "Squad ready !\nAccess it with [L.CTRL - SPACE]";
-				{
-				[_x] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
-				} forEach (units _group);
              } 
           else 
              {
@@ -207,9 +183,6 @@ _spawnPos = [(_spawnPos select 0)+25, _spawnPos select 1];
 			  DUWS_number_medical = DUWS_number_medical + 1;
 			  _group setGroupId [format["Medical team %1",DUWS_number_medical]];
               hint "Squad ready !\nAccess it with [L.CTRL - SPACE]";
-				{
-				[_x] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
-				} forEach (units _group);
              } 
           else 
              {
@@ -230,9 +203,6 @@ _spawnPos = [(_spawnPos select 0)+25, _spawnPos select 1];
 			  DUWS_number_motor = DUWS_number_motor + 1;
 			  _group setGroupId [format["Mot. scouts %1",DUWS_number_motor]];
               hint "Squad ready !\nAccess it with [L.CTRL - SPACE]";
-				{
-				[_x] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
-				} forEach (units _group);
              } 
           else 
              {
@@ -253,9 +223,6 @@ _spawnPos = [(_spawnPos select 0)+25, _spawnPos select 1];
 			  DUWS_number_meca = DUWS_number_meca + 1;
 			  _group setGroupId [format["Mec. squad %1",DUWS_number_meca]];
               hint "Squad ready !\nAccess it with [L.CTRL - SPACE]";
-				{
-				[_x] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
-				} forEach (units _group);
              } 
           else 
              {
@@ -276,9 +243,6 @@ _spawnPos = [(_spawnPos select 0)+25, _spawnPos select 1];
 			  DUWS_number_tank = DUWS_number_tank + 1;
 			  _group setGroupId [format["Tank Armor squad %1",DUWS_number_tankaa]];
               hint "Squad ready !\nAccess it with [L.CTRL - SPACE]";
-				{
-				[_x] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
-				} forEach (units _group);
              } 
           else 
              {
@@ -299,9 +263,6 @@ _spawnPos = [(_spawnPos select 0)+25, _spawnPos select 1];
 			  DUWS_number_tankaa = DUWS_number_tankaa + 1;
 			  _group setGroupId [format["AA Armor squad %1",DUWS_number_tank]];
               hint "Squad ready !\nAccess it with [L.CTRL - SPACE]";
-				{
-				[_x] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
-				} forEach (units _group);
              } 
           else 
              {

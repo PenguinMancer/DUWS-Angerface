@@ -168,6 +168,19 @@ waitUntil {sleep 1; (HQgenerated)};
 waitUntil {sleep 1; (Zonesgenerated)};
 sleep 1;
 
+[] spawn Recurring_fnc_enemyAPGain;
+
+if (isServer) then {
+// initialise the resources per zone bonus
+_basepoint = [] spawn Recurring_fnc_zonesundercontrol;
+};
+
+// init the bonuses you get when capturing zones
+_basepoint = [] spawn Recurring_fnc_zones_bonus;
+
+_warcom_init = [Array_of_OPFOR_zones, getpos hq_blu1, [0,0,0], blufor_ap, opfor_ap,blufor_ai_skill,opfor_ai_skill] spawn Warcom_fnc_WARCOM_init;
+waitUntil {scriptDone _warcom_init};
+
 // group cleaning script
 if (isServer) then {
 	clean = [
@@ -180,12 +193,4 @@ if (isServer) then {
 	] spawn Recurring_fnc_repetitive_cleanup;
 };
 
-[] spawn Recurring_fnc_enemyAPGain;
 
-if (isServer) then {
-// initialise the resources per zone bonus
-_basepoint = [] spawn Recurring_fnc_zonesundercontrol;
-};
-
-// init the bonuses you get when capturing zones
-_basepoint = [] spawn Recurring_fnc_zones_bonus;

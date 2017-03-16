@@ -1,6 +1,7 @@
 sleep (1 + (random 4));
 if (!WARCOM_qrf_zones_ready) exitWith {};
 WARCOM_qrf_zones_ready = false;
+publicVariable "WARCOM_qrf_zones_ready";
 _zoneattacked = _this select 0;
 _size = _this select 1;
 
@@ -48,7 +49,7 @@ WARCOM_opf_response_type = "";
 		      _randomZonesafe = [(_randomZone select 0)+20,_randomZone select 1];
 		      };
 			  _group = [_randomZonesafe, EAST, WARCOM_opf_response_type,[],[],WARCOM_opf_ai_skill_range] call BIS_fnc_spawnGroup;
-			  _opf_assault = [_group,_zoneattacked] spawn Warcom_fnc_WARCOM_wp_opf_qrf;
+			  _opf_assault = [_group,_zoneattacked] remoteExecCall ["Warcom_fnc_WARCOM_wp_opf_qrf", 0];
 			  
 			  _root = parsingNamespace getVariable "MISSION_ROOT";
 			  _soundToPlay = _root + "sounds\Siren.ogg";
@@ -63,3 +64,4 @@ WARCOM_opf_response_type = "";
 			  };
 
 WARCOM_qrf_zones_ready = true;
+publicVariable "WARCOM_qrf_zones_ready";

@@ -65,10 +65,6 @@ _parachute8 setPos [(_lz select 0)+(random _radius)-(random _radius), (_lz selec
 _soldier8 = _group createUnit [_ParachuteSoldier8,[0,0,0],[],0,"form"];
 _soldier8 moveindriver _parachute8;
 
-{
-[_x] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
-} forEach (units _group);
-
 sleep 60;
 
 {[_x] joinSilent player} forEach units _group;

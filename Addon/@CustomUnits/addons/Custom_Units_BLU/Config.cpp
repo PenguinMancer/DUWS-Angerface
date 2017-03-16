@@ -126,7 +126,7 @@ class CfgPatches {
 class CfgFunctions {
 	class BLU {
 		class BLUcommon {
-			class BLUInitUnit {
+			class InitBluUnit {
 				file = "\Custom_DUWS_Blu\scripts\InitBluUnit.sqf";
 			};
 		};

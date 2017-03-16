@@ -1,5 +1,7 @@
 WARCOM_opf_attack_wave_type = "";
 
+diag_log "Opfor assault begin";
+
 // Attack waves main
 [] spawn {
 	while {true} do {
@@ -23,6 +25,8 @@ WARCOM_opf_attack_wave_type = "";
 		WARCOM_opf_attack_wave_type = (configFile >> "CfgGroups" >> "East" >> "OPFOR_DUWS" >> "Infantry" >> "OIA_InfTeam");
 		};
 		  
+		  diag_log "Opfor assault group chosen";
+		  
           if (count WARCOM_zones_controled_by_OPFOR > 1) then { // make sure opfor is controlling at least 2 zones
 		  sleep 2;
 		            
@@ -38,13 +42,17 @@ WARCOM_opf_attack_wave_type = "";
             _failSafe = _failSafe + 1;
             if (_failsafe > 5) then {sleep 300; _failsafe = 0;}
             };
+			diag_log "Opfor assault zone chosen";
           // find a zone *** end ////////////////Spawn Troops
 		  _randomZonesafe = [_randomZone, 0,100,10,0,0.2,0,[],[[0,0],[0,0]]] call BIS_fnc_findSafePos;//Find a safe spawn position.
 			if (0 == _randomZonesafe select 0 && 0 == _randomZonesafe select 1) then {//If not found, then simply default to the center again.
 		  _randomZonesafe = [(_randomZone select 0)+20,_randomZone select 1];
 		  };
           _group = [_randomZonesafe, EAST, WARCOM_opf_attack_wave_type,[],[],WARCOM_opf_ai_skill_range] call BIS_fnc_spawnGroup;		          
-          _opf_assault = [_group] spawn Warcom_fnc_WARCOM_wp_opf;
+          _opf_assault = [_group] remoteExecCall ["Warcom_fnc_WARCOM_wp_opf", 0];
+		  
+		  diag_log "Opfor assault SHOULD BE Spawned";
+		  
 		  
 		  if (debugmode) then {
 		  _null = [_group,"assault"] execvm "debuglocation.sqf";

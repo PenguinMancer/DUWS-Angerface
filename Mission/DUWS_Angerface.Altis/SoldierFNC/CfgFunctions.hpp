@@ -25,12 +25,5 @@ class CFGfunctions
 		class GetOpforTeamleader {};
 		class GetOpforVehAir {};
 		class GetOpforVehGround {};
-		class RandomBluforIdentity {};
-		class RandomBluforIdentityGeneral {};
-		class RandomBluforIdentityPilot {};
-		class RandomOpforIdentity {};
-		class RandomOpforIdentityOfficer {};
-		class RandomOpforIdentitySniper {};
-		class RandomOpforIdentitySpotter {};
 	};
 };

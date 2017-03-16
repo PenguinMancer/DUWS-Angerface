@@ -44,7 +44,7 @@ WARCOM_opf_patroltown_type = "";
 		      _randomZonesafe = [(_randomZone select 0)+20,_randomZone select 1];
 		      };
 			  _group = [_randomZonesafe, EAST, WARCOM_opf_patroltown_type,[],[],WARCOM_opf_ai_skill_range] call BIS_fnc_spawnGroup;			  
-			  _opf_assault = [_group] spawn Warcom_fnc_WARCOM_wp_opf_townpatrol;
+			  _opf_assault = [_group] remoteExecCall ["Warcom_fnc_WARCOM_wp_opf_townpatrol", 0];
 			    
 			  if (debugmode) then {
 			  _null = [_group,"Town Patrol"] execvm "debuglocation.sqf";

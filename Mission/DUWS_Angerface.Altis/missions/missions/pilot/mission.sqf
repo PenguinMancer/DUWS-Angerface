@@ -55,10 +55,6 @@ _soldier1 switchMove "acts_CrouchingIdleRifle01";
 _soldier2 switchMove "acts_CrouchingIdleRifle01";
 _soldier3 switchMove "acts_CrouchingIdleRifle01";
 
-{
-[_x] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
-} forEach (units _group);
-
 // TASK AND NOTIFICATION
 _tasklocation = getMarkerPos str(_markername);
 

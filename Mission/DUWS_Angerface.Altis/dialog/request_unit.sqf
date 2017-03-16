@@ -16,7 +16,6 @@ switch (_index) do
                _group = group player ;
 			   _blusoldier = call Soldiers_fnc_GetBluforSoldier;
 			   _unit = _group createUnit [_blusoldier, _spawnpos, [], 0, "FORM"];
-			   [_unit] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
              } 
           else 
              {
@@ -34,7 +33,6 @@ switch (_index) do
                _group = group player ;
 			   _blusoldier = call Soldiers_fnc_GetBluforGrenadier;
 			   _unit = _group createUnit [_blusoldier, _spawnpos, [], 0, "FORM"];
-			   [_unit] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
              } 
           else 
              {
@@ -52,7 +50,6 @@ switch (_index) do
                _group = group player ;
 			   _blusoldier = call Soldiers_fnc_GetBluforAutoRifleman;
 			   _unit = _group createUnit [_blusoldier, _spawnpos, [], 0, "FORM"];
-			   [_unit] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
              } 
           else 
              {
@@ -70,7 +67,6 @@ switch (_index) do
                _group = group player ;
 			   _blusoldier = call Soldiers_fnc_GetBluforLightAntiTank;
 			   _unit = _group createUnit [_blusoldier, _spawnpos, [], 0, "FORM"];
-			   [_unit] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
              } 
           else 
              {
@@ -88,7 +84,6 @@ switch (_index) do
                _group = group player ;
 			   _blusoldier = call Soldiers_fnc_GetBluforMedic;
 			   _unit = _group createUnit [_blusoldier, _spawnpos, [], 0, "FORM"];
-			   [_unit] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
              } 
           else 
              {
@@ -105,7 +100,6 @@ switch (_index) do
                ctrlSetText [1000, format["%1",commandpointsblu1]];
                _group = group player ;
 			   _unit = _group createUnit ["Blufor_AntiAir_1", _spawnpos, [], 0, "FORM"];
-			   [_unit] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
              } 
           else 
              {
@@ -121,7 +115,6 @@ switch (_index) do
                ctrlSetText [1000, format["%1",commandpointsblu1]];
                _group = group player ;
 			   _unit = _group createUnit ["Blufor_Repair_1", _spawnpos, [], 0, "FORM"];
-			   [_unit] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
              } 
           else 
              {
@@ -138,7 +131,6 @@ switch (_index) do
                _group = group player ;
                _blusoldier = call Soldiers_fnc_GetBluforAntiTank;
 			   _unit = _group createUnit [_blusoldier, _spawnpos, [], 0, "FORM"];
-			   [_unit] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
              } 
           else 
              {
@@ -154,7 +146,6 @@ switch (_index) do
                ctrlSetText [1000, format["%1",commandpointsblu1]];
                _group = group player ;
 			   _unit = _group createUnit ["Blufor_Marksman_1", _spawnpos, [], 0, "FORM"];
-			   [_unit] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
              } 
           else 
              {
@@ -170,7 +161,6 @@ switch (_index) do
                ctrlSetText [1000, format["%1",commandpointsblu1]];
                _group = group player ;
 			   _unit = _group createUnit ["Blufor_Sniper_1", _spawnpos, [], 0, "FORM"];
-			   [_unit] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
              } 
           else 
              {
@@ -186,7 +176,6 @@ switch (_index) do
                ctrlSetText [1000, format["%1",commandpointsblu1]];
                _group = group player ;
 			   _unit = _group createUnit ["Blufor_Spotter_1", _spawnpos, [], 0, "FORM"];
-			   [_unit] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
              } 
           else 
              {
@@ -202,7 +191,6 @@ switch (_index) do
                ctrlSetText [1000, format["%1",commandpointsblu1]];
                _group = group player ;
 			   _unit = _group createUnit ["Blufor_Explosives_1", _spawnpos, [], 0, "FORM"];
-			   [_unit] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
              } 
           else 
              {

@@ -34,9 +34,6 @@ _group = createGroup east;
 _target = _group createUnit ["Blufor_Sniper_1", _missionpos, [], 0, "FORM"]; 
 _unit = _group createUnit ["Blufor_Spotter_1", _missionpos, [], 0, "FORM"];
 
-[_target] remoteExecCall ["Soldiers_fnc_RandomOpforIdentitySniper", 0, true];
-[_unit] remoteExecCall ["Soldiers_fnc_RandomOpforIdentitySpotter", 0, true];
-
 {
 	_x setSkill ["aimingspeed", 0.3];
 	_x setSkill ["spotdistance", 0.3];

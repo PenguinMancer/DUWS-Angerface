@@ -102,7 +102,7 @@ class CfgPatches {
 class CfgFunctions {
 	class OPF {
 		class OPFcommon {
-			class OPFInitUnit {
+			class InitOpfUnit {
 				file = "\Custom_DUWS_Opf\scripts\InitOpfUnit.sqf";
 			};
 		};

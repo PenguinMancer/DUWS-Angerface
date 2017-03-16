@@ -15,4 +15,3 @@ if (count WARCOM_zones_controled_by_BLUFOR == 0) exitWith {
 	_wp setWaypointTimeout [300, 450, 600]; 
 }
 forEach WARCOM_zones_controled_by_BLUFOR;
-

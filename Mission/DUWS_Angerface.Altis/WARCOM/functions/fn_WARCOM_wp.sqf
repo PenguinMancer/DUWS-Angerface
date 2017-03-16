@@ -9,8 +9,3 @@ _group setCombatMode "RED";
 	_wp setWaypointTimeout [300, 450, 600]; 
 }
 forEach WARCOM_zones_controled_by_OPFOR; //WARCOM_createdZones;
-
-
-{
-[_x] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
-} forEach (units _group);

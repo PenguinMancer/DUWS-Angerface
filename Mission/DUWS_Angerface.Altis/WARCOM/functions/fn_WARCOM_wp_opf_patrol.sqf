@@ -16,8 +16,3 @@ forEach WARCOM_zones_controled_by_OPFOR;
     _wp1 setWaypointType "CYCLE";
 	_wp1 setWaypointBehaviour "SAFE";
 	_wp1 setWaypointSpeed "LIMITED";
-
-// Setting Identities
-{
-[_x] remoteExecCall ["Soldiers_fnc_RandomOpforIdentity", 0, true];
-} forEach (units _group);

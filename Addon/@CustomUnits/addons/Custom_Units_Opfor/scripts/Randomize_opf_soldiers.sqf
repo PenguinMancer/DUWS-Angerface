@@ -82,6 +82,33 @@ switch (_typeofUnit) do
     removeHeadgear _unit; _unit addHeadgear (_soldierheadgear call BIS_fnc_selectRandom); 
     removeVest _unit; _unit addVest (_LeaderVest call BIS_fnc_selectRandom); 
     }; 
+	case "sniper": 
+    { 
+	removeUniform _unit; _unit forceAddUniform (_Uniforms call BIS_fnc_selectRandom); 
+	removeGoggles _unit; _unit addGoggles (_soldierfacewear call BIS_fnc_selectRandom); 
+    removeHeadgear _unit; _unit addHeadgear (_soldierheadgear call BIS_fnc_selectRandom); 
+    removeVest _unit; _unit addVest (_soldiervest call BIS_fnc_selectRandom); 
+	_unit setSpeaker "ACE_NoVoice";
+	_unit setFace "PersianHead_A3_01";
+    }; 
+	case "spotter": 
+    { 
+	removeUniform _unit; _unit forceAddUniform (_Uniforms call BIS_fnc_selectRandom); 
+	removeGoggles _unit; _unit addGoggles (_soldierfacewear call BIS_fnc_selectRandom); 
+    removeHeadgear _unit; _unit addHeadgear (_soldierheadgear call BIS_fnc_selectRandom); 
+    removeVest _unit; _unit addVest (_soldiervest call BIS_fnc_selectRandom); 
+	_unit setSpeaker "ACE_NoVoice";
+	_unit setFace "WhiteHead_18";
+    }; 
+	case "officer": 
+    { 
+	removeUniform _unit; _unit forceAddUniform (_Uniforms call BIS_fnc_selectRandom); 
+	removeGoggles _unit; _unit addGoggles (_soldierfacewear call BIS_fnc_selectRandom); 
+    removeHeadgear _unit; _unit addHeadgear (_soldierheadgear call BIS_fnc_selectRandom); 
+    removeVest _unit; _unit addVest (_LeaderVest call BIS_fnc_selectRandom); 
+	_unit setSpeaker "ACE_NoVoice";
+	_unit setFace "PersianHead_A3_01";
+    }; 
 	
 }; 
 

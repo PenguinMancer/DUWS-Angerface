@@ -24,19 +24,6 @@ _groupPatrol = createGroup WEST;
 _HQguard5 = _groupPatrol createUnit [_GuardSoldier3, _centerPos, [], 0, "FORM"]; 
 _HQguard5 setpos [(_centerPos select 0)+10, (_centerPos select 1)+10];
 
-
-// Setting Identities
-_HQunits=units _groupGuard;
-{
-[_x] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
-} forEach _HQunits;
-
-_HQunitpatrol=units _groupPatrol;
-{
-[_x] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
-} forEach _HQunitpatrol;
-
-
 _groupPatrol setCombatMode "YELLOW";
     _wp = _groupPatrol addWaypoint [[(_centerPos select 0)+10, (_centerPos select 1)+10], 0];
     _wp setWaypointType "MOVE";

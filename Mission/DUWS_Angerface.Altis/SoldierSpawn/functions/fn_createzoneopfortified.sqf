@@ -21,10 +21,5 @@ _group = [_trigger, EAST, _initGroup,[],[],opfor_ai_skill] call BIS_fnc_spawnGro
 
 [_group, _originaltrigger, _size] call bis_fnc_taskPatrol;
 
-//randomize identity
-{
-[_x] remoteExecCall ["Soldiers_fnc_RandomOpforIdentity", 0, true];
-} forEach (units _group);
-
 // ADD QRF eventhandler
 _EH = leader _group addEventHandler ["Fired", {[_this select 0] spawn WARCOM_opf_qrf}];

@@ -63,12 +63,10 @@ _HQunits=units _groupGuard;
 {
 _x addEventHandler ["Fired",{(_this select 0) setvehicleammo 1}];
 _x addEventHandler ["HandleDamage", {false}];
-[_x] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
 } forEach _HQunits;
 
 _HQunitpatrol=units _groupPatrol;
 {
 _x addEventHandler ["Fired",{(_this select 0) setvehicleammo 1}];
 _x addEventHandler ["HandleDamage", {false}];
-[_x] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
 } forEach _HQunitpatrol;

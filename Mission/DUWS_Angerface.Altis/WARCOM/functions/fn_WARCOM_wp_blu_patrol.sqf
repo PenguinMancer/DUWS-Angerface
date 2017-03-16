@@ -17,8 +17,3 @@ forEach WARCOM_zones_controled_by_BLUFOR;
     _wp1 setWaypointType "CYCLE";
 	_wp1 setWaypointBehaviour "SAFE";
 	_wp1 setWaypointSpeed "LIMITED";
-
-	
-{
-[_x] remoteExecCall ["Soldiers_fnc_RandomBluforIdentity", 0, true];
-} forEach (units _group);

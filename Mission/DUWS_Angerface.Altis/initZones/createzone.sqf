@@ -42,7 +42,7 @@ str(_markername2) setMarkerAlpha 0.1;
 _trgQRF=createTrigger["EmptyDetector",_trigger];
 _trgQRF setTriggerArea[_size,_size2,0,false];
 _trgQRF setTriggerActivation["WEST","EAST D",true];
-_trgQRF setTriggerStatements["this", format["[%1,%2] spawn WARCOM_opf_qrf_zone",_trigger,_size], ""];
+_trgQRF setTriggerStatements["this", format["[%1,%2] spawn Warcom_fnc_WARCOM_opf_qrf_zone",_trigger,_size], ""];
 _trgQRF setTriggerTimeout [5, 7, 10, true ];
 
 // CREATE ZONE CAPTURABLE TRIGGER

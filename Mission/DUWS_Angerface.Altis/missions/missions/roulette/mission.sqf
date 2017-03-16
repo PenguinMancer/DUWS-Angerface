@@ -88,12 +88,6 @@ waitUntil {alive BOMBCODE1};
 leader BOMBCODE1 setVariable["persistent",true];
 [[{leader BOMBCODE1 addEventHandler ["killed", {[]call deathhint}]}],"BIS_fnc_Spawn",true,false] call BIS_fnc_MP;
 
-//randomize identity
-{
-[_x] remoteExecCall ["Soldiers_fnc_RandomOpforIdentity", 0, true];
-} forEach (units _bombcode1);
-
-
 // CREATE PATROLS without secret code
 sleep 1;
 [_missionpos, 15] spawn SoldierSpawn_fnc_createopteam; // <-- around target		

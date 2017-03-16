@@ -16,6 +16,7 @@ str(_markername) setMarkerType "loc_Tree";
 str(_markername) setMarkerColor "ColorBlue";
 str(_markername) setMarkerText format["TF %1",_TFname];
 WARCOM_marker_num = WARCOM_marker_num + 1;
+publicVariable "WARCOM_marker_num";
 
     while {_loop} do {
     _units_alive = {alive _x }count units _group;

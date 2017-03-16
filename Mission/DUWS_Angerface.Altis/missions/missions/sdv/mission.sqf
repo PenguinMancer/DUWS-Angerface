@@ -53,10 +53,6 @@ _unit1 = _group createUnit [_PatrolSoldier1, _missionpos, [], 0, "FORM"];
 _unit2 = _group createUnit [_PatrolSoldier2, _missionpos, [], 0, "FORM"];
 _unit3 = _group createUnit [_PatrolSoldier3, _missionpos, [], 0, "FORM"];
 
-{
-[_x] remoteExecCall ["Soldiers_fnc_RandomOpforIdentity", 0, true];
-} forEach (units _group);
-
 // MISSION COMPLETED --   ATTENDRE QUE LE CAMION SOIT ARRIVE A LA BASE OU DETRUIT  
 waitUntil {sleep 2; ((getdammage _truck1)>0.95 OR (_truck1 distance _initpos)<50)};  
 
