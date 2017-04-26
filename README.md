@@ -52,3 +52,4 @@ After a location for the HQ has been selected the player will be prompted with a
 * Thanks to Haleks for Unlocked uniforms, which I have modified slightly for the purposes of my addon. 
 * Thanks to the rlex for DUWS Unofficial, which I used as a base for this modification.
 * Thanks to all the members of the DUWS-R Team for your hard work and contributions!
+* Thanks to the people who made the mission Liberation, as I adapted their code for building placement. Their githug is available <a href="https://github.com/GreuhZbug/greuh_liberation.Altis">here</a>.
