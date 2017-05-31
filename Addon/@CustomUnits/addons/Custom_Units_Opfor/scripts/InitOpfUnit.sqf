@@ -2,7 +2,7 @@ _unit = _this select 0;
 _typeofUnit = toLower (_this select 1); 
 
 if (isServer && !(_unit getvariable ["Opf_invset", false])) then { 
-    #include "SetIdentityOpf.sqf" //Important that this is first, as it'll 
+    #include "SetIdentityOpf.sqf" //Important that this is first, as certain mission units identities are set in this script ran after this.
 	#include "Randomize_opf_soldiers.sqf"
 } 
 else { // Check for JIP from standard slots.
