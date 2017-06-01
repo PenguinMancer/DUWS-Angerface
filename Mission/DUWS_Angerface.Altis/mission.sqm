@@ -1568,9 +1568,8 @@ class Mission
 		class Item10
 		{
 			dataType="Marker";
-			position[]={182.883,-2.2549322e-035,5561.0991};
+			position[]={91.06839,0.14840496,23.99707};
 			name="respawn_west";
-			text="respawn_west";
 			type="Empty";
 			id=23;
 			atlOffset=-313.45914;
@@ -1578,9 +1577,8 @@ class Mission
 		class Item11
 		{
 			dataType="Marker";
-			position[]={314.76099,-2.2549322e-035,5584.3721};
+			position[]={491.89044,-0.0045730919,666.49109};
 			name="ghost_spot";
-			text="ghost_spot";
 			type="Empty";
 			id=24;
 			atlOffset=-307.1499;
