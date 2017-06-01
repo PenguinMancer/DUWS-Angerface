@@ -28,65 +28,29 @@ addons[]=
 	"A3_Characters_F",
 	"A3_Characters_F_Exp_Civil",
 	"A3_Modules_F",
-	"Custom_DUWS_Blu",
+	"bg21_famas_prplredux",
+	"cup_creatures_staticweapons",
+	"cup_weapons_backpacks",
+	"cup_weapons_javelin",
+	"cup_weapons_pk",
+	"cup_weapons_strela_2",
+	"cup_weapons_vehicleweapons",
+	"custom_duws_blu",
+	"custom_duws_opf",
+	"custom_duws_weapons",
+	"hlcweapons_aks",
+	"hlcweapons_g3",
+	"hlcweapons_saw",
+	"rhsusf_c_statics",
+	"rhsusf_c_troops",
+	"rhs_c_troops",
+	"rh_de_cfg",
+	"rh_m4_cfg",
+	"sp_craig_carryall",
+	"vsm_oga_config",
 	"ace_medical",
 	"ace_repair",
 	"A3_Ui_F"
-};
-class AddonsMetaData
-{
-	class List
-	{
-		items=7;
-		class Item0
-		{
-			className="A3_Characters_F";
-			name="Arma 3 Alpha - Characters and Clothing";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item1
-		{
-			className="A3_Characters_F_Exp";
-			name="Arma 3 Apex - Characters and Clothing";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item2
-		{
-			className="A3_Modules_F";
-			name="Arma 3 Alpha - Scripted Modules";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item3
-		{
-			className="Custom_DUWS_Blu";
-			name="Custom_DUWS_Blu";
-			author="TeorgeGakei";
-		};
-		class Item4
-		{
-			className="ace_medical";
-			name="ACE3 - Medical";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
-		};
-		class Item5
-		{
-			className="ace_repair";
-			name="ACE3 - Repair";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
-		};
-		class Item6
-		{
-			className="A3_Ui_F";
-			name="Arma 3 - User Interface";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-	};
 };
 randomSeed=13455350;
 class ScenarioData
