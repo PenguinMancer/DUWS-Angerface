@@ -22,7 +22,7 @@ class CfgDebriefing
 	{
 		title = "Officer&Players Killed";
 		subtitle = "";
-		description = "Today, the lives of three soldiers were lost. Hunter Bethard, codename Eagle, James Mustard, codename Fox, and Sabrina Parker, codename Penguin. They will be missed dearly, and died in service to G4S. God rest their souls.";
+		description = "Sample Text, Lense flare. Mum get the camera. This is placeholder text in case that wasn't obvious.";
 		pictureBackground = "";
 		picture = "\a3\ui_f\data\gui\cfg\hints\ActionMenu_ca.paa";
 		pictureColor[] = {1,0,0,1};
