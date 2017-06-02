@@ -1,6 +1,6 @@
 diag_log format ["------------------ DUWS Angerface START ----v1.00 based on Unofficial ------ player: %1", profileName];
 
-if (isServer) then { nul = [] execVM "serverinit.sqf"; };
+if (!isMultiplayer) exitWith {systemChat "DUWS Angerface does not support single player. If you wish to experience the mission in single player, please launch the mission through a listen server.";};
 if (isDedicated) exitWith {};
 waitUntil {!isNull player};
 
@@ -12,16 +12,12 @@ waitUntil {scriptDone persistent_stat_script_init};
 #include "dialog\supports_init.hpp"
 #include "dialog\squad_number_init.hpp"
 
-if (!isMultiplayer) then {
-	_getsize_script = [player] spawn Recurring_fnc_getMapSize;
-};
-
 // IF MP
 if (isMultiplayer) then {
 
 	// Get the variables from the parameters lobby
 	player_fatigue = paramsArray select 1;
-	TrkAllPlayer = paramsArray select 4; //disbale/enable player markers
+	TrkAllPlayer = paramsArray select 4; //disable/enable player markers
 	MisEndCond = paramsArray select 6;
 	
 	if (TrkAllPlayer == 1) then {["player"] spawn Recurring_fnc_player_markers};
@@ -36,27 +32,22 @@ if (isMultiplayer) then {
 
 	sleep 5;
 	if (((vehiclevarname player) in game_master)) then {
-	DUWS_host_start = false;
-	publicVariable "DUWS_host_start";
 	waitUntil {time > 0.1};
 	_getsize_script = [player] spawn Recurring_fnc_getMapSize;
-	DUWS_host_start = true;
-	publicVariable "DUWS_host_start";
-		
+
 	// Init High Command
 	_handle = [] execVM "dialog\hc_init.sqf";
 	waitUntil {scriptDone _getsize_script};
-	};
-};
-
-if (((vehiclevarname player) in game_master)) then {
+	
+	//Start HQ Placement
 	_null = [] execVM "dialog\startup\hq_placement\placement.sqf";
 	waitUntil {chosen_hq_placement};
 
-	// create random HQ
+	// create random HQ if manual placement not chose
 	if (!player_is_choosing_hqpos) then {
 		hq_create = [20, 0.015] execVM "initHQ\locatorHQ.sqf";
 		waitUntil {scriptDone hq_create};	
+		};
 	};
 };
 
@@ -82,22 +73,16 @@ if (hasInterface) then { // WHEN CLIENT CONNECTS INIT (might need sleep)
 
 };
 
-/////////////////////////////////////////////////////////////////////////////////////////////////
-
-if (!isMultiplayer) then {
-    _handle = [] execVM "dialog\hc_init.sqf";
-};
 
 // INIT the operative list
 execVM "dialog\operative\operator_init.sqf";
 
 // MP notification
-if (isMultiplayer) then {
-	[] spawn {
-		waitUntil {time > 5};
-		["info",["MP Mechanics","Check the manual for the specifics of the DUWS in MP"]] call bis_fnc_showNotification;
-	};
+[] spawn {
+	waitUntil {time > 5};
+	["info",["MP Mechanics","Check the manual for the specifics of the DUWS in MP"]] call bis_fnc_showNotification;
 };
+
 
 // CREATE MAIN OBJECTIVE
 capture_island_obj = player createSimpleTask ["taskIsland"];
@@ -139,10 +124,6 @@ hq_blu1 addeventhandler ["firednear", {_this call protect_officer}];
 [] spawn Recurring_fnc_grenadeStop;
 
 _satcom1 = [] execVM "pxs_satcom_a3\init_satellite.sqf";
-
-if (isServer) then {
-supportreinit = addMissionEventHandler ["loaded",{[] execVM "Scripts\supports_reinit.sqf"}];
-};
 
 ////////////////INIT NO MOVING WITH FASTTRAVEL///////////////////////////////////////
 fn_enableSimulation = {(_this select 0) enableSimulation (_this select 1)};

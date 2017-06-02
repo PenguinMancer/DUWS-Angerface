@@ -52,7 +52,7 @@ ZbeCacheStatus = paramsArray select 8;
 
 if (ZbeCacheStatus == 1) then {
 	//unit caching seems to break super badly on dedicated, so this is making sure that if you're on dedicated, it doesn't screw you.
-	if ((isServer) && (!isDedicated)) then {[1000,-1,false,100,1000,1000]execvm "zbe_cache\main.sqf"};
+	if (!isDedicated) then {[1000,-1,false,100,1000,1000]execvm "zbe_cache\main.sqf"};
 };
 
 // Get the variables from the parameters lobby
@@ -170,11 +170,7 @@ waitUntil {sleep 1; (Zonesgenerated)};
 sleep 1;
 
 [] spawn Recurring_fnc_enemyAPGain;
-
-if (isServer) then {
-// initialise the resources per zone bonus
 _basepoint = [] spawn Recurring_fnc_zonesundercontrol;
-};
 
 // init the bonuses you get when capturing zones
 _basepoint = [] spawn Recurring_fnc_zones_bonus;
@@ -183,15 +179,11 @@ _warcom_init = [Array_of_OPFOR_zones, getpos hq_blu1, [0,0,0], blufor_ap, opfor_
 waitUntil {scriptDone _warcom_init};
 
 // group cleaning script
-if (isServer) then {
-	clean = [
-		10*60, // seconds to delete dead bodies (0 means don't delete)
-		10*60, // seconds to delete dead vehicles (0 means don't delete)
-		0, // seconds to delete immobile vehicles (0 means don't delete)
-		10*60, // seconds to delete dropped weapons (0 means don't delete)
-		0, // seconds to deleted planted explosives (0 means don't delete)
-		10*60 // seconds to delete dropped smokes/chemlights (0 means don't delete)
-	] spawn Recurring_fnc_repetitive_cleanup;
-};
-
-
+clean = [
+	10*60, // seconds to delete dead bodies (0 means don't delete)
+	10*60, // seconds to delete dead vehicles (0 means don't delete)
+	0, // seconds to delete immobile vehicles (0 means don't delete)
+	10*60, // seconds to delete dropped weapons (0 means don't delete)
+	0, // seconds to deleted planted explosives (0 means don't delete)
+	10*60 // seconds to delete dropped smokes/chemlights (0 means don't delete)
+] spawn Recurring_fnc_repetitive_cleanup;

@@ -17,14 +17,7 @@
 // medit 0 - 0.6
 // aride 0 - 0.3
 
-
-
-
 _weather_loop = true;
-
-//if (isMultiplayer) then {
-//_handle = [] execVM "dialog\startup\weather_broadcast.sqf";
-//};
 
 switch (weather_type) do
 {
@@ -182,8 +175,10 @@ switch (weather_type) do
 	diag_log format ["DUWS DEBUG: %3 setFog [%1, %2, 10]", _fog_intensity, _fog_height, _fog_time];	
      _fog_time setFog [_fog_intensity, _fog_height, 10];
     
-     0 setOvercast 1;
+     60 setOvercast 1;
 	 60 setRain .5;
+	 forceWeatherChange //TIL this is a thing. Apparently it should force weather values. Going to keep this here as a test, partially because when I think on it I don't know if I've ever actually seen rain in this mission.
+	 
 	diag_log format ["DUWS DEBUG: %3 setOvercast %1", _overcast_intensity];
 	OvercastVar = _overcast_intensity;
      publicVariable "OvercastVar";
