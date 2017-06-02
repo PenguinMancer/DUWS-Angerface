@@ -5,8 +5,8 @@
 		displayName = "ISIS Ammo Bearer"; // In-game name of unit
 		uniformClass = "U_BG_Guerilla2_3";  // Uniform Class
 		backpack = "SP_Carryall_ATacsFG"; // Backpack Class
-		linkedItems[] = {"SFG_Tac_smallBeardD", "SP_Shemagh_CheckTan", "TRYK_LOC_AK_chestrig_TAN", Standard_Equipment_Opf}; // Item's added to the unit. 
-		respawnLinkedItems[] = {"SFG_Tac_smallBeardD", "SP_Shemagh_CheckTan", "TRYK_LOC_AK_chestrig_TAN", Standard_Equipment_Opf}; // Item's added to the unit. Should be identical to the linkedItems section.
+		linkedItems[] = {"SFG_Tac_smallBeardD", "SP_Shemagh_CheckTan", "TRYK_LOC_AK_chestrig_TAN", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"}; // Item's added to the unit. 
+		respawnLinkedItems[] = {"SFG_Tac_smallBeardD", "SP_Shemagh_CheckTan", "TRYK_LOC_AK_chestrig_TAN", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"}; // Item's added to the unit. Should be identical to the linkedItems section.
 		weapons[] = {"hlc_rifle_ak47", "RH_mak", "Throw", "Put"}; // Weapons added to the unit.
 		respawnweapons[] = {"hlc_rifle_ak47", "RH_mak", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
 		magazines[] = {AK47Mags_Opf, AK74Mags_Opf, Macaronimags_Opf, "CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M"}; //Magazines added to the unit.
@@ -20,8 +20,8 @@
 		displayName = "ISIS Medic"; // In-game name of unit
 		uniformClass = "U_BG_Guerilla2_3";  // Uniform Class
 		backpack = "B_AssaultPack_rgr"; // Backpack Class
-		linkedItems[] = {"SFG_Tac_smallBeardD", "SP_Shemagh_CheckTan", "CUP_V_O_TK_Vest_2", Standard_Equipment_Opf}; // Item's added to the unit. 
-		respawnLinkedItems[] = {"SFG_Tac_smallBeardD", "SP_Shemagh_CheckTan", "CUP_V_O_TK_Vest_2", Standard_Equipment_Opf}; // Item's added to the unit. Should be identical to the linkedItems section.
+		linkedItems[] = {"SFG_Tac_smallBeardD", "SP_Shemagh_CheckTan", "CUP_V_O_TK_Vest_2", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"}; // Item's added to the unit. 
+		respawnLinkedItems[] = {"SFG_Tac_smallBeardD", "SP_Shemagh_CheckTan", "CUP_V_O_TK_Vest_2", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"}; // Item's added to the unit. Should be identical to the linkedItems section.
 		weapons[] = {"hlc_rifle_ak74_dirty", "RH_mak", "Throw", "Put"}; // Weapons added to the unit.
 		respawnweapons[] = {"hlc_rifle_ak74_dirty", "RH_mak", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
 		magazines[] = {AK74Mags_Opf, Macaronimags_Opf}; //Magazines added to the unit.
@@ -37,8 +37,8 @@
 		displayName = "ISIS Asst. Missile Specialist (AT)"; // In-game name of unit
 		uniformClass = "U_BG_Guerilla2_3";  // Uniform Class
 		backpack = "B_AssaultPack_rgr"; // Backpack Class
-		linkedItems[] = {"SFG_Tac_smallBeardD", "SP_Shemagh_CheckTan", "TRYK_LOC_AK_chestrig_TAN", Standard_Equipment_Opf}; // Item's added to the unit. 
-		respawnLinkedItems[] = {"SFG_Tac_smallBeardD", "SP_Shemagh_CheckTan", "TRYK_LOC_AK_chestrig_TAN", Standard_Equipment_Opf}; // Item's added to the unit. Should be identical to the linkedItems section.
+		linkedItems[] = {"SFG_Tac_smallBeardD", "SP_Shemagh_CheckTan", "TRYK_LOC_AK_chestrig_TAN", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"}; // Item's added to the unit. 
+		respawnLinkedItems[] = {"SFG_Tac_smallBeardD", "SP_Shemagh_CheckTan", "TRYK_LOC_AK_chestrig_TAN", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"}; // Item's added to the unit. Should be identical to the linkedItems section.
 		weapons[] = {"hlc_rifle_ak74_dirty2", "Throw", "Put"}; // Weapons added to the unit.
 		respawnweapons[] = {"hlc_rifle_ak74_dirty2", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
 		magazines[] = {AK74Mags_Opf, "rhs_rpg7_PG7VL_mag"}; //Magazines added to the unit.

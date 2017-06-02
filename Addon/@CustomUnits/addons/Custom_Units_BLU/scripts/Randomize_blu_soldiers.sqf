@@ -73,7 +73,7 @@ _leaderheadgear = [
 "SP_Beret_Tan"
 ];
 
-// lets strip them down
+//strip units of items that would be inside the vests and backpacks we're about to remove
 _magazines = magazines _unit; 
 _items = items _unit; // Medkits, ToolKits etc. 
 _assitems = assignedItems _unit; // NVG's, GPS etc. 
@@ -81,6 +81,7 @@ _assitems = assignedItems _unit; // NVG's, GPS etc.
 {_unit removemagazine _x} foreach _magazines; 
 removeAllItems _unit;     
 
+//figure out type of unit, then add appropriate gear
 switch (_typeofUnit) do 
 {
     case "basic": 
@@ -128,21 +129,14 @@ switch (_typeofUnit) do
 	case "general": 
     {
 	removeAllWeapons _unit;
-	removeAllItems _unit;
-	removeAllAssignedItems _unit;
-	[_unit,"ARC_Patch_FR"] call bis_fnc_setUnitInsignia;
-	_unit setSpeaker "ACE_NoVoice";
-	_unit setFace "WhiteHead_10";
-    };
+	_items = ""; 
+	_assitems = ""; //We don't want the general to have any items whatsoever.
+	};
 	case "pilot": 
-    { 
-	[_unit,"GryffinRegiment"] call bis_fnc_setUnitInsignia;
-	_unit setSpeaker "Male02ENGB";
-	_unit setFace "Zee_White_Head_08";
-    }; 
-	
+    {};
 }; 
 
+//readd the items we took from them.
 {_unit addMagazine _x} forEach _magazines; 
 {_unit additem _x} forEach _items; 
 {_unit assignitem _x} forEach _assitems; 

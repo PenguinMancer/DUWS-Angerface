@@ -5,8 +5,8 @@
 		displayName = "ISIS Grenadier"; // In-game name of unit
 		uniformClass = "U_BG_Guerilla2_1";  // Uniform Class
 		backpack = "SP_Carryall_ATacsFG"; // Backpack Class
-		linkedItems[] = {"SFG_Tac_smallBeardD", "SP_Shemagh_CheckTan", "TRYK_LOC_AK_chestrig_TAN", Standard_Equipment_Opf}; // Item's added to the unit. 
-		respawnLinkedItems[] = {"SFG_Tac_smallBeardD", "SP_Shemagh_CheckTan", "TRYK_LOC_AK_chestrig_TAN", Standard_Equipment_Opf}; // Item's added to the unit. Should be identical to the linkedItems section.
+		linkedItems[] = {"SFG_Tac_smallBeardD", "SP_Shemagh_CheckTan", "TRYK_LOC_AK_chestrig_TAN", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"}; // Item's added to the unit. 
+		respawnLinkedItems[] = {"SFG_Tac_smallBeardD", "SP_Shemagh_CheckTan", "TRYK_LOC_AK_chestrig_TAN", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"}; // Item's added to the unit. Should be identical to the linkedItems section.
 		weapons[] = {"hlc_rifle_aks74_GL", "Throw", "Put"}; // Weapons added to the unit.
 		respawnweapons[] = {"hlc_rifle_aks74_GL", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
 		magazines[] = {AK74Mags_Opf, Rifle_Grenades_Opf}; //Magazines added to the unit.

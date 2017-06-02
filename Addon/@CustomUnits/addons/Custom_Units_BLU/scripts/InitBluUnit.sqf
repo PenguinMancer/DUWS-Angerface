@@ -2,8 +2,8 @@ _unit = _this select 0;
 _typeofUnit = toLower (_this select 1); 
 
 if (isServer && !(_unit getvariable ["BLU_invset", false])) then { 
-	#include "SetIdentityBlu.sqf"			//It's important that identity is randomized first. The general and pilot identities are set secondly after this script is run, overwriting it. 
-    #include "Randomize_blu_soldiers.sqf"
+	#include "SetIdentityBlu.sqf"			//Identity is randomized, or in the case of units with static identities, set to the one set.
+    #include "Randomize_blu_soldiers.sqf"	//actual equipment set.
 } 
 else { // Check for JIP from standard slots.  
             if (local _unit) then  

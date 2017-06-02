@@ -58,7 +58,7 @@ _soldierheadgear = [
 "SP_Hood_Tan"
 ];
 
-// lets strip them down
+//strip units of items that would be inside the vests and backpacks we're about to remove
 _magazines = magazines _unit; 
 _items = items _unit; // Medkits, ToolKits etc. 
 _assitems = assignedItems _unit; // NVG's, GPS etc. 
@@ -66,6 +66,7 @@ _assitems = assignedItems _unit; // NVG's, GPS etc.
 {_unit removemagazine _x} foreach _magazines; 
 removeAllItems _unit;     
 
+//figure out type of unit, then add appropriate gear
 switch (_typeofUnit) do 
 {
     case "basic": 
@@ -88,8 +89,6 @@ switch (_typeofUnit) do
 	removeGoggles _unit; _unit addGoggles (_soldierfacewear call BIS_fnc_selectRandom); 
     removeHeadgear _unit; _unit addHeadgear (_soldierheadgear call BIS_fnc_selectRandom); 
     removeVest _unit; _unit addVest (_soldiervest call BIS_fnc_selectRandom); 
-	_unit setSpeaker "ACE_NoVoice";
-	_unit setFace "PersianHead_A3_01";
     }; 
 	case "spotter": 
     { 
@@ -97,8 +96,6 @@ switch (_typeofUnit) do
 	removeGoggles _unit; _unit addGoggles (_soldierfacewear call BIS_fnc_selectRandom); 
     removeHeadgear _unit; _unit addHeadgear (_soldierheadgear call BIS_fnc_selectRandom); 
     removeVest _unit; _unit addVest (_soldiervest call BIS_fnc_selectRandom); 
-	_unit setSpeaker "ACE_NoVoice";
-	_unit setFace "WhiteHead_18";
     }; 
 	case "officer": 
     { 
@@ -106,12 +103,10 @@ switch (_typeofUnit) do
 	removeGoggles _unit; _unit addGoggles (_soldierfacewear call BIS_fnc_selectRandom); 
     removeHeadgear _unit; _unit addHeadgear (_soldierheadgear call BIS_fnc_selectRandom); 
     removeVest _unit; _unit addVest (_LeaderVest call BIS_fnc_selectRandom); 
-	_unit setSpeaker "ACE_NoVoice";
-	_unit setFace "PersianHead_A3_01";
     }; 
-	
 }; 
 
+//readd the items we took from them.
 {_unit addMagazine _x} forEach _magazines; 
 {_unit additem _x} forEach _items; 
 {_unit assignitem _x} forEach _assitems; 

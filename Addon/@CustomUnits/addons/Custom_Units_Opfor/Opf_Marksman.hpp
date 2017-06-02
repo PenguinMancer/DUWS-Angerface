@@ -5,8 +5,8 @@
 		displayName = "ISIS Designated Marksman"; // In-game name of unit
 		uniformClass = "CUP_U_O_CHDKZ_Lopotev";  // Uniform Class
 		backpack = "B_AssaultPack_sgg"; // Backpack Class
-		linkedItems[] = {"CUP_V_RUS_Smersh_1", "SFG_Tac_smallBeardD", "SP_Shemagh_CheckGreen", Standard_Equipment_Opf}; // Item's added to the unit. 
-		respawnLinkedItems[] = {"CUP_V_RUS_Smersh_1", "SFG_Tac_smallBeardD", "SP_Shemagh_CheckGreen", Standard_Equipment_Opf}; // Item's added to the unit. Should be identical to the linkedItems section.
+		linkedItems[] = {"CUP_V_RUS_Smersh_1", "SFG_Tac_smallBeardD", "SP_Shemagh_CheckGreen", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"}; // Item's added to the unit. 
+		respawnLinkedItems[] = {"CUP_V_RUS_Smersh_1", "SFG_Tac_smallBeardD", "SP_Shemagh_CheckGreen", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"}; // Item's added to the unit. Should be identical to the linkedItems section.
 		weapons[] = {"rhs_weap_svdp_wd_scoped", "RH_mak", "Throw", "Put"}; // Weapons added to the unit.
 		respawnweapons[] = {"rhs_weap_svdp_wd_scoped", "RH_mak", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
 		magazines[] = {"rhs_10Rnd_762x54mmR_7N1", "rhs_10Rnd_762x54mmR_7N1", "rhs_10Rnd_762x54mmR_7N1", Macaronimags_Opf}; //Magazines added to the unit.

@@ -4,5 +4,26 @@ _Faces = ["PersianHead_A3_01", "PersianHead_A3_02", "PersianHead_A3_03", "GreekH
 _RndSpeaker = _Speakers call BIS_fnc_selectRandom;
 _RndFace = _Faces call BIS_fnc_selectRandom;
 
-_unit setSpeaker _RndSpeaker;
-_unit setFace _RndFace;
+switch (_typeofUnit) do 
+{
+	case "sniper": 
+    { 
+	_unit setSpeaker "ACE_NoVoice";
+	_unit setFace "PersianHead_A3_01";
+    }; 
+	case "spotter": 
+    { 
+	_unit setSpeaker "ACE_NoVoice";
+	_unit setFace "WhiteHead_18";
+    }; 
+	case "officer": 
+    { 
+	_unit setSpeaker "ACE_NoVoice";
+	_unit setFace "PersianHead_A3_01";
+    }; 
+	default 
+    { 
+	_unit setSpeaker _RndSpeaker;
+	_unit setFace _RndFace;
+    }; 
+}; 
