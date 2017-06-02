@@ -1,4 +1,4 @@
-_OpforSoldier = [
+_soldiernumber = [
 "Opfor_Soldier_1", 
 "Opfor_Soldier_2", 
 "Opfor_Soldier_3", 
@@ -13,6 +13,6 @@ _OpforSoldier = [
 "Opfor_Soldier_12"
 ];
 
-_returnedsoldier = _OpforSoldier call BIS_fnc_selectRandom;
+_returnedsoldier = _soldiernumber call BIS_fnc_selectRandom;
 
 _returnedsoldier;
