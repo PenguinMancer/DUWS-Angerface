@@ -40,22 +40,22 @@ publicvariable "WARCOM_zones_controled_by_OPFOR";
 
 // Init BLU patrols
 _blu_patrol = [] spawn Warcom_fnc_WARCOM_blu_patrol;
-waitUntil {scriptDone _blu_patrol};
+//waitUntil {scriptDone _blu_patrol};				//These wait untils don't seem to do much anyway. Gotta see if they work better with or without.
 
 // Init OPF patrols
 _opf_patrol = [] spawn Warcom_fnc_WARCOM_opf_patrol;
-waitUntil {scriptDone _opf_patrol};
+//waitUntil {scriptDone _opf_patrol};
 
 // Initialize the BLU attack waves
 _blu_assault = [] spawn Warcom_fnc_WARCOM_blu_assault;
-waitUntil {scriptDone _blu_assault};
+//waitUntil {scriptDone _blu_assault};
 
 // Init the OPF attack waves
 _opf_assault = [] spawn Warcom_fnc_WARCOM_opf_assault;
-waitUntil {scriptDone _opf_assault};
+//waitUntil {scriptDone _opf_assault};
 
 // Init the OPF town Patrols
 _opf_town = [] spawn Warcom_fnc_WARCOM_opf_townpatrol;
-waitUntil {scriptDone _opf_town};
+//waitUntil {scriptDone _opf_town};
 
 player globalchat "WARCOM initialized !";

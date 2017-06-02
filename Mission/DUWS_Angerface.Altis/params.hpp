@@ -57,6 +57,6 @@ class Params {
         title = "Zbe Cache status:";
         values[] = {0,1};
         texts[] = {"Disabled","Enabled"};
-        default = 0;
+        default = 1;
     };
 }

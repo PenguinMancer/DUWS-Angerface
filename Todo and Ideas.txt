@@ -4,11 +4,9 @@ Start with one vehicle and nothing but the weapons we already have. Have to capt
 Make a civilian Relation system
 This would take a hell of a lot of work.
 
-Make it where the zone response forces have some serious firepower compared to a regular QRF
-
 Make more enemy base prefabs.
 (serious defensive capabilities?, mortars, MG emplacements, etc.)
 
-Go through and make all friendly and enemy units for the next map.
+New skill earnable from XP. Backup magazine, gives player a free magazine for held/all weapons? Gotta see what's possible with sqf.
 
-make actual physical alarms that have to be used by opfor units for an alarm to go off.
+Consider making warcom loop an FSM?

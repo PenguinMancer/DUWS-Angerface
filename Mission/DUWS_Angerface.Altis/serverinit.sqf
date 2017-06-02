@@ -15,7 +15,7 @@ PlayerMrkrs = true;
 
 //Time of Day
  if (time < 10) then {
-setDate [2016, 8, 6, (paramsArray select 2), 1];
+setDate [2019, 7, 23, (paramsArray select 2), 1];
 };
 
 /////////////////////////////////////////////////////////////
@@ -51,7 +51,8 @@ game_master = ["player1"];publicVariable "game_master";
 ZbeCacheStatus = paramsArray select 8;
 
 if (ZbeCacheStatus == 1) then {
-	if (isServer) then {[1000,-1,false,100,1000,1000]execvm "zbe_cache\main.sqf"};
+	//unit caching seems to break super badly on dedicated, so this is making sure that if you're on dedicated, it doesn't screw you.
+	if ((isServer) && (!isDedicated)) then {[1000,-1,false,100,1000,1000]execvm "zbe_cache\main.sqf"};
 };
 
 // Get the variables from the parameters lobby
