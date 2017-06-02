@@ -6,7 +6,9 @@ _OpforTeamLeader = [
 "Opfor_TeamLeader_5", 
 "Opfor_TeamLeader_6", 
 "Opfor_TeamLeader_7", 
-"Opfor_TeamLeader_8"
+"Opfor_TeamLeader_8",
+"Opfor_TeamLeader_9", 
+"Opfor_TeamLeader_10"
 ];
 
 _returnedsoldier = _OpforTeamLeader call BIS_fnc_selectRandom;

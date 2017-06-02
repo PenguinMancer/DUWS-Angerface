@@ -10,11 +10,7 @@ _OpforSoldier = [
 "Opfor_Soldier_9", 
 "Opfor_Soldier_10", 
 "Opfor_Soldier_11", 
-"Opfor_Soldier_12", 
-"Opfor_Soldier_13", 
-"Opfor_Soldier_14", 
-"Opfor_Soldier_15", 
-"Opfor_Soldier_16"
+"Opfor_Soldier_12"
 ];
 
 _returnedsoldier = _OpforSoldier call BIS_fnc_selectRandom;
