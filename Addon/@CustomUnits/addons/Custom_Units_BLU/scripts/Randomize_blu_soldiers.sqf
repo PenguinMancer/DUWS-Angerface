@@ -129,8 +129,9 @@ switch (_typeofUnit) do
 	case "general": 
     {
 	removeAllWeapons _unit;
-	_items = ""; 
-	_assitems = ""; //We don't want the general to have any items whatsoever.
+	_magazines = magazines _unit; 
+	_items = items _unit; // Medkits, ToolKits etc. 
+	_assitems = assignedItems _unit; // NVG's, GPS etc.  //We don't want the general to have any items whatsoever.
 	};
 	case "pilot": 
     {};

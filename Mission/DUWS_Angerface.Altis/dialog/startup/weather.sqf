@@ -177,7 +177,7 @@ switch (weather_type) do
     
      60 setOvercast 1;
 	 60 setRain .5;
-	 forceWeatherChange //TIL this is a thing. Apparently it should force weather values. Going to keep this here as a test, partially because when I think on it I don't know if I've ever actually seen rain in this mission.
+	 forceWeatherChange; //TIL this is a thing. Apparently it should force weather values. Going to keep this here as a test, partially because when I think on it I don't know if I've ever actually seen rain in this mission.
 	 
 	diag_log format ["DUWS DEBUG: %3 setOvercast %1", _overcast_intensity];
 	OvercastVar = _overcast_intensity;
