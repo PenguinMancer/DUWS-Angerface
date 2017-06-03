@@ -109,5 +109,5 @@ switch (_typeofUnit) do
 //readd the items we took from them.
 {_unit addMagazine _x} forEach _magazines; 
 {_unit additem _x} forEach _items; 
-{_unit assignitem _x} forEach _assitems; 
+{_unit linkItem _x} forEach _assitems; 
 _unit setvariable ["Opf_invset", true,true]  
