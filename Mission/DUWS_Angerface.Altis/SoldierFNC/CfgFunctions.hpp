@@ -25,5 +25,6 @@ class CFGfunctions
 		class GetOpforTeamleader {};
 		class GetOpforVehAir {};
 		class GetOpforVehGround {};
+		class SetGeneralIdentity {};
 	};
 };

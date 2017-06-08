@@ -48,6 +48,7 @@ _hq disableAI "PRONE";
 //_hq setVariable ["asr_ai_exclude", true];
 //Disable VCOM for officer
 _hq setVariable ["NOAI",true];
+_hqidentity = [_hq] remoteExec ["Soldiers_fnc_SetGeneralIdentity", 0, true]; 
 hq_blu1 = _hq;
 publicVariable "hq_blu1";
 _hq setpos [_hqblu select 0, _hqblu select 1, .59];
