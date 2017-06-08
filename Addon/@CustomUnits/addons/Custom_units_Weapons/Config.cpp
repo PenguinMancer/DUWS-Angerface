@@ -412,7 +412,7 @@ class rhs_weap_m240G;
 		};
 	};	
 	class hlc_rifle_G36TAC;
-	class hlc_rifle_G36TAC_sebby : hlc_rifle_G36TAC
+	class hlc_rifle_G36TAC_peng : hlc_rifle_G36TAC
 	{
 		class LinkedItems
 		{

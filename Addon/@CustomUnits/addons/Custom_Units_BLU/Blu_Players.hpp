@@ -8,10 +8,10 @@
 		backpack = "B_Kitbag_cbr"; // Backpack Class
 		linkedItems[] = {"VSM_OGA_Vest_2", "VSM_Peltor_OCP", "PU_shemagh_TanBLK", "TAC_SG", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
 		respawnLinkedItems[] = {"VSM_OGA_Vest_2", "VSM_Peltor_OCP", "PU_shemagh_TanBLK", "TAC_SG", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemRadio", "ItemGPS"}; // Item's added to the unit. Should be identical to the linkedItems section.
-		weapons[] = {"hlc_rifle_G36TAC_sebby", "Binocular", "Throw", "Put"}; // Weapons added to the unit.
-		respawnweapons[] = {"hlc_rifle_G36TAC_sebby", "Binocular", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
-		magazines[] = {"CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag", "CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag", "CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag", "HandGrenade", "HandGrenade", "rhs_mag_an_m8hc", "rhs_mag_an_m8hc", "ACE_HandFlare_Red", "ACE_HandFlare_Red"}; //Magazines added to the unit.
-		Respawnmagazines[] = {"CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag", "CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag", "CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag", "HandGrenade", "HandGrenade", "rhs_mag_an_m8hc", "rhs_mag_an_m8hc", "ACE_HandFlare_Red", "ACE_HandFlare_Red"}; //Magazines added to the unit upon respawn, should be the same as above.
+		weapons[] = {"hlc_rifle_G36TAC_peng", "Binocular", "Throw", "Put"}; // Weapons added to the unit.
+		respawnweapons[] = {"hlc_rifle_G36TAC_peng", "Binocular", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
+		magazines[] = {"CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag", "CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag", "HandGrenade", "HandGrenade", "rhs_mag_an_m8hc", "rhs_mag_an_m8hc", "ACE_HandFlare_Red", "ACE_HandFlare_Red"}; //Magazines added to the unit.
+		Respawnmagazines[] = {"CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag", "CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag", "HandGrenade", "HandGrenade", "rhs_mag_an_m8hc", "rhs_mag_an_m8hc", "ACE_HandFlare_Red", "ACE_HandFlare_Red"}; //Magazines added to the unit upon respawn, should be the same as above.
 		Items[] = {"ACE_fieldDressing", "ACE_fieldDressing", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_quikclot", "ACE_quikclot", "ACE_packingBandage", "ACE_packingBandage", "ACE_morphine", "ACE_morphine"};
 		respawnItems[] = {"ACE_fieldDressing", "ACE_fieldDressing", "ACE_elasticBandage", "ACE_elasticBandage", "ACE_quikclot", "ACE_quikclot", "ACE_packingBandage", "ACE_packingBandage", "ACE_morphine", "ACE_morphine"};
 		};
