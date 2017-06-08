@@ -75,11 +75,11 @@ class CfgPatches {
 			"Blufor_Spotter_1",
 			"Blufor_Explosives_1", 
 			"Blufor_Pilot_1", 
-			"Blufor_Sebby_1", 
-			"Blufor_Jayme_1", 
-			"Blufor_Kevin_1",
-			"Blufor_Hunter_1", 
-			"Blufor_Jacob_1"
+			"Blufor_Penguin_1", 
+			"Blufor_Fox_1", 
+			"Blufor_Wolf_1",
+			"Blufor_Crow_1", 
+			"Blufor_Tarrasque_1"
 			};
 		weapons[] = {};
 		requiredVersion = 0.1;
