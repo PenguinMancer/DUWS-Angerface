@@ -1,7 +1,7 @@
 WARCOM_blu_patrol_type = "";
 
 [] spawn {
-		  
+
           while {True} do {
 		  
 				// Type of attack wave
@@ -22,7 +22,7 @@ WARCOM_blu_patrol_type = "";
 				} else {
 				WARCOM_blu_attack_wave_type = (configFile >> "CfgGroups" >> "West" >> "BLU_DUWS" >> "Infantry" >> "BUS_InfTeam");
 				};
-		  
+
 			  if (count WARCOM_zones_controled_by_BLUFOR > 1) then { // make sure blufor is controlling at least 2 zones
 			  sleep 2;
 			  
@@ -46,7 +46,7 @@ WARCOM_blu_patrol_type = "";
 				_randomZonesafe = [(_randomZone select 0)+20,_randomZone select 1];
 				};
 			  _group = [_randomZonesafe, WEST, WARCOM_blu_patrol_type,[],[],WARCOM_blu_ai_skill_range] call BIS_fnc_spawnGroup;			   
-			  _opf_assault = [_group] remoteExecCall ["Warcom_fnc_WARCOM_wp_blu_patrol", 0];
+			  _opf_assault = [_group] remoteExec ["Warcom_fnc_WARCOM_wp_blu_patrol", 0];
 			  
 				// spawn armored
 				

@@ -1,7 +1,7 @@
 WARCOM_opf_patrol_type = "";
 
-// Attack waves main
 [] spawn {
+
 		while {True} do {
 		
 			// Type of attack wave
@@ -22,7 +22,7 @@ WARCOM_opf_patrol_type = "";
 			} else {
 			WARCOM_opf_patrol_type = (configFile >> "CfgGroups" >> "East" >> "OPFOR_DUWS" >> "Infantry" >> "OIA_InfTeam");
 			};
-		
+
 			  if (count WARCOM_zones_controled_by_OPFOR > 1) then { // make sure opfor is controlling at least 2 zones
 			  sleep 2;
 			  
@@ -44,7 +44,7 @@ WARCOM_opf_patrol_type = "";
 		      _randomZonesafe = [(_randomZone select 0)+20,_randomZone select 1];
 		      };
 			  _group = [_randomZonesafe, EAST, WARCOM_opf_patrol_type,[],[],WARCOM_opf_ai_skill_range] call BIS_fnc_spawnGroup;			  
-			  _opf_assault = [_group] remoteExecCall ["Warcom_fnc_WARCOM_wp_opf_patrol", 0];
+			  _opf_assault = [_group] remoteExec ["Warcom_fnc_WARCOM_wp_opf_patrol", 0];
 				
 				if (debugmode) then {
 			    _null = [_group,"patrol"] execvm "debuglocation.sqf";

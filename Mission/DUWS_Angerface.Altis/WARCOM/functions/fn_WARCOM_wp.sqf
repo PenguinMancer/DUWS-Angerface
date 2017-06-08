@@ -8,4 +8,4 @@ _group setCombatMode "RED";
 	_wp setWaypointCompletionRadius 40;
 	_wp setWaypointTimeout [300, 450, 600]; 
 }
-forEach WARCOM_zones_controled_by_OPFOR; //WARCOM_createdZones;
+forEach WARCOM_zones_controled_by_OPFOR;

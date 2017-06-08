@@ -28,7 +28,7 @@ WARCOM_opf_response_type = (configfile >> "CfgGroups" >> "East" >> "OPFOR_DUWS" 
 		      _randomZonesafe = [(_randomZone select 0)+20,_randomZone select 1];
 		      };
 			  _group = [_randomZonesafe, EAST, WARCOM_opf_response_type,[],[],WARCOM_opf_ai_skill_range] call BIS_fnc_spawnGroup;
-			  _opf_assault = [_group,_zoneattacked] remoteExecCall ["Warcom_fnc_WARCOM_wp_opf_qrf", 0];
+			  _opf_assault = [_group,_zoneattacked] remoteExec ["Warcom_fnc_WARCOM_wp_opf_qrf", 0];
 			  
 		  if (debugmode) then {
 		  _null = [_group,"Zone Recap Force"] execvm "debuglocation.sqf";

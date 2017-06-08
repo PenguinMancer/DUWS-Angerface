@@ -18,6 +18,7 @@ WARCOM_qrf_ready = true;
 WARCOM_qrf_zones_ready = true;
 WARCOM_blu_ai_skill_range = _blu_ai_skill_range;  // !! IS USING blufor_ai_skill INSTEAD
 WARCOM_opf_ai_skill_range = _opfor_ai_skill;
+publicVariable "WARCOM_blu_hq_pos";
 publicVariable "WARCOM_blufor_ap";
 publicVariable "WARCOM_opfor_ap";
 publicVariable "WARCOM_marker_num";
@@ -27,35 +28,30 @@ publicVariable "WARCOM_blu_ai_skill_range";
 publicVariable "WARCOM_opf_ai_skill_range";
 
 // SORT ARRAY OF OPFOR ZONES ACCORDING TO DISTANCE FROM BLUHQ 
-WARCOM_createdZones = [_array_of_zones_total,[WARCOM_blu_hq_pos],{_input0 distance _x},"ASCEND"] call BIS_fnc_sortBy;
+_WARCOM_createdZones = [_array_of_zones_total,[WARCOM_blu_hq_pos],{_input0 distance _x},"ASCEND"] call BIS_fnc_sortBy;
 
 // ARRAY OF ZONES UNDER BLUFOR CONTROL
 WARCOM_zones_controled_by_BLUFOR = [];
 
 // ARRAY OF ZONES UNDER OPFOR CONTROL 
 // make sure it's not a reference
-_WARCOM_zones_controled_by_OPFOR = WARCOM_createdZones;
+_WARCOM_zones_controled_by_OPFOR = _WARCOM_createdZones;
 WARCOM_zones_controled_by_OPFOR = [] + _WARCOM_zones_controled_by_OPFOR;
 publicvariable "WARCOM_zones_controled_by_OPFOR";
 
 // Init BLU patrols
 _blu_patrol = [] spawn Warcom_fnc_WARCOM_blu_patrol;
-//waitUntil {scriptDone _blu_patrol};				//These wait untils don't seem to do much anyway. Gotta see if they work better with or without.
 
 // Init OPF patrols
 _opf_patrol = [] spawn Warcom_fnc_WARCOM_opf_patrol;
-//waitUntil {scriptDone _opf_patrol};
 
 // Initialize the BLU attack waves
 _blu_assault = [] spawn Warcom_fnc_WARCOM_blu_assault;
-//waitUntil {scriptDone _blu_assault};
 
 // Init the OPF attack waves
 _opf_assault = [] spawn Warcom_fnc_WARCOM_opf_assault;
-//waitUntil {scriptDone _opf_assault};
 
 // Init the OPF town Patrols
 _opf_town = [] spawn Warcom_fnc_WARCOM_opf_townpatrol;
-//waitUntil {scriptDone _opf_town};
 
 player globalchat "WARCOM initialized !";

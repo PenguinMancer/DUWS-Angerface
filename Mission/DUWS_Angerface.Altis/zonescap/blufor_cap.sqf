@@ -20,7 +20,7 @@ WARCOM_zones_controled_by_OPFOR = WARCOM_zones_controled_by_OPFOR - [_triggerPos
 publicVariable "WARCOM_zones_controled_by_OPFOR";
 
 if (WARCOM_opfor_ap > 149) then {
-_handle = [_triggerPos,_size] remoteExecCall ["Warcom_fnc_WARCOM_opf_zonerecapforce", 0];
+_handle = [_triggerPos,_size] remoteExec ["Warcom_fnc_WARCOM_opf_zonerecapforce", 0];
 };
 
 // MODIFY ARMY POWER
