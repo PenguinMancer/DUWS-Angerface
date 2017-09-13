@@ -2,11 +2,11 @@ Forced Entry mode:
 Start with one vehicle and nothing but the weapons we already have. Have to capture a zone to place the HQ.
 
 Make a civilian Relation system
-This would take a hell of a lot of work.
+I have seen it done by another addon now. Could be possible with moderate effort.
 
 Make more enemy base prefabs.
 (serious defensive capabilities?, mortars, MG emplacements, etc.)
 
 New skill earnable from XP. Backup magazine, gives player a free magazine for held/all weapons? Gotta see what's possible with sqf.
 
-Consider making warcom loop an FSM?
+Redo unit randomization so that it can use BIS_fnc_addWeapon for weapons in the future.
