@@ -32,3 +32,14 @@ First implimentation of Zone Quick Response Force. This type of quick response f
 1.1.1
 
 Zone Quick response force implimented. Units will now spawn from a random zone (that's not the one being attacked) and rush to that zone to aid them.
+
+2.0.0
+
+About ten months worth of changes happened and I forgot to update the changelog every time so I probably am going to miss a lot.
+
+Made many repeating scripts into functions, to save performance.
+Managed a way of unit randomization that is performance friendly, and still doesn't require a ton more work on my part.
+Vehicles can be spawned from two different currencies now. CP, as normal can be used to obtain vehicles that can be obtained normally from the faction you work with. USD can be used to obtain units outside of that scope.
+Vehicles and buildings can now be placed by using "ghosts" to preview where they will be placed. A vehicle can be placed within the area of any zone you control, and the home base area. This new method (Thank you liberation as I repurposed code from there) allows for MUCH more precise placement of vehicles, which should prevent issues of vehicles exploding within one another. Along with this, it allowed boats to be added to spawn lists.
+Added a simple but effective base building system. I have yet to see if its performance intensive or not yet.
+Removed single player support. It's just to big a pain for me to consider how my changes will affect single and multiplayer. If you want to play this in single player, load it as listen server on lan only.
