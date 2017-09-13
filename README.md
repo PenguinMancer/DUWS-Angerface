@@ -51,5 +51,5 @@ After a location for the HQ has been selected the player will be prompted with a
 * Thanks to Pixel Art Studio for the SATCOM script.
 * Thanks to Haleks for Unlocked uniforms, which I have modified slightly for the purposes of my addon. 
 * Thanks to the rlex for DUWS Unofficial, which I used as a base for this modification.
-* Thanks to all the members of the DUWS-R Team for your hard work and contributions!
+* Thanks to all the members of the DUWS-R Team, as I periodically drop over to your github and repurpose the bits of your version I like.
 * Thanks to the people who made the mission Liberation, as I adapted their code for building placement. Their github is available <a href="https://github.com/GreuhZbug/greuh_liberation.Altis">here</a>.
