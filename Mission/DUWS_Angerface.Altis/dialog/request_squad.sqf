@@ -87,7 +87,7 @@ _spawnPos = [(_spawnPos select 0)+25, _spawnPos select 1];
              };
     };
 
-        case 4:  
+    case 4:  
     {
     _cost = 15;
     _grouptype = (configFile >> "CfgGroups" >> "West" >> "BLU_DUWS" >> "Infantry" >> "BUS_InfTeam_AA");
@@ -106,49 +106,8 @@ _spawnPos = [(_spawnPos select 0)+25, _spawnPos select 1];
                hint "Not enough command points";
              };
     };
-    
+	
     case 5:  
-    {
-    _cost = 12;
-    _grouptype = (configFile >> "CfgGroups" >> "West" >> "BLU_DUWS" >> "Infantry" >> "BUS_ReconPatrol");
-         if (commandpointsblu1 >= _cost) then 
-             {
-              _group = [_spawnPos, WEST, _grouptype, [], [], [0.9,1]] call BIS_fnc_spawnGroup;  // these have special AI skill range
-              player hcsetgroup [_group,""];
-              commandpointsblu1 = commandpointsblu1 - _cost;
-              ctrlSetText [1000, format["%1",commandpointsblu1]];
-			  DUWS_number_sfteam = DUWS_number_sfteam + 1;
-			  _group setGroupId [format["SF team %1",DUWS_number_sfteam]];
-              hint "Squad ready !\nAccess it with [L.CTRL - SPACE]";
-             } 
-          else 
-             {
-               hint "Not enough command points";
-             };
-    };
-    
-    
-    case 6:  
-    {
-    _cost = 20;
-    _grouptype = (configFile >> "CfgGroups" >> "West" >> "BLU_DUWS" >> "Infantry" >> "BUS_ReconTeam");
-         if (commandpointsblu1 >= _cost) then 
-             {
-              _group = [_spawnPos, WEST, _grouptype, [], [], [0.9,1]] call BIS_fnc_spawnGroup;  // these have special AI skill range
-              player hcsetgroup [_group,""];
-              commandpointsblu1 = commandpointsblu1 - _cost;
-              ctrlSetText [1000, format["%1",commandpointsblu1]];
-			  DUWS_number_sfsquad = DUWS_number_sfsquad + 1;
-			  _group setGroupId [format["SF squad %1",DUWS_number_sfsquad]];
-              hint "Squad ready !\nAccess it with [L.CTRL - SPACE]";
-             } 
-          else 
-             {
-               hint "Not enough command points";
-             };
-    };
-
-    case 7:  
     {
     _cost = 8;
     _grouptype = (configFile >> "CfgGroups" >> "West" >> "BLU_DUWS" >> "Infantry" >> "BUS_SniperTeam");
@@ -168,7 +127,7 @@ _spawnPos = [(_spawnPos select 0)+25, _spawnPos select 1];
              };
     };
 
-    case 8:  
+    case 6:  
     {
     _cost = 10;
     _grouptype = (configFile >> "CfgGroups" >> "West" >> "BLU_DUWS" >> "Support" >> "BUS_Support_CLS");
@@ -190,7 +149,7 @@ _spawnPos = [(_spawnPos select 0)+25, _spawnPos select 1];
              };
     };
     
-    case 9:  
+    case 7:  
     {
     _cost = 28;
     _grouptype = (configFile >> "CfgGroups" >> "West" >> "BLU_DUWS" >> "Motorized" >> "BUS_MotInf_Team");
@@ -210,7 +169,7 @@ _spawnPos = [(_spawnPos select 0)+25, _spawnPos select 1];
              };
     };
     
-    case 10:  
+    case 8:  
     {
     _cost = 36;
     _grouptype = (configFile >> "CfgGroups" >> "West" >> "BLU_DUWS" >> "Mechanized" >> "BUS_MechInfSquad");
@@ -230,7 +189,7 @@ _spawnPos = [(_spawnPos select 0)+25, _spawnPos select 1];
              };
     };
 	
-	case 11:  
+	case 9:  
     {
     _cost = 40;
     _grouptype = (configFile >> "CfgGroups" >> "West" >> "BLU_DUWS" >> "Armored" >> "BUS_TankSection");
@@ -250,7 +209,7 @@ _spawnPos = [(_spawnPos select 0)+25, _spawnPos select 1];
              };
     };
 	
-	case 12:  
+	case 10:  
     {
     _cost = 40;
     _grouptype = (configFile >> "CfgGroups" >> "West" >> "BLU_DUWS" >> "Armored" >> "BUS_TankPlatoon_AA");
