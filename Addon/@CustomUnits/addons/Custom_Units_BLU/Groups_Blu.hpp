@@ -120,7 +120,7 @@ class CfgGroups
 					class Unit5
 					{
 						side = 1;
-						vehicle = "Blufor_Soldier_3";
+						vehicle = "Blufor_Soldier_1";
 						rank = "PRIVATE";
 						position[] = {-15,-15,0};
 					};
@@ -339,7 +339,7 @@ class CfgGroups
 					};
 					class Unit2 {
 						side = 1;
-						vehicle = "Blufor_Soldier_2";
+						vehicle = "Blufor_Soldier_1";
 						rank = "PRIVATE";
 						position[] = {13, -14, 0};
 					};
