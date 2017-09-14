@@ -2,20 +2,13 @@ _centerPos = _this select 0;
 
 _groupGuard = createGroup WEST;
 
-//Randomizing Units
-_GuardSoldier1 = [] call Soldiers_fnc_GetBluforSoldier;
-_GuardSoldier2 = [] call Soldiers_fnc_GetBluforSoldier;
-_GuardSoldier3 = [] call Soldiers_fnc_GetBluforSoldier;
-_GuardSoldier4 = [] call Soldiers_fnc_GetBluforSoldier;
-_GuardSoldier5 = [] call Soldiers_fnc_GetBluforSoldier;
-
 // AA on the roof
 _aapod = createVehicle ["B_static_AA_F", [0,0,0], [], 0, "NONE"];
 _aapod allowdamage false;
 _aapod setdamage 0;
 _aapod setpos [_centerpos select 0, _centerpos select 1,(_centerpos select 2)+3.109];
 
-_HQguard1 = _groupGuard createUnit [_GuardSoldier1, _centerPos, [], 0, "FORM"]; 
+_HQguard1 = _groupGuard createUnit ["Blufor_Soldier_1", _centerPos, [], 0, "FORM"]; 
 _HQguard1 moveinGunner _aapod;
 
 // GMG
@@ -24,7 +17,7 @@ _gl1pod allowdamage false;
 _gl1pod setdamage 0;
 _gl1pod setpos [(_centerpos select 0)-7, (_centerpos select 1)+5.5];
 
-_HQguard1 = _groupGuard createUnit [_GuardSoldier2, _centerPos, [], 0, "FORM"]; 
+_HQguard1 = _groupGuard createUnit ["Blufor_Soldier_1", _centerPos, [], 0, "FORM"]; 
 _HQguard1 moveinGunner _gl1pod;
 
 // AT
@@ -34,7 +27,7 @@ _atpod1 allowdamage false;
 _atpod1 setdamage 0;
 _atpod1 setdir 215;
 
-_HQguard1 = _groupGuard createUnit [_GuardSoldier3, _centerPos, [], 0, "FORM"]; 
+_HQguard1 = _groupGuard createUnit ["Blufor_Soldier_1", _centerPos, [], 0, "FORM"]; 
 _HQguard1 moveinGunner _atpod1;
 
 // HMG
@@ -43,7 +36,7 @@ _atpod2 allowdamage false;
 _atpod2 setdamage 0;
 _atpod2 setpos [(_centerpos select 0)+8, (_centerpos select 1)-7];
 
-_HQguard1 = _groupGuard createUnit [_GuardSoldier4, _centerPos, [], 0, "FORM"]; 
+_HQguard1 = _groupGuard createUnit ["Blufor_Soldier_1", _centerPos, [], 0, "FORM"]; 
 _HQguard1 moveinGunner _atpod2;
 
 // GMG
@@ -52,7 +45,7 @@ _atpod3 allowdamage false;
 _atpod3 setdamage 0;
 _atpod3 setpos [(_centerpos select 0)+7, (_centerpos select 1)+8];
 
-_HQguard1 = _groupGuard createUnit [_GuardSoldier5, _centerPos, [], 0, "FORM"]; 
+_HQguard1 = _groupGuard createUnit ["Blufor_Soldier_1", _centerPos, [], 0, "FORM"]; 
 _HQguard1 moveinGunner _atpod3;
 
 

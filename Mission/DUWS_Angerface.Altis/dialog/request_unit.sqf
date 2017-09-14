@@ -14,8 +14,7 @@ switch (_index) do
                commandpointsblu1 = commandpointsblu1 - 2;
                ctrlSetText [1000, format["%1",commandpointsblu1]];
                _group = group player ;
-			   _blusoldier = call Soldiers_fnc_GetBluforSoldier;
-			   _unit = _group createUnit [_blusoldier, _spawnpos, [], 0, "FORM"];
+			   _unit = _group createUnit ["Blufor_Soldier_1", _spawnpos, [], 0, "FORM"];
              } 
           else 
              {
@@ -31,8 +30,7 @@ switch (_index) do
                commandpointsblu1 = commandpointsblu1 - 3;
                ctrlSetText [1000, format["%1",commandpointsblu1]];
                _group = group player ;
-			   _blusoldier = call Soldiers_fnc_GetBluforGrenadier;
-			   _unit = _group createUnit [_blusoldier, _spawnpos, [], 0, "FORM"];
+			   _unit = _group createUnit ["Blufor_Grenadier_1", _spawnpos, [], 0, "FORM"];
              } 
           else 
              {
@@ -48,8 +46,7 @@ switch (_index) do
                commandpointsblu1 = commandpointsblu1 - 3;
                ctrlSetText [1000, format["%1",commandpointsblu1]];
                _group = group player ;
-			   _blusoldier = call Soldiers_fnc_GetBluforAutoRifleman;
-			   _unit = _group createUnit [_blusoldier, _spawnpos, [], 0, "FORM"];
+			   _unit = _group createUnit ["Blufor_Autorifleman_1", _spawnpos, [], 0, "FORM"];
              } 
           else 
              {
@@ -65,8 +62,7 @@ switch (_index) do
                commandpointsblu1 = commandpointsblu1 - 3;
                ctrlSetText [1000, format["%1",commandpointsblu1]];
                _group = group player ;
-			   _blusoldier = call Soldiers_fnc_GetBluforLightAntiTank;
-			   _unit = _group createUnit [_blusoldier, _spawnpos, [], 0, "FORM"];
+			   _unit = _group createUnit ["Blufor_Light_AntiTank_1", _spawnpos, [], 0, "FORM"];
              } 
           else 
              {
@@ -82,8 +78,7 @@ switch (_index) do
                commandpointsblu1 = commandpointsblu1 - 4;
                ctrlSetText [1000, format["%1",commandpointsblu1]];
                _group = group player ;
-			   _blusoldier = call Soldiers_fnc_GetBluforMedic;
-			   _unit = _group createUnit [_blusoldier, _spawnpos, [], 0, "FORM"];
+			   _unit = _group createUnit ["Blufor_Medic_1", _spawnpos, [], 0, "FORM"];
              } 
           else 
              {
@@ -129,8 +124,7 @@ switch (_index) do
                commandpointsblu1 = commandpointsblu1 - 4;
                ctrlSetText [1000, format["%1",commandpointsblu1]];
                _group = group player ;
-               _blusoldier = call Soldiers_fnc_GetBluforAntiTank;
-			   _unit = _group createUnit [_blusoldier, _spawnpos, [], 0, "FORM"];
+			   _unit = _group createUnit ["Blufor_AntiTank_1", _spawnpos, [], 0, "FORM"];
              } 
           else 
              {

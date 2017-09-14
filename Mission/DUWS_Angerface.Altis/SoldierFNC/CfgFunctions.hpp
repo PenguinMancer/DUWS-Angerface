@@ -4,13 +4,6 @@ class CFGfunctions
 	class SoldierFunctions
 	{
 		file = "SoldierFNC\functions";
-		class GetBluforAntiTank {};
-		class GetBluforAutoRifleman {};
-		class GetBluforGrenadier {};
-		class GetBluforLeader {};
-		class GetBluforLightAntiTank {};
-		class GetBluforMedic {};
-		class GetBluforSoldier {};
 		class GetBluforVehAir {};
 		class GetBluforVehGround {};
 		class GetOpforAntiAir {};

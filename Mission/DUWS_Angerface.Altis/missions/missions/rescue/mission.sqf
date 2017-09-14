@@ -34,13 +34,9 @@ _soldier3 = format ["s3%1%2",round(_MissionPos select 0),round(_Missionpos selec
 
 _group = createGroup west;
 
-_Rescueleader = [] call Soldiers_fnc_GetBluforLeader;
-_RescueSoldier = [] call Soldiers_fnc_GetBluforSoldier;
-_Rescueautorifleman = [] call Soldiers_fnc_GetBluforAutoRifleman;
-
-_Rescueleader createUnit [[(_missionpos select 0)+(random 10),(_missionpos select 1)+(random 10)], _group,format["this setcaptive true; this switchMove ""acts_InjuredCoughRifle02""; %1 = this",_soldier1]];
-_RescueSoldier createUnit [[(_missionpos select 0),(_missionpos select 1)], _group,format["this setcaptive true; this switchMove ""acts_InjuredLookingRifle02""; %1 = this",_soldier2]];
-_Rescueautorifleman createUnit [[(_missionpos select 0)+(random 5),(_missionpos select 1)+(random 5)], _group,format["this setcaptive true; this switchMove ""acts_InjuredLookingRifle03""; %1 = this",_soldier3]];
+"Blufor_TeamLeader_1" createUnit [[(_missionpos select 0)+(random 10),(_missionpos select 1)+(random 10)], _group,format["this setcaptive true; this switchMove ""acts_InjuredCoughRifle02""; %1 = this",_soldier1]];
+"Blufor_Soldier_1" createUnit [[(_missionpos select 0),(_missionpos select 1)], _group,format["this setcaptive true; this switchMove ""acts_InjuredLookingRifle02""; %1 = this",_soldier2]];
+"Blufor_Autorifleman_1" createUnit [[(_missionpos select 0)+(random 5),(_missionpos select 1)+(random 5)], _group,format["this setcaptive true; this switchMove ""acts_InjuredLookingRifle03""; %1 = this",_soldier3]];
 
 
 // END CREATE SOLDIERS

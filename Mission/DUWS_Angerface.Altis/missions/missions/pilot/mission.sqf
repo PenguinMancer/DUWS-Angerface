@@ -40,13 +40,9 @@ _choppa = "Land_Wreck_Heli_Attack_01_F" createVehicle (_missionpos);
 
 _group = createGroup west;
 
-_RescueSoldier1 = [] call Soldiers_fnc_GetBluforSoldier;
-_RescueSoldier2 = [] call Soldiers_fnc_GetBluforSoldier;
-_RescueSoldier3 = [] call Soldiers_fnc_GetBluforSoldier;
-
-_soldier1 = _group createUnit [_RescueSoldier1, [((_missionpos select 0)+1), ((_missionpos select 1)+3)], [], 0, "FORM"];
-_soldier2 = _group createUnit [_RescueSoldier2, [((_missionpos select 0)+1), ((_missionpos select 1)+3)], [], 0, "FORM"];
-_soldier3 = _group createUnit [_RescueSoldier3, [((_missionpos select 0)+1), ((_missionpos select 1)+3)], [], 0, "FORM"];
+_soldier1 = _group createUnit ["Blufor_Soldier_1", [((_missionpos select 0)+1), ((_missionpos select 1)+3)], [], 0, "FORM"];
+_soldier2 = _group createUnit ["Blufor_Soldier_1", [((_missionpos select 0)+1), ((_missionpos select 1)+3)], [], 0, "FORM"];
+_soldier3 = _group createUnit ["Blufor_Soldier_1", [((_missionpos select 0)+1), ((_missionpos select 1)+3)], [], 0, "FORM"];
 
 _soldier1 setcaptive true; 
 _soldier2 setcaptive true; 
