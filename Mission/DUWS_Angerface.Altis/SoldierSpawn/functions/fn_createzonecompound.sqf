@@ -13,7 +13,7 @@ _array_of_prefabs = [
 "initZones\prefabs\campsite.sqf"
 ];
 
-_path = _array_of_prefabs call BIS_fnc_selectRandom;
+_path = selectRandom _array_of_prefabs;
 
 _extraprefab = [_trigger, 0,_size-50,15,0,0.2,0,[],[[0,0],[0,0]]] call BIS_fnc_findSafePos;
 	  if (0 == _extraprefab select 0 && 0 == _extraprefab select 1) then {//If our safe position is empty, it ain't safe.

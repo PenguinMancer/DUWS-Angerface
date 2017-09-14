@@ -7,6 +7,6 @@ _vehicles = [
 "CUP_I_Datsun_PK_TK_Random_DUWS"
 ];
 
-_returnedvehicle = _vehicles call BIS_fnc_selectRandom;
+_returnedvehicle = selectRandom _vehicles;
 
 _returnedvehicle;

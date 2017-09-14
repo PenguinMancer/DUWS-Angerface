@@ -374,7 +374,7 @@ if (_found_dist_away) then {};
         MissionNameCase18 = call Recurring_fnc_generateSideMissionName;
 		
 		_towns = nearestLocations [getPosATL hq_blu1, ["NameVillage","NameCity","NameCityCapital"], half_of_map];
-		_Chosentown = _towns call BIS_fnc_selectRandom;
+		_Chosentown = selectRandom _towns;
 		
 		_RandomTownPosition = position (_Chosentown);
 		

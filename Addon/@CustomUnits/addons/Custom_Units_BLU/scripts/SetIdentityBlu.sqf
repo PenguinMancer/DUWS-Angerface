@@ -9,7 +9,7 @@ switch (_typeofUnit) do
 	_unit setSpeaker "ACE_NoVoice";
 	_unit setFace "WhiteHead_10";
     };
-	case "pilot": 
+	case "mpilot": 
     { 
 	[_unit,"GryffinRegiment"] call bis_fnc_setUnitInsignia;
 	_unit setSpeaker "Male02ENGB";

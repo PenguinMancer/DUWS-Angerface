@@ -31,7 +31,7 @@ WARCOM_blu_patrol_type = "";
 			  _randomZone = [];
 			  _failSafe = 0;
 				while {!_found} do {
-				_randomZone = WARCOM_zones_controled_by_BLUFOR call BIS_fnc_selectRandom;
+				_randomZone = selectRandom WARCOM_zones_controled_by_BLUFOR;
 				if (_randomZone distance player>900) then {_found=true;};
 				sleep 0.2;
 	

@@ -36,7 +36,7 @@ WARCOM_opf_response_type = "";
 			  _randomZone = [];
 			  _failSafe = 0;
 				while {!_found} do {
-				_randomZone = WARCOM_zones_controled_by_OPFOR call BIS_fnc_selectRandom;
+				_randomZone = selectRandom WARCOM_zones_controled_by_OPFOR;
 				if (_randomZone distance player > 900) then {_found=true;};
 				sleep 0.2;
 				//player sidechat format["Failsafe: %1",_failsafe];

@@ -8,6 +8,6 @@ _vehicles = [
 "RHS_M2A3_BUSKIII_DUWS"
 ];
 
-_returnedvehicle = _vehicles call BIS_fnc_selectRandom;
+_returnedvehicle = selectRandom _vehicles;
 
 _returnedvehicle;

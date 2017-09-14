@@ -128,9 +128,8 @@ _nouns = [
 "Paladin"
 ];
 
-_first = _prefixes call bis_fnc_selectrandom;
-
-_second = _nouns call BIS_fnc_selectRandom;
+_first = selectRandom _prefixes;
+_second = selectRandom _nouns;
 
 _name = _operation+_first+_second;
 

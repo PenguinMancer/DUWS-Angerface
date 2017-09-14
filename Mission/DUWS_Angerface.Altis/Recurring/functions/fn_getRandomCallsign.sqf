@@ -68,6 +68,6 @@ _nouns = [
 "Paladin"
 ];
 
-_name = _nouns call BIS_fnc_selectRandom;
+_name = selectRandom _nouns;
 
 _name;
