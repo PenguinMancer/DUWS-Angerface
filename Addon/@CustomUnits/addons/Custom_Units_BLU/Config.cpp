@@ -131,9 +131,6 @@ class CfgVehicles {
 		//Mission Units. These units are 100% consistent in look and loadout.
 		#include "Blu_Mission.hpp"
 		
-		//Recon units, only used in certain player request groups. Honestly debating if these guys are worth updating? They feel a bit redundant.
-		#include "Blu_recon.hpp"
-		
 		//Players
 		#include "Blu_Players.hpp"
 
