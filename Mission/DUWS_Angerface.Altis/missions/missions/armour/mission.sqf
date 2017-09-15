@@ -29,16 +29,12 @@ str(_markername2) setMarkerSize [_radius, _radius];
 str(_markername2) setMarkerAlpha 0.5;
 
 // CREATE PATROLS
-_PatrolOfficer1 = [] call Soldiers_fnc_GetOpforOfficer;
-_PatrolSoldier1 = [] call Soldiers_fnc_GetOpforSoldier;
-_PatrolSoldier2 = [] call Soldiers_fnc_GetOpforSoldier;
-
 _tank1 = "I_mas_BMP2_HQ_AAF_01" createVehicle (_missionpos);
 
 _group = createGroup east;
-_target = _group createUnit [_PatrolOfficer1, _missionpos, [], 0, "FORM"];
-_unit1 = _group createUnit [_PatrolSoldier1, _missionpos, [], 0, "FORM"];
-_unit2 = _group createUnit [_PatrolSoldier2, _missionpos, [], 0, "FORM"];
+_target = _group createUnit ["Opfor_Officer_1", _missionpos, [], 0, "FORM"];
+_unit1 = _group createUnit ["Opfor_Soldier_1", _missionpos, [], 0, "FORM"];
+_unit2 = _group createUnit ["Opfor_Soldier_1", _missionpos, [], 0, "FORM"];
 
 _target moveInDriver _tank1;
 _unit1 moveInGunner _tank1;

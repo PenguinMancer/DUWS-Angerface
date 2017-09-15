@@ -55,14 +55,10 @@ str(_markername2) setMarkerAlpha 0.5;
 	  _wp setWaypointSpeed "LIMITED";
 	  _wp setWaypointCompletionRadius 50;
 	  	
-_PatrolOfficer1 = [] call Soldiers_fnc_GetOpforOfficer;
-_PatrolSoldier1 = [] call Soldiers_fnc_GetOpforSoldier;
-_PatrolSoldier2 = [] call Soldiers_fnc_GetOpforSoldier;
-
 _group = createGroup east;
-_target = _group createUnit [_PatrolOfficer1, _missionpos, [], 0, "FORM"];
-_unit1 = _group createUnit [_PatrolSoldier1, _missionpos, [], 0, "FORM"];
-_unit2 = _group createUnit [_PatrolSoldier2, _missionpos, [], 0, "FORM"];
+_target = _group createUnit ["Opfor_Officer_1", _missionpos, [], 0, "FORM"];
+_unit1 = _group createUnit ["Opfor_Soldier_1", _missionpos, [], 0, "FORM"];
+_unit2 = _group createUnit ["Opfor_Soldier_1", _missionpos, [], 0, "FORM"];
 
 // TASK AND NOTIFICATION
 _tasklocation = getMarkerPos str(_markername);

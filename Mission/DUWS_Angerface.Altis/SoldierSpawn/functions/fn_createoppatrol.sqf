@@ -7,30 +7,15 @@ WARCOM_opfor_ap = 75;
 
 //initialize the array and classnames, as you can't do that inside of an if.
 _initGroup = [];
-_PatrolSoldier1 = "";
-_PatrolSoldier2 = "";
 
-//Randomizing Units
 if (WARCOM_opfor_ap > 50) then {
 	if (WARCOM_opfor_ap > 100) then {
-		//Randomizing Units
-		_PatrolSoldier1 = [] call Soldiers_fnc_GetOpforSquadleader;
-		_PatrolSoldier2 = [] call Soldiers_fnc_GetOpforAutorifleman;
-
-		_initGroup = [_PatrolSoldier1,_PatrolSoldier2];
+		_initGroup = ["Opfor_SquadLeader_1","Opfor_Autorifleman_1"];
 	} else {
-		//Randomizing Units
-		_PatrolSoldier1 = [] call Soldiers_fnc_GetOpforSquadleader;
-		_PatrolSoldier2 = [] call Soldiers_fnc_GetOpforSoldier;
-
-		_initGroup = [_PatrolSoldier1,_PatrolSoldier2];
+		_initGroup = ["Opfor_SquadLeader_1","Opfor_Soldier_1"];
 	};
 } else{ 
-//Randomizing Units
-_PatrolSoldier1 = [] call Soldiers_fnc_GetOpforSoldier;
-_PatrolSoldier2 = [] call Soldiers_fnc_GetOpforSoldier;
-
-_initGroup = [_PatrolSoldier1,_PatrolSoldier2];
+_initGroup = ["Opfor_Soldier_1","Opfor_Soldier_1"];
 };
 
 _group = [_position, EAST, _initGroup,[],[],opfor_ai_skill] call BIS_fnc_spawnGroup;

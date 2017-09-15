@@ -37,11 +37,6 @@ _tasklocation = getMarkerPos str(_markername);
 
 ["TaskAssigned",["",_mission_name]] call bis_fnc_showNotification;
 
-//Randomizing Units
-_PatrolSoldier1 = [] call Soldiers_fnc_GetOpforSquadleader;
-_PatrolSoldier2 = [] call Soldiers_fnc_GetOpforLightAntiTank;
-_PatrolSoldier3 = [] call Soldiers_fnc_GetOpforSoldier;
-
 // CREATE PATROLS
       sleep 1;
       [_missionpos, 15] spawn SoldierSpawn_fnc_createoppatrol; // <-- around target
@@ -49,9 +44,9 @@ _PatrolSoldier3 = [] call Soldiers_fnc_GetOpforSoldier;
       [_randompos, _radius] spawn SoldierSpawn_fnc_createopteam;
       
 _group = createGroup east;
-_unit1 = _group createUnit [_PatrolSoldier1, _missionpos, [], 0, "FORM"];
-_unit2 = _group createUnit [_PatrolSoldier2, _missionpos, [], 0, "FORM"];
-_unit3 = _group createUnit [_PatrolSoldier3, _missionpos, [], 0, "FORM"];
+_unit1 = _group createUnit ["Opfor_SquadLeader_1", _missionpos, [], 0, "FORM"];
+_unit2 = _group createUnit ["Opfor_Light_AntiTank_1", _missionpos, [], 0, "FORM"];
+_unit3 = _group createUnit ["Opfor_Soldier_1", _missionpos, [], 0, "FORM"];
 
 // MISSION COMPLETED --   ATTENDRE QUE LE CAMION SOIT ARRIVE A LA BASE OU DETRUIT  
 waitUntil {sleep 2; ((getdammage _sling1)>0.95 OR (_sling1 distance _initpos)<50)};  

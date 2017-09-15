@@ -8,14 +8,7 @@ _safetrigger = _trigger;
 };
 _trigger = _safetrigger;
 
-//Randomizing Units
-_PatrolSoldier1 = [] call Soldiers_fnc_GetOpforAntiAir;
-_PatrolSoldier2 = [] call Soldiers_fnc_GetOpforAntiTank;
-_PatrolSoldier3 = [] call Soldiers_fnc_GetOpforGrenadier;
-_PatrolSoldier4 = [] call Soldiers_fnc_GetOpforSquadleader;
-
-//original group without leaders
-_initGroup = [_PatrolSoldier1,_PatrolSoldier2,_PatrolSoldier3,_PatrolSoldier4];
+_initGroup = ["Opfor_AntiAir_1","Opfor_AntiTank_1","Opfor_Grenadier_1","Opfor_SquadLeader_1"];
 
 _group = [_trigger, EAST, _initGroup,[],[],opfor_ai_skill] call BIS_fnc_spawnGroup;
 

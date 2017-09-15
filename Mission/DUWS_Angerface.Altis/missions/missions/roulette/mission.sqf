@@ -8,10 +8,6 @@ if (!isNil "GORGON1") then
     
 };
 
-//Randomizing Units
-_PatrolSoldier1 = [] call Soldiers_fnc_GetOpforSoldier;
-_PatrolSoldier2 = [] call Soldiers_fnc_GetOpforSoldier;
- 
 if (_exiting) exitWith {true};
 
 
@@ -76,7 +72,7 @@ expl3 setVectorDirAndUp [[-0.1,0,1],[0,0,1]];
 
 // CREATE PATROLS with secret code
 sleep 1;
-_bombcode1 = [_randompos, EAST, [_PatrolSoldier1, _PatrolSoldier2],[],[],opfor_ai_skill] call BIS_fnc_spawnGroup;
+_bombcode1 = [_randompos, EAST, ["Opfor_Soldier_1", "Opfor_Soldier_1"],[],[],opfor_ai_skill] call BIS_fnc_spawnGroup;
 [_bombcode1, _randompos, 300] call bis_fnc_taskPatrol;
 _bombcode1 allowFleeing 0;
 _bombcode1 = leader _bombcode1;
