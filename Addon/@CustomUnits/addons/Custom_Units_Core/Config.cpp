@@ -329,14 +329,14 @@ class cfgFactionClasses
 {
 	class BLU_DUWS //Faction Calling Name
 	{
-		displayName = "BLU_DUWS"; //Faction name in_game
+		displayName = "DUWS Blufor"; //Faction name in_game
 		priority = 3; //How far down it is on the menu
 		side = 1; // 1 Blufor 0 opfor 3 independant i think.
 		icon = "\a3\Data_f\cfgFactionClasses_BLU_ca.paa";
 	};
 	class OPFOR_DUWS //Faction Calling Name
 	{
-		displayName = "OPFOR_DUWS"; //Faction name in_game
+		displayName = "DUWS Opfor"; //Faction name in_game
 		priority = 3; //How far down it is on the menu
 		side = 0; // 1 Blufor 0 opfor 3 independant i think.
 		icon = "\a3\Data_f\cfgFactionClasses_OPF_ca.paa";

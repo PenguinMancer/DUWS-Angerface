@@ -126,9 +126,11 @@ class CfgVehicles {
 		#include "Blu_Medic.hpp"
 		#include "Blu_Soldiers.hpp"
 		#include "Blu_TeamLeader.hpp"
+		
 		//Single Use Units (Randomized)
 		#include "Blu_Singleuse.hpp"
-		//Mission Units. These units are 100% consistent in look and loadout.
+		
+		//Mission Units. These units are mostly consistent in look and loadout.
 		#include "Blu_Mission.hpp"
 		
 		//Players

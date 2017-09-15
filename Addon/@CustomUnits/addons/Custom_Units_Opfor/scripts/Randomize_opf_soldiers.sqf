@@ -60,6 +60,60 @@ _soldierheadgear = [
 
 //Weapons begin here
 
+_BasicPrimary = [
+["hlc_rifle_ak47","hlc_30Rnd_762x39_b_ak"],
+["rhs_weap_akm","hlc_30Rnd_762x39_b_ak"],
+["rhs_weap_akms","hlc_30Rnd_762x39_b_ak"],
+["hlc_rifle_ak74","hlc_30Rnd_545x39_B_AK"],
+["hlc_rifle_ak74_dirty","hlc_30Rnd_545x39_B_AK"],
+["hlc_rifle_ak74_dirty2","hlc_30Rnd_545x39_B_AK"]
+]; //Basic rifles.
+
+_BasicSecondary = [
+["RH_mak","RH_8Rnd_9x18_Mak"],
+["rhs_weap_pya","rhs_mag_9x19_17"]
+]; //Basic pistols.
+
+_LeaderPrimary = [
+["hlc_rifle_ak74m","hlc_30Rnd_545x39_B_AK"],
+["hlc_rifle_aks74","hlc_30Rnd_545x39_B_AK"],
+["RH_hk416s_des","RH_30Rnd_556x45_M855A1"],
+["bg21_famas_FS_tan","25Rnd_556x45_famas"],
+["hlc_rifle_akm","hlc_30Rnd_762x39_b_ak"]
+]; //Rifles unique to Squad/Team leaders
+
+_CompactPrimary = [
+["hlc_rifle_aks74u","hlc_30Rnd_545x39_B_AK"],
+["hlc_rifle_aks74","hlc_30Rnd_545x39_B_AK"]
+]; //Compact weapons for tank crew and such.
+
+_RifleDMR = [
+["rhs_weap_svdp_wd_scoped","rhs_10Rnd_762x54mmR_7N1"],
+["rhs_weap_m38","rhsgref_5Rnd_762x54_m38"],
+["rhs_weap_kar98k","rhsgref_5Rnd_792x57_kar98k"],
+["hlc_rifle_M14_Rail_Oldscope","hlc_20Rnd_762x51_B_M14"]
+]; //Marksman weapons.
+
+_RifleGrenades = [
+["hlc_rifle_aks74_GL","hlc_30Rnd_545x39_B_AK","hlc_VOG25_AK"],
+["hlc_rifle_akmgl","hlc_30Rnd_762x39_b_ak","hlc_VOG25_AK"]
+]; //Rifles with under barrel launchers.
+
+_Launchers = [
+["rhs_weap_rpg7","rhs_rpg7_PG7VL_mag"]
+]; //Full sized launchers.
+
+_AALaunchers = [
+["CUP_launch_9K32Strela","CUP_Igla_M"]
+]; //Anti Air Launchers
+
+_Machineguns = [
+["CUP_lmg_PKM","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M"],
+["CUP_lmg_Pecheneg","CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M"],
+["hlc_rifle_rpk","hlc_45Rnd_762x39_m_rpk"],
+["hlc_rifle_rpk74n","hlc_45Rnd_545x39_t_rpk"]
+]; //LMGs/MGs.
+
 //strip units of items that would be inside the vests and backpacks we're about to remove
 _magazines = magazines _unit; 
 _items = items _unit; // Medkits, ToolKits etc. 
@@ -77,6 +131,8 @@ switch (_typeofUnit) do
 	removeGoggles _unit; _unit addGoggles (selectRandom _soldierfacewear); 
     removeHeadgear _unit; _unit addHeadgear (selectRandom _soldierheadgear); 
     removeVest _unit; _unit addVest (selectRandom _soldiervest); 
+	_WeaponPrimary = selectRandom _BasicPrimary; [_unit, (_WeaponPrimary select 0), 3, (_WeaponPrimary select 1)] call BIS_fnc_addWeapon;
+	_WeaponSecondary = selectRandom _BasicSecondary; [_unit, (_WeaponSecondary select 0), 3, (_WeaponSecondary select 1)] call BIS_fnc_addWeapon;
     }; 
 	case "aa": //Anti Air
     { 
@@ -84,6 +140,8 @@ switch (_typeofUnit) do
 	removeGoggles _unit; _unit addGoggles (selectRandom _soldierfacewear); 
     removeHeadgear _unit; _unit addHeadgear (selectRandom _soldierheadgear); 
     removeVest _unit; _unit addVest (selectRandom _soldiervest); 
+	_WeaponPrimary = selectRandom _BasicPrimary; [_unit, (_WeaponPrimary select 0), 3, (_WeaponPrimary select 1)] call BIS_fnc_addWeapon;
+	_WeaponLauncher = selectRandom _AALaunchers; [_unit, (_WeaponLauncher select 0), 1, (_WeaponLauncher select 1)] call BIS_fnc_addWeapon;
     };
 	case "ar": //Autorifleman
     { 
@@ -91,6 +149,7 @@ switch (_typeofUnit) do
 	removeGoggles _unit; _unit addGoggles (selectRandom _soldierfacewear); 
     removeHeadgear _unit; _unit addHeadgear (selectRandom _soldierheadgear); 
     removeVest _unit; _unit addVest (selectRandom _soldiervest); 
+	_WeaponLMG = selectRandom _Machineguns; [_unit, (_WeaponLMG select 0), 2, (_WeaponLMG select 1)] call BIS_fnc_addWeapon;
     }; 
 	case "aat": //Assistant Anti Tank
     { 
@@ -98,6 +157,7 @@ switch (_typeofUnit) do
 	removeGoggles _unit; _unit addGoggles (selectRandom _soldierfacewear); 
     removeHeadgear _unit; _unit addHeadgear (selectRandom _soldierheadgear); 
     removeVest _unit; _unit addVest (selectRandom _soldiervest); 
+	_WeaponPrimary = selectRandom _BasicPrimary; [_unit, (_WeaponPrimary select 0), 3, (_WeaponPrimary select 1)] call BIS_fnc_addWeapon;
     }; 
 	case "at": //Anti Tank
     { 
@@ -105,13 +165,17 @@ switch (_typeofUnit) do
 	removeGoggles _unit; _unit addGoggles (selectRandom _soldierfacewear); 
     removeHeadgear _unit; _unit addHeadgear (selectRandom _soldierheadgear); 
     removeVest _unit; _unit addVest (selectRandom _soldiervest); 
+	_WeaponPrimary = selectRandom _BasicPrimary; [_unit, (_WeaponPrimary select 0), 3, (_WeaponPrimary select 1)] call BIS_fnc_addWeapon;
+	_WeaponLauncher = selectRandom _Launchers; [_unit, (_WeaponLauncher select 0), 1, (_WeaponLauncher select 1)] call BIS_fnc_addWeapon;
     }; 
 	case "ammo": //Ammo Holder
     { 
 	removeUniform _unit; _unit forceAddUniform (selectRandom _Uniforms); 
 	removeGoggles _unit; _unit addGoggles (selectRandom _soldierfacewear); 
     removeHeadgear _unit; _unit addHeadgear (selectRandom _soldierheadgear); 
-    removeVest _unit; _unit addVest (selectRandom _soldiervest); 
+    removeVest _unit; _unit addVest (selectRandom _soldiervest);
+	_WeaponPrimary = selectRandom _BasicPrimary; _unit addWeapon (_WeaponPrimary select 0);
+	_WeaponSecondary = selectRandom _BasicSecondary; [_unit, (_WeaponSecondary select 0), 3, (_WeaponSecondary select 1)] call BIS_fnc_addWeapon;
     }; 
 	case "grenade": //Grenadier
     { 
@@ -119,6 +183,7 @@ switch (_typeofUnit) do
 	removeGoggles _unit; _unit addGoggles (selectRandom _soldierfacewear); 
     removeHeadgear _unit; _unit addHeadgear (selectRandom _soldierheadgear); 
     removeVest _unit; _unit addVest (selectRandom _soldiervest); 
+	_WeaponRifleGrenade = selectRandom _RifleGrenades; [_unit, (_WeaponRifleGrenade select 0), 3, (_WeaponRifleGrenade select 1)] call BIS_fnc_addWeapon; _unit addMagazines [(_WeaponRifleGrenade select 2), 3];
     }; 
 	case "lat": //Light Anti Tank
     { 
@@ -126,6 +191,8 @@ switch (_typeofUnit) do
 	removeGoggles _unit; _unit addGoggles (selectRandom _soldierfacewear); 
     removeHeadgear _unit; _unit addHeadgear (selectRandom _soldierheadgear); 
     removeVest _unit; _unit addVest (selectRandom _soldiervest); 
+	_WeaponPrimary = selectRandom _CompactPrimary; [_unit, (_WeaponPrimary select 0), 3, (_WeaponPrimary select 1)] call BIS_fnc_addWeapon;
+	_WeaponLauncher = selectRandom _Launchers; [_unit, (_WeaponLauncher select 0), 1, (_WeaponLauncher select 1)] call BIS_fnc_addWeapon;
     }; 
 	case "marks": //Marksman
     { 
@@ -133,13 +200,17 @@ switch (_typeofUnit) do
 	removeGoggles _unit; _unit addGoggles (selectRandom _soldierfacewear); 
     removeHeadgear _unit; _unit addHeadgear (selectRandom _soldierheadgear); 
     removeVest _unit; _unit addVest (selectRandom _soldiervest); 
+	_WeaponDMR = selectRandom _RifleDMR; [_unit, (_WeaponDMR select 0), 3, (_WeaponDMR select 1)] call BIS_fnc_addWeapon;
+	_WeaponSecondary = selectRandom _BasicSecondary; [_unit, (_WeaponSecondary select 0), 3, (_WeaponSecondary select 1)] call BIS_fnc_addWeapon;
     }; 
 	case "medic": //Medic
     { 
 	removeUniform _unit; _unit forceAddUniform (selectRandom _Uniforms); 
 	removeGoggles _unit; _unit addGoggles (selectRandom _soldierfacewear); 
     removeHeadgear _unit; _unit addHeadgear (selectRandom _soldierheadgear); 
-    removeVest _unit; _unit addVest (selectRandom _soldiervest); 
+    removeVest _unit; _unit addVest (selectRandom _soldiervest);
+	_WeaponPrimary = selectRandom _BasicPrimary; [_unit, (_WeaponPrimary select 0), 3, (_WeaponPrimary select 1)] call BIS_fnc_addWeapon;
+	_WeaponSecondary = selectRandom _BasicSecondary; [_unit, (_WeaponSecondary select 0), 3, (_WeaponSecondary select 1)] call BIS_fnc_addWeapon;
     }; 
 	case "leader": //Squad/Team Leader
     { 
@@ -147,6 +218,8 @@ switch (_typeofUnit) do
 	removeGoggles _unit; _unit addGoggles (selectRandom _soldierfacewear); 
     removeHeadgear _unit; _unit addHeadgear (selectRandom _soldierheadgear); 
     removeVest _unit; _unit addVest (selectRandom _LeaderVest); 
+	_WeaponPrimary = selectRandom _LeaderPrimary; [_unit, (_WeaponPrimary select 0), 3, (_WeaponPrimary select 1)] call BIS_fnc_addWeapon;
+	_WeaponSecondary = selectRandom _BasicSecondary; [_unit, (_WeaponSecondary select 0), 3, (_WeaponSecondary select 1)] call BIS_fnc_addWeapon;
     }; 
 	case "sniper": //Sniper
     { 
@@ -154,6 +227,8 @@ switch (_typeofUnit) do
 	removeGoggles _unit; _unit addGoggles (selectRandom _soldierfacewear); 
     removeHeadgear _unit; _unit addHeadgear (selectRandom _soldierheadgear); 
     removeVest _unit; _unit addVest (selectRandom _soldiervest); 
+    _WeaponDMR = selectRandom _RifleDMR; [_unit, (_WeaponDMR select 0), 3, (_WeaponDMR select 1)] call BIS_fnc_addWeapon;
+	_WeaponSecondary = selectRandom _BasicSecondary; [_unit, (_WeaponSecondary select 0), 3, (_WeaponSecondary select 1)] call BIS_fnc_addWeapon;
     }; 
 	case "spotter": //Spotter
     { 
@@ -161,6 +236,8 @@ switch (_typeofUnit) do
 	removeGoggles _unit; _unit addGoggles (selectRandom _soldierfacewear); 
     removeHeadgear _unit; _unit addHeadgear (selectRandom _soldierheadgear); 
     removeVest _unit; _unit addVest (selectRandom _soldiervest); 
+	_WeaponPrimary = selectRandom _CompactPrimary; [_unit, (_WeaponPrimary select 0), 3, (_WeaponPrimary select 1)] call BIS_fnc_addWeapon;
+	_WeaponSecondary = selectRandom _BasicSecondary; [_unit, (_WeaponSecondary select 0), 3, (_WeaponSecondary select 1)] call BIS_fnc_addWeapon;
     }; 
 	case "officer": //Officer
     { 
@@ -168,6 +245,8 @@ switch (_typeofUnit) do
 	removeGoggles _unit; _unit addGoggles (selectRandom _soldierfacewear); 
     removeHeadgear _unit; _unit addHeadgear (selectRandom _soldierheadgear); 
     removeVest _unit; _unit addVest (selectRandom _LeaderVest); 
+	_WeaponPrimary = selectRandom _LeaderPrimary; [_unit, (_WeaponPrimary select 0), 3, (_WeaponPrimary select 1)] call BIS_fnc_addWeapon;
+	_WeaponSecondary = selectRandom _BasicSecondary; [_unit, (_WeaponSecondary select 0), 3, (_WeaponSecondary select 1)] call BIS_fnc_addWeapon;
     }; 
 }; 
 
