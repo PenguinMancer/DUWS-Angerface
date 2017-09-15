@@ -22,7 +22,7 @@
 	class Blufor_General {
 		init = "[(_this select 0),'GENERAL'] call BLU_fnc_InitBluUnit";
 	};
-	class Blufor_Pilot_Mission {
+	class Blufor_Pilot_1 {
 		init = "[(_this select 0),'PILOT'] call BLU_fnc_InitBluUnit";
 	};
 	class Blufor_Ammobearer_1 {

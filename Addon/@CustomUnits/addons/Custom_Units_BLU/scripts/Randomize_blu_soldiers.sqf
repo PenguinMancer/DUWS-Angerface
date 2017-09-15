@@ -221,7 +221,7 @@ switch (_typeofUnit) do
 	removeGoggles _unit; _unit addGoggles (selectRandom _soldierfacewear); 
     removeHeadgear _unit; _unit addHeadgear (selectRandom _soldierheadgear); 
     removeVest _unit; _unit addVest (selectRandom _GrenadierVest); 
-	_WeaponRifleGrenade = selectRandom _RifleGrenades; [_unit, (_WeaponRifleGrenade select 0), 5, (_WeaponRifleGrenade select 1)] call BIS_fnc_addWeapon; _unit addMagazines [(_WeaponRifleGrenade select 2), 3]
+	_WeaponRifleGrenade = selectRandom _RifleGrenades; [_unit, (_WeaponRifleGrenade select 0), 5, (_WeaponRifleGrenade select 1)] call BIS_fnc_addWeapon; _unit addMagazines [(_WeaponRifleGrenade select 2), 3];
 	_WeaponSecondary = selectRandom _BasicSecondary; [_unit, (_WeaponSecondary select 0), 3, (_WeaponSecondary select 1)] call BIS_fnc_addWeapon;
     }; 
 	case "lat": //Light Anti Tank
