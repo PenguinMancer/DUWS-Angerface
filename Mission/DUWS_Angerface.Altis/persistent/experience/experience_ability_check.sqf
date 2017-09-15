@@ -9,7 +9,7 @@ player createDiaryRecord ["abilities_info", ["Enhanced Conditionning", "<font co
 //Make 15 experience total ability. Probably backup magazine ability?
 
 waitUntil {sleep 2; experience_total>=25};
-_handle = [player] execVM "persistent\experience\experience_ability_heal.sqf"; 
+_handle = [player] execVM "persistent\experience\experience_ability_activation_heal.sqf"; 
 ["new_ability",["New ability: Field Surgery","You are really hard to kill, you know that ?"]] call bis_fnc_showNotification;
 player createDiaryRecord ["abilities_info", ["Field Surgery", "<font color='#FF0000'>Cooldown: 20 minutes</font color><br/>Description:<br/>When activated through the radio menu, you will be fully healed after a short period of time"]];
 

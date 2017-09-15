@@ -1,38 +1,19 @@
-// Cooldown les variables
-_cooldown = 1200;
-_ability_name = "Field Surgery";
-_varname = "skill_activate_heal";
-_radio = "CHARLIE";
-
-// Defini la variable qui lance l'action
-call compile format ["%1 = false",_varname];
-
-// AJOUTE L'OPTION AU JOUEUR
-_trg=createTrigger["EmptyDetector",[0,0,0]];
-_trg setTriggerArea[5,5,0,false];
-_trg setTriggerActivation[_radio,"PRESENT",true];
-_trg setTriggerStatements["this", format["%1 = true",_varname], ""];
-_trg setTriggerText format["%1",_ability_name];
-
-
-_loop = true;
-while {_loop} do {   // LOOP de l'ability
-
-call compile format ["%1 = false",_varname];
-waitUntil {sleep 0.2; call compile format ["%1",_varname]};  // wait for the player to activate the ability
+_trg = _this select 0;
+_cooldown = _this select 1;
+_ability_name = _this select 2;
+_radio = _this select 3;
+_unit = _this select 4;
 
 deleteVehicle _trg;
 
     titleText [format["%1, patching you up...",_ability_name], "PLAIN DOWN"];
-    /// -----   ABILITY IS ACTIVATED
 	
 	player playmove "AinvPknlMstpSlayWrflDnon_medic";
-    sleep 4;
+    sleep 2;
 	
 	private "_allUsedMedication";
-	_unit = _this select 0;
-
-	if (alive _unit) exitWith {
+	
+	if (alive _unit) {
 
 		_unit setVariable ["ace_medical_pain", 0, true];
 		_unit setVariable ["ace_medical_morphine", 0, true];
@@ -97,6 +78,5 @@ deleteVehicle _trg;
 _trg=createTrigger["EmptyDetector",[0,0,0]];
 _trg setTriggerArea[5,5,0,false];
 _trg setTriggerActivation[_radio,"PRESENT",true];
-_trg setTriggerStatements["this", format["%1 = true",_varname], ""];
+_trg setTriggerStatements["this", "[_trg,_cooldown,_ability_name,_radio,_unit] execVM 'persistent\experience\experience_ability_heal.sqf'", ""];
 _trg setTriggerText format["%1",_ability_name];
-};
