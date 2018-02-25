@@ -21,7 +21,6 @@ class CfgPatches {
 			"hlc_rifle_m14sopmod_sighted",
 			"CUP_srifle_M24_des_sighted",
 			"RH_hb_b_sighted",
-			"bg21_famas_FS_tan_sighted",
 			"RH_hk416_des_sighted",
 			"rhs_weap_hk416d145_m320_sighted",
 			"CUP_arifle_Mk16_STD_sighted"
@@ -44,7 +43,6 @@ class CfgPatches {
 			"rhs_c_weapons",
 			"rhsusf_c_weapons",
 			"RH_m4_cfg",
-			"bg21_famas_prplredux",
 			"CUP_Weapons_AK",
 			"CUP_Weapons_Saiga12k",
 			"CUP_Weapons_CZ805",
@@ -358,19 +356,6 @@ class rhs_weap_m240G;
 			{
 				slot = "MuzzleSlot";
 				item = "RH_hbsd";
-			};
-		};
-	};	
-	
-	class bg21_famas_FS_tan;
-	class bg21_famas_FS_tan_sighted : bg21_famas_FS_tan
-	{
-		class LinkedItems
-		{
-			class LinkedItemsOptic
-			{
-				slot = "asdg_OpticRail_Prpl_Famas";
-				item = "CUP_optic_HoloDesert";
 			};
 		};
 	};	

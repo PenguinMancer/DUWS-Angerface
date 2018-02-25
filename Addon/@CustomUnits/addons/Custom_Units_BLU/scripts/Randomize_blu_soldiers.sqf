@@ -77,8 +77,6 @@ _leaderheadgear = [
 //Weapons start here.
 
 _BasicPrimary = [
-["bg21_famas_FS_tan","25Rnd_556x45_famas"],
-["bg21_famas_FS_tan_sighted","25Rnd_556x45_famas"],
 ["RH_hk416_des","RH_30Rnd_556x45_M855A1"],
 ["RH_hk416_des_sighted","RH_30Rnd_556x45_M855A1"]
 ]; //Basic service rifles.
