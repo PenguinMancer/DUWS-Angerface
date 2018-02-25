@@ -1,9 +1,8 @@
 //Uniforms and other worn gear start here.
 _Uniforms = [
-"Niko_USA_R_DCUTan",
-"Niko_USA_R_DCU",
-"Niko_USA_DCUTan",
-"Niko_USA_DCU"
+"rhs_uniform_cu_ucp",
+"rhs_uniform_acu_ucp",
+"rhs_uniform_cu_ocp"
 ]; //All unit uniforms.
 
 _soldiervest = [

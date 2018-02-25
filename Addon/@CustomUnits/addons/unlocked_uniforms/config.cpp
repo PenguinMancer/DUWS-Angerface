@@ -329,9 +329,4 @@ class CfgVehicles {
 		modelsides[] = {3, 2, 1, 0};
 		scope = 2;
 	};
-
-	class Niko_US_Base: SoldierWB {
-		modelsides[] = {3, 2, 1, 0};
-		scope = 2;
-	};
 };

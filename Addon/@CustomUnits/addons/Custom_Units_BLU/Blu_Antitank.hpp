@@ -3,7 +3,7 @@
 		class Blufor_AntiTank_1 : B_DUWS_base_F  {
 		scope = 2;
 		displayName = "French Missile Specialist (AT)"; // In-game name of unit
-		uniformClass = "Niko_USA_DCUTan";  // Uniform Class
+		uniformClass = "rhs_uniform_cu_ocp";  // Uniform Class
 		backpack = "VSM_OGA_carryall"; // Backpack Class
 		linkedItems[] = {"TRYK_V_PlateCarrier_coyo", "TRYK_H_woolhat_tan", "rhs_googles_black", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
 		respawnLinkedItems[] = {"TRYK_V_PlateCarrier_coyo", "TRYK_H_woolhat_tan", "rhs_googles_black", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. Should be identical to the linkedItems section.

@@ -3,7 +3,7 @@
 		class Blufor_Light_AntiTank_1 : B_DUWS_base_F  {
 		scope = 2;
 		displayName = "French Anti-Tank Rifleman"; // In-game name of unit
-		uniformClass = "Niko_USA_DCUTan";  // Uniform Class
+		uniformClass = "rhs_uniform_cu_ocp";  // Uniform Class
 		backpack = "VSM_OGA_Backpack_Compact"; // Backpack Class
 		linkedItems[] = {"lbt_light_coy", "TRYK_H_woolhat_tan", "rhs_googles_black", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
 		respawnLinkedItems[] = {"lbt_light_coy", "TRYK_H_woolhat_tan", "rhs_googles_black", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. Should be identical to the linkedItems section.

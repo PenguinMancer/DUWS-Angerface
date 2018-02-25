@@ -3,7 +3,7 @@
 		class Blufor_Ammobearer_1 : B_DUWS_base_F  {
 		scope = 2;
 		displayName = "French AmmoBearer"; // In-game name of unit
-		uniformClass = "Niko_USA_DCUTan";  // Uniform Class
+		uniformClass = "rhs_uniform_cu_ocp";  // Uniform Class
 		backpack = "VSM_OGA_carryall"; // Backpack Class
 		linkedItems[] = {"lbt_operator_coy", "CUP_H_USMC_LWH_DES", "LBG_Shemagh_Tan", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
 		respawnLinkedItems[] = {"lbt_operator_coy", "CUP_H_USMC_LWH_DES", "LBG_Shemagh_Tan", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. Should be identical to the linkedItems section.
@@ -18,7 +18,7 @@
 		class Blufor_SquadLeader_1 : B_DUWS_base_F  {
 		scope = 2;
 		displayName = "French Squad Leader"; // In-game name of unit
-		uniformClass = "Niko_USA_DCUTan";  // Uniform Class
+		uniformClass = "rhs_uniform_cu_ocp";  // Uniform Class
 		backpack = "VSM_OGA_Backpack_Compact"; // Backpack Class
 		linkedItems[] = {"lbt_tl_coy", "SP_Beret_Tan", "LBG_Shemagh_Tan", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
 		respawnLinkedItems[] = {"lbt_tl_coy", "SP_Beret_Tan", "LBG_Shemagh_Tan", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. Should be identical to the linkedItems section.
@@ -33,7 +33,7 @@
 		class Blufor_Assistant_Autorifleman_1 : B_DUWS_base_F  {
 		scope = 2;
 		displayName = "French Assistant Autorifleman"; // In-game name of unit
-		uniformClass = "Niko_USA_DCUTan";  // Uniform Class
+		uniformClass = "rhs_uniform_cu_ocp";  // Uniform Class
 		backpack = "VSM_OGA_carryall"; // Backpack Class
 		linkedItems[] = {"lbt_light_coy", "CUP_H_USMC_LWH_DES", "LBG_Shemagh_Tan", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
 		respawnLinkedItems[] = {"lbt_light_coy", "CUP_H_USMC_LWH_DES", "LBG_Shemagh_Tan", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. Should be identical to the linkedItems section.
@@ -48,7 +48,7 @@
 		class Blufor_Assistant_AntiTank_1 : B_DUWS_base_F  {
 		scope = 2;
 		displayName = "French Asst. Missile Specialist (AT)"; // In-game name of unit
-		uniformClass = "Niko_USA_DCUTan";  // Uniform Class
+		uniformClass = "rhs_uniform_cu_ocp";  // Uniform Class
 		backpack = "VSM_OGA_carryall"; // Backpack Class
 		linkedItems[] = {"lbt_light_coy", "CUP_H_USMC_LWH_DES", "LBG_Shemagh_Tan", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
 		respawnLinkedItems[] = {"lbt_light_coy", "CUP_H_USMC_LWH_DES", "LBG_Shemagh_Tan", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. Should be identical to the linkedItems section.
@@ -63,7 +63,7 @@
 		class Blufor_AntiAir_1 : B_DUWS_base_F  {
 		scope = 2;
 		displayName = "French Missile Specialist (AA)"; // In-game name of unit
-		uniformClass = "Niko_USA_DCUTan";  // Uniform Class
+		uniformClass = "rhs_uniform_cu_ocp";  // Uniform Class
 		backpack = "VSM_OGA_carryall"; // Backpack Class
 		linkedItems[] = {"TRYK_V_PlateCarrier_coyo", "TRYK_H_woolhat_tan", "rhs_googles_black", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
 		respawnLinkedItems[] = {"TRYK_V_PlateCarrier_coyo", "TRYK_H_woolhat_tan", "rhs_googles_black", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. Should be identical to the linkedItems section.
@@ -78,7 +78,7 @@
 		class Blufor_Assistant_AntiAir_1 : B_DUWS_base_F  {
 		scope = 2;
 		displayName = "French Asst. Missile Specialist (AA)"; // In-game name of unit
-		uniformClass = "Niko_USA_DCUTan";  // Uniform Class
+		uniformClass = "rhs_uniform_cu_ocp";  // Uniform Class
 		backpack = "VSM_OGA_carryall"; // Backpack Class
 		linkedItems[] = {"lbt_light_coy", "CUP_H_USMC_LWH_DES", "LBG_Shemagh_Tan", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
 		respawnLinkedItems[] = {"lbt_light_coy", "CUP_H_USMC_LWH_DES", "LBG_Shemagh_Tan", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. Should be identical to the linkedItems section.
@@ -93,7 +93,7 @@
 		class Blufor_Repair_1 : B_DUWS_base_F  {
 		scope = 2;
 		displayName = "French Repair Specialist"; // In-game name of unit
-		uniformClass = "Niko_USA_DCUTan";  // Uniform Class
+		uniformClass = "rhs_uniform_cu_ocp";  // Uniform Class
 		backpack = "VSM_OGA_carryall"; // Backpack Class
 		linkedItems[] = {"lbt_light_coy", "CUP_H_USMC_LWH_DES", "LBG_Shemagh_Tan", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
 		respawnLinkedItems[] = {"lbt_light_coy", "CUP_H_USMC_LWH_DES", "LBG_Shemagh_Tan", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. Should be identical to the linkedItems section.
@@ -110,7 +110,7 @@
 		class Blufor_Marksman_1 : B_DUWS_base_F  {
 		scope = 2;
 		displayName = "French Marksman"; // In-game name of unit
-		uniformClass = "Niko_USA_DCUTan";  // Uniform Class
+		uniformClass = "rhs_uniform_cu_ocp";  // Uniform Class
 		backpack = "VSM_OGA_Backpack_Compact"; // Backpack Class
 		linkedItems[] = {"lbt_light_coy", "CUP_H_USMC_LWH_DES", "LBG_Shemagh_Tan", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
 		respawnLinkedItems[] = {"lbt_light_coy", "CUP_H_USMC_LWH_DES", "LBG_Shemagh_Tan", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. Should be identical to the linkedItems section.
@@ -155,7 +155,7 @@
 		class Blufor_Explosives_1 : B_DUWS_base_F  {
 		scope = 2;
 		displayName = "French Explosive Specialist"; // In-game name of unit
-		uniformClass = "Niko_USA_DCUTan";  // Uniform Class
+		uniformClass = "rhs_uniform_cu_ocp";  // Uniform Class
 		backpack = "VSM_OGA_carryall"; // Backpack Class
 		linkedItems[] = {"lbt_weapons_mc", "rhsusf_mich_bare_norotos_arc_tan", "rhs_googles_clear", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
 		respawnLinkedItems[] = {"lbt_weapons_mc", "rhsusf_mich_bare_norotos_arc_tan", "rhs_googles_clear", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. Should be identical to the linkedItems section.
@@ -172,7 +172,7 @@
 		class Blufor_Pilot_1 : B_DUWS_base_F  {
 		scope = 2;
 		displayName = "French Helo Pilot"; // In-game name of unit
-		uniformClass = "Niko_USA_DCUTan";  // Uniform Class
+		uniformClass = "rhs_uniform_cu_ocp";  // Uniform Class
 		backpack = "B_Parachute"; // Backpack Class
 		linkedItems[] = {"lbt_pouchless_coy", "TRYK_H_TACEARMUFF_H", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
 		respawnLinkedItems[] = {"lbt_pouchless_coy", "TRYK_H_TACEARMUFF_H", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. Should be identical to the linkedItems section.
