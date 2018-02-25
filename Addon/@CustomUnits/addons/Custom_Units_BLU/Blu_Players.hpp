@@ -68,8 +68,8 @@
 		genericNames = "DUWS_Tarrasque_Name";
 		uniformClass = "VSM_AOR1_Camo";  // Uniform Class
 		backpack = "VSM_AOR1_Backpack_Kitbag"; // Backpack Class
-		linkedItems[] = {"cpc_Fast_mc", "H_HelmetB_light_desert", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemRadio", "ItemGPS", "SP_Kneepads_Black"}; // Item's added to the unit. 
-		respawnLinkedItems[] = {"cpc_Fast_mc", "H_HelmetB_light_desert", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemRadio", "ItemGPS", "SP_Kneepads_Black"}; // Item's added to the unit. Should be identical to the linkedItems section.
+		linkedItems[] = {"VSM_CarrierRig_Operator_AOR1", "H_HelmetB_light_desert", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemRadio", "ItemGPS", "SP_Kneepads_Black"}; // Item's added to the unit. 
+		respawnLinkedItems[] = {"VSM_CarrierRig_Operator_AOR1", "H_HelmetB_light_desert", "ItemMap", "ItemCompass", "ACE_Altimeter", "ItemRadio", "ItemGPS", "SP_Kneepads_Black"}; // Item's added to the unit. Should be identical to the linkedItems section.
 		weapons[] = {"RH_M16A4_tarrasque", "RH_Deaglem", "Rangefinder", "Throw", "Put"}; // Weapons added to the unit.
 		respawnweapons[] = {"RH_M16A4_tarrasque", "RH_Deaglem", "Rangefinder", "Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
 		magazines[] = {"30Rnd_556x45_Stanag_Tracer_Red", "30Rnd_556x45_Stanag_Tracer_Red", "30Rnd_556x45_Stanag_Tracer_Red", "30Rnd_556x45_Stanag_Tracer_Red", "RH_7Rnd_50_AE", "RH_7Rnd_50_AE", "RH_7Rnd_50_AE", "SmokeShellGreen", "SmokeShellGreen", "Chemlight_green", "Chemlight_green"}; //Magazines added to the unit.

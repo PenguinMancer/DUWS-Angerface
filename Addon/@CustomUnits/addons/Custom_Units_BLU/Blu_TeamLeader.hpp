@@ -5,8 +5,8 @@
 		displayName = "French Team Leader"; // In-game name of unit
 		uniformClass = "rhs_uniform_cu_ocp";  // Uniform Class
 		backpack = "VSM_OGA_Backpack_Compact"; // Backpack Class
-		linkedItems[] = {"lbt_tl_coy", "SP_Beret_Tan", "LBG_Shemagh_Tan", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
-		respawnLinkedItems[] = {"lbt_tl_coy", "SP_Beret_Tan", "LBG_Shemagh_Tan", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. Should be identical to the linkedItems section.
+		linkedItems[] = {"rhsusf_spcs_ocp_rifleman", "SP_Beret_Tan", "LBG_Shemagh_Tan", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
+		respawnLinkedItems[] = {"rhsusf_spcs_ocp_rifleman", "SP_Beret_Tan", "LBG_Shemagh_Tan", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. Should be identical to the linkedItems section.
 		weapons[] = {"Throw", "Put"}; // Weapons added to the unit.
 		respawnweapons[] = {"Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
 		magazines[] = {Standard_Grenades_Blu}; //Magazines added to the unit.

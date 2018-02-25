@@ -5,8 +5,8 @@
 		displayName = "French Anti-Tank Rifleman"; // In-game name of unit
 		uniformClass = "rhs_uniform_cu_ocp";  // Uniform Class
 		backpack = "VSM_OGA_Backpack_Compact"; // Backpack Class
-		linkedItems[] = {"lbt_light_coy", "TRYK_H_woolhat_tan", "rhs_googles_black", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
-		respawnLinkedItems[] = {"lbt_light_coy", "TRYK_H_woolhat_tan", "rhs_googles_black", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. Should be identical to the linkedItems section.
+		linkedItems[] = {"rhsusf_mbav_light", "TRYK_H_woolhat_tan", "rhs_googles_black", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
+		respawnLinkedItems[] = {"rhsusf_mbav_light", "TRYK_H_woolhat_tan", "rhs_googles_black", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. Should be identical to the linkedItems section.
 		weapons[] = {"Throw", "Put"}; // Weapons added to the unit.
 		respawnweapons[] = {"Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
 		magazines[] = {Standard_Grenades_Blu}; //Magazines added to the unit.

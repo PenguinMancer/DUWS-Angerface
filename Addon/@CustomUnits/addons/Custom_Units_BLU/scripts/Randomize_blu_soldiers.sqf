@@ -6,10 +6,10 @@ _Uniforms = [
 ]; //All unit uniforms.
 
 _soldiervest = [
-"lbt_light_coy",
-"lbt_operator_coy",
-"lbt_fast_coy",
-"lbt_pouchless_coy"
+"rhsusf_mbav_light",
+"TRYK_V_PlateCarrier_coyo_L",
+"rhsusf_spc_crewman",
+"rhsusf_spc"
 ]; //Vest for basic soldiers
 
 _ATvest = [
@@ -20,28 +20,28 @@ _ATvest = [
 ]; //Vests for units that need to take heavy hits, such as AT units.
 
 _ARvest = [
-"lbt_operator_coy",
-"lbt_operator_mc",
+"TRYK_V_PlateCarrier_coyo_L",
+"rhsusf_mbav_mg",
 "TRYK_V_ArmorVest_cbr2",
 "TAC_V_tacv1L_CY"
 ]; //Vests for units that need to carry a lot, like autorifleman.
 
 _GrenadierVest = [
-"lbt_weapons_mc",
-"lbt_weapons_coy",
+"rhsusf_mbav_grenadier",
+"rhsusf_iotv_ocp_Grenadier",
 "CUP_V_B_Eagle_SPC_GL",
 "CUP_V_BAF_Osprey_Mk2_DDPM_Grenadier"
 ]; //Vests for Grenadier units, often have flak protection.
 
 _MedicVest = [
 "CUP_V_BAF_Osprey_Mk2_DDPM_Medic",
-"lbt_medical_mc",
-"lbt_medical_coy"
+"rhsusf_mbav_medic",
+"rhsusf_iotv_ocp_Medic"
 ]; //Vest for combat medics.
 
 _LeaderVest = [
-"lbt_tl_coy",
-"lbt_tl_mc",
+"rhsusf_spcs_ocp_rifleman",
+"rhsusf_iotv_ocp_Teamleader",
 "rhsusf_iotv_ocp_Squadleader"
 ]; //Vest for squad and team leader.
 
