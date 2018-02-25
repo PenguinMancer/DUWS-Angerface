@@ -50,7 +50,7 @@ _HQguard1 = _groupGuard createUnit ["Blufor_Soldier_1", _centerPos, [], 0, "FORM
 _HQguard1 moveinGunner _gl1pod;
 
 // AT
-_atpod1 = createVehicle ["I_mas_TOW_TriPod_AAF", [0,0,0], [], 0, "NONE"];
+_atpod1 = createVehicle ["CUP_B_TOW_TriPod_USMC", [0,0,0], [], 0, "NONE"];
 _atpod1 setpos [(_centerpos select 0)-7, (_centerpos select 1)-8];
 _atpod1 allowdamage false;
 _atpod1 setdamage 0;

@@ -78,7 +78,6 @@ _LeaderPrimary = [
 ["hlc_rifle_ak74m","hlc_30Rnd_545x39_B_AK"],
 ["hlc_rifle_aks74","hlc_30Rnd_545x39_B_AK"],
 ["RH_hk416s_des","RH_30Rnd_556x45_M855A1"],
-["bg21_famas_FS_tan","25Rnd_556x45_famas"],
 ["hlc_rifle_akm","hlc_30Rnd_762x39_b_ak"]
 ]; //Rifles unique to Squad/Team leaders
 

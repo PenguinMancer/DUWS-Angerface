@@ -29,7 +29,7 @@ str(_markername2) setMarkerSize [_radius, _radius];
 str(_markername2) setMarkerAlpha 0.5;
 
 // CREATE PATROLS
-_tank1 = "I_mas_BMP2_HQ_AAF_01" createVehicle (_missionpos);
+_tank1 = "CUP_O_BMP2_TKA" createVehicle (_missionpos);
 
 _group = createGroup east;
 _target = _group createUnit ["Opfor_Officer_1", _missionpos, [], 0, "FORM"];

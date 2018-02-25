@@ -9,8 +9,8 @@
 		respawnLinkedItems[] = {"lbt_operator_coy", "CUP_H_USMC_LWH_DES", "LBG_Shemagh_Tan", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. Should be identical to the linkedItems section.
 		weapons[] = {"Throw", "Put"}; // Weapons added to the unit.
 		respawnweapons[] = {"Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
-		magazines[] = {Famas_Mags_Blu, M416_Mags_Blu, Standard_Grenades_Blu, "hlc_200rnd_556x45_M_SAW"}; //Magazines added to the unit.
-		Respawnmagazines[] = {Famas_Mags_Blu, M416_Mags_Blu, Standard_Grenades_Blu, "hlc_200rnd_556x45_M_SAW"}; //Magazines added to the unit upon respawn, should be the same as above.
+		magazines[] = {M416_Mags_Blu, M416_Mags_Blu, Standard_Grenades_Blu, "hlc_200rnd_556x45_M_SAW"}; //Magazines added to the unit.
+		Respawnmagazines[] = {M416_Mags_Blu, M416_Mags_Blu, Standard_Grenades_Blu, "hlc_200rnd_556x45_M_SAW"}; //Magazines added to the unit upon respawn, should be the same as above.
 		};
 
 		//Blufor Squad Leader
