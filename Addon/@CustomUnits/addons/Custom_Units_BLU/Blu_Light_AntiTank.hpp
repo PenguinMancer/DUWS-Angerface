@@ -2,7 +2,7 @@
 
 		class Blufor_Light_AntiTank_1 : B_DUWS_base_F  {
 		scope = 2;
-		displayName = "French Anti-Tank Rifleman"; // In-game name of unit
+		displayName = "Nato Anti-Tank Rifleman"; // In-game name of unit
 		uniformClass = "rhs_uniform_cu_ocp";  // Uniform Class
 		backpack = "VSM_OGA_Backpack_Compact"; // Backpack Class
 		linkedItems[] = {"rhsusf_mbav_light", "TRYK_H_woolhat_tan", "rhs_googles_black", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 

@@ -2,7 +2,7 @@
 
 		class Blufor_Medic_1 : B_DUWS_base_F  {
 		scope = 2;
-		displayName = "French Medic"; // In-game name of unit
+		displayName = "Nato Medic"; // In-game name of unit
 		uniformClass = "rhs_uniform_cu_ocp";  // Uniform Class
 		backpack = "VSM_OGA_Backpack_Compact"; // Backpack Class
 		linkedItems[] = {"rhsusf_mbav_medic", "CUP_H_USMC_LWH_DES", "LBG_Shemagh_Tan", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 

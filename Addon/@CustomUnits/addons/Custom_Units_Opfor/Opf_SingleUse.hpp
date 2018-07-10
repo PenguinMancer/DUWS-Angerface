@@ -2,7 +2,7 @@
 		
 		class Opfor_Ammoholder_1 : O_DUWS_base_F  {
 		scope = 2;
-		displayName = "ISIS Ammo Bearer"; // In-game name of unit
+		displayName = "Terrorist Ammo Bearer"; // In-game name of unit
 		uniformClass = "U_BG_Guerilla2_3";  // Uniform Class
 		backpack = "SP_Carryall_ATacsFG"; // Backpack Class
 		linkedItems[] = {"SFG_Tac_smallBeardD", "SP_Shemagh_CheckTan", "TRYK_LOC_AK_chestrig_TAN", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"}; // Item's added to the unit. 
@@ -17,7 +17,7 @@
 		
 		class Opfor_Medic_1 : O_DUWS_base_F  {
 		scope = 2;
-		displayName = "ISIS Medic"; // In-game name of unit
+		displayName = "Terrorist Medic"; // In-game name of unit
 		uniformClass = "U_BG_Guerilla2_3";  // Uniform Class
 		backpack = "B_AssaultPack_rgr"; // Backpack Class
 		linkedItems[] = {"SFG_Tac_smallBeardD", "SP_Shemagh_CheckTan", "CUP_V_O_TK_Vest_2", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"}; // Item's added to the unit. 
@@ -34,7 +34,7 @@
 		
 		class Opfor_Assistant_AntiTank_1 : O_DUWS_base_F  {
 		scope = 2;
-		displayName = "ISIS Asst. Missile Specialist (AT)"; // In-game name of unit
+		displayName = "Terrorist Asst. Missile Specialist (AT)"; // In-game name of unit
 		uniformClass = "U_BG_Guerilla2_3";  // Uniform Class
 		backpack = "B_AssaultPack_rgr"; // Backpack Class
 		linkedItems[] = {"SFG_Tac_smallBeardD", "SP_Shemagh_CheckTan", "TRYK_LOC_AK_chestrig_TAN", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"}; // Item's added to the unit. 

@@ -2,7 +2,7 @@
 		
 		class Opfor_Marksman_1 : O_DUWS_base_F  {
 		scope = 2;
-		displayName = "ISIS Designated Marksman"; // In-game name of unit
+		displayName = "Terrorist Designated Marksman"; // In-game name of unit
 		uniformClass = "CUP_U_O_CHDKZ_Lopotev";  // Uniform Class
 		backpack = "B_AssaultPack_sgg"; // Backpack Class
 		linkedItems[] = {"CUP_V_RUS_Smersh_1", "SFG_Tac_smallBeardD", "SP_Shemagh_CheckGreen", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"}; // Item's added to the unit. 

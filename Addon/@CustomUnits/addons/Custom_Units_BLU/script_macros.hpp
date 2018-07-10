@@ -1,5 +1,2 @@
 #define Standard_Grenades_Blu HandGrenade,HandGrenade,rhs_mag_m18_red,rhs_mag_m18_red
 #define M416_Mags_Blu RH_30Rnd_556x45_M855A1,RH_30Rnd_556x45_M855A1,RH_30Rnd_556x45_M855A1,RH_30Rnd_556x45_M855A1,RH_30Rnd_556x45_M855A1
-#define M9_Mags_Blu RH_15Rnd_9x19_M9,RH_15Rnd_9x19_M9,RH_15Rnd_9x19_M9
-#define G17_Mags_Blu RH_17Rnd_9x19_g17,RH_17Rnd_9x19_g17,RH_17Rnd_9x19_g17
-#define HE_grenades rhs_mag_M441_HE,rhs_mag_M441_HE,rhs_mag_M441_HE

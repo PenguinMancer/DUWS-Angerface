@@ -2,7 +2,7 @@
 		
 		class Opfor_Light_AntiTank_1 : O_DUWS_base_F  {
 		scope = 2;
-		displayName = "ISIS Anti Tank Rifleman"; // In-game name of unit
+		displayName = "Terrorist Anti Tank Rifleman"; // In-game name of unit
 		uniformClass = "U_BG_Guerilla2_3";  // Uniform Class
 		backpack = "B_AssaultPack_sgg"; // Backpack Class
 		linkedItems[] = {"SFG_Tac_smallBeardD", "SP_Shemagh_CheckTan", "CUP_V_B_RRV_DA1", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio"}; // Item's added to the unit. 

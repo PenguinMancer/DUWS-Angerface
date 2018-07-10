@@ -2,7 +2,7 @@
 		
 		class Blufor_Ammobearer_1 : B_DUWS_base_F  {
 		scope = 2;
-		displayName = "French AmmoBearer"; // In-game name of unit
+		displayName = "Nato AmmoBearer"; // In-game name of unit
 		uniformClass = "rhs_uniform_cu_ocp";  // Uniform Class
 		backpack = "VSM_OGA_carryall"; // Backpack Class
 		linkedItems[] = {"TRYK_V_PlateCarrier_coyo_L", "CUP_H_USMC_LWH_DES", "LBG_Shemagh_Tan", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
@@ -17,7 +17,7 @@
 		
 		class Blufor_SquadLeader_1 : B_DUWS_base_F  {
 		scope = 2;
-		displayName = "French Squad Leader"; // In-game name of unit
+		displayName = "Nato Squad Leader"; // In-game name of unit
 		uniformClass = "rhs_uniform_cu_ocp";  // Uniform Class
 		backpack = "VSM_OGA_Backpack_Compact"; // Backpack Class
 		linkedItems[] = {"rhsusf_spcs_ocp_rifleman", "SP_Beret_Tan", "LBG_Shemagh_Tan", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
@@ -32,7 +32,7 @@
 		
 		class Blufor_Assistant_Autorifleman_1 : B_DUWS_base_F  {
 		scope = 2;
-		displayName = "French Assistant Autorifleman"; // In-game name of unit
+		displayName = "Nato Assistant Autorifleman"; // In-game name of unit
 		uniformClass = "rhs_uniform_cu_ocp";  // Uniform Class
 		backpack = "VSM_OGA_carryall"; // Backpack Class
 		linkedItems[] = {"rhsusf_mbav_light", "CUP_H_USMC_LWH_DES", "LBG_Shemagh_Tan", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
@@ -47,7 +47,7 @@
 		
 		class Blufor_Assistant_AntiTank_1 : B_DUWS_base_F  {
 		scope = 2;
-		displayName = "French Asst. Missile Specialist (AT)"; // In-game name of unit
+		displayName = "Nato Asst. Missile Specialist (AT)"; // In-game name of unit
 		uniformClass = "rhs_uniform_cu_ocp";  // Uniform Class
 		backpack = "VSM_OGA_carryall"; // Backpack Class
 		linkedItems[] = {"rhsusf_mbav_light", "CUP_H_USMC_LWH_DES", "LBG_Shemagh_Tan", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
@@ -62,7 +62,7 @@
 		
 		class Blufor_AntiAir_1 : B_DUWS_base_F  {
 		scope = 2;
-		displayName = "French Missile Specialist (AA)"; // In-game name of unit
+		displayName = "Nato Missile Specialist (AA)"; // In-game name of unit
 		uniformClass = "rhs_uniform_cu_ocp";  // Uniform Class
 		backpack = "VSM_OGA_carryall"; // Backpack Class
 		linkedItems[] = {"TRYK_V_PlateCarrier_coyo", "TRYK_H_woolhat_tan", "rhs_googles_black", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
@@ -77,7 +77,7 @@
 		
 		class Blufor_Assistant_AntiAir_1 : B_DUWS_base_F  {
 		scope = 2;
-		displayName = "French Asst. Missile Specialist (AA)"; // In-game name of unit
+		displayName = "Nato Asst. Missile Specialist (AA)"; // In-game name of unit
 		uniformClass = "rhs_uniform_cu_ocp";  // Uniform Class
 		backpack = "VSM_OGA_carryall"; // Backpack Class
 		linkedItems[] = {"rhsusf_mbav_light", "CUP_H_USMC_LWH_DES", "LBG_Shemagh_Tan", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
@@ -92,7 +92,7 @@
 		
 		class Blufor_Repair_1 : B_DUWS_base_F  {
 		scope = 2;
-		displayName = "French Repair Specialist"; // In-game name of unit
+		displayName = "Nato Repair Specialist"; // In-game name of unit
 		uniformClass = "rhs_uniform_cu_ocp";  // Uniform Class
 		backpack = "VSM_OGA_carryall"; // Backpack Class
 		linkedItems[] = {"rhsusf_mbav_light", "CUP_H_USMC_LWH_DES", "LBG_Shemagh_Tan", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
@@ -109,7 +109,7 @@
 		
 		class Blufor_Marksman_1 : B_DUWS_base_F  {
 		scope = 2;
-		displayName = "French Marksman"; // In-game name of unit
+		displayName = "Nato Marksman"; // In-game name of unit
 		uniformClass = "rhs_uniform_cu_ocp";  // Uniform Class
 		backpack = "VSM_OGA_Backpack_Compact"; // Backpack Class
 		linkedItems[] = {"rhsusf_mbav_light", "CUP_H_USMC_LWH_DES", "LBG_Shemagh_Tan", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
@@ -124,7 +124,7 @@
 		
 		class Blufor_Sniper_1 : B_DUWS_base_F  {
 		scope = 2;
-		displayName = "French Sniper"; // In-game name of unit
+		displayName = "Nato Sniper"; // In-game name of unit
 		uniformClass = "CUP_U_O_TK_Ghillie_Top";  // Uniform Class
 		backpack = "VSM_OGA_Backpack_Kitbag"; // Backpack Class
 		linkedItems[] = {"rhsusf_spc_crewman", "TRYK_H_TACEARMUFF_H", "LBG_Shemagh_Tan", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
@@ -139,7 +139,7 @@
 		
 		class Blufor_Spotter_1 : B_DUWS_base_F  {
 		scope = 2;
-		displayName = "French Spotter"; // In-game name of unit
+		displayName = "Nato Spotter"; // In-game name of unit
 		uniformClass = "CUP_U_O_TK_Ghillie_Top";  // Uniform Class
 		backpack = "VSM_OGA_Backpack_Kitbag"; // Backpack Class
 		linkedItems[] = {"rhsusf_spc_crewman", "TRYK_H_TACEARMUFF_H", "LBG_Shemagh_Tan", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
@@ -154,7 +154,7 @@
 		
 		class Blufor_Explosives_1 : B_DUWS_base_F  {
 		scope = 2;
-		displayName = "French Explosive Specialist"; // In-game name of unit
+		displayName = "Nato Explosive Specialist"; // In-game name of unit
 		uniformClass = "rhs_uniform_cu_ocp";  // Uniform Class
 		backpack = "VSM_OGA_carryall"; // Backpack Class
 		linkedItems[] = {"rhsusf_mbav_grenadier", "rhsusf_mich_bare_norotos_arc_tan", "rhs_googles_clear", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
@@ -171,7 +171,7 @@
 		
 		class Blufor_Pilot_1 : B_DUWS_base_F  {
 		scope = 2;
-		displayName = "French Helo Pilot"; // In-game name of unit
+		displayName = "Nato Helo Pilot"; // In-game name of unit
 		uniformClass = "rhs_uniform_cu_ocp";  // Uniform Class
 		backpack = "B_Parachute"; // Backpack Class
 		linkedItems[] = {"rhsusf_spc", "TRYK_H_TACEARMUFF_H", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
