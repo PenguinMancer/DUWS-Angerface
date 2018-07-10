@@ -27,11 +27,57 @@ class CfgWorlds
 		{
 			class FirstNames 
 			{			
-				America = "America";
+				James = "James";
+				John = "John";
+				Robert = "Robert";
+				Michael = "Michael";
+				Will = "Will";
+				David = "David";
+				Joseph = "Joseph";
+				Tom = "Tom";
+				Charles = "Charles";
+				Noah = "Noah";
+				Liam = "Liam";
+				Mason = "Mason";
+				Jacob = "Jacob";
+				Ethan = "Ethan";
+				Elijah = "Elijah";
+				Ben = "Ben";
+				Owen = "Owen";
+				Connor = "Connor";
+				Henry = "Henry";
+				Nathan = "Nathan";
+				Dylan = "Dylan";
+				Cameron = "Cameron";
+				David = "David";
+				Jack = "Jack";
+				Logan = "Logan";
 			};
 			class LastNames 
 			{
-				McAmerica = "McAmerica Face";
+				Smith = "Smith";
+				Johnson = "Johnson";
+				Williams = "Williams";
+				Brown = "Brown";
+				Jones = "Jones";
+				Miller = "Miller";
+				Davis = "Davis";
+				Garcia = "Garcia";
+				Wilson = "Wilson";
+				Martinez = "Martinez";
+				Anderson = "Anderson";
+				Taylor = "Taylor";
+				Thomas = "Thomas";
+				Moore = "Moore";
+				Martin = "Martin";
+				Jackson = "Jackson";
+				Thompson = "Thompson";
+				White = "White";
+				Lopez = "Lopez";
+				Lee = "Lee";
+				Gonzalez = "Gonzalez";
+				Harris = "Harris";
+				Clark = "Clark";
 			};
 		};
 		class DUWS_Opfor_Names {
