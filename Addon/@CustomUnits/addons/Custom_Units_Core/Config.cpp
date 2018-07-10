@@ -49,7 +49,7 @@ class CfgWorlds
 				Nathan = "Nathan";
 				Dylan = "Dylan";
 				Cameron = "Cameron";
-				David = "David";
+				Matthew = "Matthew";
 				Jack = "Jack";
 				Logan = "Logan";
 			};
