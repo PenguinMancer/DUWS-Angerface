@@ -164,8 +164,8 @@ switch (_typeofUnit) do
 	removeGoggles _unit; _unit addGoggles (selectRandom _soldierfacewear); 
     removeHeadgear _unit; _unit addHeadgear (selectRandom _soldierheadgear); 
     removeVest _unit; _unit addVest (selectRandom _soldiervest); 
-	_WeaponPrimary = selectRandom _BasicPrimary; [_unit, (_WeaponPrimary select 0), 3, (_WeaponPrimary select 1)] call BIS_fnc_addWeapon;
-	_WeaponLauncher = selectRandom _Launchers; [_unit, (_WeaponLauncher select 0), 1, (_WeaponLauncher select 1)] call BIS_fnc_addWeapon;
+	_WeaponPrimary = selectRandom _CompactPrimary; [_unit, (_WeaponPrimary select 0), 2, (_WeaponPrimary select 1)] call BIS_fnc_addWeapon;
+	_WeaponLauncher = selectRandom _Launchers; [_unit, (_WeaponLauncher select 0), 2, (_WeaponLauncher select 1)] call BIS_fnc_addWeapon;
     }; 
 	case "ammo": //Ammo Holder
     { 

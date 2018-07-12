@@ -183,3 +183,20 @@
 		Items[] = {"ACE_fieldDressing", "ACE_fieldDressing", "ACE_morphine"};
 		respawnItems[] = {"ACE_fieldDressing", "ACE_fieldDressing", "ACE_morphine"};
 		};
+		
+		//Blufor Stealth Unit
+		
+		class Blufor_Stealth_1 : B_DUWS_base_F  {
+		scope = 2;
+		displayName = "Nato Stealth Operative"; // In-game name of unit
+		uniformClass = "TRYK_U_B_BLK_Tshirt";  // Uniform Class
+		backpack = ""; // Backpack Class
+		linkedItems[] = {"TRYK_balaclava_BLACK_NV", "SP_ECHHelmet_Black1", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. 
+		respawnLinkedItems[] = {"TRYK_balaclava_BLACK_NV", "SP_ECHHelmet_Black1", "ItemMap", "ItemCompass", "ItemWatch", "ItemRadio", "ItemGPS"}; // Item's added to the unit. Should be identical to the linkedItems section.
+		weapons[] = {"Throw", "Put"}; // Weapons added to the unit.
+		respawnweapons[] = {"Throw", "Put"}; // Weapons added to the unit. Should be identical to the linkedItems section
+		magazines[] = {}; //Magazines added to the unit.
+		Respawnmagazines[] = {}; //Magazines added to the unit upon respawn, should be the same as above.
+		Items[] = {};
+		respawnItems[] = {};
+		};
