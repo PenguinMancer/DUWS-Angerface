@@ -135,6 +135,7 @@ class CfgVehicles {
 		
 		//Players
 		#include "Blu_Players.hpp"
+		#include "Blu_Players_Sahari.hpp"
 
 		//Blufor Vehicles
 		#include "Blu_Vehicles.hpp"
